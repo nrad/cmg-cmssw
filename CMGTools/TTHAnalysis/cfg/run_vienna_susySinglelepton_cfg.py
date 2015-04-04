@@ -115,6 +115,10 @@ selectedComponents =  [TTJets]
 TTJets.splitFactor=1000 
 
 #selectedComponents =  WJetsToLNuHT #[WJetsToLNu] # + WJetsToLNuHT 
+#WJetsToLNuHT[0].splitFactor=100
+#WJetsToLNuHT[1].splitFactor=100
+#WJetsToLNuHT[2].splitFactor=100
+#WJetsToLNuHT[3].splitFactor=100
 #selectedComponents = QCDHT + [WJetsToLNu]  + DYJetsM50HT + SingleTop + [ TTWJets, TTZJets, TTH] + SusySignalSamples
 #-------- SEQUENCE
 
@@ -134,7 +138,7 @@ if test==1:
     # test a single component, using a single thread.
     comp = TTJets
 #    comp = SMS_T1tttt_2J_mGl1500_mLSP100
-    comp.files = comp.files[:1]
+    comp.files = comp.files[1]
     selectedComponents = [comp]
     comp.splitFactor = 1
 elif test==2:    
