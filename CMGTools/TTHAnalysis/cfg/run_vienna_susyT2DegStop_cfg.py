@@ -11,7 +11,7 @@ from CMGTools.TTHAnalysis.analyzers.susyCore_modules_cff import *
 
 # selec Iso
 isolation = "miniIso"
-bkg = 0
+bkg = 1
 
 if bkg==0:
   lepAna.muon_dxy0fix = True ## NAVID
@@ -163,19 +163,33 @@ treeProducer = cfg.Analyzer(
 
 
 from CMGTools.TTHAnalysis.samples.samples_13TeV_PHYS14 import *
-from CMGTools.TTHAnalysis.samples.samples_13TeV_private_heplx import *
 
 
 if bkg:
-  selectedComponents =  [TT_PU40bx25]
-  TT_PU40bx25.splitFactor=1000
+
+  #selectedComponents =  [ZJetsToNuNuHT,WJetsToLNuHT,TTJets]
+  #print ZJetsToNuNuHT
+  #print TTJets
+
+
+  #selectedComponents =  ZJetsToNuNuHT+WJetsToLNuHT+TTJets
+  selectedComponents =  [TTJets]
+  #TT_PU40bx25.splitFactor=1000
   #selectedComponents =  [WJetsToLNu]
   #WJetsToLNu.splitFactor=1000 
 else:
+  from CMGTools.TTHAnalysis.samples.samples_13TeV_private_heplx import *
   selectedComponents =  [T2DegStop_300_270]
-  T2DegStop_300_270.splitFactor=1000
+  #T2DegStop_300_270.splitFactor=1000
+#for c in selectedComponents: 
+#    if type(c)==type([]):
+#      for cc in c:
+#        cc.splitFactor = 1000
+#    else:
+#      c.splitFactor=1000
 
-
+for c in selectedComponents:
+  c.splitFactor=1000
 
 
 
@@ -191,12 +205,12 @@ sequence = cfg.Sequence(susyCoreSequence+[
 
 
 #-------- HOW TO RUN
-test = 0
+test = 1
 if test==1:
     # test a single component, using a single thread.
     if bkg:
       #comp = WJetsToLNu
-      comp = TT_PU40bx25
+      comp = TTJets
     else:
       comp = T2DegStop_300_270
     #comp = selectedComponents[0]
@@ -210,6 +224,19 @@ elif test==2:
     for comp in selectedComponents:
         comp.splitFactor = 1
         comp.files = comp.files[:1]
+
+#from PhysicsTools.HeppyCore.framework.services.tfile import TFileService
+#output_service = cfg.Service(
+#      TFileService,
+#      'outputfile',
+#      name="outputfile",
+#      fname='susyT2DegStop.root',
+#      option='recreate'
+#    )
+#
+#from PhysicsTools.Heppy.utils.cmsswPreprocessor import CmsswPreprocessor
+#preprocessor = CmsswPreprocessor("%s/src/JMEAnalysis/JetToolbox/test/jettoolbox_cfg.py" % os.environ['CMSSW_BASE'])
+
 
 from PhysicsTools.HeppyCore.framework.eventsfwlite import Events
 config = cfg.Config( components = selectedComponents,

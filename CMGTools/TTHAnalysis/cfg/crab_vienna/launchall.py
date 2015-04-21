@@ -3,8 +3,8 @@ import imp, os
 # datasets to run as defined from run_susyMT2.cfg
 # number of jobs to run per dataset decided based on splitFactor and fineSplitFactor from cfg file
 # in principle one only needs to modify the following two lines:
-production_label = "test_vienna_crab"
-cmg_version = 'CMGTools-from-CMSSW_7_2_3_LocalDevelopments'
+production_label = "test_3"
+cmg_version = 'CMGTools-from-CMSSW_7_2_3_dxy0fix'
 
 debug  = True
 useAAA = False

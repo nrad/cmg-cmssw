@@ -1,1 +1,1 @@
-../run_vienna_susySinglelepton_crab_cfg.py
+../run_vienna_susyT2DegStop_cfg.py
