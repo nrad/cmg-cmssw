@@ -102,11 +102,13 @@ class JetAnalyzer( Analyzer ):
         if self.cfg_comp.isMC:
             self.genJets = [ x for x in self.handles['genJet'].product() ]
             self.matchJets(event, allJets)
+
             if getattr(self.cfg_ana, 'smearJets', False):
                 self.smearJets(event, allJets)
-        
+
 	##Sort Jets by pT 
         allJets.sort(key = lambda j : j.pt(), reverse = True)
+
 	## Apply jet selection
         self.jets = []
         self.jetsFailId = []
@@ -144,7 +146,7 @@ class JetAnalyzer( Analyzer ):
         if hasattr(event, 'selectedLeptons') and self.cfg_ana.cleanSelectedLeptons:
             event.discardedLeptons = [ l for l in leptons if l not in cleanLeptons ]
             event.selectedLeptons  = [ l for l in event.selectedLeptons if l not in event.discardedLeptons ]
-
+        
         ## Clean Jets from photons
         photons = []
         if hasattr(event, 'selectedPhotons'):
@@ -203,6 +205,7 @@ class JetAnalyzer( Analyzer ):
             #    else:                   event.nGenJets25Fwd += 1
                     
             self.jetFlavour(event)
+
 
         setattr(event,"rho"                    +self.cfg_ana.collectionPostFix, self.rho                    ) 
         setattr(event,"deltaMetFromJEC"        +self.cfg_ana.collectionPostFix, self.deltaMetFromJEC        ) 
