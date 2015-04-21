@@ -1,5 +1,6 @@
 from PhysicsTools.Heppy.physicsobjects.Lepton import Lepton
 from PhysicsTools.HeppyCore.utils.deltar import deltaR
+import ROOT
 
 class Muon( Lepton ):
     def __init__(self, *args, **kwargs):
@@ -10,6 +11,13 @@ class Muon( Lepton ):
         if not hasattr(self,what):
             raise RuntimeError, "I don't have a track called "+what
         self._trackForDxyDz = what
+ 
+     
+    def setDxy0Fix(self,fix):
+        #if not hasattr(self,"muon_dxy0fix"):
+        #    raise RuntimeError, "no dxy0fix option"+fix
+        #print "set dxy0fix NAVID"
+        self._dxy0fix = fix
 
     def looseId( self ):
         '''Loose ID as recommended by mu POG.'''
@@ -62,7 +70,15 @@ class Muon( Lepton ):
         '''
         if vertex is None:
             vertex = self.associatedVertex
-        return getattr(self,self._trackForDxyDz)().dxy( vertex.position() )
+        if self._dxy0fix:
+            vertexPosition = ROOT.Math.XYZPoint(0.0,0.0,0.0)
+        else:
+            vertexPosition = vertex.position()
+
+        #print "############# NAVID #############"
+        #print "vertex Position"
+        #print vertexPosition.x() , vertexPosition.y(), vertexPosition.z()
+        return getattr(self,self._trackForDxyDz)().dxy( vertexPosition)
 
     def edxy(self):
         '''returns the uncertainty on dxy (from gsf track)'''
@@ -76,7 +92,12 @@ class Muon( Lepton ):
         '''
         if vertex is None:
             vertex = self.associatedVertex
-        return getattr(self,self._trackForDxyDz)().dz( vertex.position() )
+        #if self._dxy0fix:
+        #    vertexPosition = ROOT.Math.XYZPoint(0.0,0.0,0.0)
+        #else:
+        #    vertexPosition = vertex.position()
+        vertexPosition = vertex.position()
+        return getattr(self,self._trackForDxyDz)().dz( vertexPosition)
 
     def edz(self):
         '''returns the uncertainty on dxz (from gsf track)'''

@@ -238,6 +238,7 @@ class LeptonAnalyzer( Analyzer ):
         for mu in allmuons:
             mu.associatedVertex = event.goodVertices[0] if len(event.goodVertices)>0 else event.vertices[0]
             mu.setTrackForDxyDz(self.cfg_ana.muon_dxydz_track)
+            mu.setDxy0Fix(self.cfg_ana.muon_dxy0fix) #NAVID
 
         # Set tight id if specified
         if hasattr(self.cfg_ana, "mu_tightId"):
@@ -474,6 +475,7 @@ setattr(LeptonAnalyzer,"defaultConfig",cfg.Analyzer(
     inclusive_muon_dxy = 0.5,
     inclusive_muon_dz  = 1.0,
     muon_dxydz_track   = "muonBestTrack",
+    muon_dxy0fix   = False, ## NAVID 
     # loose muon selection
     loose_muon_id     = "POG_ID_Loose",
     loose_muon_pt     = 5,
