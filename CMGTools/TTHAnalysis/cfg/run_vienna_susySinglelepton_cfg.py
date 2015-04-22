@@ -50,6 +50,10 @@ jetAna.doQG = True
 jetAna.smearJets = False #should be false in susycore, already
 jetAna.recalibrateJets = True #should be true in susycore, already
 metAna.recalibrate = False #should be false in susycore, already
+metAna.otherMETs = [\
+  ("metTxy",('slimmedTxyMETs', 'std::vector<pat::MET>')),
+  ("metRaw",('slimmedRAWMETs', 'std::vector<pat::MET>')),
+  ]
 
 isoTrackAna.setOff=False
 
@@ -122,6 +126,7 @@ treeProducer = cfg.Analyzer(
 
 #-------- SAMPLES AND TRIGGERS -----------
 
+<<<<<<< HEAD
 from CMGTools.TTHAnalysis.samples.samples_13TeV_PHYS14 import *
 #selectedComponents = [QCD_HT_100To250, QCD_HT_250To500, QCD_HT_500To1000, QCD_HT_1000ToInf,TTJets, TTWJets, TTZJets, TTH, SMS_T1tttt_2J_mGl1500_mLSP100, SMS_T1tttt_2J_mGl1200_mLSP800] + SingleTop + WJetsToLNuHT + DYJetsM50HT + T5ttttDeg + T1ttbbWW + T5qqqqWW
 #selectedComponents = [TTJets]
@@ -134,6 +139,23 @@ SMS_T5qqqqWW_Gl1200_Chi1000_LSP800.splitFactor = 100
 #WJetsToLNuHT[2].splitFactor=100
 #WJetsToLNuHT[3].splitFactor=100
 #selectedComponents = QCDHT + [WJetsToLNu]  + DYJetsM50HT + SingleTop + [ TTWJets, TTZJets, TTH] + SusySignalSamples
+=======
+<<<<<<< HEAD
+from CMGTools.TTHAnalysis.samples.samples_13TeV_PHYS14 import *
+#selectedComponents =  [TTJets]
+#TTJets.splitFactor=1000 
+from CMGTools.TTHAnalysis.samples.samples_13TeV_private_heplx import *
+selectedComponents = [T2DegStop_300_270]
+=======
+#from CMGTools.TTHAnalysis.samples.samples_13TeV_PHYS14 import *
+#selectedComponents = [QCD_HT_100To250, QCD_HT_250To500, QCD_HT_500To1000, QCD_HT_1000ToInf,TTJets, TTWJets, TTZJets, TTH, SMS_T1tttt_2J_mGl1500_mLSP100, SMS_T1tttt_2J_mGl1200_mLSP800] + SingleTop + WJetsToLNuHT + DYJetsM50HT + T5ttttDeg + T1ttbbWW + T5qqqqWW
+#selectedComponents = [TTJets]
+>>>>>>> f9d59eb9a682a51e9a6001234c6583e501ff85e7
+
+
+from CMGTools.TTHAnalysis.samples.samples_13TeV_private_heplx import *
+selectedComponents = [DYJetsToLL_M50_PU20bx25]#, DYJetsToLLHT100to200_M50_PU20bx25, DYJetsToLLHT200to400_M50_PU20bx25, DYJetsToLLHT400to600_M50_PU20bx25, DYJetsToLLHT600toInf_M50_PU20bx25]
+>>>>>>> 4a3228d0ce45ded601655a883f59446a4a1b48c5
 
 #-------- SEQUENCE
 
@@ -146,10 +168,19 @@ sequence = cfg.Sequence(susyCoreSequence+[
 
 
 #-------- HOW TO RUN
+<<<<<<< HEAD
 test = 0
+=======
+test = 2
+>>>>>>> 4a3228d0ce45ded601655a883f59446a4a1b48c5
 if test==1:
     # test a single component, using a single thread.
+<<<<<<< HEAD
+    #comp = TTJets
+    comp = T2DegStop_300_270
+=======
     comp = selectedComponents[0]
+>>>>>>> f9d59eb9a682a51e9a6001234c6583e501ff85e7
 #    comp = SMS_T1tttt_2J_mGl1500_mLSP100
     comp.files = comp.files[0]
     selectedComponents = [comp]
