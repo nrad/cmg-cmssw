@@ -4,14 +4,15 @@ import imp
 from PhysicsTools.HeppyCore.framework.config import CFG
 class CmsswPreprocessor :
 	def __init__(self,configFile,command="cmsRun") :
-		self.configFile=configFile
+		self.configFile=os.path.expandvars(configFile)
 		self.command=command
 	
 	def run(self,component,wd,firstEvent,nEvents):
 		print wd,firstEvent,nEvents
-		if nEvents is None:
-			nEvents = -1
-		cmsswConfig = imp.load_source("cmsRunProcess",self.configFile)
+		if nEvents is None: 
+			nEvents=-1
+
+		cmsswConfig = imp.load_source("cmsRunProcess",os.path.expandvars(self.configFile))
 		inputfiles= []
 		for fn in component.files :
 			if not re.match("file:.*",fn) and not re.match("root:.*",fn) :
