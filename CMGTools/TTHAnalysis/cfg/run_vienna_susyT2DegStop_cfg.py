@@ -86,6 +86,54 @@ metAna.otherMETs = [\
   ("metRaw",('slimmedRAWMETs', 'std::vector<pat::MET>')),
   ]
 
+
+
+
+# --- JET-LEPTON CLEANING ---
+jetAna.minLepPt = 10
+jetAna.jetCol = 'slimmedJets'
+#jetAna.jetCol = 'patJetsAK4PFCHS'
+jetAna.copyJetsByValue = False
+jetAna.mcGT = "PHYS14_V4_MC"
+jetAna.doQG = True
+jetAna.smearJets = False #should be false in susycore, already
+jetAna.recalibrateJets = True #should be true in susycore, already
+metAna.recalibrate = False #should be false in susycore, already
+
+
+# --- JET-LEPTON CLEANING ---
+jetAnaAK4CHS = cfg.Analyzer(
+    JetAnalyzer, name='jetAnalyzerAK4CHS',
+    jetCol = 'patJetsAK4PFCHS',
+    copyJetsByValue = True,
+    genJetCol = ('patJetsAK4PFCHS','genJets'),
+    rho = ('fixedGridRhoFastjetAll','',''),
+    cleanSelectedLeptons = False, #Whether to clean 'selectedLeptons' after disambiguation. Treat with care (= 'False') if running Jetanalyzer more than once
+    jetPt = 25.,
+    jetEta = 4.7,
+    jetEtaCentral = 2.4,
+    jetLepDR = 0.4,
+    jetLepArbitration = (lambda jet,lepton : lepton), # you can decide which to keep in case of overlaps; e.g. if the jet is b-tagged you might want to keep the jet
+    minLepPt = 10,
+    relaxJetId = False,
+    doPuId = False, # Not commissioned in 7.0.X
+    recalibrateJets = "MC", # True, False, 'MC', 'Data'
+    recalibrationType = "AK4PFchs",
+    mcGT     = "PHYS14_V4_MC",
+    jecPath = "%s/src/CMGTools/RootTools/data/jec/" % os.environ['CMSSW_BASE'],
+    shiftJEC = 0, # set to +1 or -1 to get +/-1 sigma shifts
+    smearJets = False,
+    shiftJER = 0, # set to +1 or -1 to get +/-1 sigma shifts  
+    cleanJetsFromFirstPhoton = False,
+    cleanJetsFromTaus = False,
+    cleanJetsFromIsoTracks = False,
+    doQG = False,
+    cleanGenJetsFromPhoton = False
+    )
+jetAnaAK4CHS.collectionPostFix="AK4CHS"
+
+
+
 isoTrackAna.setOff=False
 
 from CMGTools.TTHAnalysis.analyzers.ttHLepEventAnalyzer import ttHLepEventAnalyzer
@@ -94,11 +142,19 @@ ttHEventAna = cfg.Analyzer(
     minJets25 = 0,
     )
 
+
+
+
+
+
+
 ## Insert the FatJet, SV, HeavyFlavour analyzers in the sequence
 susyCoreSequence.insert(susyCoreSequence.index(ttHCoreEventAna),
                         ttHFatJetAna)
 susyCoreSequence.insert(susyCoreSequence.index(ttHCoreEventAna),
                         ttHSVAna)
+susyCoreSequence.insert(susyCoreSequence.index(jetAna), jetAnaAK4CHS)
+
 
 ## Single lepton + ST skim
 from CMGTools.TTHAnalysis.analyzers.ttHSTSkimmer import ttHSTSkimmer
@@ -234,13 +290,18 @@ elif test==2:
 #      option='recreate'
 #    )
 #
-#from PhysicsTools.Heppy.utils.cmsswPreprocessor import CmsswPreprocessor
-#preprocessor = CmsswPreprocessor("%s/src/JMEAnalysis/JetToolbox/test/jettoolbox_cfg.py" % os.environ['CMSSW_BASE'])
+
+from PhysicsTools.Heppy.utils.cmsswPreprocessor import CmsswPreprocessor
+preprocessor = CmsswPreprocessor("%s/src/JMEAnalysis/JetToolbox/python/test/jettoolbox_cfg.py"%os.environ['CMSSW_BASE'])
+
 
 
 from PhysicsTools.HeppyCore.framework.eventsfwlite import Events
 config = cfg.Config( components = selectedComponents,
                      sequence = sequence,
                      services = [],
+                     preprocessor=preprocessor,
                      events_class = Events)
+
+
 
