@@ -228,8 +228,9 @@ if bkg:
   #print TTJets
 
 
-  #selectedComponents =  ZJetsToNuNuHT+WJetsToLNuHT+TTJets
-  selectedComponents =  [TTJets]
+  selectedComponents =  ZJetsToNuNuHT+WJetsToLNuHT+[TTJets]
+  #selectedComponents =  [TTJets]
+
   #TT_PU40bx25.splitFactor=1000
   #selectedComponents =  [WJetsToLNu]
   #WJetsToLNu.splitFactor=1000 
@@ -245,7 +246,7 @@ else:
 #      c.splitFactor=1000
 
 for c in selectedComponents:
-  c.splitFactor=1000
+  c.splitFactor=len(c.files)
 
 
 
@@ -261,7 +262,7 @@ sequence = cfg.Sequence(susyCoreSequence+[
 
 
 #-------- HOW TO RUN
-test = 1
+test = 0
 if test==1:
     # test a single component, using a single thread.
     if bkg:
@@ -281,15 +282,15 @@ elif test==2:
         comp.splitFactor = 1
         comp.files = comp.files[:1]
 
-#from PhysicsTools.HeppyCore.framework.services.tfile import TFileService
-#output_service = cfg.Service(
-#      TFileService,
-#      'outputfile',
-#      name="outputfile",
-#      fname='susyT2DegStop.root',
-#      option='recreate'
-#    )
-#
+from PhysicsTools.HeppyCore.framework.services.tfile import TFileService
+output_service = cfg.Service(
+      TFileService,
+      'outputfile',
+      name="outputfile",
+      fname='susyDegenerateStopAnalysis.root',
+      option='recreate'
+    )
+
 
 #from PhysicsTools.Heppy.utils.cmsswPreprocessor import CmsswPreprocessor
 #preprocessor = CmsswPreprocessor("%s/src/JMEAnalysis/JetToolbox/python/test/jettoolbox_cfg.py"%os.environ['CMSSW_BASE'])
