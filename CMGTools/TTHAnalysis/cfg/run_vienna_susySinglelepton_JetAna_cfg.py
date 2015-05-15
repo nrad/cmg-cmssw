@@ -138,7 +138,8 @@ treeProducer = cfg.Analyzer(
 #from CMGTools.TTHAnalysis.samples.samples_13TeV_PHYS14_private import *
 from CMGTools.TTHAnalysis.samples.samples_13TeV_PHYS14 import *
 #selectedComponents = [QCD_HT_100To250, QCD_HT_250To500, QCD_HT_500To1000, QCD_HT_1000ToInf,TTJets, TTWJets, TTZJets, TTH, SMS_T1tttt_2J_mGl1500_mLSP100, SMS_T1tttt_2J_mGl1200_mLSP800] + SingleTop + WJetsToLNuHT + DYJetsM50HT + T5ttttDeg + T1ttbbWW + T5qqqqWW
-
+selectedComponents = [TTJets]
+TTJets.splitFactor = 552
 
 #-------- SEQUENCE
 sequence = cfg.Sequence(susyCoreSequence+[
@@ -151,7 +152,7 @@ sequence = cfg.Sequence(susyCoreSequence+[
 
 
 #-------- HOW TO RUNtest = 1
-test = 1
+test = 0
 if test==1:
     # test a single component, using a single thread.
     comp = TTJets
@@ -169,7 +170,9 @@ elif test==2:
 
 
 from PhysicsTools.Heppy.utils.cmsswPreprocessor import CmsswPreprocessor
-preprocessor = CmsswPreprocessor("%s/src/JMEAnalysis/JetToolbox/test/jettoolbox_cfg.py" % os.environ['CMSSW_BASE'])
+#preprocessor = CmsswPreprocessor("%s/src/JMEAnalysis/JetToolbox/python/test/jettoolbox_cfg.py" % os.environ['CMSSW_BASE'])
+preprocessor = CmsswPreprocessor("$CMSSW_BASE/src/JMEAnalysis/JetToolbox/python/test/jettoolbox_cfg.py")
+
 
 from PhysicsTools.HeppyCore.framework.eventsfwlite import Events
 config = cfg.Config( components = selectedComponents,

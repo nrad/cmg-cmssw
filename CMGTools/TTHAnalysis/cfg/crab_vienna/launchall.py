@@ -3,11 +3,13 @@ import imp, os
 # datasets to run as defined from run_susyMT2.cfg
 # number of jobs to run per dataset decided based on splitFactor and fineSplitFactor from cfg file
 # in principle one only needs to modify the following two lines:
-production_label = "test6_vienna_crab"
+production_label = "test2_RobertSignals_vienna_crab"
 cmg_version = 'CMGTools-from-CMSSW_7_2_3_LocalDevelopments'
 
-debug  = True
-useAAA = True
+#debug  = True
+#useAAA = True
+debug  = False
+useAAA = False
 
 handle = open("heppy_config.py", 'r')
 cfo = imp.load_source("heppy_config", "heppy_config.py", handle)
@@ -16,6 +18,7 @@ handle.close()
 
 #os.system("scramv1 runtime -sh")
 os.system("source /cvmfs/cms.cern.ch/crab3/crab.sh")
+os.system("which crab")
 
 os.environ["PROD_LABEL"]  = production_label
 os.environ["CMG_VERSION"] = cmg_version

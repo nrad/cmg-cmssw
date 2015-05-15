@@ -233,14 +233,14 @@ SMS_T2qq_2J_mStop600_mLSP550,
 SMS_T2qq_2J_mStop1200_mLSP100, 
 SMS_T2bb_2J_mStop900_mLSP100, 
 SMS_T2bb_2J_mStop600_mLSP580, 
-SMS_T1tttt_2J_mGl1500_mLSP100, 
-SMS_T1tttt_2J_mGl1200_mLSP800, 
+#SMS_T1tttt_2J_mGl1500_mLSP100, 
+#SMS_T1tttt_2J_mGl1200_mLSP800, 
 SMS_T1qqqq_2J_mGl1400_mLSP100, 
 SMS_T1qqqq_2J_mGl1000_mLSP800, 
 SMS_T1bbbb_2J_mGl1500_mLSP100, 
 SMS_T1bbbb_2J_mGl1000_mLSP900,
-SMS_T5qqqqWW_Gl1500_Chi800_LSP100, 
-SMS_T5qqqqWW_Gl1200_Chi1000_LSP800,
+#SMS_T5qqqqWW_Gl1500_Chi800_LSP100, 
+#SMS_T5qqqqWW_Gl1200_Chi1000_LSP800,
 ]
 
 mcSamplesPHYS14_PU20bx25 = QCDHT + QCDPt + [QCD_Mu15] + QCDPtEMEnriched + QCDPtbcToE + [WJetsToLNu] + WJetsToLNuHT +  [DYJetsToLL_M50, DYJetsMuMuM50_PtZ180] + DYJetsM50HT + GJetsHT + ZJetsToNuNuHT + SingleTop + [ TTJets, TTWJets, TTZJets, TTH, WZJetsTo3LNu, ZZTo4L, GGHZZ4L] + SusySignalSamples
@@ -358,6 +358,11 @@ T5qqqqWW = [
     T5qqqqWW_mGo1000_mCh800_mChi700_dilep, T5qqqqWW_mGo1200_mCh1000_mChi800_dilep
 ]
 
+T5qqqqWW_vienna = [
+    T5qqqqWW_mGo1500_mCh800_mChi100, 
+    T5qqqqWW_mGo1200_mCh1000_mChi800,
+    T5qqqqWW_mGo1000_mCh800_mChi700,
+]
 
 
 # note: cross section for q~ q~ from https://twiki.cern.ch/twiki/bin/view/LHCPhysics/SUSYCrossSections13TeVsquarkantisquark (i.e. gluinos and stops decoupled)
