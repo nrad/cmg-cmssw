@@ -44,12 +44,9 @@ lepAna.loose_electron_dz = 100
 
 lepAna.inclusive_muon_dxy = 100
 lepAna.inclusive_muon_dz = 100
-lepAna.selected_muon_dxy = 100
-lepAna.selected_muon_dz = 100
 lepAna.inclusive_electron_dxy = 100
 lepAna.inclusive_electron_dz = 100
-lepAna.selected_electron_dxy = 100
-lepAna.selected_electron_dz = 100
+
 
 
 
