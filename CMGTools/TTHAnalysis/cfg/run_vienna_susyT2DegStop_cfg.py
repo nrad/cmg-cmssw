@@ -36,18 +36,18 @@ elif isolation == "relIso03":
     lepAna.loose_muon_relIso = 0.5
 
 #### FOR BUGGY T2Deg
+#lepAna.inclusive_muon_dxy = 100
+#lepAna.inclusive_muon_dz = 100
+#lepAna.inclusive_electron_dxy = 100
+#lepAna.inclusive_electron_dz = 100
 
 lepAna.loose_muon_dxy = 100
 lepAna.loose_muon_dz = 100
 lepAna.loose_electron_dxy = 100
 lepAna.loose_electron_dz = 100
 
-lepAna.inclusive_muon_dxy = 100
-lepAna.inclusive_muon_dz = 100
 lepAna.selected_muon_dxy = 100
 lepAna.selected_muon_dz = 100
-lepAna.inclusive_electron_dxy = 100
-lepAna.inclusive_electron_dz = 100
 lepAna.selected_electron_dxy = 100
 lepAna.selected_electron_dz = 100
 
