@@ -206,6 +206,16 @@ heavyFlavourHadronType = NTupleObjectType("heavyFlavourHadron", baseObjectTypes 
     
 ])
 
+genTauWithLinksExtrasType = NTupleObjectType("genTauWithLinksType", baseObjectTypes = [ genParticleWithAncestryType ], mcOnly=True, variables = [
+    NTupleVariable("MEx", lambda x : x.MEx, float, help="neutrino x momentum from gen-tau"),
+    NTupleVariable("MEy", lambda x : x.MEy, float, help="neutrino y momentum from gen-tau"),
+    NTupleVariable("nNuE", lambda x : x.nNuE, float, help="nuE multiplicity in tau decay"),
+    NTupleVariable("nNuMu", lambda x : x.nNuMu, float, help="nuMu multiplicity in tau decay"),
+    NTupleVariable("nNuTau", lambda x : x.nNuTau, float, help="nuTau multiplicity in tau decay"),
+    NTupleVariable("MEpar", lambda x : x.MEpar, float, help="neutrino momentum from gen-tau, parallel to gen-tau"),
+    NTupleVariable("MEperp", lambda x : x.MEperp, float, help="neutrino momentum from gen-tau, perp. to gen-tau"),
+])
+
 
 def ptRel(p4,axis):
     a = ROOT.TVector3(axis.Vect().X(),axis.Vect().Y(),axis.Vect().Z())
