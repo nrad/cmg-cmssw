@@ -28,7 +28,8 @@ susySingleLepton_collections = susyCore_collections.copy()
 susySingleLepton_collections.update({
 
             # put more here
-            "genParticles"     : NTupleCollection("genPartAll",  genParticleWithMotherId, 200, help="all pruned genparticles"), # need to decide which gen collection ?
+            #"genParticles"     : NTupleCollection("genPartAll",  genParticleWithMotherId, 200, help="all pruned genparticles"), # need to decide which gen collection ?
+            "genParticles"     : NTupleCollection("genPartAll",  genParticleWithMotherIndex, 10000, help="all genparticles"), # If using HLT gen particles use much larger vector length
             ## ---------------------------------------------
             "selectedLeptons" : NTupleCollection("LepGood", leptonTypeSusy, 8, help="Leptons after the preselection"),
             "otherLeptons"    : NTupleCollection("LepOther", leptonTypeSusy, 8, help="Leptons after the preselection"),
@@ -37,6 +38,7 @@ susySingleLepton_collections.update({
             ##------------------------------------------------
             "cleanJetsAll"       : NTupleCollection("Jet",     jetTypeSusy, 25, help="Cental jets after full selection and cleaning, sorted by pt"),
             "fatJets"         : NTupleCollection("FatJet",  fatJetType,  15, help="AK8 jets, sorted by pt"),
+            "genJets"         : NTupleCollection("GenJet",  genJetType,  15, help="Gen Jets, sorted by pt"),
             "reclusteredFatJets" : NTupleCollection("RCFatJet",     fourVectorType,20, help="FatJets1.2 reclusterd from ak4 cleanJetsAll pT > 30, eta <5 "),
             #"cleanJetsAllAK4CHS"     : NTupleCollection("JetAK4CHS",  fatJetType,  15, help="for Cental reclustered AK4CHS after full selection and cleaning, sorted by pt "),
             ##------------------------------------------------

@@ -139,6 +139,10 @@ fatJetType = NTupleObjectType("fatJet",  baseObjectTypes = [ jetType ], variable
     NTupleVariable("minMass", lambda x : (x.tagInfo("caTop").properties().minMass if x.tagInfo("caTop") else -99), float, help="CA8 jet minMass"),
     NTupleVariable("nSubJets", lambda x : (x.tagInfo("caTop").properties().nSubJets if x.tagInfo("caTop") else -99), float, help="CA8 jet nSubJets"),
 ])
+
+genJetType = NTupleObjectType("genJets",  baseObjectTypes = [ fourVectorType ], variables = [
+    NTupleVariable("nConstituents", lambda x : x.nConstituents() ,help="Number of Constituents"),
+])
       
 ##------------------------------------------  
 ## MET
@@ -159,6 +163,17 @@ genTauWithLinksExtrasType = NTupleObjectType("genTauWithLinksType", baseObjectTy
     NTupleVariable("nNuTau", lambda x : x.nNuTau, float, help="nuTau multiplicity in tau decay"),
     NTupleVariable("MEpar", lambda x : x.MEpar, float, help="neutrino momentum from gen-tau, parallel to gen-tau"),
     NTupleVariable("MEperp", lambda x : x.MEperp, float, help="neutrino momentum from gen-tau, perp. to gen-tau"),
+])
+
+
+genParticleWithMotherIndex = NTupleObjectType("genParticleWithMotherIndex", baseObjectTypes = [ genParticleWithMotherId ], mcOnly=True, variables = [
+    NTupleVariable("index", lambda x : x.index, int, help="index of the mother in the genParticles"),
+    NTupleVariable("nDaughters", lambda x : x.nDaughters, int, help="index of the mother in the genParticles"),
+    NTupleVariable("nMothers", lambda x : x.nMothers, int, help="index of the mother in the genParticles"),
+    NTupleVariable("motherIndex1", lambda x : x.motherIndex1, int, help="index of the first mother in the genParticles"),
+    NTupleVariable("motherIndex2", lambda x : x.motherIndex2, int, help="index of the last mother in the genParticles"),
+    NTupleVariable("daughterIndex1", lambda x : x.daughterIndex1, int, help="index of the first daughter daughter in the genParticles"),
+    NTupleVariable("daughterIndex2", lambda x : x.daughterIndex2, int, help="index of the last daughter in the genParticles"),
 ])
 
 ##------------------------------------------  
