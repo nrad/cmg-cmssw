@@ -35,9 +35,9 @@ elif isolation == "relIso03":
     lepAna.loose_electron_relIso = 0.5
     lepAna.loose_muon_relIso = 0.5
 
-#### FOR BUGGY T2Deg
+#### FOR BUGGY Phys14 T2Deg
 
-dxy0fix=True
+dxy0fix=False
 if dxy0fix:
   print "----------------------------------------------------------"
   print "WARNING: dxy0fix = True ----> NO dxy or dz cuts on leptons"
