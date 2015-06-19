@@ -5,11 +5,13 @@ echo $CMSSW_BASE
 # extract exported necessary stuff
 #tar xzf cmgdataset.tar.gz --directory $HOME
 tar xzf python.tar.gz --directory $CMSSW_BASE
-tar xzf cafpython.tar.gz --directory $CMSSW_BASE
+#tar xzf cafpython.tar.gz --directory $CMSSW_BASE
 
 # uncomment for debuging purposes
 
-ls -lR .
+#ls -lR .
+
+mv -i src/* $CMSSW_BASE/src/
 echo "ARGS:"
 echo $@
 echo "ENV..................................."
@@ -55,11 +57,18 @@ edmProvDump
 
 # Update library path
 # Needed so recompiled modules are found
-export LD_LIBRARY_PATH=./lib/slc6_amd64_gcc481:$LD_LIBRARY_PATH 
+export LD_LIBRARY_PATH=./lib/${SCRAM_ARCH}:$LD_LIBRARY_PATH 
+#export LD_LIBRARY_PATH=./lib/slc6_amd64_gcc481:$LD_LIBRARY_PATH 
+echo $LD_LIBRARY_PATH
 
 echo $@
 
+#root -l -b <<EOF
+#.include
+#EOF
+
 python -u heppy_crab_script.py $@
 
+echo "After heppy_crab_script.py"
 ls -lR
 
