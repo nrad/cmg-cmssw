@@ -25,17 +25,15 @@ config.Data.unitsPerJob = int(os.environ["CMG_UNITS_PER_JOB"])
 if "CMG_TOTAL_UNITS" in os.environ:
   config.Data.totalUnits = int(os.environ["CMG_TOTAL_UNITS"])
 
-
 config.Data.inputDataset = dataset
 config.Data.publishDataName = m.group(2)+"_"+production_label
 
 #config.Data.publishDataName += "_"+sample
 print "Will send dataset", dataset , "with", config.Data.unitsPerJob, " files / jobs"
 
-config.General.requestName = sample + "_" + cmg_version # task name
+#config.General.requestName = sample + "_" + cmg_version # task name
+config.General.requestName = production_label+"_"+cmg_version # task name
 config.General.workArea = 'crab_' + production_label + "_" + sample # crab dir name
-
-
 
 ## this will divide task in *exactly* NJOBS jobs (for this we need JobType.pluginName = 'PrivateMC' and Data.splitting = 'EventBased')
 #config.Data.unitsPerJob = 10
@@ -48,12 +46,15 @@ config.JobType.scriptArgs = ["datasetname="+datasetname]
 ## output will be .../$outLFN/$PRIMARY_DS/$PUBLISH_NAME/$TIMESTAMP/$COUNTER/$FILENAME
 ## https://twiki.cern.ch/twiki/bin/view/CMSPublic/Crab3DataHandling
 #config.Data.outLFNDirBase += '/babies/' + cmg_version
-config.Data.outLFNDirBase = config.Data.outLFNDirBase.replace("/adamwo","/adamw")
+#config.Data.outLFNDirBase = config.Data.outLFNDirBase.replace("/adamwo","/adamw")
 #config.Data.primaryDataset =  production_label
 #config.Data.publishDataName = dataset
 ##final output: /store/user/$USER/babies/cmg_version/production_label/dataset/150313_114158/0000/foo.b
 
 config.JobType.inputFiles.append("sample_"+datasetname+".pkl")
+
+if "INPUT_DBS" in os.environ:
+  config.Data.inputDBS = os.environ["INPUT_DBS"]
 
 ## if NEVENTS variable is set then only nevents will be run
 #try: 
