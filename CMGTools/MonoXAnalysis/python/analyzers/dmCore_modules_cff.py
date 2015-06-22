@@ -156,11 +156,11 @@ lepAna = cfg.Analyzer(
     inclusive_electron_dz  = 1.0,
     inclusive_electron_lostHits = 5.0,
     # veto electron selection
-    loose_electron_id     = "POG_Cuts_ID_PHYS14_25ns_v1_Veto_full5x5",
+    loose_electron_id     = "POG_Cuts_ID_PHYS14_25ns_v2_ConvVetoDxyDz_Veto_full5x5",
     loose_electron_pt     = 10,
     loose_electron_eta    = 2.5,
     loose_electron_dxy    = 0.5,
-    loose_electron_dz     = 0.5,
+    loose_electron_dz     = 1.0,
     loose_electron_relIso = 1.0,
     loose_electron_lostHits = 5.0,
     # muon isolation correction method (can be "rhoArea" or "deltaBeta")
@@ -210,6 +210,8 @@ photonAna = cfg.Analyzer(
     ptMin = 15,
     etaMax = 2.5,
     gammaID = "POG_PHYS14_25ns_Loose",
+    rhoPhoton = 'fixedGridRhoFastjetAll',
+    gamma_isoCorr = 'rhoArea',
     do_mc_match = True,
     do_randomCone = False,
 )
@@ -218,30 +220,30 @@ photonAna = cfg.Analyzer(
 tauAna = cfg.Analyzer(
     TauAnalyzer, name="tauAnalyzer",
     # inclusive very loose hadronic tau selection
-    inclusive_ptMin = 15,
+    inclusive_ptMin = 18,
     inclusive_etaMax = 9999,
     inclusive_dxyMax = 1000.,
-    inclusive_dzMax = 0.4,
+    inclusive_dzMax = 1000,
     inclusive_vetoLeptons = False,
     inclusive_leptonVetoDR = 0.4,
-    inclusive_decayModeID = "decayModeFindingNewDMs", # ignored if not set or ""
-    inclusive_tauID = "decayModeFindingNewDMs",
+    inclusive_decayModeID = "", # ignored if not set or ""
+    inclusive_tauID = "decayModeFinding",
     inclusive_vetoLeptonsPOG = False, # If True, the following two IDs are required
     inclusive_tauAntiMuonID = "",
     inclusive_tauAntiElectronID = "",
     # loose hadronic tau selection
-    loose_ptMin = 15,
+    loose_ptMin = 18,
     loose_etaMax = 9999,
     loose_dxyMax = 1000.,
-    loose_dzMax = 0.2,
-    loose_vetoLeptons = True,
+    loose_dzMax = 1000,
+    loose_vetoLeptons = False,
     loose_leptonVetoDR = 0.4,
-    loose_decayModeID = "decayModeFindingNewDMs", # ignored if not set or ""
-    loose_tauID = "byLooseCombinedIsolationDeltaBetaCorr3Hits",
+    loose_decayModeID = "decayModeFinding", # ignored if not set or ""
+    loose_tauID = "decayModeFinding",
     loose_vetoLeptonsPOG = False, # If True, the following two IDs are required
-    loose_tauAntiMuonID = "againstMuonLoose3",
-    loose_tauAntiElectronID = "againstElectronLooseMVA5",
-    loose_tauLooseID = "decayModeFindingNewDMs"
+    loose_tauAntiMuonID = "",
+    loose_tauAntiElectronID = "",
+    loose_tauLooseID = "decayModeFinding"
 )
 
 ##------------------------------------------
@@ -282,14 +284,14 @@ jetAna = cfg.Analyzer(
     jetEta = 4.7,
     jetEtaCentral = 2.5,
     jetLepDR = 0.4,
-    jetLepArbitration = (lambda jet,lepton : lepton), # you can decide which to keep in case of overlaps; e.g. if the jet is b-tagged you might want to keep the jet
-    cleanSelectedLeptons = True, #Whether to clean 'selectedLeptons' after disambiguation. Treat with care (= 'False') if running Jetanalyzer more than once
+    jetLepArbitration = (lambda jet,lepton : (jet,lepton)), # you can decide which to keep in case of overlaps; e.g. if the jet is b-tagged you might want to keep the jet
+    cleanSelectedLeptons = False, #Whether to clean 'selectedLeptons' after disambiguation. Treat with care (= 'False') if running Jetanalyzer more than once
     minLepPt = 10,
     relaxJetId = False,  
-    doPuId = False, # Not commissioned in 7.0.X
+    doPuId = True, # Not commissioned in 7.0.X, use the Run1 training for the time being
     recalibrateJets = "MC", # True, False, 'MC', 'Data'
     recalibrationType = "AK4PFchs",
-    mcGT     = "PHYS14_25_V2",
+    mcGT     = "MCRUN2_74_V9",
     jecPath = "%s/src/CMGTools/RootTools/data/jec/" % os.environ['CMSSW_BASE'],
     shiftJEC = 0, # set to +1 or -1 to get +/-1 sigma shifts
     smearJets = False,
