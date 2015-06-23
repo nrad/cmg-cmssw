@@ -63,8 +63,8 @@ class GeneratorAnalyzer( Analyzer ):
     def declareHandles(self):
         super(GeneratorAnalyzer, self).declareHandles()
         #NAVID need to add recoGenParticles
-        self.mchandles['genParticles'] = AutoHandle( 'genParticles', 'std::vector<reco::GenParticle>' )
-        #self.mchandles['genParticles'] = AutoHandle( 'prunedGenParticles', 'std::vector<reco::GenParticle>' )
+        #self.mchandles['genParticles'] = AutoHandle( 'genParticles', 'std::vector<reco::GenParticle>' )
+        self.mchandles['genParticles'] = AutoHandle( 'prunedGenParticles', 'std::vector<reco::GenParticle>' )
 
 	if self.makeLHEweights:
 		self.mchandles['LHEweights'] = AutoHandle( 'source', 'LHEEventProduct', mayFail = True, lazy = False )
@@ -212,8 +212,6 @@ class GeneratorAnalyzer( Analyzer ):
             daughterIndex2=-1
             motherIndex1=-1
             motherIndex2=-1
-
-
             for igp, gp in enumerate(allGenParticles):
               #if abs(gp.pdgId())==1000022:
               #  print "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% NAVID %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
@@ -233,13 +231,12 @@ class GeneratorAnalyzer( Analyzer ):
                 motherIndex2=-1
               if gp.daughter(0):
                 daughterIndex1 = allGenParticles.index(gp.daughter(0))
-                if nMoms>1:
+                if nDaus>1:
                   daughterIndex2 = allGenParticles.index(gp.daughter(nDaus-1))
                 else: daughterIndex2 = -1
               else:
                 daughterIndex1=-1
                 daughterIndex2=-1
-
               gp.motherIndex1= motherIndex1
               gp.motherIndex2= motherIndex2
               gp.daughterIndex1= daughterIndex1

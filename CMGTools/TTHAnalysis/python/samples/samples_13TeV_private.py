@@ -7,14 +7,14 @@ T2DegStop_300_270 = cfg.MCComponent(
       dataset="/T2DegStop2j_300_270_GENSIM/nrad-T2DegStop2j_300_270_MINIAOD-a279b5108ada7c3c0926210c2a95f22e/USER",
       name = "T2DegStop_300_270",
       files =  ['root://hephyse.oeaw.ac.at//dpm/oeaw.ac.at/home/cms/store/user/nrad/T2DegStop2j_300_270_GENSIM/T2DegStop2j_300_270_MINIAOD/a279b5108ada7c3c0926210c2a95f22e//T2DegStop2j_300_270_miniAOD_1_1_RGu.root',
-                #'root://hephyse.oeaw.ac.at//dpm/oeaw.ac.at/home/cms/store/user/nrad/T2DegStop2j_300_270_GENSIM/T2DegStop2j_300_270_MINIAOD/a279b5108ada7c3c0926210c2a95f22e//T2DegStop2j_300_270_miniAOD_2_1_yQN.root',
-                #'root://hephyse.oeaw.ac.at//dpm/oeaw.ac.at/home/cms/store/user/nrad/T2DegStop2j_300_270_GENSIM/T2DegStop2j_300_270_MINIAOD/a279b5108ada7c3c0926210c2a95f22e//T2DegStop2j_300_270_miniAOD_3_1_o3g.root',
-                #'root://hephyse.oeaw.ac.at//dpm/oeaw.ac.at/home/cms/store/user/nrad/T2DegStop2j_300_270_GENSIM/T2DegStop2j_300_270_MINIAOD/a279b5108ada7c3c0926210c2a95f22e//T2DegStop2j_300_270_miniAOD_4_1_EPC.root',
-                #'root://hephyse.oeaw.ac.at//dpm/oeaw.ac.at/home/cms/store/user/nrad/T2DegStop2j_300_270_GENSIM/T2DegStop2j_300_270_MINIAOD/a279b5108ada7c3c0926210c2a95f22e//T2DegStop2j_300_270_miniAOD_5_1_hmI.root',
-                #'root://hephyse.oeaw.ac.at//dpm/oeaw.ac.at/home/cms/store/user/nrad/T2DegStop2j_300_270_GENSIM/T2DegStop2j_300_270_MINIAOD/a279b5108ada7c3c0926210c2a95f22e//T2DegStop2j_300_270_miniAOD_6_1_PA3.root',
-                #'root://hephyse.oeaw.ac.at//dpm/oeaw.ac.at/home/cms/store/user/nrad/T2DegStop2j_300_270_GENSIM/T2DegStop2j_300_270_MINIAOD/a279b5108ada7c3c0926210c2a95f22e//T2DegStop2j_300_270_miniAOD_7_1_adn.root',
-                #'root://hephyse.oeaw.ac.at//dpm/oeaw.ac.at/home/cms/store/user/nrad/T2DegStop2j_300_270_GENSIM/T2DegStop2j_300_270_MINIAOD/a279b5108ada7c3c0926210c2a95f22e//T2DegStop2j_300_270_miniAOD_8_1_wD2.root',
-                #'root://hephyse.oeaw.ac.at//dpm/oeaw.ac.at/home/cms/store/user/nrad/T2DegStop2j_300_270_GENSIM/T2DegStop2j_300_270_MINIAOD/a279b5108ada7c3c0926210c2a95f22e//T2DegStop2j_300_270_miniAOD_9_1_sjf.root'
+                'root://hephyse.oeaw.ac.at//dpm/oeaw.ac.at/home/cms/store/user/nrad/T2DegStop2j_300_270_GENSIM/T2DegStop2j_300_270_MINIAOD/a279b5108ada7c3c0926210c2a95f22e//T2DegStop2j_300_270_miniAOD_2_1_yQN.root',
+                'root://hephyse.oeaw.ac.at//dpm/oeaw.ac.at/home/cms/store/user/nrad/T2DegStop2j_300_270_GENSIM/T2DegStop2j_300_270_MINIAOD/a279b5108ada7c3c0926210c2a95f22e//T2DegStop2j_300_270_miniAOD_3_1_o3g.root',
+                'root://hephyse.oeaw.ac.at//dpm/oeaw.ac.at/home/cms/store/user/nrad/T2DegStop2j_300_270_GENSIM/T2DegStop2j_300_270_MINIAOD/a279b5108ada7c3c0926210c2a95f22e//T2DegStop2j_300_270_miniAOD_4_1_EPC.root',
+                'root://hephyse.oeaw.ac.at//dpm/oeaw.ac.at/home/cms/store/user/nrad/T2DegStop2j_300_270_GENSIM/T2DegStop2j_300_270_MINIAOD/a279b5108ada7c3c0926210c2a95f22e//T2DegStop2j_300_270_miniAOD_5_1_hmI.root',
+                'root://hephyse.oeaw.ac.at//dpm/oeaw.ac.at/home/cms/store/user/nrad/T2DegStop2j_300_270_GENSIM/T2DegStop2j_300_270_MINIAOD/a279b5108ada7c3c0926210c2a95f22e//T2DegStop2j_300_270_miniAOD_6_1_PA3.root',
+                'root://hephyse.oeaw.ac.at//dpm/oeaw.ac.at/home/cms/store/user/nrad/T2DegStop2j_300_270_GENSIM/T2DegStop2j_300_270_MINIAOD/a279b5108ada7c3c0926210c2a95f22e//T2DegStop2j_300_270_miniAOD_7_1_adn.root',
+                'root://hephyse.oeaw.ac.at//dpm/oeaw.ac.at/home/cms/store/user/nrad/T2DegStop2j_300_270_GENSIM/T2DegStop2j_300_270_MINIAOD/a279b5108ada7c3c0926210c2a95f22e//T2DegStop2j_300_270_miniAOD_8_1_wD2.root',
+                'root://hephyse.oeaw.ac.at//dpm/oeaw.ac.at/home/cms/store/user/nrad/T2DegStop2j_300_270_GENSIM/T2DegStop2j_300_270_MINIAOD/a279b5108ada7c3c0926210c2a95f22e//T2DegStop2j_300_270_miniAOD_9_1_sjf.root'
                ],
       xSection = 8.51615,
       nGenEvents = 1,
@@ -221,7 +221,7 @@ T2DegStop_300_270_RunII_genParticles_files=[file[:-1] for file in fileList.stdou
 
 
 T2DegStop_300_270_RunII_genParticles = cfg.MCComponent(
-      dataset="/T2DegStop2j_300_270_GENSIM/nrad-T2DegStop2j_300_270_MINIAOD-a279b5108ada7c3c0926210c2a95f22e/USER",
+      dataset="/T2DegStop_300_270_GEN-SIM/nrad-T2DegStop_300_270_MINIAOD-RunIISpring15-MCRUN2_74_V9-25ns-008934a25a3583950e0bb876accde101/USER",
       name = "T2DegStop_300_270_RunII_genParticles",
       files =  [T2DegStop_300_270_RunII_genParticles_dir + x for x in T2DegStop_300_270_RunII_genParticles_files
                ],

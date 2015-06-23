@@ -160,13 +160,22 @@ metTypeSusy = NTupleObjectType("metSusy", baseObjectTypes = [ metType ], variabl
 
 
 genParticleWithMotherIndex = NTupleObjectType("genParticleWithMotherIndex", baseObjectTypes = [ genParticleWithMotherId ], mcOnly=True, variables = [
-    NTupleVariable("index", lambda x : x.index, int, help="index of the mother in the genParticles"),
-    NTupleVariable("nDaughters", lambda x : x.nDaughters, int, help="index of the mother in the genParticles"),
-    NTupleVariable("nMothers", lambda x : x.nMothers, int, help="index of the mother in the genParticles"),
-    NTupleVariable("motherIndex1", lambda x : x.motherIndex1, int, help="index of the first mother in the genParticles"),
-    NTupleVariable("motherIndex2", lambda x : x.motherIndex2, int, help="index of the last mother in the genParticles"),
-    NTupleVariable("daughterIndex1", lambda x : x.daughterIndex1, int, help="index of the first daughter daughter in the genParticles"),
-    NTupleVariable("daughterIndex2", lambda x : x.daughterIndex2, int, help="index of the last daughter in the genParticles"),
+    #NTupleVariable("nDaughters", lambda x : x.nDaughters, int, help="index of the daughters in the genParticles"),
+    #NTupleVariable("nMothers", lambda x : x.nMothers, int, help="index of the mother in the genParticles"),
+    #NTupleVariable("motherIndex1", lambda x : x.motherIndex1, int, help="index of the first mother in the genParticles"),
+    #NTupleVariable("motherIndex2", lambda x : x.motherIndex2, int, help="index of the last mother in the genParticles"),
+    #NTupleVariable("daughterIndex1", lambda x : x.daughterIndex1, int, help="index of the first daughter daughter in the genParticles"),
+    #NTupleVariable("daughterIndex2", lambda x : x.daughterIndex2, int, help="index of the last daughter in the genParticles"),
+
+    ## these work for 74X miniaod
+    NTupleVariable("nDaughters", lambda x : x.numberOfDaughters(), int, help="index of the daughters in the genParticles"),
+    NTupleVariable("nMothers", lambda x : x.numberOfMothers(), int, help="index of the mother in the genParticles"),
+    NTupleVariable("motherIndex1", lambda x : x.motherRef(0).index() if x.numberOfMothers() > 0 else -1, int, help="index of the first mother in the genParticles"),
+    NTupleVariable("daughterIndex1", lambda x : x.daughterRef(0).index() if x.numberOfDaughters() >0 else -1, int, help="index of the first mother in the genParticles"),
+    NTupleVariable("motherIndex2", lambda x : x.motherRef(x.numberOfMothers()-1).index() if x.numberOfMothers() > 1 else -1, int, help="index of the last mother in the genParticles"),
+    NTupleVariable("daughterIndex2", lambda x : x.daughterRef(x.numberOfDaughters()-1).index() if x.numberOfDaughters() > 1 else -1, int, help="index of the last mother in the genParticles"),
+
+
 ])
 
 

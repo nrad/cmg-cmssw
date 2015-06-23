@@ -157,10 +157,11 @@ from CMGTools.TTHAnalysis.samples.samples_13TeV_PHYS14 import *
 
 
 #from CMGTools.TTHAnalysis.samples.samples_13TeV_private_heplx import *
-from CMGTools.TTHAnalysis.samples.samples_13TeV_private import *
+from CMGTools.TTHAnalysis.samples.samples_13TeV_local import *
 #selectedComponents = [T2DegStop_300_270]
 #selectedComponents = [T2DegStop_300_270_Phys14_genParticles]
-selectedComponents = [T2DegStop_300_270_RunII_genParticles]
+#selectedComponents = [T2DegStop_300_270_RunII_genParticles]
+selectedComponents = [T2DegStop_300_270_RunII_genParticles_local]
 
 #selectedComponents = [DYJetsToLL_M50_PU20bx25]#, DYJetsToLLHT100to200_M50_PU20bx25, DYJetsToLLHT200to400_M50_PU20bx25, DYJetsToLLHT400to600_M50_PU20bx25, DYJetsToLLHT600toInf_M50_PU20bx25]
 
