@@ -218,6 +218,24 @@ metAna = cfg.Analyzer(
     collectionPostFix = "",
     )
 
+metAnaDef = cfg.Analyzer(
+    METAnalyzer, name="metAnalyzerDef",
+    metCollection     = ("slimmedMETs","", "PAT"),
+    noPUMetCollection = ("slimmedMETs","", "PAT"),    
+    copyMETsByValue = True,
+    doTkMet = False,
+    doMetNoPU = False,
+    doMetNoMu = False,
+    doMetNoEle = False,
+    doMetNoPhoton = False,
+    recalibrate = False,
+    jetAnalyzerCalibrationPostFix = "",
+    candidates='packedPFCandidates',
+    candidatesTypes='std::vector<pat::PackedCandidate>',
+    dzMax = 0.1,
+    collectionPostFix = "Def",
+    )
+
 
 ##------------------------------------------
 ##  Z skim
@@ -309,6 +327,7 @@ metCoreSequence = [
    #jetAna,
 ##### met modules below
     metAna,
+    metAnaDef,
     eventFlagsAna,
 ##### tree
 ##    treeProducer,
