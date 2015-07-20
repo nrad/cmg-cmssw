@@ -28,7 +28,7 @@ process.options = cms.untracked.PSet(
 
 # How many events to process
 process.maxEvents = cms.untracked.PSet( 
-   input = cms.untracked.int32(10000)
+   input = cms.untracked.int32(20)
 )
 
 ### =====================================================================================================
@@ -75,28 +75,33 @@ process.maxEvents = cms.untracked.PSet(
 )
 
 ### =====================================================================================================
+#default configuration for miniAOD reprocessing
 
-from PhysicsTools.PatUtils.tools.runMETCorrectionsAndUncertainties import runMETCorrectionsAndUncertainties
+from PhysicsTools.PatUtils.tools.runMETCorrectionsAndUncertainties import runMetCorAndUncFromMiniAOD
+runMetCorAndUncFromMiniAOD(process)
 
-#recomputation only available for T1 and Txy. T0 is copied from the miniAOD, and smearing is not consudered
-# necessitates both T1 and T1Txy in the recomputation
-
-#MET T1 uncertainties
-runMETCorrectionsAndUncertainties(process, metType="PF",
-                                  correctionLevel=["T1"],
-                                  computeUncertainties=True,
-                                  produceIntermediateCorrections=False,
-                                  addToPatDefaultSequence=False,
-                                  jetCollection="selectedPatJets",
-                                  electronCollection="slimmedElectrons",
-                                  muonCollection="slimmedMuons",
-                                  tauCollection="slimmedTaus",
-                                  reclusterJets = True,
-                                  pfCandCollection = "packedPFCandidates",
-                                  onMiniAOD=True,
-                                  postfix="",
-                                  )
-
+#from PhysicsTools.PatUtils.tools.runMETCorrectionsAndUncertainties import runMETCorrectionsAndUncertainties
+#
+##recomputation only available for T1 and Txy. T0 is copied from the miniAOD, and smearing is not consudered
+## necessitates both T1 and T1Txy in the recomputation
+#
+#
+###MET T1 uncertainties
+#runMETCorrectionsAndUncertainties(process, metType="PF",
+#                                  correctionLevel=["T1"],
+#                                  computeUncertainties=True,
+#                                  produceIntermediateCorrections=False,
+#                                  addToPatDefaultSequence=False,
+#                                  jetCollection="selectedPatJets",
+#                                  electronCollection="slimmedElectrons",
+#                                  muonCollection="slimmedMuons",
+#                                  tauCollection="slimmedTaus",
+#                                  reclusterJets = True,
+#                                  pfCandCollection = "packedPFCandidates",
+#                                  onMiniAOD=True,
+#                                  postfix="",
+#                                  )
+#
 ##MET T1+Txy
 #runMETCorrectionsAndUncertainties(process, metType="PF",
 #                                  correctionLevel=["T1","Txy"],
@@ -134,7 +139,7 @@ process.MINIAODSIMoutput = cms.OutputModule("PoolOutputModule",
 )
 
 
-process.MINIAODSIMoutput_step = cms.EndPath(process.MINIAODSIMoutput)
+process.endpath = cms.EndPath(process.MINIAODSIMoutput)
 
 
 dumpFile  = open("MetType1_dump.py", "w")
