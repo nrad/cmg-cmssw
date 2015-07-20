@@ -30,6 +30,9 @@ met_globalVariables = [
     NTupleVariable("met_caloPhi", lambda ev : ev.met.caloMETPhi(), help="calo met phi"),
     NTupleVariable("met_caloSumEt", lambda ev : ev.met.caloMETSumEt(), help="calo met sumEt"),
 
+    NTupleVariable("met_genPt", lambda ev : ev.met_genPtDef, help="gen met p_{T}"),
+    NTupleVariable("met_genPhi", lambda ev : ev.met_genPhiDef, help="gen met phi"),
+
    # ----------------------- type1met studies info -------------------------------------------------------------------- #     
 
     NTupleVariable("metType1_Pt", lambda ev : ev.metType1.pt() if  hasattr(ev,'metType1') else  0 , help="type1, V5, pt"),
