@@ -96,11 +96,17 @@ def doTinyCmsPrelim(textLeft="_default_",textRight="_default_",hasExpo=False,tex
     if textLeft  == "_default_": textLeft  = options.lspam
     if textRight == "_default_": textRight = options.rspam
     if lumi      == None       : lumi      = options.lumi
+    if   lumi > 3.54e+1: lumitext = "%.0f fb^{-1}" % lumi
+    elif lumi > 3.54e+0: lumitext = "%.1f fb^{-1}" % lumi
+    elif lumi > 3.54e-1: lumitext = "%.2f fb^{-1}" % lumi
+    elif lumi > 3.54e-2: lumitext = "%.0f pb^{-1}" % (lumi*1000)
+    elif lumi > 3.54e-3: lumitext = "%.1f pb^{-1}" % (lumi*1000)
+    else               : lumitext = "%.2f pb^{-1}" % (lumi*1000)
+    textLeft = textLeft.replace("%(lumi)",lumitext)
+    textRight = textRight.replace("%(lumi)",lumitext)
     if textLeft not in ['', None]:
         doSpam(textLeft, (.28 if hasExpo else .17)+xoffs, .955, .60+xoffs, .995, align=12, textSize=textSize)
     if textRight not in ['', None]:
-        if "%(lumi)" in textRight: 
-            textRight = textRight % { 'lumi':lumi }
         doSpam(textRight,.68+xoffs, .955, .99+xoffs, .995, align=32, textSize=textSize)
 
 def printExtraLabel(labeltext, legPosition):
@@ -248,7 +254,7 @@ def doNormFit(pspec,pmap,mca):
         pdfs.add(hpdf); dontDelete.append(hpdf)
         if mca.getProcessOption(p,'FreeFloat',False):
             syst = mca.getProcessOption(p,'NormSystematic',0.0)
-            normterm = w.factory('syst_%s[%g,%g,%g]' % (p, pmap[p].Integral(), 0.2*pmap[p].Integral(), 5*pmap[p].Integral() ))
+            normterm = w.factory('prod::norm_%s(%g,syst_%s[1,%g,%g])' % (p, pmap[p].Integral(), p, 0.2, 5))
             dontDelete.append((normterm,))
             coeffs.add(normterm)
             procNormMap[p] = normterm
