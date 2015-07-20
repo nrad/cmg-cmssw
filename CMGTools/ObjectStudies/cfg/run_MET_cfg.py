@@ -49,17 +49,13 @@ elif test==1:
    # ----------------------- Summer15 options -------------------------------------------------------------------- #
 
 elif test==3:
-<<<<<<< HEAD
     selectedComponents = [ DYJetsToLL_M50_50ns,TTJets_50ns ]
+#    selectedComponents = [ TTJets_50ns ]
     isZSkim=True
-=======
-#    selectedComponents = [ DYJetsToLL_M50_50ns,TTJets_50ns ]
-    selectedComponents = [ TTJets_50ns ]
-#    isZSkim=True
->>>>>>> 5b4e080... small stuff in cfg
     for comp in selectedComponents:
         comp.triggers = triggers_mumu
         comp.splitFactor = 1000
+#        comp.files = comp.files[:1]
         comp.files = comp.files[:]
 
 elif test==4:
