@@ -4,10 +4,8 @@
 ##########################################################
 import PhysicsTools.HeppyCore.framework.config as cfg
 
-
 #Load all analyzers
 from CMGTools.TTHAnalysis.analyzers.susyCore_modules_cff import *
-
 
 # Lepton Preselection
 # ele
@@ -94,6 +92,7 @@ triggerFlagsAna.triggerBits = {
         'Mu50NoIso' : trigger_1mu_noiso_w,
         'MuHT600' : triggers_mu_ht600,
         'MuHT400MET70' : triggers_mu_ht400_met70,
+        'MuHT350MET70' : triggers_mu_ht350_met70,
         'MuMET120' : triggers_mu_met120,
         'MuHT400B': triggers_mu_ht400_btag,
         'MuHad' : triggers_muhad,
@@ -102,11 +101,14 @@ triggerFlagsAna.triggerBits = {
         'ElNoIso' : trigger_1el_noiso,
         'EleHT600' : triggers_el_ht600,
         'EleHT400MET70' : triggers_el_ht400_met70,
+        'EleHT350MET70' : triggers_el_ht350_met70,
         'EleHT200' :triggers_el_ht200,
         'ElHT400B': triggers_el_ht400_btag,
         'ElHad' : triggers_elhad
         #put trigger here for data
         }
+
+
 
 # Tree Producer
 from CMGTools.TTHAnalysis.analyzers.treeProducerSusySingleLepton import *
@@ -134,7 +136,7 @@ treeProducer = cfg.Analyzer(
 from CMGTools.RootTools.samples.samples_13TeV_74X import *
 
 selectedComponents = [
-        #TTJets,
+        TTJets,
         #TTJets_50ns
         #TTJets_LO,
         #TTJets_LO_50ns,
@@ -174,21 +176,22 @@ elif test==3:
 elif test=="data":
         #from CMGTools.RootTools.samples.samples_13TeV_Data import *
         #selectedComponents = [ privEGamma2015A ]
-	from CMGTools.RootTools.samples.samples_13TeV_DATA2015 import *
-	selectedComponents = [ SingleElectron_Run2015B ]
+    from CMGTools.RootTools.samples.samples_13TeV_DATA2015 import *
+    selectedComponents = [ SingleElectron_Run2015B ]
+    #selectedComponents = [ SingleMu_Run2015B ]
+    #selectedComponents = [ SingleMuon_Run2015B ]
 
-	eventFlagsAna.processName = 'HLT'
-	jetAna.recalibrateJets = False
+    eventFlagsAna.processName = 'HLT'
+    jetAna.recalibrateJets = False
 
-	for comp in dataSamples:
-		comp.isMC = False
-		comp.isData = True
-
-
-        for comp in selectedComponents:
-                comp.splitFactor = 1
-                comp.fineSplitFactor = 10
-                #comp.files = comp.files[:1]
+    for comp in dataSamples:
+      comp.isMC = False
+      comp.isData = True
+    
+    for comp in selectedComponents:
+      comp.splitFactor = 1
+      comp.fineSplitFactor = 10
+      #comp.files = comp.files[:1]
 
 
 from PhysicsTools.HeppyCore.framework.eventsfwlite import Events
