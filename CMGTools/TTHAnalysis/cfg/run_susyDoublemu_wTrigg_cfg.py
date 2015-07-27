@@ -74,7 +74,7 @@ ttHSTSkimmer = cfg.Analyzer(
         minST = 200,
         )
 
-#from CMGTools.RootTools.samples.triggers_13TeV_Spring15 import * # central trigger list
+from CMGTools.RootTools.samples.triggers_13TeV_Spring15 import * # central trigger list
 from CMGTools.RootTools.samples.triggers_13TeV_Spring15_1l import *
 
 triggerFlagsAna.triggerBits = {
@@ -87,25 +87,31 @@ triggerFlagsAna.triggerBits = {
         'HTMET' : triggers_HTMET,
         'Had' : triggers_had,
         ## muon
-        'SingleMu' : triggers_1mu,
-        'Mu45NoIso' : trigger_1mu_noiso_r,
-        'Mu50NoIso' : trigger_1mu_noiso_w,
-        'MuHT600' : triggers_mu_ht600,
-        'MuHT400MET70' : triggers_mu_ht400_met70,
-        'MuHT350MET70' : triggers_mu_ht350_met70,
-        'MuMET120' : triggers_mu_met120,
-        'MuHT400B': triggers_mu_ht400_btag,
-        'MuHad' : triggers_muhad,
-        ## electrons
-        'SingleEl' : triggers_1el,
-        'ElNoIso' : trigger_1el_noiso,
-        'EleHT600' : triggers_el_ht600,
-        'EleHT400MET70' : triggers_el_ht400_met70,
-        'EleHT350MET70' : triggers_el_ht350_met70,
-        'EleHT200' :triggers_el_ht200,
-        'ElHT400B': triggers_el_ht400_btag,
-        'ElHad' : triggers_elhad
+       #'SingleMu' : triggers_1mu,
+       #'Mu45NoIso' : trigger_1mu_noiso_r,
+       #'Mu50NoIso' : trigger_1mu_noiso_w,
+       #'MuHT600' : triggers_mu_ht600,
+       #'MuHT400MET70' : triggers_mu_ht400_met70,
+       #'MuHT350MET70' : triggers_mu_ht350_met70,
+       #'MuMET120' : triggers_mu_met120,
+       #'MuHT400B': triggers_mu_ht400_btag,
+       #'MuHad' : triggers_muhad,
+       ### electrons
+       #'SingleEl' : triggers_1el,
+       #'ElNoIso' : trigger_1el_noiso,
+       #'EleHT600' : triggers_el_ht600,
+       #'EleHT400MET70' : triggers_el_ht400_met70,
+       #'EleHT350MET70' : triggers_el_ht350_met70,
+       #'EleHT200' :triggers_el_ht200,
+       #'ElHT400B': triggers_el_ht400_btag,
+       #'ElHad' : triggers_elhad
         #put trigger here for data
+       'mumuRun1' : triggers_mumu_run1, 
+       'mumuIso' : triggers_mumu_iso, 
+       'mumuNoniso_50ns' : triggers_mumu_noniso_50ns, 
+       'mumuNoiso' : triggers_mumu_noniso, 
+       'mumuSS' : triggers_mumu_ss, 
+       'mumuHT' : triggers_mumu_ht, 
         }
 
 
@@ -177,10 +183,10 @@ elif test=="data":
         #from CMGTools.RootTools.samples.samples_13TeV_Data import *
         #selectedComponents = [ privEGamma2015A ]
     from CMGTools.RootTools.samples.samples_13TeV_DATA2015 import *
-    selectedComponents = [ SingleElectron_Run2015B ]
+    #selectedComponents = [ SingleElectron_Run2015B ]
     #selectedComponents = [ SingleMu_Run2015B ]
     #selectedComponents = [ SingleMuon_Run2015B ]
-
+    selectedComponents = [ DoubleMuon_Run2015B ]
     eventFlagsAna.processName = 'HLT'
     jetAna.recalibrateJets = False
 
