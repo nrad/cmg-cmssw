@@ -1,4 +1,5 @@
 from PhysicsTools.Heppy.analyzers.core.AutoFillTreeProducer  import * 
+from CMGTools.TTHAnalysis.analyzers.ntupleTypes import *
 
 met_globalVariables = [
     NTupleVariable("rho",  lambda ev: ev.rho, float, help="kt6PFJets rho"),
@@ -89,6 +90,16 @@ met_globalVariables = [
 
     ]
 
+recoilComponents = [\
+'charged_m30_m25', 'charged_m25_m20', 'charged_m20_m15', 'charged_m15_m10', 'charged_m10_m05', 'charged_m05_0', 'charged_0_p05', 'charged_p05_p10', 'charged_p10_p15', 'charged_p15_p20', 'charged_p20_p25', 'charged_p25_p30', 
+'neutral_m30_m25', 'neutral_m25_m20', 'neutral_m20_m15', 'neutral_m15_m10', 'neutral_m10_m05', 'neutral_m05_0', 'neutral_0_p05', 'neutral_p05_p10', 'neutral_p10_p15', 'neutral_p15_p20', 'neutral_p20_p25', 'neutral_p25_p30', 
+'gamma_m30_m25', 'gamma_m25_m20', 'gamma_m20_m15', 'gamma_m15_m10', 'gamma_m10_m05', 'gamma_m05_0', 'gamma_0_p05', 'gamma_p05_p10', 'gamma_p10_p15', 'gamma_p15_p20', 'gamma_p20_p25', 'gamma_p25_p30', 
+'hHF_m50_m45', 'hHF_m45_m40', 'hHF_m40_m35', 'hHF_m35_m30', 'hHF_m05_0', 'hHF_0_p05', 'hHF_p05_p10', 'hHF_p10_p15', 'egammaHF_m50_m45', 'egammaHF_m45_m40', 'egammaHF_m40_m35', 'egammaHF_m35_m30', 'egammaHF_m05_0',
+]
+for r in recoilComponents:
+  met_globalVariables.append(NTupleVariable("recoilComponent_"+r+'_pt', lambda ev : getattr(ev, "recoilComponent_"+r).pt() if  hasattr(ev, "recoilComponent_"+r) else  0 , float, mcOnly=False,help="recoil component pt"))
+  met_globalVariables.append(NTupleVariable("recoilComponent_"+r+'_phi', lambda ev : getattr(ev, "recoilComponent_"+r).phi() if  hasattr(ev, "recoilComponent_"+r) else  0 , float, mcOnly=False,help="recoil component phi"))
+ 
 met_globalObjects = {
     "met" : NTupleObject("met", metType, help="PF E_{T}^{miss}, after type 1 corrections"),
 #    "metraw" : NTupleObject("metraw", metType, help="PF E_{T}^{miss}"),
@@ -103,4 +114,7 @@ met_collections = {
     "gentaus"         : NTupleCollection("genTau",     genParticleWithLinksType, 10, help="Generated leptons (tau) from W/Z decays"),                            
     "generatorSummary" : NTupleCollection("GenPart", genParticleWithLinksType, 100 , help="Hard scattering particles, with ancestry and links"),
 #    "selectedLeptons" : NTupleCollection("lep", leptonType, 50, help="Leptons after the preselection", filter=lambda l : l.pt()>10 ),
+    "selectedLeptons" : NTupleCollection("LepGood", leptonTypeSusy, 8, help="Leptons after the preselection"),
+    ##------------------------------------------------
+    "cleanJetsAll"       : NTupleCollection("Jet",     jetTypeSusy, 25, help="Cental jets after full selection and cleaning, sorted by pt"),
     }

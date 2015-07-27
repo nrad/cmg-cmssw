@@ -212,6 +212,7 @@ metAna = cfg.Analyzer(
     doMetNoPhoton = False,
     recalibrate = False,
     jetAnalyzerCalibrationPostFix = "",
+    recoilComponents = [],
     candidates='packedPFCandidates',
     candidatesTypes='std::vector<pat::PackedCandidate>',
     dzMax = 0.1,
@@ -306,7 +307,7 @@ metCoreSequence = [
    #ttHLepSkim,
    #ttHZskim,
 ##### jet modules below
-   #jetAna,
+   jetAna,
 ##### met modules below
     metAna,
     eventFlagsAna,

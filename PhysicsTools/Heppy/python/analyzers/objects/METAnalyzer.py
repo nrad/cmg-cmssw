@@ -103,6 +103,26 @@ class METAnalyzer( Analyzer ):
         genCharged = [ x for x in self.mchandles['packedGen'].product() if x.charge() != 0 and abs(x.eta()) < 2.4 ]
         event.tkGenMet = ROOT.reco.Particle.LorentzVector(-1.*(sum([x.px() for x in genCharged])) , -1.*(sum([x.py() for x in genCharged])), 0, math.hypot((sum([x.px() for x in genCharged])),(sum([x.py() for x in genCharged]))) )
 
+    def makeRecoilComponents(self, event):
+        pfcands = self.handles['cmgCand'].product()
+        cands={'other':[]}
+        for comp in self.cfg_ana.recoilComponents:
+          cands[comp['name']] = []
+        for i in xrange(pfcands.size()):
+          eta = pfcands.at(i).eta()
+          pdgId = pfcands.at(i).pdgId()
+          for comp in self.cfg_ana.recoilComponents:
+            if abs(pdgId)==abs(comp['pdgId']) and eta>=comp['etaLow'] and eta<comp['etaHigh']:
+              cands[comp['name']].append(pfcands.at(i))
+              break
+            cands['other'].append(pfcands.at(i))
+          
+        for k in cands.keys():
+          s_px = sum([x.px() for x in cands[k]])
+          s_py = sum([x.py() for x in cands[k]])
+          setattr(event, 'recoilComponent_'+k+self.cfg_ana.collectionPostFix, ROOT.reco.Particle.LorentzVector(s_px, s_py, 0, math.hypot(s_px, s_py) ))
+#          print 'recoilComponent_'+k+self.cfg_ana.collectionPostFix, getattr(event,'recoilComponent_'+k+self.cfg_ana.collectionPostFix).pt()
+
     def makeMETNoMu(self, event):
         self.metNoMu = copy.deepcopy(self.met)
         if self.cfg_ana.doMetNoPU: self.metNoMuNoPU = copy.deepcopy(self.metNoPU)
@@ -230,6 +250,8 @@ class METAnalyzer( Analyzer ):
             if self.cfg_comp.isMC and hasattr(event, 'genParticles'):
                 self.makeGenTkMet(event)
 
+        if len(self.cfg_ana.recoilComponents)>0:
+          self.makeRecoilComponents(event)
         return True
 
 
@@ -244,7 +266,8 @@ setattr(METAnalyzer,"defaultConfig", cfg.Analyzer(
     doMetNoPU = True,  
     doMetNoMu = False,  
     doMetNoEle = False,  
-    doMetNoPhoton = False,  
+    doMetNoPhoton = False, 
+    recoilComponents = [],
     candidates='packedPFCandidates',
     candidatesTypes='std::vector<pat::PackedCandidate>',
     dzMax = 0.1,
