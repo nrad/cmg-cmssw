@@ -16,7 +16,7 @@ is1L=False
 
 #-------- HOW TO RUN
 
-test = 2
+test = 3
 
 if test==0:
     selectedComponents = [DoubleMu_742, DoubleMu_740p9]
@@ -47,13 +47,6 @@ elif test==1:
 
 
    # ----------------------- Summer15 options -------------------------------------------------------------------- #
-elif test==2:
-    selectedComponents = [ DYJetsToLL_M50_50ns, TTJets_50ns  ]
-    isZSkim=False
-    for comp in selectedComponents:
-        comp.triggers = triggers_mumu
-        comp.splitFactor = 1000
-        comp.files = comp.files[:]
 
 elif test==3:
     selectedComponents = [ DYJetsToLL_M50_50ns,TTJets_50ns ]
@@ -141,69 +134,6 @@ treeProducer = cfg.Analyzer(
 ##------------------------------------------
 
 metAna.doTkMet = True
-metAna.recoilComponents = [
-  {'pdgId':211,'etaLow':-3,'etaHigh':-2.5,'name':'charged_m30_m25'},
-  {'pdgId':211,'etaLow':-2.5,'etaHigh':-2,'name':'charged_m25_m20'},
-  {'pdgId':211,'etaLow':-2.,'etaHigh':-1.5,'name':'charged_m20_m15'},
-  {'pdgId':211,'etaLow':-1.5,'etaHigh':-1,'name':'charged_m15_m10'},
-  {'pdgId':211,'etaLow':-1,'etaHigh':-0.5,'name':'charged_m10_m05'},
-  {'pdgId':211,'etaLow':-0.5,'etaHigh':0,'name':'charged_m05_0'},
-  {'pdgId':211,'etaLow':0,'etaHigh':0.5,'name':'charged_0_p05'},
-  {'pdgId':211,'etaLow':0.5,'etaHigh':1,'name':'charged_p05_p10'},
-  {'pdgId':211,'etaLow':1,'etaHigh':1.5,'name':'charged_p10_p15'},
-  {'pdgId':211,'etaLow':1.5,'etaHigh':2,'name':'charged_p15_p20'},
-  {'pdgId':211,'etaLow':2,'etaHigh':2.5,'name':'charged_p20_p25'},
-  {'pdgId':211,'etaLow':2.5,'etaHigh':3,'name':'charged_p25_p30'},
-  {'pdgId':230,'etaLow':-3,'etaHigh':-2.5,'name':'neutral_m30_m25'},
-  {'pdgId':230,'etaLow':-2.5,'etaHigh':-2,'name':'neutral_m25_m20'},
-  {'pdgId':230,'etaLow':-2.,'etaHigh':-1.5,'name':'neutral_m20_m15'},
-  {'pdgId':230,'etaLow':-1.5,'etaHigh':-1,'name':'neutral_m15_m10'},
-  {'pdgId':230,'etaLow':-1,'etaHigh':-0.5,'name':'neutral_m10_m05'},
-  {'pdgId':230,'etaLow':-0.5,'etaHigh':0,'name':'neutral_m05_0'},
-  {'pdgId':230,'etaLow':0,'etaHigh':0.5,'name':'neutral_0_p05'},
-  {'pdgId':230,'etaLow':0.5,'etaHigh':1,'name':'neutral_p05_p10'},
-  {'pdgId':230,'etaLow':1,'etaHigh':1.5,'name':'neutral_p10_p15'},
-  {'pdgId':230,'etaLow':1.5,'etaHigh':2,'name':'neutral_p15_p20'},
-  {'pdgId':230,'etaLow':2,'etaHigh':2.5,'name':'neutral_p20_p25'},
-  {'pdgId':230,'etaLow':2.5,'etaHigh':3,'name':'neutral_p25_p30'},
-  {'pdgId':22,'etaLow':-3,'etaHigh':-2.5,'name':'gamma_m30_m25'},
-  {'pdgId':22,'etaLow':-2.5,'etaHigh':-2,'name':'gamma_m25_m20'},
-  {'pdgId':22,'etaLow':-2.,'etaHigh':-1.5,'name':'gamma_m20_m15'},
-  {'pdgId':22,'etaLow':-1.5,'etaHigh':-1,'name':'gamma_m15_m10'},
-  {'pdgId':22,'etaLow':-1,'etaHigh':-0.5,'name':'gamma_m10_m05'},
-  {'pdgId':22,'etaLow':-0.5,'etaHigh':0,'name':'gamma_m05_0'},
-  {'pdgId':22,'etaLow':0,'etaHigh':0.5,'name':'gamma_0_p05'},
-  {'pdgId':22,'etaLow':0.5,'etaHigh':1,'name':'gamma_p05_p10'},
-  {'pdgId':22,'etaLow':1,'etaHigh':1.5,'name':'gamma_p10_p15'},
-  {'pdgId':22,'etaLow':1.5,'etaHigh':2,'name':'gamma_p15_p20'},
-  {'pdgId':22,'etaLow':2,'etaHigh':2.5,'name':'gamma_p20_p25'},
-  {'pdgId':22,'etaLow':2.5,'etaHigh':3,'name':'gamma_p25_p30'},
-
-  {'pdgId':1,'etaLow':-5,'etaHigh':-4.5,'name':'hHF_m50_m45'},
-  {'pdgId':1,'etaLow':-4.5,'etaHigh':-4,'name':'hHF_m45_m40'},
-  {'pdgId':1,'etaLow':-4,'etaHigh':-3.5,'name':'hHF_m40_m35'},
-  {'pdgId':1,'etaLow':-3.5,'etaHigh':-3,'name':'hHF_m35_m30'},
-  {'pdgId':1,'etaLow':3,'etaHigh':3.5,'name':'hHF_m05_0'},
-  {'pdgId':1,'etaLow':3.5,'etaHigh':4,'name':'hHF_0_p05'},
-  {'pdgId':1,'etaLow':4,'etaHigh':4.5,'name':'hHF_p05_p10'},
-  {'pdgId':1,'etaLow':4.5,'etaHigh':5,'name':'hHF_p10_p15'},
-  {'pdgId':2,'etaLow':-5,'etaHigh':-4.5,'name':'egammaHF_m50_m45'},
-  {'pdgId':2,'etaLow':-4.5,'etaHigh':-4,'name':'egammaHF_m45_m40'},
-  {'pdgId':2,'etaLow':-4,'etaHigh':-3.5,'name':'egammaHF_m40_m35'},
-  {'pdgId':2,'etaLow':-3.5,'etaHigh':-3,'name':'egammaHF_m35_m30'},
-  {'pdgId':2,'etaLow':3,'etaHigh':3.5,'name':'egammaHF_m05_0'},
-  {'pdgId':2,'etaLow':3.5,'etaHigh':4,'name':'egammaHF_0_p05'},
-  {'pdgId':2,'etaLow':4,'etaHigh':4.5,'name':'egammaHF_p05_p10'},
-  {'pdgId':2,'etaLow':4.5,'etaHigh':5,'name':'egammaHF_p10_p15'},
-]
-#  226   case 211: return h;
-#  227   case 11: return e;
-#  228   case 13: return mu;
-#  229   case 22: return gamma;
-#  230   case 130: return h0;
-#  231   case 1: return h_HF;
-#  232   case 2: return egamma_HF;
-
 metAna.doSpecialMet = False
 
 metSequence = cfg.Sequence(
