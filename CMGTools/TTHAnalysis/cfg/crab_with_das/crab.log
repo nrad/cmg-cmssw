@@ -1,0 +1,2943 @@
+DEBUG 2015-07-16 11:53:37,442: 	 Executing command: 'checkusername'
+DEBUG 2015-07-16 11:53:37,442: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-16 11:53:37,449: 	 Checking credentials
+DEBUG 2015-07-16 11:53:37,449: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-16 11:53:37,449: 	 Getting proxy life time left
+DEBUG 2015-07-16 11:53:38,060: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 690118
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 11:53:38,573: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 690118
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 11:53:38,573: 	 Proxy valid for 191:41:58 hours
+DEBUG 2015-07-16 11:53:38,688: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-16 11:53:38,689: 	 Checking credentials
+DEBUG 2015-07-16 11:53:38,689: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-16 11:53:38,689: 	 Getting proxy life time left
+DEBUG 2015-07-16 11:53:39,194: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 690117
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 11:53:39,806: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 690117
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 11:53:39,806: 	 Proxy valid for 191:41:57 hours
+DEBUG 2015-07-16 11:53:39,806: 	 Command use: checkusername
+DEBUG 2015-07-16 11:53:39,806: 	 Options use: []
+DEBUG 2015-07-16 11:53:39,806: 	 Instance is None
+DEBUG 2015-07-16 11:53:39,806: 	 Server base url is None
+INFO 2015-07-16 11:53:39,806: 	 Retrieving DN from proxy...
+INFO 2015-07-16 11:53:41,304: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-16 11:53:41,304: 	 Retrieving username from SiteDB...
+INFO 2015-07-16 11:53:43,924: 	 Username is: easilar
+DEBUG 2015-07-16 11:54:31,228: 	 Executing command: 'checkusername'
+DEBUG 2015-07-16 11:54:31,228: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-16 11:54:31,240: 	 Checking credentials
+DEBUG 2015-07-16 11:54:31,240: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-16 11:54:31,240: 	 Getting proxy life time left
+DEBUG 2015-07-16 11:54:31,851: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 690065
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 11:54:32,363: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 690064
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 11:54:32,364: 	 Proxy valid for 191:41:05 hours
+DEBUG 2015-07-16 11:54:32,484: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-16 11:54:32,484: 	 Checking credentials
+DEBUG 2015-07-16 11:54:32,485: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-16 11:54:32,485: 	 Getting proxy life time left
+DEBUG 2015-07-16 11:54:33,001: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 690064
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 11:54:33,512: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 690063
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 11:54:33,512: 	 Proxy valid for 191:41:04 hours
+DEBUG 2015-07-16 11:54:33,513: 	 Command use: checkusername
+DEBUG 2015-07-16 11:54:33,513: 	 Options use: []
+DEBUG 2015-07-16 11:54:33,513: 	 Instance is None
+DEBUG 2015-07-16 11:54:33,513: 	 Server base url is None
+INFO 2015-07-16 11:54:33,513: 	 Retrieving DN from proxy...
+INFO 2015-07-16 11:54:35,096: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-16 11:54:35,096: 	 Retrieving username from SiteDB...
+INFO 2015-07-16 11:54:37,814: 	 Username is: easilar
+DEBUG 2015-07-16 11:55:04,367: 	 Executing command: 'checkusername'
+DEBUG 2015-07-16 11:55:04,367: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-16 11:55:04,375: 	 Checking credentials
+DEBUG 2015-07-16 11:55:04,376: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-16 11:55:04,376: 	 Getting proxy life time left
+DEBUG 2015-07-16 11:55:04,880: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 690032
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 11:55:05,388: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 690031
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 11:55:05,388: 	 Proxy valid for 191:40:32 hours
+DEBUG 2015-07-16 11:55:05,500: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-16 11:55:05,501: 	 Checking credentials
+DEBUG 2015-07-16 11:55:05,501: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-16 11:55:05,501: 	 Getting proxy life time left
+DEBUG 2015-07-16 11:55:06,009: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 690031
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 11:55:06,527: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 690030
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 11:55:06,527: 	 Proxy valid for 191:40:31 hours
+DEBUG 2015-07-16 11:55:06,527: 	 Command use: checkusername
+DEBUG 2015-07-16 11:55:06,527: 	 Options use: []
+DEBUG 2015-07-16 11:55:06,527: 	 Instance is None
+DEBUG 2015-07-16 11:55:06,527: 	 Server base url is None
+INFO 2015-07-16 11:55:06,527: 	 Retrieving DN from proxy...
+INFO 2015-07-16 11:55:07,794: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-16 11:55:07,795: 	 Retrieving username from SiteDB...
+INFO 2015-07-16 11:55:10,198: 	 Username is: easilar
+DEBUG 2015-07-16 11:55:34,733: 	 Executing command: 'checkusername'
+DEBUG 2015-07-16 11:55:34,733: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-16 11:55:34,741: 	 Checking credentials
+DEBUG 2015-07-16 11:55:34,741: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-16 11:55:34,742: 	 Getting proxy life time left
+DEBUG 2015-07-16 11:55:35,245: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 690001
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 11:55:35,751: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 690001
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 11:55:35,751: 	 Proxy valid for 191:40:01 hours
+DEBUG 2015-07-16 11:55:35,864: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-16 11:55:35,864: 	 Checking credentials
+DEBUG 2015-07-16 11:55:35,864: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-16 11:55:35,864: 	 Getting proxy life time left
+DEBUG 2015-07-16 11:55:36,371: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 690000
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 11:55:36,875: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 690000
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 11:55:36,876: 	 Proxy valid for 191:40:00 hours
+DEBUG 2015-07-16 11:55:36,876: 	 Command use: checkusername
+DEBUG 2015-07-16 11:55:36,876: 	 Options use: []
+DEBUG 2015-07-16 11:55:36,876: 	 Instance is None
+DEBUG 2015-07-16 11:55:36,876: 	 Server base url is None
+INFO 2015-07-16 11:55:36,876: 	 Retrieving DN from proxy...
+INFO 2015-07-16 11:55:38,258: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-16 11:55:38,258: 	 Retrieving username from SiteDB...
+INFO 2015-07-16 11:55:40,449: 	 Username is: easilar
+DEBUG 2015-07-16 11:56:03,903: 	 Executing command: 'checkusername'
+DEBUG 2015-07-16 11:56:03,903: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-16 11:56:03,914: 	 Checking credentials
+DEBUG 2015-07-16 11:56:03,914: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-16 11:56:03,914: 	 Getting proxy life time left
+DEBUG 2015-07-16 11:56:04,423: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 689972
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 11:56:04,930: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 689972
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 11:56:04,930: 	 Proxy valid for 191:39:32 hours
+DEBUG 2015-07-16 11:56:05,044: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-16 11:56:05,045: 	 Checking credentials
+DEBUG 2015-07-16 11:56:05,045: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-16 11:56:05,045: 	 Getting proxy life time left
+DEBUG 2015-07-16 11:56:05,553: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 689971
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 11:56:06,060: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 689970
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 11:56:06,060: 	 Proxy valid for 191:39:31 hours
+DEBUG 2015-07-16 11:56:06,060: 	 Command use: checkusername
+DEBUG 2015-07-16 11:56:06,060: 	 Options use: []
+DEBUG 2015-07-16 11:56:06,060: 	 Instance is None
+DEBUG 2015-07-16 11:56:06,060: 	 Server base url is None
+INFO 2015-07-16 11:56:06,061: 	 Retrieving DN from proxy...
+INFO 2015-07-16 11:56:07,307: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-16 11:56:07,307: 	 Retrieving username from SiteDB...
+INFO 2015-07-16 11:56:10,553: 	 Username is: easilar
+DEBUG 2015-07-16 13:38:15,510: 	 Executing command: 'remake'
+DEBUG 2015-07-16 13:38:15,515: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-16 13:51:16,317: 	 Executing command: 'checkusername'
+DEBUG 2015-07-16 13:51:16,317: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-16 13:51:16,329: 	 Checking credentials
+DEBUG 2015-07-16 13:51:16,330: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-16 13:51:16,330: 	 Getting proxy life time left
+DEBUG 2015-07-16 13:51:17,147: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 685242
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 13:51:17,765: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 685241
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 13:51:17,766: 	 Proxy valid for 190:20:42 hours
+DEBUG 2015-07-16 13:51:17,887: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-16 13:51:17,887: 	 Checking credentials
+DEBUG 2015-07-16 13:51:17,887: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-16 13:51:17,887: 	 Getting proxy life time left
+DEBUG 2015-07-16 13:51:18,501: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 685241
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 13:51:19,218: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 685239
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 13:51:19,219: 	 Proxy valid for 190:20:41 hours
+DEBUG 2015-07-16 13:51:19,219: 	 Command use: checkusername
+DEBUG 2015-07-16 13:51:19,219: 	 Options use: []
+DEBUG 2015-07-16 13:51:19,219: 	 Instance is None
+DEBUG 2015-07-16 13:51:19,219: 	 Server base url is None
+INFO 2015-07-16 13:51:19,219: 	 Retrieving DN from proxy...
+INFO 2015-07-16 13:51:20,869: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-16 13:51:20,870: 	 Retrieving username from SiteDB...
+INFO 2015-07-16 13:51:23,872: 	 Username is: easilar
+DEBUG 2015-07-16 13:51:05,269: 	 Executing command: 'submit'
+DEBUG 2015-07-16 13:51:05,269: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-16 13:51:05,281: 	 Checking credentials
+DEBUG 2015-07-16 13:51:05,284: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-16 13:51:05,285: 	 Getting proxy life time left
+DEBUG 2015-07-16 13:51:06,105: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 685253
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 13:51:06,823: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 685252
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 13:51:06,824: 	 Proxy valid for 190:20:53 hours
+INFO 2015-07-16 13:51:06,824: 	 Will use CRAB configuration file heppy_crab_config_env.py
+DEBUG 2015-07-16 13:51:06,825: 	 Loading CRAB configuration file.
+DEBUG 2015-07-16 13:51:24,114: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2015-07-16 13:51:24,115: 	 Working area '/afs/cern.ch/work/e/easilar/FORJOBS/CMSSW_7_4_7/src/CMGTools/TTHAnalysis/cfg/crab_with_das/crab_heppy_TTJets_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_RunIISpring15DR74-Asympt25ns_MCRUN2_74_V9-v1/crab_heppy_CMGTools-from-CMSSW_7_2_3_LocalDevelopments' already exists 
+Please change the requestName in the config file
+ERROR 2015-07-16 13:51:24,115: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/bin/crab", line 133, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/bin/crab", line 119, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/lib/python2.6/site-packages/CRABClient/Commands/submit.py", line 40, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args = True)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/lib/python2.6/site-packages/CRABClient/Commands/SubCommand.py", line 298, in __init__
+    getattr(self.configuration.General, 'requestName', None))
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/lib/python2.6/site-packages/CRABClient/ClientUtilities.py", line 387, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+ConfigException: Working area '/afs/cern.ch/work/e/easilar/FORJOBS/CMSSW_7_4_7/src/CMGTools/TTHAnalysis/cfg/crab_with_das/crab_heppy_TTJets_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_RunIISpring15DR74-Asympt25ns_MCRUN2_74_V9-v1/crab_heppy_CMGTools-from-CMSSW_7_2_3_LocalDevelopments' already exists 
+Please change the requestName in the config file
+DEBUG 2015-07-16 13:52:12,000: 	 Executing command: 'checkusername'
+DEBUG 2015-07-16 13:52:12,001: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-16 13:52:12,010: 	 Checking credentials
+DEBUG 2015-07-16 13:52:12,010: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-16 13:52:12,010: 	 Getting proxy life time left
+DEBUG 2015-07-16 13:52:12,838: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 685187
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 13:52:13,455: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 685185
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 13:52:13,456: 	 Proxy valid for 190:19:47 hours
+DEBUG 2015-07-16 13:52:13,576: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-16 13:52:13,576: 	 Checking credentials
+DEBUG 2015-07-16 13:52:13,576: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-16 13:52:13,576: 	 Getting proxy life time left
+DEBUG 2015-07-16 13:52:14,287: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 685185
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 13:52:14,895: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 685184
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 13:52:14,896: 	 Proxy valid for 190:19:45 hours
+DEBUG 2015-07-16 13:52:14,896: 	 Command use: checkusername
+DEBUG 2015-07-16 13:52:14,896: 	 Options use: []
+DEBUG 2015-07-16 13:52:14,896: 	 Instance is None
+DEBUG 2015-07-16 13:52:14,896: 	 Server base url is None
+INFO 2015-07-16 13:52:14,896: 	 Retrieving DN from proxy...
+INFO 2015-07-16 13:52:16,716: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-16 13:52:16,716: 	 Retrieving username from SiteDB...
+INFO 2015-07-16 13:52:20,189: 	 Username is: easilar
+DEBUG 2015-07-16 14:08:24,768: 	 Executing command: 'checkusername'
+DEBUG 2015-07-16 14:08:24,768: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-16 14:08:24,779: 	 Checking credentials
+DEBUG 2015-07-16 14:08:24,780: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-16 14:08:24,780: 	 Getting proxy life time left
+DEBUG 2015-07-16 14:08:25,997: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 684214
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 14:08:26,606: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 684212
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 14:08:26,607: 	 Proxy valid for 190:03:34 hours
+DEBUG 2015-07-16 14:08:26,718: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-16 14:08:26,719: 	 Checking credentials
+DEBUG 2015-07-16 14:08:26,719: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-16 14:08:26,719: 	 Getting proxy life time left
+DEBUG 2015-07-16 14:08:27,429: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 684212
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 14:08:28,034: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 684211
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 14:08:28,035: 	 Proxy valid for 190:03:32 hours
+DEBUG 2015-07-16 14:08:28,035: 	 Command use: checkusername
+DEBUG 2015-07-16 14:08:28,035: 	 Options use: []
+DEBUG 2015-07-16 14:08:28,035: 	 Instance is None
+DEBUG 2015-07-16 14:08:28,035: 	 Server base url is None
+INFO 2015-07-16 14:08:28,035: 	 Retrieving DN from proxy...
+INFO 2015-07-16 14:08:29,633: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-16 14:08:29,633: 	 Retrieving username from SiteDB...
+INFO 2015-07-16 14:08:32,295: 	 Username is: easilar
+DEBUG 2015-07-16 14:08:16,785: 	 Executing command: 'submit'
+DEBUG 2015-07-16 14:08:16,785: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-16 14:08:16,804: 	 Checking credentials
+DEBUG 2015-07-16 14:08:16,804: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-16 14:08:16,804: 	 Getting proxy life time left
+DEBUG 2015-07-16 14:08:17,515: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 684222
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 14:08:18,228: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 684220
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 14:08:18,228: 	 Proxy valid for 190:03:42 hours
+INFO 2015-07-16 14:08:18,228: 	 Will use CRAB configuration file heppy_crab_config_env.py
+DEBUG 2015-07-16 14:08:18,231: 	 Loading CRAB configuration file.
+DEBUG 2015-07-16 14:08:32,487: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2015-07-16 14:08:32,508: 	 Working area '/afs/cern.ch/work/e/easilar/FORJOBS/CMSSW_7_4_7/src/CMGTools/TTHAnalysis/cfg/crab_with_das/crab_heppy_TTJets_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_RunIISpring15DR74-Asympt25ns_MCRUN2_74_V9-v1/crab_heppy_CMGTools-from-CMSSW_7_4_7_LocalDevelopments' already exists 
+Please change the requestName in the config file
+ERROR 2015-07-16 14:08:32,508: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/bin/crab", line 133, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/bin/crab", line 119, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/lib/python2.6/site-packages/CRABClient/Commands/submit.py", line 40, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args = True)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/lib/python2.6/site-packages/CRABClient/Commands/SubCommand.py", line 298, in __init__
+    getattr(self.configuration.General, 'requestName', None))
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/lib/python2.6/site-packages/CRABClient/ClientUtilities.py", line 387, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+ConfigException: Working area '/afs/cern.ch/work/e/easilar/FORJOBS/CMSSW_7_4_7/src/CMGTools/TTHAnalysis/cfg/crab_with_das/crab_heppy_TTJets_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_RunIISpring15DR74-Asympt25ns_MCRUN2_74_V9-v1/crab_heppy_CMGTools-from-CMSSW_7_4_7_LocalDevelopments' already exists 
+Please change the requestName in the config file
+DEBUG 2015-07-16 14:09:31,325: 	 Executing command: 'checkusername'
+DEBUG 2015-07-16 14:09:31,325: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-16 14:09:31,335: 	 Checking credentials
+DEBUG 2015-07-16 14:09:31,336: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-16 14:09:31,336: 	 Getting proxy life time left
+DEBUG 2015-07-16 14:09:32,054: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 684148
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 14:09:32,977: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 684146
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 14:09:32,977: 	 Proxy valid for 190:02:28 hours
+DEBUG 2015-07-16 14:09:33,104: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-16 14:09:33,104: 	 Checking credentials
+DEBUG 2015-07-16 14:09:33,105: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-16 14:09:33,105: 	 Getting proxy life time left
+DEBUG 2015-07-16 14:09:33,814: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 684146
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 14:09:34,430: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 684144
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 14:09:34,431: 	 Proxy valid for 190:02:26 hours
+DEBUG 2015-07-16 14:09:34,431: 	 Command use: checkusername
+DEBUG 2015-07-16 14:09:34,431: 	 Options use: []
+DEBUG 2015-07-16 14:09:34,431: 	 Instance is None
+DEBUG 2015-07-16 14:09:34,431: 	 Server base url is None
+INFO 2015-07-16 14:09:34,431: 	 Retrieving DN from proxy...
+INFO 2015-07-16 14:09:36,081: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-16 14:09:36,082: 	 Retrieving username from SiteDB...
+INFO 2015-07-16 14:09:38,974: 	 Username is: easilar
+DEBUG 2015-07-16 15:40:04,542: 	 Executing command: 'getlog'
+DEBUG 2015-07-16 15:40:04,543: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-16 15:53:33,695: 	 Executing command: 'checkusername'
+DEBUG 2015-07-16 15:53:33,695: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-16 15:53:33,731: 	 Checking credentials
+DEBUG 2015-07-16 15:53:33,732: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-16 15:53:33,732: 	 Getting proxy life time left
+DEBUG 2015-07-16 15:53:38,953: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 686954
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 15:53:39,770: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 686952
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 15:53:39,770: 	 Proxy valid for 190:49:14 hours
+DEBUG 2015-07-16 15:53:39,998: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-16 15:53:39,998: 	 Checking credentials
+DEBUG 2015-07-16 15:53:39,998: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-16 15:53:39,998: 	 Getting proxy life time left
+DEBUG 2015-07-16 15:53:40,718: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 686952
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 15:53:41,528: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 686950
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 15:53:41,528: 	 Proxy valid for 190:49:12 hours
+DEBUG 2015-07-16 15:53:41,529: 	 Command use: checkusername
+DEBUG 2015-07-16 15:53:41,529: 	 Options use: []
+DEBUG 2015-07-16 15:53:41,529: 	 Instance is None
+DEBUG 2015-07-16 15:53:41,529: 	 Server base url is None
+INFO 2015-07-16 15:53:41,529: 	 Retrieving DN from proxy...
+INFO 2015-07-16 15:53:43,637: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-16 15:53:43,637: 	 Retrieving username from SiteDB...
+INFO 2015-07-16 15:53:47,342: 	 Username is: easilar
+DEBUG 2015-07-16 16:53:45,714: 	 Executing command: 'checkusername'
+DEBUG 2015-07-16 16:53:45,715: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-16 16:53:45,742: 	 Checking credentials
+DEBUG 2015-07-16 16:53:45,742: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-16 16:53:45,742: 	 Getting proxy life time left
+DEBUG 2015-07-16 16:53:46,447: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 691066
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 16:53:47,054: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 691066
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 16:53:47,054: 	 Proxy valid for 191:57:46 hours
+DEBUG 2015-07-16 16:53:47,164: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-16 16:53:47,165: 	 Checking credentials
+DEBUG 2015-07-16 16:53:47,165: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-16 16:53:47,165: 	 Getting proxy life time left
+DEBUG 2015-07-16 16:53:47,776: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 691065
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 16:53:48,387: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 691064
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 16:53:48,387: 	 Proxy valid for 191:57:45 hours
+DEBUG 2015-07-16 16:53:48,387: 	 Command use: checkusername
+DEBUG 2015-07-16 16:53:48,387: 	 Options use: []
+DEBUG 2015-07-16 16:53:48,387: 	 Instance is None
+DEBUG 2015-07-16 16:53:48,387: 	 Server base url is None
+INFO 2015-07-16 16:53:48,387: 	 Retrieving DN from proxy...
+INFO 2015-07-16 16:53:50,133: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-16 16:53:50,134: 	 Retrieving username from SiteDB...
+INFO 2015-07-16 16:53:53,253: 	 Username is: easilar
+DEBUG 2015-07-16 16:52:13,537: 	 Executing command: 'submit'
+DEBUG 2015-07-16 16:52:13,540: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-16 16:52:13,556: 	 Checking credentials
+DEBUG 2015-07-16 16:52:13,556: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-16 16:52:13,557: 	 Getting proxy life time left
+DEBUG 2015-07-16 16:52:14,365: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 691158
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 16:52:14,974: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 691158
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 16:52:14,975: 	 Proxy valid for 191:59:18 hours
+INFO 2015-07-16 16:52:14,975: 	 Will use CRAB configuration file heppy_crab_config_env.py
+DEBUG 2015-07-16 16:52:14,975: 	 Loading CRAB configuration file.
+DEBUG 2015-07-16 16:53:53,281: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2015-07-16 16:53:53,284: 	 Working area '/afs/cern.ch/work/e/easilar/test_for_data/CMSSW_7_4_7/src/CMGTools/TTHAnalysis/cfg/crab_with_das/crab_heppy_TTJets_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_RunIISpring15DR74-Asympt25ns_MCRUN2_74_V9-v1/crab_heppy_CMGTools-from-CMSSW_7_4_7_LocalDevelopments' already exists 
+Please change the requestName in the config file
+ERROR 2015-07-16 16:53:53,284: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/bin/crab", line 133, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/bin/crab", line 119, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/lib/python2.6/site-packages/CRABClient/Commands/submit.py", line 40, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args = True)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/lib/python2.6/site-packages/CRABClient/Commands/SubCommand.py", line 298, in __init__
+    getattr(self.configuration.General, 'requestName', None))
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/lib/python2.6/site-packages/CRABClient/ClientUtilities.py", line 387, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+ConfigException: Working area '/afs/cern.ch/work/e/easilar/test_for_data/CMSSW_7_4_7/src/CMGTools/TTHAnalysis/cfg/crab_with_das/crab_heppy_TTJets_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_RunIISpring15DR74-Asympt25ns_MCRUN2_74_V9-v1/crab_heppy_CMGTools-from-CMSSW_7_4_7_LocalDevelopments' already exists 
+Please change the requestName in the config file
+DEBUG 2015-07-16 16:55:57,719: 	 Executing command: 'checkusername'
+DEBUG 2015-07-16 16:55:57,720: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-16 16:55:57,727: 	 Checking credentials
+DEBUG 2015-07-16 16:55:57,727: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-16 16:55:57,727: 	 Getting proxy life time left
+DEBUG 2015-07-16 16:55:58,345: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 690934
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 16:55:59,265: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 690933
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 16:55:59,266: 	 Proxy valid for 191:55:34 hours
+DEBUG 2015-07-16 16:55:59,376: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-16 16:55:59,376: 	 Checking credentials
+DEBUG 2015-07-16 16:55:59,376: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-16 16:55:59,377: 	 Getting proxy life time left
+DEBUG 2015-07-16 16:56:00,492: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 690932
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 16:56:01,098: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 690931
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-16 16:56:01,099: 	 Proxy valid for 191:55:32 hours
+DEBUG 2015-07-16 16:56:01,099: 	 Command use: checkusername
+DEBUG 2015-07-16 16:56:01,099: 	 Options use: []
+DEBUG 2015-07-16 16:56:01,099: 	 Instance is None
+DEBUG 2015-07-16 16:56:01,099: 	 Server base url is None
+INFO 2015-07-16 16:56:01,099: 	 Retrieving DN from proxy...
+INFO 2015-07-16 16:56:02,562: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-16 16:56:02,563: 	 Retrieving username from SiteDB...
+INFO 2015-07-16 16:56:05,319: 	 Username is: easilar
+DEBUG 2015-07-17 18:07:16,905: 	 Executing command: 'checkusername'
+DEBUG 2015-07-17 18:07:16,905: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-17 18:07:16,918: 	 Checking credentials
+DEBUG 2015-07-17 18:07:16,918: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-17 18:07:16,918: 	 Getting proxy life time left
+DEBUG 2015-07-17 18:07:17,824: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 691175
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:07:18,333: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 691173
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:07:18,333: 	 Proxy valid for 191:59:35 hours
+DEBUG 2015-07-17 18:07:18,445: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-17 18:07:18,446: 	 Checking credentials
+DEBUG 2015-07-17 18:07:18,446: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-17 18:07:18,446: 	 Getting proxy life time left
+DEBUG 2015-07-17 18:07:18,953: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 691174
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:07:19,459: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 691172
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:07:19,460: 	 Proxy valid for 191:59:34 hours
+DEBUG 2015-07-17 18:07:19,460: 	 Command use: checkusername
+DEBUG 2015-07-17 18:07:19,460: 	 Options use: []
+DEBUG 2015-07-17 18:07:19,460: 	 Instance is None
+DEBUG 2015-07-17 18:07:19,460: 	 Server base url is None
+INFO 2015-07-17 18:07:19,460: 	 Retrieving DN from proxy...
+INFO 2015-07-17 18:07:21,151: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-17 18:07:21,152: 	 Retrieving username from SiteDB...
+INFO 2015-07-17 18:07:23,525: 	 Username is: easilar
+DEBUG 2015-07-17 18:08:00,178: 	 Executing command: 'checkusername'
+DEBUG 2015-07-17 18:08:00,178: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-17 18:08:00,214: 	 Checking credentials
+DEBUG 2015-07-17 18:08:00,216: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-17 18:08:00,216: 	 Getting proxy life time left
+DEBUG 2015-07-17 18:08:01,362: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 691131
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:08:02,300: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 691129
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:08:02,300: 	 Proxy valid for 191:58:51 hours
+DEBUG 2015-07-17 18:08:02,419: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-17 18:08:02,419: 	 Checking credentials
+DEBUG 2015-07-17 18:08:02,419: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-17 18:08:02,419: 	 Getting proxy life time left
+DEBUG 2015-07-17 18:08:03,555: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 691129
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:08:04,397: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 691127
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:08:04,397: 	 Proxy valid for 191:58:49 hours
+DEBUG 2015-07-17 18:08:04,397: 	 Command use: checkusername
+DEBUG 2015-07-17 18:08:04,397: 	 Options use: []
+DEBUG 2015-07-17 18:08:04,397: 	 Instance is None
+DEBUG 2015-07-17 18:08:04,398: 	 Server base url is None
+INFO 2015-07-17 18:08:04,398: 	 Retrieving DN from proxy...
+INFO 2015-07-17 18:08:07,824: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-17 18:08:07,825: 	 Retrieving username from SiteDB...
+INFO 2015-07-17 18:08:13,760: 	 Username is: easilar
+DEBUG 2015-07-17 18:08:46,138: 	 Executing command: 'checkusername'
+DEBUG 2015-07-17 18:08:46,139: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-17 18:08:46,149: 	 Checking credentials
+DEBUG 2015-07-17 18:08:46,149: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-17 18:08:46,150: 	 Getting proxy life time left
+DEBUG 2015-07-17 18:08:46,863: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 691086
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:08:47,473: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 691084
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:08:47,473: 	 Proxy valid for 191:58:06 hours
+DEBUG 2015-07-17 18:08:47,600: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-17 18:08:47,600: 	 Checking credentials
+DEBUG 2015-07-17 18:08:47,600: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-17 18:08:47,601: 	 Getting proxy life time left
+DEBUG 2015-07-17 18:08:48,214: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 691084
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:08:49,328: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 691082
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:08:49,329: 	 Proxy valid for 191:58:04 hours
+DEBUG 2015-07-17 18:08:49,329: 	 Command use: checkusername
+DEBUG 2015-07-17 18:08:49,329: 	 Options use: []
+DEBUG 2015-07-17 18:08:49,329: 	 Instance is None
+DEBUG 2015-07-17 18:08:49,329: 	 Server base url is None
+INFO 2015-07-17 18:08:49,329: 	 Retrieving DN from proxy...
+INFO 2015-07-17 18:08:50,842: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-17 18:08:50,845: 	 Retrieving username from SiteDB...
+INFO 2015-07-17 18:08:53,128: 	 Username is: easilar
+DEBUG 2015-07-17 18:09:11,442: 	 Executing command: 'checkusername'
+DEBUG 2015-07-17 18:09:11,442: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-17 18:09:11,451: 	 Checking credentials
+DEBUG 2015-07-17 18:09:11,451: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-17 18:09:11,451: 	 Getting proxy life time left
+DEBUG 2015-07-17 18:09:11,958: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 691061
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:09:12,467: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 691059
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:09:12,469: 	 Proxy valid for 191:57:41 hours
+DEBUG 2015-07-17 18:09:12,579: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-17 18:09:12,580: 	 Checking credentials
+DEBUG 2015-07-17 18:09:12,580: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-17 18:09:12,580: 	 Getting proxy life time left
+DEBUG 2015-07-17 18:09:13,089: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 691059
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:09:13,599: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 691058
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:09:13,600: 	 Proxy valid for 191:57:39 hours
+DEBUG 2015-07-17 18:09:13,600: 	 Command use: checkusername
+DEBUG 2015-07-17 18:09:13,600: 	 Options use: []
+DEBUG 2015-07-17 18:09:13,600: 	 Instance is None
+DEBUG 2015-07-17 18:09:13,600: 	 Server base url is None
+INFO 2015-07-17 18:09:13,600: 	 Retrieving DN from proxy...
+INFO 2015-07-17 18:09:15,069: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-17 18:09:15,070: 	 Retrieving username from SiteDB...
+INFO 2015-07-17 18:09:17,648: 	 Username is: easilar
+DEBUG 2015-07-17 18:09:34,751: 	 Executing command: 'checkusername'
+DEBUG 2015-07-17 18:09:34,751: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-17 18:09:34,761: 	 Checking credentials
+DEBUG 2015-07-17 18:09:34,761: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-17 18:09:34,761: 	 Getting proxy life time left
+DEBUG 2015-07-17 18:09:35,366: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 691037
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:09:35,875: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 691036
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:09:35,876: 	 Proxy valid for 191:57:17 hours
+DEBUG 2015-07-17 18:09:35,988: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-17 18:09:35,988: 	 Checking credentials
+DEBUG 2015-07-17 18:09:35,989: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-17 18:09:35,989: 	 Getting proxy life time left
+DEBUG 2015-07-17 18:09:36,495: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 691036
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:09:36,999: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 691035
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:09:37,000: 	 Proxy valid for 191:57:16 hours
+DEBUG 2015-07-17 18:09:37,000: 	 Command use: checkusername
+DEBUG 2015-07-17 18:09:37,000: 	 Options use: []
+DEBUG 2015-07-17 18:09:37,000: 	 Instance is None
+DEBUG 2015-07-17 18:09:37,000: 	 Server base url is None
+INFO 2015-07-17 18:09:37,000: 	 Retrieving DN from proxy...
+INFO 2015-07-17 18:09:38,140: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-17 18:09:38,141: 	 Retrieving username from SiteDB...
+INFO 2015-07-17 18:09:40,243: 	 Username is: easilar
+DEBUG 2015-07-17 18:09:57,643: 	 Executing command: 'checkusername'
+DEBUG 2015-07-17 18:09:57,643: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-17 18:09:57,650: 	 Checking credentials
+DEBUG 2015-07-17 18:09:57,651: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-17 18:09:57,651: 	 Getting proxy life time left
+DEBUG 2015-07-17 18:09:58,155: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 691014
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:09:58,664: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 691013
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:09:58,664: 	 Proxy valid for 191:56:54 hours
+DEBUG 2015-07-17 18:09:58,776: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-17 18:09:58,777: 	 Checking credentials
+DEBUG 2015-07-17 18:09:58,777: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-17 18:09:58,777: 	 Getting proxy life time left
+DEBUG 2015-07-17 18:09:59,282: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 691013
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:09:59,793: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 691012
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:09:59,793: 	 Proxy valid for 191:56:53 hours
+DEBUG 2015-07-17 18:09:59,793: 	 Command use: checkusername
+DEBUG 2015-07-17 18:09:59,793: 	 Options use: []
+DEBUG 2015-07-17 18:09:59,794: 	 Instance is None
+DEBUG 2015-07-17 18:09:59,794: 	 Server base url is None
+INFO 2015-07-17 18:09:59,794: 	 Retrieving DN from proxy...
+INFO 2015-07-17 18:10:01,098: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-17 18:10:01,098: 	 Retrieving username from SiteDB...
+INFO 2015-07-17 18:10:03,381: 	 Username is: easilar
+DEBUG 2015-07-17 18:10:22,263: 	 Executing command: 'checkusername'
+DEBUG 2015-07-17 18:10:22,264: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-17 18:10:22,271: 	 Checking credentials
+DEBUG 2015-07-17 18:10:22,271: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-17 18:10:22,271: 	 Getting proxy life time left
+DEBUG 2015-07-17 18:10:22,776: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 690990
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:10:23,282: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 690988
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:10:23,282: 	 Proxy valid for 191:56:30 hours
+DEBUG 2015-07-17 18:10:23,395: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-17 18:10:23,397: 	 Checking credentials
+DEBUG 2015-07-17 18:10:23,397: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-17 18:10:23,399: 	 Getting proxy life time left
+DEBUG 2015-07-17 18:10:23,909: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 690989
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:10:24,415: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 690987
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:10:24,415: 	 Proxy valid for 191:56:29 hours
+DEBUG 2015-07-17 18:10:24,415: 	 Command use: checkusername
+DEBUG 2015-07-17 18:10:24,415: 	 Options use: []
+DEBUG 2015-07-17 18:10:24,415: 	 Instance is None
+DEBUG 2015-07-17 18:10:24,415: 	 Server base url is None
+INFO 2015-07-17 18:10:24,415: 	 Retrieving DN from proxy...
+INFO 2015-07-17 18:10:25,863: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-17 18:10:25,863: 	 Retrieving username from SiteDB...
+INFO 2015-07-17 18:10:28,254: 	 Username is: easilar
+DEBUG 2015-07-17 18:10:49,356: 	 Executing command: 'checkusername'
+DEBUG 2015-07-17 18:10:49,356: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-17 18:10:49,364: 	 Checking credentials
+DEBUG 2015-07-17 18:10:49,365: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-17 18:10:49,365: 	 Getting proxy life time left
+DEBUG 2015-07-17 18:10:49,869: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 690963
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:10:50,276: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 690961
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:10:50,276: 	 Proxy valid for 191:56:03 hours
+DEBUG 2015-07-17 18:10:50,390: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-17 18:10:50,391: 	 Checking credentials
+DEBUG 2015-07-17 18:10:50,391: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-17 18:10:50,391: 	 Getting proxy life time left
+DEBUG 2015-07-17 18:10:50,900: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 690962
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:10:51,406: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 690960
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:10:51,406: 	 Proxy valid for 191:56:02 hours
+DEBUG 2015-07-17 18:10:51,407: 	 Command use: checkusername
+DEBUG 2015-07-17 18:10:51,407: 	 Options use: []
+DEBUG 2015-07-17 18:10:51,407: 	 Instance is None
+DEBUG 2015-07-17 18:10:51,407: 	 Server base url is None
+INFO 2015-07-17 18:10:51,407: 	 Retrieving DN from proxy...
+INFO 2015-07-17 18:10:52,635: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-17 18:10:52,636: 	 Retrieving username from SiteDB...
+INFO 2015-07-17 18:10:54,962: 	 Username is: easilar
+DEBUG 2015-07-17 18:11:13,063: 	 Executing command: 'checkusername'
+DEBUG 2015-07-17 18:11:13,063: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-17 18:11:13,071: 	 Checking credentials
+DEBUG 2015-07-17 18:11:13,072: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-17 18:11:13,072: 	 Getting proxy life time left
+DEBUG 2015-07-17 18:11:13,580: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 690939
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:11:14,089: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 690937
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:11:14,089: 	 Proxy valid for 191:55:39 hours
+DEBUG 2015-07-17 18:11:14,205: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-17 18:11:14,206: 	 Checking credentials
+DEBUG 2015-07-17 18:11:14,206: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-17 18:11:14,206: 	 Getting proxy life time left
+DEBUG 2015-07-17 18:11:14,714: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 690938
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:11:15,220: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 690936
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:11:15,220: 	 Proxy valid for 191:55:38 hours
+DEBUG 2015-07-17 18:11:15,220: 	 Command use: checkusername
+DEBUG 2015-07-17 18:11:15,220: 	 Options use: []
+DEBUG 2015-07-17 18:11:15,220: 	 Instance is None
+DEBUG 2015-07-17 18:11:15,220: 	 Server base url is None
+INFO 2015-07-17 18:11:15,221: 	 Retrieving DN from proxy...
+INFO 2015-07-17 18:11:16,416: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-17 18:11:16,416: 	 Retrieving username from SiteDB...
+INFO 2015-07-17 18:11:18,943: 	 Username is: easilar
+DEBUG 2015-07-17 18:11:53,352: 	 Executing command: 'checkusername'
+DEBUG 2015-07-17 18:11:53,352: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-17 18:11:53,366: 	 Checking credentials
+DEBUG 2015-07-17 18:11:53,366: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-17 18:11:53,366: 	 Getting proxy life time left
+DEBUG 2015-07-17 18:11:53,975: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 690899
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:11:54,580: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 690897
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:11:54,581: 	 Proxy valid for 191:54:59 hours
+DEBUG 2015-07-17 18:11:54,702: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-17 18:11:54,702: 	 Checking credentials
+DEBUG 2015-07-17 18:11:54,702: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-17 18:11:54,703: 	 Getting proxy life time left
+DEBUG 2015-07-17 18:11:55,209: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 690897
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:11:55,717: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 690896
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:11:55,717: 	 Proxy valid for 191:54:57 hours
+DEBUG 2015-07-17 18:11:55,717: 	 Command use: checkusername
+DEBUG 2015-07-17 18:11:55,717: 	 Options use: []
+DEBUG 2015-07-17 18:11:55,718: 	 Instance is None
+DEBUG 2015-07-17 18:11:55,718: 	 Server base url is None
+INFO 2015-07-17 18:11:55,718: 	 Retrieving DN from proxy...
+INFO 2015-07-17 18:11:57,042: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-17 18:11:57,042: 	 Retrieving username from SiteDB...
+INFO 2015-07-17 18:11:59,383: 	 Username is: easilar
+DEBUG 2015-07-17 18:12:17,004: 	 Executing command: 'checkusername'
+DEBUG 2015-07-17 18:12:17,005: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-17 18:12:17,014: 	 Checking credentials
+DEBUG 2015-07-17 18:12:17,014: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-17 18:12:17,014: 	 Getting proxy life time left
+DEBUG 2015-07-17 18:12:17,519: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 690875
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:12:18,025: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 690874
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:12:18,026: 	 Proxy valid for 191:54:35 hours
+DEBUG 2015-07-17 18:12:18,138: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-17 18:12:18,139: 	 Checking credentials
+DEBUG 2015-07-17 18:12:18,139: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-17 18:12:18,139: 	 Getting proxy life time left
+DEBUG 2015-07-17 18:12:18,644: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 690874
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:12:19,149: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 690872
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:12:19,149: 	 Proxy valid for 191:54:34 hours
+DEBUG 2015-07-17 18:12:19,149: 	 Command use: checkusername
+DEBUG 2015-07-17 18:12:19,149: 	 Options use: []
+DEBUG 2015-07-17 18:12:19,149: 	 Instance is None
+DEBUG 2015-07-17 18:12:19,149: 	 Server base url is None
+INFO 2015-07-17 18:12:19,150: 	 Retrieving DN from proxy...
+INFO 2015-07-17 18:12:20,440: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-17 18:12:20,440: 	 Retrieving username from SiteDB...
+INFO 2015-07-17 18:12:22,863: 	 Username is: easilar
+DEBUG 2015-07-17 18:12:14,811: 	 Executing command: 'submit'
+DEBUG 2015-07-17 18:12:14,811: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-17 18:12:14,819: 	 Checking credentials
+DEBUG 2015-07-17 18:12:14,819: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-17 18:12:14,819: 	 Getting proxy life time left
+DEBUG 2015-07-17 18:12:15,327: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 690877
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:12:15,833: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 690876
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-17 18:12:15,833: 	 Proxy valid for 191:54:37 hours
+INFO 2015-07-17 18:12:15,833: 	 Will use CRAB configuration file heppy_crab_config_env.py
+DEBUG 2015-07-17 18:12:15,833: 	 Loading CRAB configuration file.
+DEBUG 2015-07-17 18:12:22,885: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2015-07-17 18:12:22,885: 	 Working area '/afs/cern.ch/work/e/easilar/test_for_data/CMSSW_7_4_7/src/CMGTools/TTHAnalysis/cfg/crab_with_das/crab_trial2_WJetsToLNu_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_RunIISpring15DR74-Asympt25ns_MCRUN2_74_V9-v1/crab_trial2_CMGTools-from-CMSSW_7_4_7_LocalDevelopments' already exists 
+Please change the requestName in the config file
+ERROR 2015-07-17 18:12:22,886: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/bin/crab", line 133, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/bin/crab", line 119, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/lib/python2.6/site-packages/CRABClient/Commands/submit.py", line 40, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args = True)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/lib/python2.6/site-packages/CRABClient/Commands/SubCommand.py", line 298, in __init__
+    getattr(self.configuration.General, 'requestName', None))
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/lib/python2.6/site-packages/CRABClient/ClientUtilities.py", line 387, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+ConfigException: Working area '/afs/cern.ch/work/e/easilar/test_for_data/CMSSW_7_4_7/src/CMGTools/TTHAnalysis/cfg/crab_with_das/crab_trial2_WJetsToLNu_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_RunIISpring15DR74-Asympt25ns_MCRUN2_74_V9-v1/crab_trial2_CMGTools-from-CMSSW_7_4_7_LocalDevelopments' already exists 
+Please change the requestName in the config file
+DEBUG 2015-07-20 11:12:57,099: 	 Executing command: 'checkusername'
+DEBUG 2015-07-20 11:12:57,099: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-20 11:12:57,578: 	 Checking credentials
+DEBUG 2015-07-20 11:12:57,578: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-20 11:12:57,578: 	 Getting proxy life time left
+DEBUG 2015-07-20 11:12:58,082: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 690921
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:12:58,488: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 690921
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:12:58,489: 	 Proxy valid for 191:55:21 hours
+DEBUG 2015-07-20 11:12:58,598: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-20 11:12:58,598: 	 Checking credentials
+DEBUG 2015-07-20 11:12:58,598: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-20 11:12:58,599: 	 Getting proxy life time left
+DEBUG 2015-07-20 11:12:59,102: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 690921
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:12:59,608: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 690920
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:12:59,608: 	 Proxy valid for 191:55:21 hours
+DEBUG 2015-07-20 11:12:59,609: 	 Command use: checkusername
+DEBUG 2015-07-20 11:12:59,609: 	 Options use: []
+DEBUG 2015-07-20 11:12:59,609: 	 Instance is None
+DEBUG 2015-07-20 11:12:59,609: 	 Server base url is None
+INFO 2015-07-20 11:12:59,609: 	 Retrieving DN from proxy...
+INFO 2015-07-20 11:13:00,796: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-20 11:13:00,796: 	 Retrieving username from SiteDB...
+INFO 2015-07-20 11:13:03,086: 	 Username is: easilar
+DEBUG 2015-07-20 11:14:16,534: 	 Executing command: 'checkusername'
+DEBUG 2015-07-20 11:14:16,534: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-20 11:14:16,541: 	 Checking credentials
+DEBUG 2015-07-20 11:14:16,541: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-20 11:14:16,541: 	 Getting proxy life time left
+DEBUG 2015-07-20 11:14:17,045: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 690843
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:14:17,452: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 690842
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:14:17,452: 	 Proxy valid for 191:54:03 hours
+DEBUG 2015-07-20 11:14:17,562: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-20 11:14:17,562: 	 Checking credentials
+DEBUG 2015-07-20 11:14:17,562: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-20 11:14:17,562: 	 Getting proxy life time left
+DEBUG 2015-07-20 11:14:18,067: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 690842
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:14:18,573: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 690841
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:14:18,573: 	 Proxy valid for 191:54:02 hours
+DEBUG 2015-07-20 11:14:18,573: 	 Command use: checkusername
+DEBUG 2015-07-20 11:14:18,573: 	 Options use: []
+DEBUG 2015-07-20 11:14:18,573: 	 Instance is None
+DEBUG 2015-07-20 11:14:18,574: 	 Server base url is None
+INFO 2015-07-20 11:14:18,574: 	 Retrieving DN from proxy...
+INFO 2015-07-20 11:14:19,707: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-20 11:14:19,707: 	 Retrieving username from SiteDB...
+INFO 2015-07-20 11:14:21,835: 	 Username is: easilar
+DEBUG 2015-07-20 11:30:42,458: 	 Executing command: 'checkusername'
+DEBUG 2015-07-20 11:30:42,459: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-20 11:30:42,464: 	 Checking credentials
+DEBUG 2015-07-20 11:30:42,464: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-20 11:30:42,465: 	 Getting proxy life time left
+DEBUG 2015-07-20 11:30:42,969: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 689857
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:30:43,474: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 689856
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:30:43,474: 	 Proxy valid for 191:37:37 hours
+DEBUG 2015-07-20 11:30:43,583: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-20 11:30:43,583: 	 Checking credentials
+DEBUG 2015-07-20 11:30:43,583: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-20 11:30:43,583: 	 Getting proxy life time left
+DEBUG 2015-07-20 11:30:44,089: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 689856
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:30:44,595: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 689855
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:30:44,596: 	 Proxy valid for 191:37:36 hours
+DEBUG 2015-07-20 11:30:44,596: 	 Command use: checkusername
+DEBUG 2015-07-20 11:30:44,596: 	 Options use: []
+DEBUG 2015-07-20 11:30:44,596: 	 Instance is None
+DEBUG 2015-07-20 11:30:44,596: 	 Server base url is None
+INFO 2015-07-20 11:30:44,596: 	 Retrieving DN from proxy...
+INFO 2015-07-20 11:30:45,688: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-20 11:30:45,689: 	 Retrieving username from SiteDB...
+INFO 2015-07-20 11:30:47,775: 	 Username is: easilar
+DEBUG 2015-07-20 11:31:21,721: 	 Executing command: 'checkusername'
+DEBUG 2015-07-20 11:31:21,721: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-20 11:31:21,728: 	 Checking credentials
+DEBUG 2015-07-20 11:31:21,728: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-20 11:31:21,729: 	 Getting proxy life time left
+DEBUG 2015-07-20 11:31:22,233: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 689817
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:31:22,738: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 689817
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:31:22,739: 	 Proxy valid for 191:36:57 hours
+DEBUG 2015-07-20 11:31:22,849: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-20 11:31:22,849: 	 Checking credentials
+DEBUG 2015-07-20 11:31:22,849: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-20 11:31:22,849: 	 Getting proxy life time left
+DEBUG 2015-07-20 11:31:23,354: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 689816
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:31:23,860: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 689816
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:31:23,860: 	 Proxy valid for 191:36:56 hours
+DEBUG 2015-07-20 11:31:23,860: 	 Command use: checkusername
+DEBUG 2015-07-20 11:31:23,860: 	 Options use: []
+DEBUG 2015-07-20 11:31:23,860: 	 Instance is None
+DEBUG 2015-07-20 11:31:23,860: 	 Server base url is None
+INFO 2015-07-20 11:31:23,860: 	 Retrieving DN from proxy...
+INFO 2015-07-20 11:31:24,996: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-20 11:31:24,997: 	 Retrieving username from SiteDB...
+INFO 2015-07-20 11:31:27,034: 	 Username is: easilar
+DEBUG 2015-07-20 11:32:14,233: 	 Executing command: 'checkusername'
+DEBUG 2015-07-20 11:32:14,233: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-20 11:32:14,240: 	 Checking credentials
+DEBUG 2015-07-20 11:32:14,240: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-20 11:32:14,240: 	 Getting proxy life time left
+DEBUG 2015-07-20 11:32:14,744: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 689765
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:32:15,249: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 689764
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:32:15,249: 	 Proxy valid for 191:36:05 hours
+DEBUG 2015-07-20 11:32:15,359: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-20 11:32:15,359: 	 Checking credentials
+DEBUG 2015-07-20 11:32:15,359: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-20 11:32:15,359: 	 Getting proxy life time left
+DEBUG 2015-07-20 11:32:15,766: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 689764
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:32:16,271: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 689763
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:32:16,271: 	 Proxy valid for 191:36:04 hours
+DEBUG 2015-07-20 11:32:16,272: 	 Command use: checkusername
+DEBUG 2015-07-20 11:32:16,272: 	 Options use: []
+DEBUG 2015-07-20 11:32:16,272: 	 Instance is None
+DEBUG 2015-07-20 11:32:16,272: 	 Server base url is None
+INFO 2015-07-20 11:32:16,272: 	 Retrieving DN from proxy...
+INFO 2015-07-20 11:32:17,514: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-20 11:32:17,515: 	 Retrieving username from SiteDB...
+INFO 2015-07-20 11:32:19,663: 	 Username is: easilar
+DEBUG 2015-07-20 11:32:54,396: 	 Executing command: 'checkusername'
+DEBUG 2015-07-20 11:32:54,396: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-20 11:32:54,403: 	 Checking credentials
+DEBUG 2015-07-20 11:32:54,403: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-20 11:32:54,403: 	 Getting proxy life time left
+DEBUG 2015-07-20 11:32:55,108: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 689725
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:32:55,714: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 689724
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:32:55,715: 	 Proxy valid for 191:35:25 hours
+DEBUG 2015-07-20 11:32:55,824: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-20 11:32:55,824: 	 Checking credentials
+DEBUG 2015-07-20 11:32:55,824: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-20 11:32:55,824: 	 Getting proxy life time left
+DEBUG 2015-07-20 11:32:56,329: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 689723
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:32:56,834: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 689723
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:32:56,834: 	 Proxy valid for 191:35:23 hours
+DEBUG 2015-07-20 11:32:56,835: 	 Command use: checkusername
+DEBUG 2015-07-20 11:32:56,835: 	 Options use: []
+DEBUG 2015-07-20 11:32:56,835: 	 Instance is None
+DEBUG 2015-07-20 11:32:56,835: 	 Server base url is None
+INFO 2015-07-20 11:32:56,835: 	 Retrieving DN from proxy...
+INFO 2015-07-20 11:32:57,963: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-20 11:32:57,963: 	 Retrieving username from SiteDB...
+INFO 2015-07-20 11:33:00,084: 	 Username is: easilar
+DEBUG 2015-07-20 11:33:38,331: 	 Executing command: 'checkusername'
+DEBUG 2015-07-20 11:33:38,331: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-20 11:33:38,340: 	 Checking credentials
+DEBUG 2015-07-20 11:33:38,340: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-20 11:33:38,340: 	 Getting proxy life time left
+DEBUG 2015-07-20 11:33:38,846: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 689681
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:33:39,353: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 689680
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:33:39,353: 	 Proxy valid for 191:34:41 hours
+DEBUG 2015-07-20 11:33:39,463: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-20 11:33:39,464: 	 Checking credentials
+DEBUG 2015-07-20 11:33:39,464: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-20 11:33:39,464: 	 Getting proxy life time left
+DEBUG 2015-07-20 11:33:39,971: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 689680
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:33:40,475: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 689679
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:33:40,476: 	 Proxy valid for 191:34:40 hours
+DEBUG 2015-07-20 11:33:40,476: 	 Command use: checkusername
+DEBUG 2015-07-20 11:33:40,476: 	 Options use: []
+DEBUG 2015-07-20 11:33:40,476: 	 Instance is None
+DEBUG 2015-07-20 11:33:40,476: 	 Server base url is None
+INFO 2015-07-20 11:33:40,476: 	 Retrieving DN from proxy...
+INFO 2015-07-20 11:33:41,684: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-20 11:33:41,684: 	 Retrieving username from SiteDB...
+INFO 2015-07-20 11:33:43,872: 	 Username is: easilar
+DEBUG 2015-07-20 11:34:18,483: 	 Executing command: 'checkusername'
+DEBUG 2015-07-20 11:34:18,483: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-20 11:34:18,489: 	 Checking credentials
+DEBUG 2015-07-20 11:34:18,489: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-20 11:34:18,489: 	 Getting proxy life time left
+DEBUG 2015-07-20 11:34:18,994: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 689641
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:34:19,498: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 689640
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:34:19,499: 	 Proxy valid for 191:34:01 hours
+DEBUG 2015-07-20 11:34:19,608: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-20 11:34:19,608: 	 Checking credentials
+DEBUG 2015-07-20 11:34:19,609: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-20 11:34:19,609: 	 Getting proxy life time left
+DEBUG 2015-07-20 11:34:20,115: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 689639
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:34:20,621: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 689639
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:34:20,621: 	 Proxy valid for 191:33:59 hours
+DEBUG 2015-07-20 11:34:20,621: 	 Command use: checkusername
+DEBUG 2015-07-20 11:34:20,621: 	 Options use: []
+DEBUG 2015-07-20 11:34:20,621: 	 Instance is None
+DEBUG 2015-07-20 11:34:20,621: 	 Server base url is None
+INFO 2015-07-20 11:34:20,621: 	 Retrieving DN from proxy...
+INFO 2015-07-20 11:34:21,717: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-20 11:34:21,717: 	 Retrieving username from SiteDB...
+INFO 2015-07-20 11:34:24,123: 	 Username is: easilar
+DEBUG 2015-07-20 11:34:57,324: 	 Executing command: 'checkusername'
+DEBUG 2015-07-20 11:34:57,324: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-20 11:34:57,330: 	 Checking credentials
+DEBUG 2015-07-20 11:34:57,330: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-20 11:34:57,330: 	 Getting proxy life time left
+DEBUG 2015-07-20 11:34:57,733: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 689602
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:34:58,138: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 689601
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:34:58,138: 	 Proxy valid for 191:33:22 hours
+DEBUG 2015-07-20 11:34:58,246: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-20 11:34:58,246: 	 Checking credentials
+DEBUG 2015-07-20 11:34:58,246: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-20 11:34:58,246: 	 Getting proxy life time left
+DEBUG 2015-07-20 11:34:58,651: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 689601
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:34:59,055: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 689600
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:34:59,056: 	 Proxy valid for 191:33:21 hours
+DEBUG 2015-07-20 11:34:59,056: 	 Command use: checkusername
+DEBUG 2015-07-20 11:34:59,056: 	 Options use: []
+DEBUG 2015-07-20 11:34:59,056: 	 Instance is None
+DEBUG 2015-07-20 11:34:59,056: 	 Server base url is None
+INFO 2015-07-20 11:34:59,056: 	 Retrieving DN from proxy...
+INFO 2015-07-20 11:35:00,144: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-20 11:35:00,145: 	 Retrieving username from SiteDB...
+INFO 2015-07-20 11:35:02,214: 	 Username is: easilar
+DEBUG 2015-07-20 11:35:36,566: 	 Executing command: 'checkusername'
+DEBUG 2015-07-20 11:35:36,567: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-20 11:35:36,572: 	 Checking credentials
+DEBUG 2015-07-20 11:35:36,573: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-20 11:35:36,573: 	 Getting proxy life time left
+DEBUG 2015-07-20 11:35:36,977: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 689563
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:35:37,483: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 689562
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:35:37,484: 	 Proxy valid for 191:32:43 hours
+DEBUG 2015-07-20 11:35:37,592: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-20 11:35:37,593: 	 Checking credentials
+DEBUG 2015-07-20 11:35:37,593: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-20 11:35:37,593: 	 Getting proxy life time left
+DEBUG 2015-07-20 11:35:38,098: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 689561
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:35:38,502: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 689561
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:35:38,503: 	 Proxy valid for 191:32:41 hours
+DEBUG 2015-07-20 11:35:38,503: 	 Command use: checkusername
+DEBUG 2015-07-20 11:35:38,503: 	 Options use: []
+DEBUG 2015-07-20 11:35:38,503: 	 Instance is None
+DEBUG 2015-07-20 11:35:38,503: 	 Server base url is None
+INFO 2015-07-20 11:35:38,503: 	 Retrieving DN from proxy...
+INFO 2015-07-20 11:35:39,611: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-20 11:35:39,612: 	 Retrieving username from SiteDB...
+INFO 2015-07-20 11:35:41,705: 	 Username is: easilar
+DEBUG 2015-07-20 11:36:18,157: 	 Executing command: 'checkusername'
+DEBUG 2015-07-20 11:36:18,157: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-20 11:36:18,163: 	 Checking credentials
+DEBUG 2015-07-20 11:36:18,163: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-20 11:36:18,163: 	 Getting proxy life time left
+DEBUG 2015-07-20 11:36:18,669: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 689521
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:36:19,474: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 689520
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:36:19,474: 	 Proxy valid for 191:32:01 hours
+DEBUG 2015-07-20 11:36:19,583: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-20 11:36:19,584: 	 Checking credentials
+DEBUG 2015-07-20 11:36:19,584: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-20 11:36:19,584: 	 Getting proxy life time left
+DEBUG 2015-07-20 11:36:19,990: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 689520
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:36:20,396: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 689519
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:36:20,396: 	 Proxy valid for 191:32:00 hours
+DEBUG 2015-07-20 11:36:20,396: 	 Command use: checkusername
+DEBUG 2015-07-20 11:36:20,396: 	 Options use: []
+DEBUG 2015-07-20 11:36:20,396: 	 Instance is None
+DEBUG 2015-07-20 11:36:20,396: 	 Server base url is None
+INFO 2015-07-20 11:36:20,397: 	 Retrieving DN from proxy...
+INFO 2015-07-20 11:36:21,588: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-20 11:36:21,588: 	 Retrieving username from SiteDB...
+INFO 2015-07-20 11:36:23,662: 	 Username is: easilar
+DEBUG 2015-07-20 11:37:04,299: 	 Executing command: 'checkusername'
+DEBUG 2015-07-20 11:37:04,299: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-20 11:37:04,307: 	 Checking credentials
+DEBUG 2015-07-20 11:37:04,307: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-20 11:37:04,307: 	 Getting proxy life time left
+DEBUG 2015-07-20 11:37:04,814: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 689475
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:37:05,318: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 689474
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:37:05,319: 	 Proxy valid for 191:31:15 hours
+DEBUG 2015-07-20 11:37:05,433: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-20 11:37:05,433: 	 Checking credentials
+DEBUG 2015-07-20 11:37:05,434: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-20 11:37:05,434: 	 Getting proxy life time left
+DEBUG 2015-07-20 11:37:06,039: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 689474
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:37:06,545: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 689473
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:37:06,546: 	 Proxy valid for 191:31:14 hours
+DEBUG 2015-07-20 11:37:06,546: 	 Command use: checkusername
+DEBUG 2015-07-20 11:37:06,546: 	 Options use: []
+DEBUG 2015-07-20 11:37:06,546: 	 Instance is None
+DEBUG 2015-07-20 11:37:06,546: 	 Server base url is None
+INFO 2015-07-20 11:37:06,546: 	 Retrieving DN from proxy...
+INFO 2015-07-20 11:37:07,881: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-20 11:37:07,881: 	 Retrieving username from SiteDB...
+INFO 2015-07-20 11:37:10,263: 	 Username is: easilar
+DEBUG 2015-07-20 11:46:58,205: 	 Executing command: 'checkusername'
+DEBUG 2015-07-20 11:46:58,205: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-20 11:46:58,217: 	 Checking credentials
+DEBUG 2015-07-20 11:46:58,218: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-20 11:46:58,218: 	 Getting proxy life time left
+DEBUG 2015-07-20 11:46:58,724: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 688881
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:46:59,233: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 688880
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:46:59,234: 	 Proxy valid for 191:21:21 hours
+DEBUG 2015-07-20 11:46:59,343: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-20 11:46:59,344: 	 Checking credentials
+DEBUG 2015-07-20 11:46:59,344: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-20 11:46:59,344: 	 Getting proxy life time left
+DEBUG 2015-07-20 11:46:59,849: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 688880
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:47:00,355: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 688879
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-20 11:47:00,356: 	 Proxy valid for 191:21:20 hours
+DEBUG 2015-07-20 11:47:00,356: 	 Command use: checkusername
+DEBUG 2015-07-20 11:47:00,356: 	 Options use: []
+DEBUG 2015-07-20 11:47:00,356: 	 Instance is None
+DEBUG 2015-07-20 11:47:00,356: 	 Server base url is None
+INFO 2015-07-20 11:47:00,356: 	 Retrieving DN from proxy...
+INFO 2015-07-20 11:47:01,581: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-20 11:47:01,582: 	 Retrieving username from SiteDB...
+INFO 2015-07-20 11:47:03,938: 	 Username is: easilar
+DEBUG 2015-07-28 12:12:13,318: 	 Executing command: 'checkusername'
+DEBUG 2015-07-28 12:12:13,318: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-28 12:12:13,323: 	 Checking credentials
+DEBUG 2015-07-28 12:12:13,324: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-28 12:12:13,324: 	 Getting proxy life time left
+DEBUG 2015-07-28 12:12:13,729: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 688570
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:12:14,234: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 688568
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:12:14,235: 	 Proxy valid for 191:16:10 hours
+DEBUG 2015-07-28 12:12:14,342: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-28 12:12:14,342: 	 Checking credentials
+DEBUG 2015-07-28 12:12:14,342: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-28 12:12:14,342: 	 Getting proxy life time left
+DEBUG 2015-07-28 12:12:14,745: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 688569
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:12:15,149: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 688567
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:12:15,149: 	 Proxy valid for 191:16:09 hours
+DEBUG 2015-07-28 12:12:15,149: 	 Command use: checkusername
+DEBUG 2015-07-28 12:12:15,149: 	 Options use: []
+DEBUG 2015-07-28 12:12:15,149: 	 Instance is None
+DEBUG 2015-07-28 12:12:15,149: 	 Server base url is None
+INFO 2015-07-28 12:12:15,149: 	 Retrieving DN from proxy...
+INFO 2015-07-28 12:12:16,324: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-28 12:12:16,324: 	 Retrieving username from SiteDB...
+INFO 2015-07-28 12:12:18,297: 	 Username is: easilar
+DEBUG 2015-07-28 12:12:19,389: 	 Executing command: 'checkusername'
+DEBUG 2015-07-28 12:12:19,389: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-28 12:12:19,396: 	 Checking credentials
+DEBUG 2015-07-28 12:12:19,396: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-28 12:12:19,396: 	 Getting proxy life time left
+DEBUG 2015-07-28 12:12:19,900: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 688564
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:12:20,405: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 688562
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:12:20,405: 	 Proxy valid for 191:16:04 hours
+DEBUG 2015-07-28 12:12:20,517: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-28 12:12:20,517: 	 Checking credentials
+DEBUG 2015-07-28 12:12:20,517: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-28 12:12:20,517: 	 Getting proxy life time left
+DEBUG 2015-07-28 12:12:20,922: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 688563
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:12:21,325: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 688561
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:12:21,326: 	 Proxy valid for 191:16:03 hours
+DEBUG 2015-07-28 12:12:21,326: 	 Command use: checkusername
+DEBUG 2015-07-28 12:12:21,326: 	 Options use: []
+DEBUG 2015-07-28 12:12:21,326: 	 Instance is None
+DEBUG 2015-07-28 12:12:21,326: 	 Server base url is None
+INFO 2015-07-28 12:12:21,326: 	 Retrieving DN from proxy...
+INFO 2015-07-28 12:12:22,559: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-28 12:12:22,559: 	 Retrieving username from SiteDB...
+INFO 2015-07-28 12:12:24,620: 	 Username is: easilar
+DEBUG 2015-07-28 12:12:05,570: 	 Executing command: 'submit'
+DEBUG 2015-07-28 12:12:05,570: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-28 12:12:05,594: 	 Checking credentials
+DEBUG 2015-07-28 12:12:05,595: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-28 12:12:05,595: 	 Getting proxy life time left
+DEBUG 2015-07-28 12:12:06,204: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 688577
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:12:06,711: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 688576
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:12:06,712: 	 Proxy valid for 191:16:17 hours
+INFO 2015-07-28 12:12:06,713: 	 Will use CRAB configuration file heppy_crab_config_env.py
+DEBUG 2015-07-28 12:12:06,713: 	 Loading CRAB configuration file.
+ERROR 2015-07-28 12:12:24,637: 	 Syntax error in CRAB configuration file:
+'NoneType' object has no attribute 'group'
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3CommonErrors#Syntax_error_in_CRAB_configurati
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+ERROR 2015-07-28 12:12:24,637: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/bin/crab", line 133, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/bin/crab", line 119, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/lib/python2.6/site-packages/CRABClient/Commands/submit.py", line 40, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args = True)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/lib/python2.6/site-packages/CRABClient/Commands/SubCommand.py", line 294, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/lib/python2.6/site-packages/CRABClient/Commands/SubCommand.py", line 83, in loadConfig
+    raise ConfigurationException(configmsg)
+ConfigurationException: Syntax error in CRAB configuration file:
+'NoneType' object has no attribute 'group'
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3CommonErrors#Syntax_error_in_CRAB_configurati
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+DEBUG 2015-07-28 12:12:29,459: 	 Executing command: 'checkusername'
+DEBUG 2015-07-28 12:12:29,459: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-28 12:12:29,464: 	 Checking credentials
+DEBUG 2015-07-28 12:12:29,464: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-28 12:12:29,464: 	 Getting proxy life time left
+DEBUG 2015-07-28 12:12:29,871: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 688554
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:12:30,377: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 688552
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:12:30,377: 	 Proxy valid for 191:15:54 hours
+DEBUG 2015-07-28 12:12:30,486: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-28 12:12:30,486: 	 Checking credentials
+DEBUG 2015-07-28 12:12:30,486: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-28 12:12:30,486: 	 Getting proxy life time left
+DEBUG 2015-07-28 12:12:30,993: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 688553
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:12:31,500: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 688551
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:12:31,501: 	 Proxy valid for 191:15:53 hours
+DEBUG 2015-07-28 12:12:31,501: 	 Command use: checkusername
+DEBUG 2015-07-28 12:12:31,501: 	 Options use: []
+DEBUG 2015-07-28 12:12:31,501: 	 Instance is None
+DEBUG 2015-07-28 12:12:31,501: 	 Server base url is None
+INFO 2015-07-28 12:12:31,501: 	 Retrieving DN from proxy...
+INFO 2015-07-28 12:12:32,612: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-28 12:12:32,612: 	 Retrieving username from SiteDB...
+INFO 2015-07-28 12:12:35,053: 	 Username is: easilar
+DEBUG 2015-07-28 12:12:36,099: 	 Executing command: 'checkusername'
+DEBUG 2015-07-28 12:12:36,099: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-28 12:12:36,105: 	 Checking credentials
+DEBUG 2015-07-28 12:12:36,106: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-28 12:12:36,106: 	 Getting proxy life time left
+DEBUG 2015-07-28 12:12:36,610: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 688547
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:12:37,117: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 688545
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:12:37,117: 	 Proxy valid for 191:15:47 hours
+DEBUG 2015-07-28 12:12:37,225: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-28 12:12:37,225: 	 Checking credentials
+DEBUG 2015-07-28 12:12:37,226: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-28 12:12:37,226: 	 Getting proxy life time left
+DEBUG 2015-07-28 12:12:37,632: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 688546
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:12:38,139: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 688544
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:12:38,139: 	 Proxy valid for 191:15:46 hours
+DEBUG 2015-07-28 12:12:38,139: 	 Command use: checkusername
+DEBUG 2015-07-28 12:12:38,139: 	 Options use: []
+DEBUG 2015-07-28 12:12:38,139: 	 Instance is None
+DEBUG 2015-07-28 12:12:38,139: 	 Server base url is None
+INFO 2015-07-28 12:12:38,139: 	 Retrieving DN from proxy...
+INFO 2015-07-28 12:12:39,301: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-28 12:12:39,301: 	 Retrieving username from SiteDB...
+INFO 2015-07-28 12:12:41,496: 	 Username is: easilar
+DEBUG 2015-07-28 12:12:27,659: 	 Executing command: 'submit'
+DEBUG 2015-07-28 12:12:27,660: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-28 12:12:27,665: 	 Checking credentials
+DEBUG 2015-07-28 12:12:27,665: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-28 12:12:27,665: 	 Getting proxy life time left
+DEBUG 2015-07-28 12:12:28,069: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 688555
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:12:28,473: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 688554
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:12:28,473: 	 Proxy valid for 191:15:55 hours
+INFO 2015-07-28 12:12:28,473: 	 Will use CRAB configuration file heppy_crab_config_env.py
+DEBUG 2015-07-28 12:12:28,473: 	 Loading CRAB configuration file.
+ERROR 2015-07-28 12:12:41,513: 	 Syntax error in CRAB configuration file:
+'NoneType' object has no attribute 'group'
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3CommonErrors#Syntax_error_in_CRAB_configurati
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+ERROR 2015-07-28 12:12:41,514: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/bin/crab", line 133, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/bin/crab", line 119, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/lib/python2.6/site-packages/CRABClient/Commands/submit.py", line 40, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args = True)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/lib/python2.6/site-packages/CRABClient/Commands/SubCommand.py", line 294, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/lib/python2.6/site-packages/CRABClient/Commands/SubCommand.py", line 83, in loadConfig
+    raise ConfigurationException(configmsg)
+ConfigurationException: Syntax error in CRAB configuration file:
+'NoneType' object has no attribute 'group'
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3CommonErrors#Syntax_error_in_CRAB_configurati
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+DEBUG 2015-07-28 12:12:43,821: 	 Executing command: 'checkusername'
+DEBUG 2015-07-28 12:12:43,821: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-28 12:12:43,826: 	 Checking credentials
+DEBUG 2015-07-28 12:12:43,826: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-28 12:12:43,826: 	 Getting proxy life time left
+DEBUG 2015-07-28 12:12:44,230: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 688539
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:12:44,734: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 688538
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:12:44,735: 	 Proxy valid for 191:15:39 hours
+DEBUG 2015-07-28 12:12:44,842: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-28 12:12:44,843: 	 Checking credentials
+DEBUG 2015-07-28 12:12:44,843: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-28 12:12:44,843: 	 Getting proxy life time left
+DEBUG 2015-07-28 12:12:45,247: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 688538
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:12:45,753: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 688537
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:12:45,753: 	 Proxy valid for 191:15:38 hours
+DEBUG 2015-07-28 12:12:45,753: 	 Command use: checkusername
+DEBUG 2015-07-28 12:12:45,753: 	 Options use: []
+DEBUG 2015-07-28 12:12:45,753: 	 Instance is None
+DEBUG 2015-07-28 12:12:45,753: 	 Server base url is None
+INFO 2015-07-28 12:12:45,753: 	 Retrieving DN from proxy...
+INFO 2015-07-28 12:12:46,876: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-28 12:12:46,877: 	 Retrieving username from SiteDB...
+INFO 2015-07-28 12:12:48,941: 	 Username is: easilar
+DEBUG 2015-07-28 12:12:49,991: 	 Executing command: 'checkusername'
+DEBUG 2015-07-28 12:12:49,991: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-28 12:12:49,997: 	 Checking credentials
+DEBUG 2015-07-28 12:12:49,997: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-28 12:12:49,997: 	 Getting proxy life time left
+DEBUG 2015-07-28 12:12:50,504: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 688533
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:12:51,011: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 688532
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:12:51,011: 	 Proxy valid for 191:15:33 hours
+DEBUG 2015-07-28 12:12:51,121: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-28 12:12:51,121: 	 Checking credentials
+DEBUG 2015-07-28 12:12:51,121: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-28 12:12:51,121: 	 Getting proxy life time left
+DEBUG 2015-07-28 12:12:51,625: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 688532
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:12:52,029: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 688530
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:12:52,030: 	 Proxy valid for 191:15:32 hours
+DEBUG 2015-07-28 12:12:52,030: 	 Command use: checkusername
+DEBUG 2015-07-28 12:12:52,030: 	 Options use: []
+DEBUG 2015-07-28 12:12:52,030: 	 Instance is None
+DEBUG 2015-07-28 12:12:52,030: 	 Server base url is None
+INFO 2015-07-28 12:12:52,030: 	 Retrieving DN from proxy...
+INFO 2015-07-28 12:12:53,112: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-28 12:12:53,113: 	 Retrieving username from SiteDB...
+INFO 2015-07-28 12:12:55,249: 	 Username is: easilar
+DEBUG 2015-07-28 12:12:41,915: 	 Executing command: 'submit'
+DEBUG 2015-07-28 12:12:41,915: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-28 12:12:41,921: 	 Checking credentials
+DEBUG 2015-07-28 12:12:41,921: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-28 12:12:41,921: 	 Getting proxy life time left
+DEBUG 2015-07-28 12:12:42,324: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 688541
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:12:42,832: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 688540
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:12:42,832: 	 Proxy valid for 191:15:41 hours
+INFO 2015-07-28 12:12:42,832: 	 Will use CRAB configuration file heppy_crab_config_env.py
+DEBUG 2015-07-28 12:12:42,832: 	 Loading CRAB configuration file.
+ERROR 2015-07-28 12:12:55,273: 	 Syntax error in CRAB configuration file:
+'NoneType' object has no attribute 'group'
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3CommonErrors#Syntax_error_in_CRAB_configurati
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+ERROR 2015-07-28 12:12:55,274: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/bin/crab", line 133, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/bin/crab", line 119, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/lib/python2.6/site-packages/CRABClient/Commands/submit.py", line 40, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args = True)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/lib/python2.6/site-packages/CRABClient/Commands/SubCommand.py", line 294, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/lib/python2.6/site-packages/CRABClient/Commands/SubCommand.py", line 83, in loadConfig
+    raise ConfigurationException(configmsg)
+ConfigurationException: Syntax error in CRAB configuration file:
+'NoneType' object has no attribute 'group'
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3CommonErrors#Syntax_error_in_CRAB_configurati
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+DEBUG 2015-07-28 12:16:57,674: 	 Executing command: 'checkusername'
+DEBUG 2015-07-28 12:16:57,675: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-28 12:16:57,680: 	 Checking credentials
+DEBUG 2015-07-28 12:16:57,680: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-28 12:16:57,680: 	 Getting proxy life time left
+DEBUG 2015-07-28 12:16:58,084: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 688285
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:16:58,488: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 688284
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:16:58,488: 	 Proxy valid for 191:11:25 hours
+DEBUG 2015-07-28 12:16:58,598: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-28 12:16:58,598: 	 Checking credentials
+DEBUG 2015-07-28 12:16:58,598: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-28 12:16:58,598: 	 Getting proxy life time left
+DEBUG 2015-07-28 12:16:59,103: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 688284
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:17:00,011: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 688283
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:17:00,011: 	 Proxy valid for 191:11:24 hours
+DEBUG 2015-07-28 12:17:00,011: 	 Command use: checkusername
+DEBUG 2015-07-28 12:17:00,011: 	 Options use: []
+DEBUG 2015-07-28 12:17:00,011: 	 Instance is None
+DEBUG 2015-07-28 12:17:00,011: 	 Server base url is None
+INFO 2015-07-28 12:17:00,011: 	 Retrieving DN from proxy...
+INFO 2015-07-28 12:17:01,075: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-28 12:17:01,075: 	 Retrieving username from SiteDB...
+INFO 2015-07-28 12:17:04,829: 	 Username is: easilar
+DEBUG 2015-07-28 12:17:05,785: 	 Executing command: 'checkusername'
+DEBUG 2015-07-28 12:17:05,785: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-28 12:17:05,790: 	 Checking credentials
+DEBUG 2015-07-28 12:17:05,790: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-28 12:17:05,790: 	 Getting proxy life time left
+DEBUG 2015-07-28 12:17:06,294: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 688277
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:17:06,798: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 688276
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:17:06,798: 	 Proxy valid for 191:11:17 hours
+DEBUG 2015-07-28 12:17:06,905: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-28 12:17:06,905: 	 Checking credentials
+DEBUG 2015-07-28 12:17:06,905: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-28 12:17:06,905: 	 Getting proxy life time left
+DEBUG 2015-07-28 12:17:07,309: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 688276
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:17:07,714: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 688275
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:17:07,714: 	 Proxy valid for 191:11:16 hours
+DEBUG 2015-07-28 12:17:07,714: 	 Command use: checkusername
+DEBUG 2015-07-28 12:17:07,715: 	 Options use: []
+DEBUG 2015-07-28 12:17:07,715: 	 Instance is None
+DEBUG 2015-07-28 12:17:07,715: 	 Server base url is None
+INFO 2015-07-28 12:17:07,715: 	 Retrieving DN from proxy...
+INFO 2015-07-28 12:17:08,739: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-28 12:17:08,739: 	 Retrieving username from SiteDB...
+INFO 2015-07-28 12:17:11,342: 	 Username is: easilar
+DEBUG 2015-07-28 12:16:55,824: 	 Executing command: 'submit'
+DEBUG 2015-07-28 12:16:55,824: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-28 12:16:55,831: 	 Checking credentials
+DEBUG 2015-07-28 12:16:55,832: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-28 12:16:55,832: 	 Getting proxy life time left
+DEBUG 2015-07-28 12:16:56,335: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 688287
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:16:56,740: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 688286
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:16:56,740: 	 Proxy valid for 191:11:27 hours
+INFO 2015-07-28 12:16:56,740: 	 Will use CRAB configuration file heppy_crab_config_env.py
+DEBUG 2015-07-28 12:16:56,740: 	 Loading CRAB configuration file.
+ERROR 2015-07-28 12:17:11,359: 	 Syntax error in CRAB configuration file:
+'NoneType' object has no attribute 'group'
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3CommonErrors#Syntax_error_in_CRAB_configurati
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+ERROR 2015-07-28 12:17:11,360: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/bin/crab", line 133, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/bin/crab", line 119, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/lib/python2.6/site-packages/CRABClient/Commands/submit.py", line 40, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args = True)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/lib/python2.6/site-packages/CRABClient/Commands/SubCommand.py", line 294, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/lib/python2.6/site-packages/CRABClient/Commands/SubCommand.py", line 83, in loadConfig
+    raise ConfigurationException(configmsg)
+ConfigurationException: Syntax error in CRAB configuration file:
+'NoneType' object has no attribute 'group'
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3CommonErrors#Syntax_error_in_CRAB_configurati
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+DEBUG 2015-07-28 12:17:49,079: 	 Executing command: 'checkusername'
+DEBUG 2015-07-28 12:17:49,080: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-28 12:17:49,085: 	 Checking credentials
+DEBUG 2015-07-28 12:17:49,085: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-28 12:17:49,085: 	 Getting proxy life time left
+DEBUG 2015-07-28 12:17:49,489: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 688234
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:17:49,993: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 688233
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:17:49,994: 	 Proxy valid for 191:10:34 hours
+DEBUG 2015-07-28 12:17:50,102: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-28 12:17:50,102: 	 Checking credentials
+DEBUG 2015-07-28 12:17:50,102: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-28 12:17:50,102: 	 Getting proxy life time left
+DEBUG 2015-07-28 12:17:50,506: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 688233
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:17:50,911: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 688232
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:17:50,912: 	 Proxy valid for 191:10:33 hours
+DEBUG 2015-07-28 12:17:50,912: 	 Command use: checkusername
+DEBUG 2015-07-28 12:17:50,912: 	 Options use: []
+DEBUG 2015-07-28 12:17:50,912: 	 Instance is None
+DEBUG 2015-07-28 12:17:50,912: 	 Server base url is None
+INFO 2015-07-28 12:17:50,912: 	 Retrieving DN from proxy...
+INFO 2015-07-28 12:17:52,017: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-28 12:17:52,018: 	 Retrieving username from SiteDB...
+INFO 2015-07-28 12:17:53,978: 	 Username is: easilar
+DEBUG 2015-07-28 12:20:37,733: 	 Executing command: 'checkusername'
+DEBUG 2015-07-28 12:20:37,734: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-28 12:20:37,739: 	 Checking credentials
+DEBUG 2015-07-28 12:20:37,739: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-28 12:20:37,739: 	 Getting proxy life time left
+DEBUG 2015-07-28 12:20:38,142: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 691126
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:20:38,546: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 691126
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:20:38,546: 	 Proxy valid for 191:58:46 hours
+DEBUG 2015-07-28 12:20:38,654: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-28 12:20:38,654: 	 Checking credentials
+DEBUG 2015-07-28 12:20:38,654: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-28 12:20:38,654: 	 Getting proxy life time left
+DEBUG 2015-07-28 12:20:39,158: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 691125
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:20:39,563: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 691125
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:20:39,564: 	 Proxy valid for 191:58:45 hours
+DEBUG 2015-07-28 12:20:39,564: 	 Command use: checkusername
+DEBUG 2015-07-28 12:20:39,564: 	 Options use: []
+DEBUG 2015-07-28 12:20:39,564: 	 Instance is None
+DEBUG 2015-07-28 12:20:39,564: 	 Server base url is None
+INFO 2015-07-28 12:20:39,564: 	 Retrieving DN from proxy...
+INFO 2015-07-28 12:20:40,749: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-28 12:20:40,749: 	 Retrieving username from SiteDB...
+INFO 2015-07-28 12:20:42,847: 	 Username is: easilar
+DEBUG 2015-07-28 12:20:35,780: 	 Executing command: 'submit'
+DEBUG 2015-07-28 12:20:35,780: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-28 12:20:35,789: 	 Checking credentials
+DEBUG 2015-07-28 12:20:35,790: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-28 12:20:35,790: 	 Getting proxy life time left
+DEBUG 2015-07-28 12:20:36,294: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 691128
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:20:36,799: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 691128
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:20:36,799: 	 Proxy valid for 191:58:48 hours
+INFO 2015-07-28 12:20:36,799: 	 Will use CRAB configuration file heppy_crab_config_env.py
+DEBUG 2015-07-28 12:20:36,799: 	 Loading CRAB configuration file.
+DEBUG 2015-07-28 12:20:42,869: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2015-07-28 12:20:42,870: 	 Working area '/afs/cern.ch/work/e/easilar/test_for_data/CMSSW_7_4_7/src/CMGTools/TTHAnalysis/cfg/crab_with_das/crab_test_for_data_QCD_Pt_80to120_TuneCUETP8M1_13TeV_pythia8_RunIISpring15DR74-Asympt25ns_MCRUN2_74_V9-v1/crab_test_for_data_CMGTools-from-CMSSW_7_4_7_LocalDevelopments' already exists 
+Please change the requestName in the config file
+ERROR 2015-07-28 12:20:42,870: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/bin/crab", line 133, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/bin/crab", line 119, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/lib/python2.6/site-packages/CRABClient/Commands/submit.py", line 40, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args = True)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/lib/python2.6/site-packages/CRABClient/Commands/SubCommand.py", line 298, in __init__
+    getattr(self.configuration.General, 'requestName', None))
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/lib/python2.6/site-packages/CRABClient/ClientUtilities.py", line 387, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+ConfigException: Working area '/afs/cern.ch/work/e/easilar/test_for_data/CMSSW_7_4_7/src/CMGTools/TTHAnalysis/cfg/crab_with_das/crab_test_for_data_QCD_Pt_80to120_TuneCUETP8M1_13TeV_pythia8_RunIISpring15DR74-Asympt25ns_MCRUN2_74_V9-v1/crab_test_for_data_CMGTools-from-CMSSW_7_4_7_LocalDevelopments' already exists 
+Please change the requestName in the config file
+DEBUG 2015-07-28 12:21:22,014: 	 Executing command: 'checkusername'
+DEBUG 2015-07-28 12:21:22,014: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-28 12:21:22,020: 	 Checking credentials
+DEBUG 2015-07-28 12:21:22,020: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-28 12:21:22,020: 	 Getting proxy life time left
+DEBUG 2015-07-28 12:21:22,624: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 691082
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:21:23,131: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 691081
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:21:23,131: 	 Proxy valid for 191:58:02 hours
+DEBUG 2015-07-28 12:21:23,241: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-28 12:21:23,241: 	 Checking credentials
+DEBUG 2015-07-28 12:21:23,241: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-28 12:21:23,242: 	 Getting proxy life time left
+DEBUG 2015-07-28 12:21:23,745: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 691081
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:21:24,149: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 691080
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 12:21:24,149: 	 Proxy valid for 191:58:01 hours
+DEBUG 2015-07-28 12:21:24,149: 	 Command use: checkusername
+DEBUG 2015-07-28 12:21:24,149: 	 Options use: []
+DEBUG 2015-07-28 12:21:24,149: 	 Instance is None
+DEBUG 2015-07-28 12:21:24,149: 	 Server base url is None
+INFO 2015-07-28 12:21:24,149: 	 Retrieving DN from proxy...
+INFO 2015-07-28 12:21:25,223: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-28 12:21:25,224: 	 Retrieving username from SiteDB...
+INFO 2015-07-28 12:21:27,346: 	 Username is: easilar
+DEBUG 2015-07-28 14:25:30,979: 	 Executing command: 'checkusername'
+DEBUG 2015-07-28 14:25:30,979: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-28 14:25:30,990: 	 Checking credentials
+DEBUG 2015-07-28 14:25:30,991: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-28 14:25:30,991: 	 Getting proxy life time left
+DEBUG 2015-07-28 14:25:31,903: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 689119
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 14:25:32,419: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 689117
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 14:25:32,419: 	 Proxy valid for 191:25:19 hours
+DEBUG 2015-07-28 14:25:32,632: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-28 14:25:32,633: 	 Checking credentials
+DEBUG 2015-07-28 14:25:32,633: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-28 14:25:32,633: 	 Getting proxy life time left
+DEBUG 2015-07-28 14:25:33,150: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 689117
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 14:25:33,657: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 689116
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 14:25:33,658: 	 Proxy valid for 191:25:17 hours
+DEBUG 2015-07-28 14:25:33,658: 	 Command use: checkusername
+DEBUG 2015-07-28 14:25:33,658: 	 Options use: []
+DEBUG 2015-07-28 14:25:33,658: 	 Instance is None
+DEBUG 2015-07-28 14:25:33,658: 	 Server base url is None
+INFO 2015-07-28 14:25:33,658: 	 Retrieving DN from proxy...
+INFO 2015-07-28 14:25:35,051: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-28 14:25:35,051: 	 Retrieving username from SiteDB...
+INFO 2015-07-28 14:25:37,480: 	 Username is: easilar
+DEBUG 2015-07-28 14:30:36,066: 	 Executing command: 'checkusername'
+DEBUG 2015-07-28 14:30:36,066: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-28 14:30:36,073: 	 Checking credentials
+DEBUG 2015-07-28 14:30:36,073: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-28 14:30:36,073: 	 Getting proxy life time left
+DEBUG 2015-07-28 14:30:36,577: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 688814
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 14:30:37,091: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 688812
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 14:30:37,091: 	 Proxy valid for 191:20:14 hours
+DEBUG 2015-07-28 14:30:37,204: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-28 14:30:37,204: 	 Checking credentials
+DEBUG 2015-07-28 14:30:37,204: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-28 14:30:37,204: 	 Getting proxy life time left
+DEBUG 2015-07-28 14:30:37,709: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 688813
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 14:30:38,719: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 688811
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 14:30:38,719: 	 Proxy valid for 191:20:13 hours
+DEBUG 2015-07-28 14:30:38,719: 	 Command use: checkusername
+DEBUG 2015-07-28 14:30:38,720: 	 Options use: []
+DEBUG 2015-07-28 14:30:38,720: 	 Instance is None
+DEBUG 2015-07-28 14:30:38,720: 	 Server base url is None
+INFO 2015-07-28 14:30:38,720: 	 Retrieving DN from proxy...
+INFO 2015-07-28 14:30:40,093: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-28 14:30:40,094: 	 Retrieving username from SiteDB...
+INFO 2015-07-28 14:30:42,892: 	 Username is: easilar
+DEBUG 2015-07-28 14:38:13,364: 	 Executing command: 'checkusername'
+DEBUG 2015-07-28 14:38:13,364: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-28 14:38:13,391: 	 Checking credentials
+DEBUG 2015-07-28 14:38:13,392: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-28 14:38:13,392: 	 Getting proxy life time left
+DEBUG 2015-07-28 14:38:14,610: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 688356
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 14:38:15,670: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 688354
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 14:38:15,671: 	 Proxy valid for 191:12:36 hours
+DEBUG 2015-07-28 14:38:16,118: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-28 14:38:16,119: 	 Checking credentials
+DEBUG 2015-07-28 14:38:16,119: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-28 14:38:16,119: 	 Getting proxy life time left
+DEBUG 2015-07-28 14:38:17,265: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 688353
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 14:38:18,107: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 688351
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 14:38:18,107: 	 Proxy valid for 191:12:33 hours
+DEBUG 2015-07-28 14:38:18,108: 	 Command use: checkusername
+DEBUG 2015-07-28 14:38:18,108: 	 Options use: []
+DEBUG 2015-07-28 14:38:18,108: 	 Instance is None
+DEBUG 2015-07-28 14:38:18,108: 	 Server base url is None
+INFO 2015-07-28 14:38:18,108: 	 Retrieving DN from proxy...
+INFO 2015-07-28 14:38:20,548: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-28 14:38:20,548: 	 Retrieving username from SiteDB...
+INFO 2015-07-28 14:38:24,230: 	 Username is: easilar
+DEBUG 2015-07-28 17:20:12,675: 	 Executing command: 'checkusername'
+DEBUG 2015-07-28 17:20:12,675: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-28 17:20:12,684: 	 Checking credentials
+DEBUG 2015-07-28 17:20:12,684: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-28 17:20:12,684: 	 Getting proxy life time left
+DEBUG 2015-07-28 17:20:13,191: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 690899
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 17:20:13,698: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 690899
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 17:20:13,699: 	 Proxy valid for 191:54:59 hours
+DEBUG 2015-07-28 17:20:13,808: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-28 17:20:13,809: 	 Checking credentials
+DEBUG 2015-07-28 17:20:13,809: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-28 17:20:13,809: 	 Getting proxy life time left
+DEBUG 2015-07-28 17:20:14,325: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 690898
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 17:20:14,833: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 690898
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 17:20:14,833: 	 Proxy valid for 191:54:58 hours
+DEBUG 2015-07-28 17:20:14,834: 	 Command use: checkusername
+DEBUG 2015-07-28 17:20:14,834: 	 Options use: []
+DEBUG 2015-07-28 17:20:14,834: 	 Instance is None
+DEBUG 2015-07-28 17:20:14,834: 	 Server base url is None
+INFO 2015-07-28 17:20:14,834: 	 Retrieving DN from proxy...
+INFO 2015-07-28 17:20:16,015: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-28 17:20:16,016: 	 Retrieving username from SiteDB...
+INFO 2015-07-28 17:20:18,676: 	 Username is: easilar
+DEBUG 2015-07-28 17:25:07,126: 	 Executing command: 'checkusername'
+DEBUG 2015-07-28 17:25:07,127: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-28 17:25:07,134: 	 Checking credentials
+DEBUG 2015-07-28 17:25:07,134: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-28 17:25:07,134: 	 Getting proxy life time left
+DEBUG 2015-07-28 17:25:07,642: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 690605
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 17:25:08,146: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 690604
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 17:25:08,147: 	 Proxy valid for 191:50:05 hours
+DEBUG 2015-07-28 17:25:08,258: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+
+ error: WARNING: can't open config file: /build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/tmp/BUILDROOT/ef35842be28ecca6d10195ea8182a5ac/build/dmwmbld/srv/state/dmwmbld/builds/comp_gcc481/w/slc6_amd64_gcc481/external/openssl/1.0.1p/ssl/openssl.cnf
+
+ retcode : 0
+DEBUG 2015-07-28 17:25:08,259: 	 Checking credentials
+DEBUG 2015-07-28 17:25:08,259: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-28 17:25:08,259: 	 Getting proxy life time left
+DEBUG 2015-07-28 17:25:08,769: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 690604
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 17:25:09,279: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 690603
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 17:25:09,280: 	 Proxy valid for 191:50:04 hours
+DEBUG 2015-07-28 17:25:09,280: 	 Command use: checkusername
+DEBUG 2015-07-28 17:25:09,280: 	 Options use: []
+DEBUG 2015-07-28 17:25:09,280: 	 Instance is None
+DEBUG 2015-07-28 17:25:09,280: 	 Server base url is None
+INFO 2015-07-28 17:25:09,280: 	 Retrieving DN from proxy...
+INFO 2015-07-28 17:25:10,597: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=easilar/CN=722995/CN=Ece Asilar
+INFO 2015-07-28 17:25:10,598: 	 Retrieving username from SiteDB...
+INFO 2015-07-28 17:25:12,909: 	 Username is: easilar
+DEBUG 2015-07-28 17:27:54,640: 	 Executing command: 'status'
+DEBUG 2015-07-28 17:27:54,640: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-28 17:28:00,238: 	 Executing command: 'status'
+DEBUG 2015-07-28 17:28:00,238: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-28 17:28:12,686: 	 Executing command: 'status'
+DEBUG 2015-07-28 17:28:12,686: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3
+DEBUG 2015-07-28 17:28:12,703: 	 Checking credentials
+DEBUG 2015-07-28 17:28:12,703: 	 Found proxy file /afs/cern.ch/user/e/easilar/.proxy
+DEBUG 2015-07-28 17:28:12,704: 	 Getting proxy life time left
+DEBUG 2015-07-28 17:28:13,314: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -timeleft
+ output : 690419
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 17:28:13,826: 	 Executing : 
+ command : voms-proxy-info -file /afs/cern.ch/user/e/easilar/.proxy -actimeleft
+ output : 690419
+
+ error: 
+ retcode : 0
+DEBUG 2015-07-28 17:28:13,826: 	 Proxy valid for 191:46:59 hours
+ERROR 2015-07-28 17:28:13,828: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/work/e/easilar/test_for_data/CMSSW_7_4_7/src/CMGTools/TTHAnalysis/cfg/crab_with_das/crab_data2_DoubleMuon_Run2015B-PromptReco-v1
+ERROR 2015-07-28 17:28:13,828: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/bin/crab", line 133, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/bin/crab", line 119, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/lib/python2.6/site-packages/CRABClient/Commands/SubCommand.py", line 317, in __init__
+    self.loadLocalCache(proxyOptsSetPlace)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/lib/python2.6/site-packages/CRABClient/Commands/SubCommand.py", line 431, in loadLocalCache
+    self.cachedinfo, self.logfile = loadCache(self.requestarea, self.logger)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc481/cms/crabclient/3.3.1507-comp/lib/python2.6/site-packages/CRABClient/ClientUtilities.py", line 439, in loadCache
+    raise CachefileNotFoundException(msg)
+CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/work/e/easilar/test_for_data/CMSSW_7_4_7/src/CMGTools/TTHAnalysis/cfg/crab_with_das/crab_data2_DoubleMuon_Run2015B-PromptReco-v1
+DEBUG 2015-07-28 17:28:21,882: 	 Executing command: 'remake'
+DEBUG 2015-07-28 17:28:21,882: 	 Found CRAB cache file /afs/cern.ch/user/e/easilar/.crab3

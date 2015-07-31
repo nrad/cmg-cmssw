@@ -183,7 +183,7 @@ elif test=="data":
 
     eventFlagsAna.processName = 'HLT'
     jetAna.recalibrateJets = False
-
+    print dataSamples
     for comp in dataSamples:
       comp.isMC = False
       comp.isData = True

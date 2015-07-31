@@ -13,7 +13,10 @@ dataDir = "$CMSSW_BASE/src/CMGTools/TTHAnalysis/data"  # use environmental varia
 #lumi: delivered= 4.430 (/nb) recorded= 4.013 (/nb)
 #json=dataDir+'/json/DCSONLY_Run2015B.json'
 #json=dataDir+'/json/Cert_246908-251252_13TeV_PromptReco_Collisions15.json'
+#json=dataDir+'/json/Cert_246908-251883_13TeV_PromptReco_Collisions15.json'
 json=dataDir+'/json/Cert_246908-251883_13TeV_PromptReco_Collisions15.json'
+#json=dataDir+'/json/try.json'
+
 #json=dataDir+'/json/json_DCSONLY_Run2015B.txt'
 #json=dataDir+'/json/Cert_246908-251252_13TeV_PromptReco_Collisions15_JSON.txt' # golden json 5.6/pb
 
@@ -31,6 +34,7 @@ json=dataDir+'/json/Cert_246908-251883_13TeV_PromptReco_Collisions15.json'
 ### ----------------------------- Magnetic Field On ----------------------------------------
 
 Jet_Run2015B            = kreator.makeDataComponent("Jet_Run2015B"           , "/Jet/Run2015B-PromptReco-v1/MINIAOD"           , "CMS", ".*root", json)
+print "JSON" , json
 JetHT_Run2015B          = kreator.makeDataComponent("JetHT_Run2015B"         , "/JetHT/Run2015B-PromptReco-v1/MINIAOD"         , "CMS", ".*root", json)
 HTMHT_Run2015B          = kreator.makeDataComponent("HTMHT_Run2015B"         , "/HTMHT/Run2015B-PromptReco-v1/MINIAOD"         , "CMS", ".*root", json)
 MET_Run2015B            = kreator.makeDataComponent("MET_Run2015B"           , "/MET/Run2015B-PromptReco-v1/MINIAOD"           , "CMS", ".*root", json)
