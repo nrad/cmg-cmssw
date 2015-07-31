@@ -7,11 +7,6 @@ import PhysicsTools.HeppyCore.framework.config as cfg
 #Load all analyzers
 from CMGTools.TTHAnalysis.analyzers.susyCore_modules_cff import *
 
-
-
-print "HELLO: Greetings from ECE : )"
-
-
 # Lepton Preselection
 # ele
 lepAna.loose_electron_id = "POG_MVA_ID_Run2_NonTrig_Loose"
