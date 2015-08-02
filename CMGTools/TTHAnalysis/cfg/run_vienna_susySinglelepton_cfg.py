@@ -204,13 +204,36 @@ elif test=="data":
       #comp.files = comp.files[:1]
 
 
+# -------------------- Running pre-processor
+import subprocess
+globalTag = 'MCRUN2_74_V9A::All'
+jecDBFile = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_50nsV2_MC.db'
+jecEra    = 'Summer15_50nsV2_MC'
+preprocessorFile = "$CMSSW_BASE/src/CMGTools/ObjectStudies/cfg/MetType1_GT_%s_jec_%s.py"%(globalTag.replace('::All',''),jecEra)
+subprocess.call(['python', 
+  os.path.expandvars('$CMSSW_BASE/src/CMGTools/ObjectStudies/cfg/corMETMiniAOD_cfgCreator.py'),\
+  '--GT='+globalTag, 
+  '--outputFile='+preprocessorFile, 
+  '--jecDBFile='+jecDBFile,
+  '--jecEra='+jecEra
+])
+from PhysicsTools.Heppy.utils.cmsswPreprocessor import CmsswPreprocessor
+preprocessor = CmsswPreprocessor(preprocessorFile)
 
 from PhysicsTools.HeppyCore.framework.eventsfwlite import Events
-#print "selectedComponents3 ",selectedComponents
+#printComps(config.components, True)               
 config = cfg.Config( components = selectedComponents,
                      sequence = sequence,
                      services = [],
+                     preprocessor=preprocessor, # comment if pre-processor non needed
+#                     events_class = event_class)
                      events_class = Events)
 
+##print "selectedComponents3 ",selectedComponents
+#config = cfg.Config( components = selectedComponents,
+#                     sequence = sequence,
+#                     services = [],
+#                     events_class = Events)
+#
 #!# #print "selectedComponents4 ",config.components
 
