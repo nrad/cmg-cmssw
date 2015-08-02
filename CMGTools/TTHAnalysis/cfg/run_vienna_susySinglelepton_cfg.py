@@ -50,9 +50,8 @@ jetAna.dataGT   = "Summer15_50nsV2_MC",
 
 jetAna.doQG = True
 jetAna.smearJets = False #should be false in susycore, already
-#jetAna.recalibrateJets = True #should be true in susycore, already
 jetAna.recalibrateJets =  False #For data
-metAna.recalibrate = False #should be false in susycore, already
+#metAna.recalibrate = False #should be false in susycore, already
 #metAna.otherMETs = [\
 #  ("metTxy",('slimmedTxyMETs', 'std::vector<pat::MET>')),
 #  ("metRaw",('slimmedRAWMETs', 'std::vector<pat::MET>')),
