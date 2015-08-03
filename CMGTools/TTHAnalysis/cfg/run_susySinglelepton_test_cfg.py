@@ -49,8 +49,8 @@ jetAna.minLepPt = 10
 jetAna.mcGT = "Summer15_V5_p6_MC"
 jetAna.doQG = True
 jetAna.smearJets = False #should be false in susycore, already
-#jetAna.recalibrateJets = True #should be true in susycore, already
-jetAna.recalibrateJets = False #should be true in susycore, already
+jetAna.recalibrateJets = True #should be true in susycore, already
+#jetAna.recalibrateJets = False #should be true in susycore, already
 metAna.recalibrate = True #should be false in susycore, already
 
 isoTrackAna.setOff=False
