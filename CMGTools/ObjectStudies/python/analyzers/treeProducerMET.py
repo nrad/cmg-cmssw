@@ -3,6 +3,9 @@ from PhysicsTools.Heppy.analyzers.core.AutoFillTreeProducer  import *
 met_globalVariables = [
     NTupleVariable("rho",  lambda ev: ev.rho, float, help="kt6PFJets rho"),
     NTupleVariable("nVert",  lambda ev: len(ev.goodVertices), int, help="Number of good vertices"),
+
+    NTupleVariable("met_genPt", lambda ev : ev.met_genPtDef, help="gen E_{T}^{miss} pt from patch of Matthieus recipe which doesn't store genmet"),
+    NTupleVariable("met_genPhi", lambda ev : ev.met_genPhiDef, help="gen E_{T}^{miss} phi from patch of Matthieus recipe which doesn't store genmet"),
 ##    NTupleVariable("nPU",  lambda ev: ev.nPU, long, help="getPU_NumInteractions"),
 
 ##    NTupleVariable("ntracksPV",  lambda ev: ev.goodVertices[0].tracksSize() , int, help="Number of tracks (with weight > 0.5)"),
@@ -44,19 +47,19 @@ met_globalVariables = [
    # -------------
 
     NTupleVariable("ak4MET_Pt", lambda ev : ev.ak4MET.pt() if  hasattr(ev,'ak4MET') else  0 , help="type1, V4, pt"),
-    NTupleVariable("ak4MET_Phi", lambda ev : ev.ak4MET.phi() if  hasattr(ev,'ak4MET') else  0 , help="ype1, V4, phi"),
+    NTupleVariable("ak4MET_Phi", lambda ev : ev.ak4MET.phi() if  hasattr(ev,'ak4MET') else  0 , help="type1, V4, phi"),
 
     NTupleVariable("ak4chsMET_Pt", lambda ev : ev.ak4chsMET.pt() if  hasattr(ev,'ak4chsMET') else  0 , help="type1, V4, pt"),
-    NTupleVariable("ak4chsMET_Phi", lambda ev : ev.ak4chsMET.phi() if  hasattr(ev,'ak4chsMET') else  0 , help="ype1, V4, phi"),
+    NTupleVariable("ak4chsMET_Phi", lambda ev : ev.ak4chsMET.phi() if  hasattr(ev,'ak4chsMET') else  0 , help="type1, V4, phi"),
 
     NTupleVariable("ak420MET_Pt", lambda ev : ev.ak4pt20MET.pt() if  hasattr(ev,'ak4pt20MET') else  0 , help="type1, V4, pt20, pt"),
-    NTupleVariable("ak420MET_Phi", lambda ev : ev.ak4pt20MET.phi() if  hasattr(ev,'ak4pt20MET') else  0 , help="ype1, V4, pt20, phi"),
+    NTupleVariable("ak420MET_Phi", lambda ev : ev.ak4pt20MET.phi() if  hasattr(ev,'ak4pt20MET') else  0 , help="type1, V4, pt20, phi"),
 
     NTupleVariable("ak4chs20MET_Pt", lambda ev : ev.ak4chspt20MET.pt() if  hasattr(ev,'ak4chspt20MET') else  0 , help="type1, V4, pt20, pt"),
-    NTupleVariable("ak4chs20MET_Phi", lambda ev : ev.ak4chspt20MET.phi() if  hasattr(ev,'ak4chspt20MET') else  0 , help="ype1, V4, pt>20, phi"),
+    NTupleVariable("ak4chs20MET_Phi", lambda ev : ev.ak4chspt20MET.phi() if  hasattr(ev,'ak4chspt20MET') else  0 , help="type1, V4, pt>20, phi"),
 
     NTupleVariable("ak4Mix_Pt", lambda ev : ev.ak4Mix.pt() if  hasattr(ev,'ak4Mix') else  0 , help="type1, V4, pt20, Mix, pt"),
-    NTupleVariable("ak4Mix_Phi", lambda ev : ev.ak4Mix.phi() if  hasattr(ev,'ak4Mix') else  0 , help="ype1, V4, pt>20, Mix, phi"),
+    NTupleVariable("ak4Mix_Phi", lambda ev : ev.ak4Mix.phi() if  hasattr(ev,'ak4Mix') else  0 , help="type1, V4, pt>20, Mix, phi"),
 
    # ----------------------- tkMet info -------------------------------------------------------------------- #     
 

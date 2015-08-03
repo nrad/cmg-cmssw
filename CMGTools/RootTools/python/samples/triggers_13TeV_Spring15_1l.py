@@ -1,5 +1,8 @@
-### ----> for the 1L dPhi analysis
+##################
+## Triggers for HLT_MC_SPRING15 and Run II
+## Based on HLT_MC_SPRING15 and /frozen/2015/25ns14e33/v2.1/HLT/V1 and /frozen/2015/50ns_5e33/v2.1/HLT/V5
 
+### ----> for the 1L dPhi analysis
 
 ## single lepton
 triggers_1mu = ["HLT_IsoMu27_v*"]
