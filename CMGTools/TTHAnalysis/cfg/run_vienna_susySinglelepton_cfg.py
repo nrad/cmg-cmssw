@@ -44,8 +44,8 @@ ttHLepSkim.maxLeptons = 999
 # --- JET-LEPTON CLEANING ---
 jetAna.minLepPt = 10
 
-jetAna.mcGT = "PHYS14_V4_MC"
-#jetAna.mcGT     = "Summer15_50nsV2_MC",
+#jetAna.mcGT = "PHYS14_V4_MC"
+jetAna.mcGT     = "Summer15_50nsV2_MC",
 #jetAna.dataGT   = "Summer15_50nsV2_MC",
 
 jetAna.doQG = True
