@@ -43,14 +43,12 @@ ttHLepSkim.maxLeptons = 999
 
 # --- JET-LEPTON CLEANING ---
 jetAna.minLepPt = 10
-
-#jetAna.mcGT = "PHYS14_V4_MC"
-jetAna.mcGT     = "Summer15_50nsV2_MC",
-#jetAna.dataGT   = "Summer15_50nsV2_MC",
-
-jetAna.doQG = True
+jetAna.mcGT     = "Summer15_50nsV2_MC"
+jetAna.dataGT   = "Summer15_50nsV2_MC"
+jetAna.doQG = False
 jetAna.smearJets = False #should be false in susycore, already
 jetAna.recalibrateJets =  True #For data
+
 #metAna.recalibrate = False #should be false in susycore, already
 #metAna.otherMETs = [\
 #  ("metTxy",('slimmedTxyMETs', 'std::vector<pat::MET>')),
