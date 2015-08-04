@@ -3,6 +3,7 @@
 ## skim condition: >= 1 loose leptons, no pt cuts or id ##
 ##########################################################
 import PhysicsTools.HeppyCore.framework.config as cfg
+from PhysicsTools.HeppyCore.framework.heppy_loop import getHeppyOption
 
 #Load all analyzers
 from CMGTools.TTHAnalysis.analyzers.susyCore_modules_cff import *
@@ -220,14 +221,19 @@ subprocess.call(['python',
 from PhysicsTools.Heppy.utils.cmsswPreprocessor import CmsswPreprocessor
 preprocessor = CmsswPreprocessor(preprocessorFile)
 
+from CMGTools.TTHAnalysis.tools.EOSEventsWithDownload import EOSEventsWithDownload
 from PhysicsTools.HeppyCore.framework.eventsfwlite import Events
+event_class = Events
+if getHeppyOption("fetch"):
+  event_class = EOSEventsWithDownload
+
 #printComps(config.components, True)               
 config = cfg.Config( components = selectedComponents,
                      sequence = sequence,
                      services = [],
                      preprocessor=preprocessor, # comment if pre-processor non needed
 #                     events_class = event_class)
-                     events_class = Events)
+                     events_class = event_class)
 
 ##print "selectedComponents3 ",selectedComponents
 #config = cfg.Config( components = selectedComponents,
