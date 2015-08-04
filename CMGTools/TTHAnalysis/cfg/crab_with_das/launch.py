@@ -65,6 +65,8 @@ for comp in selectedComponents:
     fout.close()
 #    os.environ["DATASET"] = str(comp.name)
     os.environ["CMG_DATASET"] = comp.dataset
+    if comp.json:
+        os.environ["CMG_JSON"] = os.path.expandvars(comp.json)
     os.environ["CMG_COMPONENT_NAME"] = comp.name
 #    os.system("python tmp.py > tmp.lis")
     os.system("which crab")
