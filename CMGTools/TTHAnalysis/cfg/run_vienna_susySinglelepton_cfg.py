@@ -152,42 +152,33 @@ treeProducer = cfg.Analyzer(
 from CMGTools.RootTools.samples.samples_13TeV_74X import *
 
 selectedComponents = [
-        TTJets,
         ]
 
 
-#!# #selectedComponents = [ TT_PU40bx25 ]
-#-------- SEQUENCE
-
 sequence = cfg.Sequence(susyCoreSequence+[
         ttHEventAna,
-#    ttHSTSkimmer,
-#    ttHReclusterJets,
         treeProducer,
         ])
 
+if getHeppyOption("loadSamples"):
+  if test==1:
+    # test a single component, using a single thread.
+    comp = TTJets
+    comp.files = comp.files[:1]
+    selectedComponents = [comp]
+    comp.splitFactor = 1
+  elif test==2:
+    # test all components (1 thread per component).
+    for comp in selectedComponents:
+            comp.splitFactor = 1
+            comp.fineSplitFactor = 10
+            comp.files = comp.files[:1]
+  elif test==3:
+    # run all components (1 thread per component).
+    for comp in selectedComponents:
+            comp.splitFactor = len(comp.files)
 
-test =1
-if test==1:
-        # test a single component, using a single thread.
-        comp = TTJets
-        comp.files = comp.files[:1]
-        selectedComponents = [comp]
-        comp.splitFactor = 1
-elif test==2:
-        # test all components (1 thread per component).
-        for comp in selectedComponents:
-                comp.splitFactor = 1
-                comp.fineSplitFactor = 10
-                comp.files = comp.files[:1]
-elif test==3:
-        # run all components (1 thread per component).
-        for comp in selectedComponents:
-                comp.splitFactor = len(comp.files)
-
-elif test=="data":
-        #from CMGTools.RootTools.samples.samples_13TeV_Data import *
-        #selectedComponents = [ privEGamma2015A ]
+  elif test=="data":
     from CMGTools.RootTools.samples.samples_13TeV_DATA2015 import *
     selectedComponents = [ SingleElectron_Run2015B ]
     #selectedComponents = [ SingleMu_Run2015B ]
