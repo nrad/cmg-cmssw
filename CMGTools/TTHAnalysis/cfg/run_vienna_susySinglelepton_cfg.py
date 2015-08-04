@@ -160,6 +160,9 @@ sequence = cfg.Sequence(susyCoreSequence+[
         treeProducer,
         ])
 
+
+test=1
+
 if getHeppyOption("loadSamples"):
   if test==1:
     # test a single component, using a single thread.
