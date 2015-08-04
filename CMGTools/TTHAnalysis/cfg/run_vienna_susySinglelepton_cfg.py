@@ -57,7 +57,6 @@ jetAna.recalibrateJets =  True #For data
 
 isoTrackAna.setOff=False
 genAna.allGenTaus = True
-eventFlagsAna.processName = 'HLT'
 
 from CMGTools.TTHAnalysis.analyzers.ttHLepEventAnalyzer import ttHLepEventAnalyzer
 ttHEventAna = cfg.Analyzer(
@@ -70,6 +69,13 @@ susyCoreSequence.insert(susyCoreSequence.index(ttHCoreEventAna),
                         ttHFatJetAna)
 susyCoreSequence.insert(susyCoreSequence.index(ttHCoreEventAna),
                         ttHSVAna)
+
+from CMGTools.TTHAnalysis.analyzers.hbheAnalyzer import hbheAnalyzer
+hbheFilterAna = cfg.Analyzer(
+    hbheAnalyzer, name = 'hbheAnalyzer',
+)
+
+susyCoreSequence.insert(-1, hbheFilterAna)
 
 ## Single lepton + ST skim
 from CMGTools.TTHAnalysis.analyzers.ttHSTSkimmer import ttHSTSkimmer
@@ -84,8 +90,6 @@ ttHSTSkimmer = cfg.Analyzer(
 #    pTSubJet = 30,
 #    etaSubJet = 5.0,
 #            )
-
-#from CMGTools.TTHAnalysis.samples.samples_13TeV_PHYS14  import *
 
 #from CMGTools.RootTools.samples.triggers_13TeV_Spring15 import * # central trigger list
 from CMGTools.RootTools.samples.triggers_13TeV_Spring15 import *
@@ -188,7 +192,6 @@ elif test=="data":
     #selectedComponents = [ SingleMu_Run2015B ]
     #selectedComponents = [ SingleMuon_Run2015B ]
 
-    eventFlagsAna.processName = 'HLT'
     jetAna.recalibrateJets = False
     print dataSamples
     for comp in dataSamples:

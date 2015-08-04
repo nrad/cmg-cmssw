@@ -54,7 +54,7 @@ eventFlagsAna = cfg.Analyzer(
     fallbackProcessName = 'RECO', 
     outprefix   = 'Flag',
     triggerBits = {
-#        "HBHENoiseFilter" : [ "Flag_HBHENoiseFilter" ],
+        "HBHENoiseFilter" : [ "Flag_HBHENoiseFilter" ],
         "CSCTightHaloFilter" : [ "Flag_CSCTightHaloFilter" ],
         "hcalLaserEventFilter" : [ "Flag_hcalLaserEventFilter" ],
         "EcalDeadCellTriggerPrimitiveFilter" : [ "Flag_EcalDeadCellTriggerPrimitiveFilter" ],
@@ -69,11 +69,6 @@ eventFlagsAna = cfg.Analyzer(
         "METFilters" : [ "Flag_METFilters" ],
     }
     )
-
-from CMGTools.TTHAnalysis.analyzers.hbheAnalyzer import hbheAnalyzer
-hbheFilterAna = cfg.Analyzer(
-    hbheAnalyzer, name = 'hbheAnalyzer',
-)
 
 # Select a list of good primary vertices (generic)
 vertexAna = cfg.Analyzer(
@@ -434,5 +429,4 @@ susyCoreSequence = [
     #ttHJetMETSkim
     triggerFlagsAna,
     eventFlagsAna,
-    hbheFilterAna,
 ]
