@@ -59,7 +59,7 @@ metAna.recalibrate = True #should be false in susycore, already
 
 isoTrackAna.setOff=False
 genAna.allGenTaus = True
-#eventFlagsAna.processName = 'HLT'
+eventFlagsAna.processName = 'HLT'
 
 from CMGTools.TTHAnalysis.analyzers.ttHLepEventAnalyzer import ttHLepEventAnalyzer
 ttHEventAna = cfg.Analyzer(
