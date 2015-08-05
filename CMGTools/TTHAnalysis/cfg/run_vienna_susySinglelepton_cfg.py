@@ -44,17 +44,16 @@ ttHLepSkim.maxLeptons = 999
 
 # --- JET-LEPTON CLEANING ---
 jetAna.minLepPt = 10
+#jetAna.jetPt = 25
+#jetAna.jetEta = 2.4
+
 jetAna.mcGT     = "Summer15_50nsV2_MC"
 jetAna.dataGT   = "Summer15_50nsV2_MC"
-jetAna.doQG = False
+jetAna.doQG = True
 jetAna.smearJets = False #should be false in susycore, already
 jetAna.recalibrateJets =  True #For data
 
-#metAna.recalibrate = False #should be false in susycore, already
-#metAna.otherMETs = [\
-#  ("metTxy",('slimmedTxyMETs', 'std::vector<pat::MET>')),
-#  ("metRaw",('slimmedRAWMETs', 'std::vector<pat::MET>')),
-#  ]
+metAna.recalibrate = False #should be false in susycore, already
 
 isoTrackAna.setOff=False
 genAna.allGenTaus = True
@@ -161,7 +160,12 @@ sequence = cfg.Sequence(susyCoreSequence+[
         ])
 
 
-test=1
+removeResiduals = True
+
+test="data"
+#test=1
+
+isData = test=="data"
 
 if getHeppyOption("loadSamples"):
   if test==1:
@@ -183,35 +187,37 @@ if getHeppyOption("loadSamples"):
 
   elif test=="data":
     from CMGTools.RootTools.samples.samples_13TeV_DATA2015 import *
-    selectedComponents = [ SingleElectron_Run2015B ]
-    #selectedComponents = [ SingleMu_Run2015B ]
-    #selectedComponents = [ SingleMuon_Run2015B ]
+    selectedComponents = [ SingleMu_Run2015B ]
 
-    jetAna.recalibrateJets = False
-    print dataSamples
     for comp in dataSamples:
       comp.isMC = False
       comp.isData = True
     
     for comp in selectedComponents:
       comp.splitFactor = 1
-      comp.fineSplitFactor = 10
-      #comp.files = comp.files[:1]
+      comp.fineSplitFactor = 1
+      comp.files = comp.files[:1]
 
 
 # -------------------- Running pre-processor
 import subprocess
-globalTag = 'MCRUN2_74_V9A::All'
+mcGlobalTag   = 'MCRUN2_74_V9A'
+dataGlobalTag = '74X_dataRun2_Prompt_v1'
 jecDBFile = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_50nsV2_MC.db'
 jecEra    = 'Summer15_50nsV2_MC'
-preprocessorFile = "$CMSSW_BASE/src/CMGTools/ObjectStudies/cfg/MetType1_GT_%s_jec_%s.py"%(globalTag.replace('::All',''),jecEra)
+preprocessorFile = "$CMSSW_BASE/src/CMGTools/ObjectStudies/cfg/MetType1_jec_%s.py"%(jecEra)
+extraArgs=[]
+if isData:extraArgs.append('--isData')
+if removeResiduals:extraArgs.append('--removeResiduals')
+print "extraArgs",extraArgs
 subprocess.call(['python', 
   os.path.expandvars('$CMSSW_BASE/src/CMGTools/ObjectStudies/cfg/corMETMiniAOD_cfgCreator.py'),\
-  '--GT='+globalTag, 
+  '--mcGT='+mcGlobalTag, 
+  '--dataGT='+dataGlobalTag, 
   '--outputFile='+preprocessorFile, 
   '--jecDBFile='+jecDBFile,
   '--jecEra='+jecEra
-])
+  ] + extraArgs )
 from PhysicsTools.Heppy.utils.cmsswPreprocessor import CmsswPreprocessor
 preprocessor = CmsswPreprocessor(preprocessorFile)
 
