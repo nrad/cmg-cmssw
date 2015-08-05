@@ -189,15 +189,12 @@ if getHeppyOption("loadSamples"):
     from CMGTools.RootTools.samples.samples_13TeV_DATA2015 import *
     selectedComponents = [ SingleMu_Run2015B ]
 
-    for comp in dataSamples:
-      comp.isMC = False
-      comp.isData = True
-    
     for comp in selectedComponents:
       comp.splitFactor = 1
       comp.fineSplitFactor = 1
       comp.files = comp.files[:1]
 
+print selectedComponents
 
 # -------------------- Running pre-processor
 import subprocess
