@@ -148,7 +148,6 @@ treeProducer = cfg.Analyzer(
 
 #!# #-------- SAMPLES AND TRIGGERS -----------
 
-from CMGTools.RootTools.samples.samples_13TeV_74X import *
 
 selectedComponents = [
         ]
@@ -162,12 +161,12 @@ sequence = cfg.Sequence(susyCoreSequence+[
 
 removeResiduals = True
 
-test="data"
-#test=1
+test=1
 
 isData = test=="data"
 
 if getHeppyOption("loadSamples"):
+  from CMGTools.RootTools.samples.samples_13TeV_74X import *
   if test==1:
     # test a single component, using a single thread.
     comp = TTJets
