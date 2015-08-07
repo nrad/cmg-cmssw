@@ -17,7 +17,7 @@ isEarlyRun = False # to be used for the filters
 removeResiduals = True
 #-------- HOW TO RUN
 
-test = 2
+test = 16
 
 if test==0:
     isData = True
@@ -139,6 +139,15 @@ elif test==15:
         else:
             comp.run_range=(251585,251883) # in promptReco runInJSON: 251643,251721,251883
         print comp
+elif test==16:
+    isData = True
+    isDiJet=True
+    selectedComponents = [ JetHT_Run2015B ]
+    for comp in selectedComponents:
+        comp.splitFactor = 1
+        comp.files = comp.files[:5]
+        comp.json = "$CMSSW_BASE/src/CMGTools/TTHAnalysis/data/json/Cert_246908-251883_13TeV_PromptReco_Collisions15_JSON_v2.json"
+        comp.intLumi= 0.04003
 # ------------------------------------------------------------------------------------------- #
 
 from CMGTools.ObjectStudies.analyzers.metCoreModules_cff import *
@@ -171,6 +180,8 @@ treeProducer = cfg.Analyzer(
 metAna.doTkMet = True
 metAna.doSpecialMet = False
 
+
+
 metSequence = cfg.Sequence(
     metCoreSequence + [treeProducer]
     )
@@ -195,6 +206,7 @@ if is1L:
 
 if comp.isData and not isEarlyRun:
     eventFlagsAna.processName = 'RECO'
+    metAnaDef.metCollection     = ("slimmedMETs","", "RECO") 
 
 if comp.isData and comp.json is None:
     metSequence.remove(jsonAna)
@@ -239,7 +251,7 @@ if getHeppyOption("nofetch"):
 import subprocess
 jecDBFile = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_50nsV2_MC.db'
 jecEra    = 'Summer15_50nsV2_MC'
-preprocessorFile = "$CMSSW_BASE/src/CMGTools/ObjectStudies/cfg/MetType1_jec_%s.py"%(jecEra)
+preprocessorFile = "$CMSSW_BASE/tmp/MetType1_jec_%s.py"%(jecEra)
 extraArgs=[]
 if isData:
   extraArgs.append('--isData')
@@ -248,7 +260,7 @@ else:
   GT= 'MCRUN2_74_V9A'
 if removeResiduals:extraArgs.append('--removeResiduals')
 args = ['python', 
-  os.path.expandvars('$CMSSW_BASE/src/CMGTools/ObjectStudies/cfg/corMETMiniAOD_cfgCreator.py'),\
+  os.path.expandvars('$CMSSW_BASE/python/CMGTools/ObjectStudies/corMETMiniAOD_cfgCreator.py'),\
   '--GT='+GT, 
   '--outputFile='+preprocessorFile, 
   '--jecDBFile='+jecDBFile,

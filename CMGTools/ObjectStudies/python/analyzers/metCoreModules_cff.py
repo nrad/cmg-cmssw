@@ -319,7 +319,7 @@ metCoreSequence = [
     susyCounter,
     skimAnalyzer,
    #eventSelector,
-    jsonAna,
+#    jsonAna,
     triggerAna,
     triggerFlagsAna,
     pileUpAna,
