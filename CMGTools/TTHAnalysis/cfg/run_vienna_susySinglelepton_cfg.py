@@ -198,7 +198,7 @@ if getHeppyOption("loadSamples"):
 import subprocess
 jecDBFile = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_50nsV2_MC.db'
 jecEra    = 'Summer15_50nsV2_MC'
-preprocessorFile = "$CMSSW_BASE/src/CMGTools/ObjectStudies/cfg/MetType1_jec_%s.py"%(jecEra)
+preprocessorFile = "$CMSSW_BASE/tmp/MetType1_jec_%s.py"%(jecEra)
 extraArgs=[]
 if isData:
   extraArgs.append('--isData')
@@ -207,7 +207,7 @@ else:
   GT= 'MCRUN2_74_V9A'
 if removeResiduals:extraArgs.append('--removeResiduals')
 args = ['python', 
-  os.path.expandvars('$CMSSW_BASE/src/CMGTools/ObjectStudies/python/corMETMiniAOD_cfgCreator.py'),\
+  os.path.expandvars('$CMSSW_BASE/python/CMGTools/ObjectStudies/corMETMiniAOD_cfgCreator.py'),\
   '--GT='+GT, 
   '--outputFile='+preprocessorFile, 
   '--jecDBFile='+jecDBFile,
