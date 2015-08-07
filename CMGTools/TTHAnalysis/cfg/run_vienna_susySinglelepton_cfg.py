@@ -191,6 +191,8 @@ if getHeppyOption("loadSamples"):
     for comp in selectedComponents:
         comp.splitFactor = 1
         comp.files = comp.files[:]
+        comp.isMC = False
+        comp.isData = True
 #        comp.json = "$CMSSW_BASE/src/CMGTools/TTHAnalysis/data/json/Cert_246908-251883_13TeV_PromptReco_Collisions15_JSON_v2.json"
 
 if isData:# and not isEarlyRun:
