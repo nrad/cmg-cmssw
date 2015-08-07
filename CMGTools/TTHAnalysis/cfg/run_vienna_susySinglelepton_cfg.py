@@ -152,17 +152,16 @@ treeProducer = cfg.Analyzer(
 selectedComponents = [
         ]
 
-
-sequence = cfg.Sequence(susyCoreSequence+[
-        ttHEventAna,
+sequence = cfg.Sequence(
+  susyCoreSequence+
+      [ ttHEventAna,
         treeProducer,
         ])
 
-
 removeResiduals = True
 
-#test="data"
-test=1
+test="data"
+#test=1
 
 isData = test=="data"
 
@@ -184,17 +183,22 @@ if getHeppyOption("loadSamples"):
   elif test==3:
     # run all components (1 thread per component).
     for comp in selectedComponents:
-            comp.splitFactor = len(comp.files)
+      comp.splitFactor = len(comp.files)
 
   elif test=="data":
     from CMGTools.RootTools.samples.samples_13TeV_DATA2015 import *
-    selectedComponents = [ SingleMu_Run2015B ]
 
+    selectedComponents = [ SingleMuon_Run2015B ]
     for comp in selectedComponents:
-      comp.splitFactor = 1
-      comp.fineSplitFactor = 1
-      comp.files = comp.files[:1]
+        comp.splitFactor = 1
+        comp.files = comp.files[:]
+        comp.isMC = False
+        comp.isData = True
+#        comp.json = "$CMSSW_BASE/src/CMGTools/TTHAnalysis/data/json/Cert_246908-251883_13TeV_PromptReco_Collisions15_JSON_v2.json"
 
+if isData:# and not isEarlyRun:
+    eventFlagsAna.processName = 'RECO'
+    metAnaDef.metCollection     = ("slimmedMETs","", "RECO") 
 # -------------------- Running pre-processor
 import subprocess
 jecDBFile = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_50nsV2_MC.db'
@@ -226,18 +230,10 @@ event_class = Events
 if getHeppyOption("fetch"):
   event_class = EOSEventsWithDownload
 
-#printComps(config.components, True)               
+#printComps(config.components, True)
 config = cfg.Config( components = selectedComponents,
                      sequence = sequence,
                      services = [],
                      preprocessor=preprocessor, # comment if pre-processor non needed
                      events_class = event_class)
-
-##print "selectedComponents3 ",selectedComponents
-#config = cfg.Config( components = selectedComponents,
-#                     sequence = sequence,
-#                     services = [],
-#                     events_class = Events)
-#
-#!# #print "selectedComponents4 ",config.components
 
