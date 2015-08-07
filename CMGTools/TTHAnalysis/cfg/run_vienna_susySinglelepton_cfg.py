@@ -152,17 +152,16 @@ treeProducer = cfg.Analyzer(
 selectedComponents = [
         ]
 
-
-sequence = cfg.Sequence(susyCoreSequence+[
-        ttHEventAna,
+sequence = cfg.Sequence(
+#  susyCoreSequence+
+      [ ttHEventAna,
         treeProducer,
         ])
 
-
 removeResiduals = True
 
-#test="data"
-test=1
+test="data"
+#test=1
 
 isData = test=="data"
 
@@ -194,6 +193,9 @@ if getHeppyOption("loadSamples"):
       comp.fineSplitFactor = 1
       comp.files = comp.files[:1]
 
+if isData:# and not isEarlyRun:
+    eventFlagsAna.processName = 'RECO'
+    metAnaDef.metCollection     = ("slimmedMETs","", "RECO") 
 # -------------------- Running pre-processor
 import subprocess
 jecDBFile = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_50nsV2_MC.db'
