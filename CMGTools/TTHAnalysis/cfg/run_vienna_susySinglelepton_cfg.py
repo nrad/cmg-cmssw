@@ -162,8 +162,8 @@ sequence = cfg.Sequence(susyCoreSequence+[
 
 removeResiduals = True
 
-test="data"
-#test=1
+#test="data"
+test=1
 
 isData = test=="data"
 
