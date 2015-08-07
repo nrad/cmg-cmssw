@@ -207,7 +207,7 @@ else:
   GT= 'MCRUN2_74_V9A'
 if removeResiduals:extraArgs.append('--removeResiduals')
 args = ['python', 
-  os.path.expandvars('$CMSSW_BASE/src/CMGTools/ObjectStudies/cfg/corMETMiniAOD_cfgCreator.py'),\
+  os.path.expandvars('$CMSSW_BASE/src/CMGTools/ObjectStudies/python/corMETMiniAOD_cfgCreator.py'),\
   '--GT='+GT, 
   '--outputFile='+preprocessorFile, 
   '--jecDBFile='+jecDBFile,
