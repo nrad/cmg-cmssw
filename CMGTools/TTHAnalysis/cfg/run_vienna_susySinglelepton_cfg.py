@@ -159,11 +159,12 @@ sequence = cfg.Sequence(
         ])
 
 removeResiduals = True
+isData = False
 
-test="data"
-#test=1
-
-isData = test=="data"
+if isData:
+  test="data"
+else:
+  test=1
 
 if getHeppyOption("loadSamples"):
   from CMGTools.RootTools.samples.samples_13TeV_74X import *
@@ -198,28 +199,37 @@ if getHeppyOption("loadSamples"):
 if isData:# and not isEarlyRun:
     eventFlagsAna.processName = 'RECO'
     metAnaDef.metCollection     = ("slimmedMETs","", "RECO") 
+
 # -------------------- Running pre-processor
-import subprocess
-jecDBFile = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_50nsV2_MC.db'
-jecEra    = 'Summer15_50nsV2_MC'
-preprocessorFile = "$CMSSW_BASE/tmp/MetType1_jec_%s.py"%(jecEra)
-extraArgs=[]
-if isData:
-  extraArgs.append('--isData')
-  GT= '74X_dataRun2_Prompt_v1'
-else:
-  GT= 'MCRUN2_74_V9A'
-if removeResiduals:extraArgs.append('--removeResiduals')
-args = ['python', 
-  os.path.expandvars('$CMSSW_BASE/python/CMGTools/ObjectStudies/corMETMiniAOD_cfgCreator.py'),\
-  '--GT='+GT, 
-  '--outputFile='+preprocessorFile, 
-  '--jecDBFile='+jecDBFile,
-  '--jecEra='+jecEra
-  ] + extraArgs 
-#print "Making pre-processorfile:"
-#print " ".join(args)
-subprocess.call(args)
+if getHeppyOption("makePreProcessorFile"): #create preprocessor file on the fly
+  import subprocess
+  jecDBFile = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_50nsV2_MC.db'
+  jecEra    = 'Summer15_50nsV2_MC'
+  extraArgs=[]
+  if isData:
+    extraArgs.append('--isData')
+    GT= '74X_dataRun2_Prompt_v1'
+  else:
+    GT= 'MCRUN2_74_V9A'
+  if removeResiduals:extraArgs.append('--removeResiduals')
+  preprocessorFile = "$CMSSW_BASE/tmp/MetType1_jec_%s_GT_%s_residuals_%s.py"%(jecEra, GT, str(not(removeResiduals)))
+  args = ['python', 
+    os.path.expandvars('$CMSSW_BASE/python/CMGTools/ObjectStudies/corMETMiniAOD_cfgCreator.py'),\
+    '--GT='+GT, 
+    '--outputFile='+preprocessorFile, 
+    '--jecDBFile='+jecDBFile,
+    '--jecEra='+jecEra
+    ] + extraArgs 
+  #print "Making pre-processorfile:"
+  #print " ".join(args)
+  subprocess.call(args)
+else: #use precomputed preprocessor files
+  if isData:
+    preprocessorFile = "$CMSSW_BASE/src/CMGTools/TTHAnalysis/python/preProcFiles/MetType1_jec_Summer15_50nsV2_MC_GT_74X_dataRun2_Prompt_v1_residuals_False.py"
+  else:
+    preprocessorFile = "$CMSSW_BASE/src/CMGTools/TTHAnalysis/python/preProcFiles/MetType1_jec_Summer15_50nsV2_MC_GT_MCRUN2_74_V9A_residuals_False.py" 
+  print "Using preprocessor file %s"%preprocessorFile
+
 from PhysicsTools.Heppy.utils.cmsswPreprocessor import CmsswPreprocessor
 preprocessor = CmsswPreprocessor(preprocessorFile)
 
