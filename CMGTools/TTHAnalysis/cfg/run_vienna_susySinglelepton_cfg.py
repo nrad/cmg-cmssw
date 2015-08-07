@@ -170,7 +170,6 @@ if getHeppyOption("loadSamples"):
   if test==1:
     # test a single component, using a single thread.
     comp = TTJets
-    print comp
     comp.files = comp.files[:1]
     selectedComponents = [comp]
     comp.splitFactor = 1
