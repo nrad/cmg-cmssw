@@ -47,8 +47,6 @@ jetAna.minLepPt = 10
 #jetAna.jetPt = 25
 #jetAna.jetEta = 2.4
 
-jetAna.mcGT     = "Summer15_50nsV2_MC"
-jetAna.dataGT   = "Summer15_50nsV2_MC"
 jetAna.doQG = True
 jetAna.smearJets = False #should be false in susycore, already
 jetAna.recalibrateJets =  True #For data
@@ -145,9 +143,7 @@ treeProducer = cfg.Analyzer(
      collections = susySingleLepton_collections,
 )
 
-
 #!# #-------- SAMPLES AND TRIGGERS -----------
-
 
 selectedComponents = [
         ]
@@ -160,11 +156,14 @@ sequence = cfg.Sequence(
 
 removeResiduals = True
 isData = False
+#bx = '50ns'
+bx = '25ns'
 
 if isData:
   test="data"
 else:
-  test=4
+  if bx=='50ns':test=4
+  if bx=='25ns':test=5
 
 #if True or getHeppyOption("loadSamples"):
 if getHeppyOption("loadSamples"):
@@ -188,13 +187,16 @@ if getHeppyOption("loadSamples"):
   elif test==4:
 #    TTJets_50ns.fineSplitFactor = 4
 #    selectedComponents = [TTJets_50ns]
-    selectedComponents = [DYJetsToLL_M50_50ns, DYJetsToLL_M10to50_50ns, WJetsToLNu_50ns]
-#    DYJetsM50HT_50ns
-#    SingleTop_50ns
-#    DiBosons_50ns
+#    selectedComponents = [DYJetsToLL_M50_50ns, DYJetsToLL_M10to50_50ns, WJetsToLNu_50ns]
+    selectedComponents = [TTJets]
     for comp in selectedComponents:
+      comp.files = comp.files[:1]
       comp.splitFactor = len(comp.files)
-      comp.files = comp.files[:]
+  elif test==5:
+    selectedComponents = [TTJets]
+    for comp in selectedComponents:
+      comp.files = comp.files[:1]
+      comp.splitFactor = len(comp.files)
 
   elif test=="data":
     from CMGTools.RootTools.samples.samples_13TeV_DATA2015 import *
@@ -206,23 +208,42 @@ if getHeppyOption("loadSamples"):
         comp.isData = True
 #        comp.json = "$CMSSW_BASE/src/CMGTools/TTHAnalysis/data/json/Cert_246908-251883_13TeV_PromptReco_Collisions15_JSON_v2.json"
 
-if isData:# and not isEarlyRun:
-    eventFlagsAna.processName = 'RECO'
-    metAnaDef.metCollection   = ("slimmedMETs","", "RECO") 
+
+if isData:
+  assert bx!='25ns', "Has the future arrived?"
+  GT= '74X_dataRun2_Prompt_v1' #50ns data
+#  jetAna.mcGT     = "Summer15_50nsV2_MC"
+  jetAna.mcGT     = "XXX"
+  jetAna.dataGT   = "Summer15_50nsV2_DATA"
+  eventFlagsAna.processName = 'RECO'
+  metAnaDef.metCollection   = ("slimmedMETs","", "RECO") 
+else:
+  if bx=='50ns':
+    jecDBFile = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_50nsV2_MC.db'
+    jecEra    = 'Summer15_50nsV2_MC'
+    mcGT= 'MCRUN2_74_V9A' #50ns MC
+    dataGT= 'Summer15_50nsV2_DATA' #50ns Data
+    jetAna.mcGT     = "Summer15_50nsV2_MC"
+    jetAna.dataGT   = "Summer15_50nsV2_DATA"
+  if bx=='25ns':
+    jecDBFile = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_25nsV2_MC.db'
+    jecEra    = 'Summer15_25nsV2_MC' 
+    mcGT= 'MCRUN2_74_V9' #25ns MC
+    jetAna.mcGT     = "Summer15_25nsV2_MC"
+    jetAna.dataGT   = "XXX" #"Summer15_25nsV2_DATA"
+
+GT = dataGT if isData else mcGT
+preprocessorFilename = "MetType1_jec_%s_GT_%s_residuals_%s.py"%(jecEra, GT, str(not(removeResiduals)))
 
 # -------------------- Running pre-processor
 if getHeppyOption("makePreProcessorFile"): #create preprocessor file on the fly
   import subprocess
-  jecDBFile = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_50nsV2_MC.db'
-  jecEra    = 'Summer15_50nsV2_MC'
   extraArgs=[]
   if isData:
     extraArgs.append('--isData')
-    GT= '74X_dataRun2_Prompt_v1'
-  else:
-    GT= 'MCRUN2_74_V9A'
   if removeResiduals:extraArgs.append('--removeResiduals')
-  preprocessorFile = "$CMSSW_BASE/tmp/MetType1_jec_%s_GT_%s_residuals_%s.py"%(jecEra, GT, str(not(removeResiduals)))
+  preprocessorDir = "$CMSSW_BASE/tmp"
+  preprocessorFile = "/".join([preprocessorDir, preprocessorFilename])
   args = ['python', 
     os.path.expandvars('$CMSSW_BASE/python/CMGTools/ObjectStudies/corMETMiniAOD_cfgCreator.py'),\
     '--GT='+GT, 
@@ -234,11 +255,10 @@ if getHeppyOption("makePreProcessorFile"): #create preprocessor file on the fly
   #print " ".join(args)
   subprocess.call(args)
 else: #use precomputed preprocessor files
-  if isData:
-    preprocessorFile = "$CMSSW_BASE/python/CMGTools/TTHAnalysis/preProcFiles/MetType1_jec_Summer15_50nsV2_MC_GT_74X_dataRun2_Prompt_v1_residuals_False.py"
-  else:
-    preprocessorFile = "$CMSSW_BASE/python/CMGTools/TTHAnalysis/preProcFiles/MetType1_jec_Summer15_50nsV2_MC_GT_MCRUN2_74_V9A_residuals_False.py" 
-  print "Using preprocessor file %s"%preprocessorFile
+  preprocessorDir = "$CMSSW_BASE/python/CMGTools/TTHAnalysis/preProcFiles"
+  preprocessorFile = "/".join([preprocessorDir, preprocessorFilename])
+
+print "Using preprocessorFile", preprocessorFile
 
 from PhysicsTools.Heppy.utils.cmsswPreprocessor import CmsswPreprocessor
 preprocessor = CmsswPreprocessor(preprocessorFile)
