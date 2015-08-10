@@ -154,8 +154,8 @@ sequence = cfg.Sequence(
         treeProducer,
         ])
 
-removeResiduals = False
 isData = True
+removeResiduals = False
 bx = '50ns'
 #bx = '25ns'
 
@@ -214,8 +214,8 @@ if isData:
   assert bx!='25ns', "Has the future arrived?"
   mcGT = 'XXX'
   dataGT= '74X_dataRun2_Prompt_v1' #50ns data
-  jetAna.mcGT     = "XXX"
-  jetAna.dataGT   = "Summer15_50nsV2_DATA"
+#  jetAna.mcGT     = "Summer15_50nsV2"
+#  jetAna.dataGT   = "Summer15_50nsV2"
   jecDBFile = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_50nsV2_DATA.db'
   jecEra    = 'Summer15_50nsV2_DATA'
   eventFlagsAna.processName = 'RECO'
@@ -229,18 +229,18 @@ else: #simulation
 #    jecEra    = 'Summer15_V5_MC'
     mcGT= 'MCRUN2_74_V9A' #50ns MC
     dataGT= 'XXX' #50ns Data
-    jetAna.mcGT     = "Summer15_50nsV2_MC"
+#    jetAna.mcGT     = "Summer15_50nsV2"
 #    jetAna.mcGT     = "Summer15_V5_p6_MC"
-    jetAna.dataGT   = "XXX"#"Summer15_50nsV2_DATA"
+#    jetAna.dataGT   = "XXX"#"Summer15_50nsV2"
   if bx=='25ns':
     jecDBFile = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_25nsV2_MC.db'
 #    jecDBFile = ''
     jecEra    = 'Summer15_25nsV2_MC' 
 #    jecEra    = '' 
     mcGT= 'MCRUN2_74_V9' #25ns MC
-    jetAna.mcGT     = "Summer15_25nsV2_MC"
+#    jetAna.mcGT     = "Summer15_25nsV2"
 #    jetAna.mcGT     = "MCRUN2_74_V9"
-    jetAna.dataGT   = "XXX" #"Summer15_25nsV2_DATA"
+#    jetAna.dataGT   = "XXX" #"Summer15_25nsV2"
 
 GT = dataGT if isData else mcGT
 preprocessorFilename = "MetType1_jec_%s_GT_%s_residuals_%s.py"%(jecEra, GT, str(not(removeResiduals)))
