@@ -8,7 +8,7 @@ from PhysicsTools.PythonAnalysis import *
 small = False
 
 edmCollections = { \
-  "slimmedMETs"                       :("vector<pat::MET>",      "slimmedMETs"                         , "",        "PAT"   )  ,
+  "slimmedMETs"                       :("vector<pat::MET>",      "slimmedMETs"                         , "",        "RECO"   )  ,
 #  "patJets"                           :("vector<pat::Jet>",      "patJets"                             , "",        "RERUN" )  ,
 #  "patJetsResDown"                    :("vector<pat::Jet>",      "patJetsResDown"                      , "",        "RERUN" )  ,
 #  "patJetsResUp"                      :("vector<pat::Jet>",      "patJetsResUp"                        , "",        "RERUN" )  ,
@@ -23,13 +23,14 @@ edmCollections = { \
 #  "shiftedPatJetResDown"              :("vector<pat::Jet>",      "shiftedPatJetResDown"                , "",        "RERUN" )  ,
 #  "shiftedPatJetResUp"                :("vector<pat::Jet>",      "shiftedPatJetResUp"                  , "",        "RERUN" )  ,
 #  "patPFMetT1Txy"                     :("vector<pat::MET>",      "patPFMetT1Txy"                       , "",        "RERUN" )  ,
-#  "slimmedMETsRERUN"                  :("vector<pat::MET>",      "slimmedMETs"                         , "",        "RERUN" ),
+  "slimmedMETsRERUN"                  :("vector<pat::MET>",      "slimmedMETs"                         , "",        "RERUN" ),
+  "slimmedMETsNoHFRERUN"                  :("vector<pat::MET>",      "slimmedMETsNoHF"                         , "",        "RERUN" ),
 }
 
 handles={k:Handle(edmCollections[k][0]) for k in edmCollections.keys()}
 
-#files = ["../../TTHAnalysis/cfg/Test/SingleMu_Run2015B_6/cmsswPreProcessing.root"]
-files = ["/afs/cern.ch/user/s/schoef/eos/cms/store/data/Run2015B/SingleMu/MINIAOD/PromptReco-v1/000/250/987/00000/787E4EA9-A525-E511-9647-02163E011DE5.root"]
+#files = ["/afs/hephy.at/user/r/rschoefbeck/CMS/cmssw/CMSSW_7_4_6_patch1/src/corMETMiniAOD_data_noResiduals.root"]
+files = ["/afs/hephy.at/user/r/rschoefbeck/CMS/cmssw/CMSSW_7_4_6_patch1/src/corMETMiniAOD_data_residuals.root"]
 
 events = Events(files)
 events.toBegin()
@@ -37,8 +38,10 @@ products={}
 missingCollections=[]
 print "Number of events:",events.size()
 
-for nev in range(events.size()):
-  if nev%100==0:print nev,'/',events.size()
+nevents = min(3, events.size())
+
+for nev in range(nevents):
+  if nev%100==0:print nev,'/',nevents
   events.to(nev)
   eaux=events.eventAuxiliary()
   run=eaux.run()           
@@ -67,9 +70,15 @@ for nev in range(events.size()):
 #  print
   
   oldMET = products["slimmedMETs"][0]  
-#  newMET = products["slimmedMETsRERUN"][0]  
-  print "old raw MET", oldMET.uncorrectedPt()
-  print "old type1 MET", oldMET.pt()
+  newMET = products["slimmedMETsRERUN"][0] 
+  newMETNoHF = products["slimmedMETsNoHFRERUN"][0] 
+  print  
+  print "mAOD raw         MET", oldMET.uncorrectedPt()
+  print "mAOD type1       MET", oldMET.pt()
+  print "RERUN raw        MET", newMET.uncorrectedPt()
+  print "RERUN type1      MET", newMET.pt()
+  print "RERUN NOHF raw   MET", newMETNoHF.uncorrectedPt()
+  print "RERUN NOHF type1 MET", newMETNoHF.pt()
 #  print "new raw MET", newMET.uncorrectedPt()
 #  print "new type1 MET", newMET.pt()
 #  print "should be ...", sqrt((newMET.uncorrectedPt()*cos(newMET.uncorrectedPhi()) + dx)**2 + (newMET.uncorrectedPt()*sin(newMET.uncorrectedPhi()) + dy)**2)
