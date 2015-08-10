@@ -154,15 +154,15 @@ sequence = cfg.Sequence(
         treeProducer,
         ])
 
-removeResiduals = True
-isData = False
-#bx = '50ns'
-bx = '25ns'
+removeResiduals = False
+isData = True
+bx = '50ns'
+#bx = '25ns'
 
 if isData:
   test="data"
 else:
-  if bx=='50ns':test=4
+  if bx=='50ns':test=3
   if bx=='25ns':test=5
 
 #if True or getHeppyOption("loadSamples"):
@@ -181,9 +181,10 @@ if getHeppyOption("loadSamples"):
             comp.fineSplitFactor = 10
             comp.files = comp.files[:1]
   elif test==3:
-    # run all components (1 thread per component).
+    # RelVal test 
+    selectedComponents=[ZMM_746p1_bx50]
     for comp in selectedComponents:
-      comp.splitFactor = len(comp.files)
+      comp.splitFactor = 1 
   elif test==4:
 #    TTJets_50ns.fineSplitFactor = 4
 #    selectedComponents = [TTJets_50ns]
@@ -193,10 +194,10 @@ if getHeppyOption("loadSamples"):
       comp.files = comp.files[:1]
       comp.splitFactor = len(comp.files)
   elif test==5:
-    selectedComponents = [TTJets]
+    selectedComponents = [ZMM_746p1_bx25]
     for comp in selectedComponents:
-      comp.files = comp.files[:1]
-      comp.splitFactor = len(comp.files)
+      comp.files = comp.files[:]
+      comp.splitFactor = 1 
 
   elif test=="data":
     from CMGTools.RootTools.samples.samples_13TeV_DATA2015 import *
@@ -211,25 +212,34 @@ if getHeppyOption("loadSamples"):
 
 if isData:
   assert bx!='25ns', "Has the future arrived?"
-  GT= '74X_dataRun2_Prompt_v1' #50ns data
-#  jetAna.mcGT     = "Summer15_50nsV2_MC"
+  mcGT = 'XXX'
+  dataGT= '74X_dataRun2_Prompt_v1' #50ns data
   jetAna.mcGT     = "XXX"
   jetAna.dataGT   = "Summer15_50nsV2_DATA"
+  jecDBFile = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_50nsV2_DATA.db'
+  jecEra    = 'Summer15_50nsV2_DATA'
   eventFlagsAna.processName = 'RECO'
-  metAnaDef.metCollection   = ("slimmedMETs","", "RECO") 
-else:
+  metAnaDef.metCollection   = ("slimmedMETs","", "RECO")
+  jetAna.applyL2L3Residual = False if removeResiduals else 'Data' 
+else: #simulation
   if bx=='50ns':
     jecDBFile = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_50nsV2_MC.db'
+#    jecDBFile = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_V5_p6_MC.db'
     jecEra    = 'Summer15_50nsV2_MC'
+#    jecEra    = 'Summer15_V5_MC'
     mcGT= 'MCRUN2_74_V9A' #50ns MC
-    dataGT= 'Summer15_50nsV2_DATA' #50ns Data
+    dataGT= 'XXX' #50ns Data
     jetAna.mcGT     = "Summer15_50nsV2_MC"
-    jetAna.dataGT   = "Summer15_50nsV2_DATA"
+#    jetAna.mcGT     = "Summer15_V5_p6_MC"
+    jetAna.dataGT   = "XXX"#"Summer15_50nsV2_DATA"
   if bx=='25ns':
     jecDBFile = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_25nsV2_MC.db'
+#    jecDBFile = ''
     jecEra    = 'Summer15_25nsV2_MC' 
+#    jecEra    = '' 
     mcGT= 'MCRUN2_74_V9' #25ns MC
     jetAna.mcGT     = "Summer15_25nsV2_MC"
+#    jetAna.mcGT     = "MCRUN2_74_V9"
     jetAna.dataGT   = "XXX" #"Summer15_25nsV2_DATA"
 
 GT = dataGT if isData else mcGT

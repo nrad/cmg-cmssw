@@ -31,6 +31,10 @@ handles={k:Handle(edmCollections[k][0]) for k in edmCollections.keys()}
 
 #files = ["/afs/hephy.at/user/r/rschoefbeck/CMS/cmssw/CMSSW_7_4_6_patch1/src/corMETMiniAOD_data_noResiduals.root"]
 files = ["/afs/hephy.at/user/r/rschoefbeck/CMS/cmssw/CMSSW_7_4_6_patch1/src/corMETMiniAOD_data_residuals.root"]
+#files = ["../../TTHAnalysis/cfg/Test/SingleMu_Run2015B_6/cmsswPreProcessing.root"]
+#files = ["/afs/cern.ch/user/s/schoef/eos/cms/store/data/Run2015B/SingleMu/MINIAOD/PromptReco-v1/000/250/987/00000/787E4EA9-A525-E511-9647-02163E011DE5.root"]
+#files=['/afs/cern.ch/work/s/schoef/CMS/CMSSW_7_4_7/src/CMGTools/TTHAnalysis/cfg/MetType1_jec_Summer15_50nsV2_DATA_GT_74X_dataRun2_Prompt_v1_residuals_False.root']
+#files=['/afs/cern.ch/work/s/schoef/CMS/CMSSW_7_4_7/src/CMGTools/TTHAnalysis/cfg/MetType1_jec_Summer15_50nsV2_DATA_GT_74X_dataRun2_Prompt_v1_residuals_True.root']
 
 events = Events(files)
 events.toBegin()
@@ -79,7 +83,3 @@ for nev in range(nevents):
   print "RERUN type1      MET", newMET.pt()
   print "RERUN NOHF raw   MET", newMETNoHF.uncorrectedPt()
   print "RERUN NOHF type1 MET", newMETNoHF.pt()
-#  print "new raw MET", newMET.uncorrectedPt()
-#  print "new type1 MET", newMET.pt()
-#  print "should be ...", sqrt((newMET.uncorrectedPt()*cos(newMET.uncorrectedPhi()) + dx)**2 + (newMET.uncorrectedPt()*sin(newMET.uncorrectedPhi()) + dy)**2)
- 
