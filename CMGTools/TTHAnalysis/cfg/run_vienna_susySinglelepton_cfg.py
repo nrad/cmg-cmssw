@@ -155,7 +155,7 @@ sequence = cfg.Sequence(
         ])
 
 isData = False
-removeResiduals = False
+removeResiduals = True
 #bx = '50ns'
 bx = '25ns'
 
@@ -194,17 +194,18 @@ if getHeppyOption("loadSamples"):
       comp.files = comp.files[:1]
       comp.splitFactor = len(comp.files)
   elif test==5:
-    selectedComponents = [DYJetsToLL_M50]
+#    selectedComponents = [DYJetsToLL_M50]
+    selectedComponents = [WJetsToLNu_HT600to800,WJetsToLNu_HT800to1200,WJetsToLNu_HT1200to2500,WJetsToLNu_HT2500toInf]
     for comp in selectedComponents:
-      comp.files = comp.files[:1]
-      comp.splitFactor = 1 
+      comp.files = comp.files[:]
+      comp.splitFactor = len(comp.files) 
 
   elif test=="data":
     from CMGTools.RootTools.samples.samples_13TeV_DATA2015 import *
     selectedComponents = [ SingleMuon_Run2015B ]
     for comp in selectedComponents:
         comp.splitFactor = 1
-        comp.files = comp.files[:]
+        comp.files = comp.files[:1]
         comp.isMC = False
         comp.isData = True
 #        comp.json = "$CMSSW_BASE/src/CMGTools/TTHAnalysis/data/json/Cert_246908-251883_13TeV_PromptReco_Collisions15_JSON_v2.json"

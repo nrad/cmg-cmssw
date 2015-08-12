@@ -1256,7 +1256,7 @@ process.patPFMetNoHF = cms.EDProducer("PATMETProducer",
 
     ),
     genMETSource = cms.InputTag("genMetExtractor"),
-    metSource = cms.InputTag("pfMet"),
+    metSource = cms.InputTag("pfMetNoHF"),
     muonSource = cms.InputTag("muons"),
     resolutions = cms.PSet(
 
@@ -2096,7 +2096,7 @@ process.patPFMetTxyCorrNoHF = cms.EDProducer("MultShiftMETcorrInputProducer",
             type = cms.int32(7),
             varType = cms.int32(0)
         )),
-    srcPFlow = cms.InputTag("packedPFCandidates"),
+    srcPFlow = cms.InputTag("noHFCands"),
     vertexCollection = cms.InputTag("offlineSlimmedPrimaryVertices")
 )
 
@@ -6316,7 +6316,7 @@ process.es_hardcode = cms.ESSource("HcalHardcodeCalibrations",
     toGet = cms.untracked.vstring('GainWidths')
 )
 
-import os
+
 process.jec = cms.ESSource("PoolDBESSource",
     DBParameters = cms.PSet(
         authenticationPath = cms.untracked.string(''),
@@ -6330,7 +6330,7 @@ process.jec = cms.ESSource("PoolDBESSource",
         idleConnectionCleanupPeriod = cms.untracked.int32(10),
         messageLevel = cms.untracked.int32(0)
     ),
-    connect = cms.string('sqlite_file:'+os.path.expandvars('$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_25nsV2_MC.db')),
+    connect = cms.string('sqlite_file:/afs/cern.ch/work/s/schoef/CMS/CMSSW_7_4_7/src/CMGTools/RootTools/data/jec/Summer15_25nsV2_MC.db'),
     toGet = cms.VPSet(cms.PSet(
         label = cms.untracked.string('AK4PF'),
         record = cms.string('JetCorrectionsRecord'),
