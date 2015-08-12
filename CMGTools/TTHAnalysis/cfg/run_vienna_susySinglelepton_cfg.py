@@ -196,7 +196,7 @@ if getHeppyOption("loadSamples"):
   elif test==5:
     selectedComponents = [DYJetsToLL_M50]
     for comp in selectedComponents:
-      comp.files = comp.files[:]
+      comp.files = comp.files[:1]
       comp.splitFactor = 1 
 
   elif test=="data":
