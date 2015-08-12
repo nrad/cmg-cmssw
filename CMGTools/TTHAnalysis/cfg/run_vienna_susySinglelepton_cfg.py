@@ -154,10 +154,10 @@ sequence = cfg.Sequence(
         treeProducer,
         ])
 
-isData = True
+isData = False
 removeResiduals = False
-bx = '50ns'
-#bx = '25ns'
+#bx = '50ns'
+bx = '25ns'
 
 if isData:
   test="data"
@@ -194,7 +194,7 @@ if getHeppyOption("loadSamples"):
       comp.files = comp.files[:1]
       comp.splitFactor = len(comp.files)
   elif test==5:
-    selectedComponents = [ZMM_746p1_bx25]
+    selectedComponents = [DYJetsToLL_M50]
     for comp in selectedComponents:
       comp.files = comp.files[:]
       comp.splitFactor = 1 
