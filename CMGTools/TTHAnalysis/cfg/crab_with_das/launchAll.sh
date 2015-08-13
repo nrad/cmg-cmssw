@@ -1,4 +1,33 @@
 #!/bin/sh
+Jet_Run2015B
+JetHT_Run2015B
+HTMHT_Run2015B
+MET_Run2015B
+SingleElectron_Run2015B
+SingleMu_Run2015B
+SingleMuon_Run2015B
+SinglePhoton_Run2015B
+EGamma_Run2015B
+DoubleEG_Run2015B
+MuonEG_Run2015B
+DoubleMuon_Run2015B
+minBias_Run2015B
+zeroBias_Run2015B
+Jet_Run2015B_17Jul
+JetHT_Run2015B_17Jul
+HTMHT_Run2015B_17Jul
+MET_Run2015B_17Jul
+SingleElectron_Run2015B_17Jul
+SingleMu_Run2015B_17Jul
+SingleMuon_Run2015B_17Jul
+SinglePhoton_Run2015B_17Jul
+EGamma_Run2015B_17Jul
+DoubleEG_Run2015B_17Jul
+MuonEG_Run2015B_17Jul
+DoubleMuon_Run2015B_17Jul
+minBias_Run2015B_17Jul
+zeroBias_Run2015B_17Jul
+
 #python launch.py --unitsPerJob=1 --production_label="MC25ns" TTJets
 #python launch.py --unitsPerJob=1 --production_label="MC25ns" TToLeptons_tch
 #python launch.py --unitsPerJob=1 --production_label="MC25ns" TToLeptons_sch
@@ -9,11 +38,11 @@
 #python launch.py --unitsPerJob=1 --production_label="MC25ns" WJetsToLNu_HT200to400
 #python launch.py --unitsPerJob=1 --production_label="MC25ns" WJetsToLNu_HT400to600
 #python launch.py --unitsPerJob=1 --production_label="MC25ns" WJetsToLNu_HT600toInf
-python launch.py --unitsPerJob=1 --production_label="MC25ns_150812" WJetsToLNu_HT600to800
-#python launch.py --unitsPerJob=1 --production_label="MC25ns_150812" WJetsToLNu_HT800to1200
-#python launch.py --unitsPerJob=1 --production_label="MC25ns_150812" WJetsToLNu_HT1200to2500
-#python launch.py --unitsPerJob=1 --production_label="MC25ns_150812" WJetsToLNu_HT2500toInf
-#python launch.py --unitsPerJob=1 --production_label="MC25ns_150812" DYJetsToLL_M50
+#python launch.py --unitsPerJob=1 --production_label="MC25ns_150813" WJetsToLNu_HT600to800
+#python launch.py --unitsPerJob=1 --production_label="MC25ns_150813" WJetsToLNu_HT800to1200
+#python launch.py --unitsPerJob=1 --production_label="MC25ns_150813" WJetsToLNu_HT1200to2500
+#python launch.py --unitsPerJob=1 --production_label="MC25ns_150813" WJetsToLNu_HT2500toInf
+#python launch.py --unitsPerJob=1 --production_label="MC25ns_150813" DYJetsToLL_M50
 #python launch.py --unitsPerJob=1 --production_label="MC25ns" DYJetsToLL_M10to50
 #python launch.py --unitsPerJob=1 --production_label="MC25ns" DYJetsToLL_M50_PUflat1050
 #python launch.py --unitsPerJob=1 --production_label="MC25ns" DYJetsToLL_M50_HT100to200
