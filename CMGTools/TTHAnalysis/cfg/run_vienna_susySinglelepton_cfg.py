@@ -154,10 +154,10 @@ sequence = cfg.Sequence(
         treeProducer,
         ])
 
-isData = True
-removeResiduals = False
-bx = '50ns'
-#bx = '25ns'
+isData = False
+removeResiduals = True
+#bx = '50ns'
+bx = '25ns'
 
 if isData:
   test="data"
