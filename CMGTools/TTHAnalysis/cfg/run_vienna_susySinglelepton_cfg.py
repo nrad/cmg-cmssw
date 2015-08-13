@@ -194,10 +194,10 @@ if getHeppyOption("loadSamples"):
       comp.files = comp.files[:1]
       comp.splitFactor = len(comp.files)
   elif test==5:
-#    selectedComponents = [DYJetsToLL_M50]
-    selectedComponents = [WJetsToLNu_HT600to800,WJetsToLNu_HT800to1200,WJetsToLNu_HT1200to2500,WJetsToLNu_HT2500toInf]
+    selectedComponents = [DYJetsToLL_M50]
+#    selectedComponents = [WJetsToLNu_HT600to800,WJetsToLNu_HT800to1200,WJetsToLNu_HT1200to2500,WJetsToLNu_HT2500toInf]
     for comp in selectedComponents:
-      comp.files = comp.files[:]
+      comp.files = comp.files[:1]
       comp.splitFactor = len(comp.files) 
 
   elif test=="data":
