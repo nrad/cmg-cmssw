@@ -1150,7 +1150,11 @@ class RunMETCorrectionsAndUncertainties(ConfigToolBase):
               getattr(process,"patJetCorrFactors").levels = levels
             if postfix !="":
                 setattr(process, "patJetCorrFactors"+postfix, getattr(process,"patJetCorrFactors").clone() )
-            
+            if self._parameters["runOnData"].value:
+                levels = getattr(process,"patJetCorrFactors"+postfix).levels
+                if "L2L3Residual" not in levels: levels.append("L2L3Residual")
+                getattr(process,"patJetCorrFactors"+postfix).levels = levels
+                       
             getattr(process,"patJetCorrFactors"+postfix).src=cms.InputTag(jetColName)
             getattr(process,"patJetCorrFactors"+postfix).primaryVertices= cms.InputTag("offlineSlimmedPrimaryVertices")
 
