@@ -1,4 +1,6 @@
 import FWCore.ParameterSet.Config as cms
+import os
+
 
 process = cms.Process("RERUN")
 
@@ -6330,7 +6332,7 @@ process.jec = cms.ESSource("PoolDBESSource",
         idleConnectionCleanupPeriod = cms.untracked.int32(10),
         messageLevel = cms.untracked.int32(0)
     ),
-    connect = cms.string('sqlite_file:/afs/cern.ch/work/s/schoef/CMS/CMSSW_7_4_7/src/CMGTools/RootTools/data/jec/Summer15_25nsV2_MC.db'),
+    connect = cms.string('sqlite_file:'+os.path.expandvars('$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_25nsV2_MC.db')),
     toGet = cms.VPSet(cms.PSet(
         label = cms.untracked.string('AK4PF'),
         record = cms.string('JetCorrectionsRecord'),
