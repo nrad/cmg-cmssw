@@ -127,6 +127,18 @@ triggerFlagsAna.triggerBits = {
         'mumuNoiso' : triggers_mumu_noniso,
         'mumuSS' : triggers_mumu_ss,
         'mumuHT' : triggers_mumu_ht,
+#
+        'MET170_pres'      :triggers_MET170_pres   , 
+        'MET250'           :triggers_MET250        ,
+        'MET90nc'          :triggers_MET90nc       ,
+        'MET120nc'         :triggers_MET120nc      ,
+        'MET90'            :triggers_MET90MHT90    ,
+        'MET120'           :triggers_MET120MHT120  ,
+        'PhysRates'        :triggers_PhysRate      ,
+
+
+
+
         }
 
 # Tree Producer
