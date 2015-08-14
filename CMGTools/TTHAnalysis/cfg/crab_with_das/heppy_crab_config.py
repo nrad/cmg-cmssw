@@ -31,7 +31,7 @@ for l in p.stdout.readlines():
     fields = l[:-1].split()
     if len(fields)==3:
       user = fields[-1]
-config.Data.outLFNDirBase = '/store/user/' + user
+config.Data.outLFNDirBase = '/store/user/' + user+'/cmgTuples/'
 config.Data.publication = False
 #config.Data.primaryDataset = 'MyTest'
 #config.Data.totalUnits = 5

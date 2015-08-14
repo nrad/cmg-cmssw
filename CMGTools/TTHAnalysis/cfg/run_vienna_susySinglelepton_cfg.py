@@ -211,7 +211,7 @@ if getHeppyOption("loadSamples"):
     selectedComponents = [DYJetsToLL_M50]
 #    selectedComponents = [WJetsToLNu_HT600to800,WJetsToLNu_HT800to1200,WJetsToLNu_HT1200to2500,WJetsToLNu_HT2500toInf]
     for comp in selectedComponents:
-      comp.files = comp.files[:1]
+      comp.files = comp.files[:]
       comp.splitFactor = len(comp.files) 
 
   elif test=="data":
@@ -219,7 +219,8 @@ if getHeppyOption("loadSamples"):
     selectedComponents = [ SingleMuon_Run2015B ]
     for comp in selectedComponents:
         comp.splitFactor = 1
-        comp.files = comp.files[:1]
+#        comp.files = ["root://eoscms.cern.ch//store/data/Run2015B/DoubleEG/MINIAOD/PromptReco-v1/000/251/096/00000/8A2D533C-5626-E511-AF3C-02163E011FAB.root"]
+        comp.files = comp.files[:1] 
         comp.isMC = False
         comp.isData = True
 #        comp.json = "$CMSSW_BASE/src/CMGTools/TTHAnalysis/data/json/Cert_246908-251883_13TeV_PromptReco_Collisions15_JSON_v2.json"
