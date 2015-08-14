@@ -1,32 +1,32 @@
 #!/bin/sh
-Jet_Run2015B
-JetHT_Run2015B
-HTMHT_Run2015B
-MET_Run2015B
-SingleElectron_Run2015B
-SingleMu_Run2015B
-SingleMuon_Run2015B
-SinglePhoton_Run2015B
-EGamma_Run2015B
-DoubleEG_Run2015B
-MuonEG_Run2015B
-DoubleMuon_Run2015B
-minBias_Run2015B
-zeroBias_Run2015B
-Jet_Run2015B_17Jul
-JetHT_Run2015B_17Jul
-HTMHT_Run2015B_17Jul
-MET_Run2015B_17Jul
-SingleElectron_Run2015B_17Jul
-SingleMu_Run2015B_17Jul
-SingleMuon_Run2015B_17Jul
-SinglePhoton_Run2015B_17Jul
-EGamma_Run2015B_17Jul
-DoubleEG_Run2015B_17Jul
-MuonEG_Run2015B_17Jul
-DoubleMuon_Run2015B_17Jul
-minBias_Run2015B_17Jul
-zeroBias_Run2015B_17Jul
+python launch.py --unitsPerJob=1 --production_label="Summer15_50nsV4" Jet_Run2015B
+python launch.py --unitsPerJob=1 --production_label="Summer15_50nsV4" JetHT_Run2015B
+python launch.py --unitsPerJob=1 --production_label="Summer15_50nsV4" HTMHT_Run2015B
+python launch.py --unitsPerJob=1 --production_label="Summer15_50nsV4" MET_Run2015B
+python launch.py --unitsPerJob=1 --production_label="Summer15_50nsV4" SingleElectron_Run2015B
+python launch.py --unitsPerJob=1 --production_label="Summer15_50nsV4" SingleMu_Run2015B
+python launch.py --unitsPerJob=1 --production_label="Summer15_50nsV4" SingleMuon_Run2015B
+python launch.py --unitsPerJob=1 --production_label="Summer15_50nsV4" SinglePhoton_Run2015B
+python launch.py --unitsPerJob=1 --production_label="Summer15_50nsV4" EGamma_Run2015B
+python launch.py --unitsPerJob=1 --production_label="Summer15_50nsV4" DoubleEG_Run2015B
+python launch.py --unitsPerJob=1 --production_label="Summer15_50nsV4" MuonEG_Run2015B
+python launch.py --unitsPerJob=1 --production_label="Summer15_50nsV4" DoubleMuon_Run2015B
+python launch.py --unitsPerJob=1 --production_label="Summer15_50nsV4" minBias_Run2015B
+python launch.py --unitsPerJob=1 --production_label="Summer15_50nsV4" zeroBias_Run2015B
+python launch.py --unitsPerJob=1 --production_label="Summer15_50nsV4" Jet_Run2015B_17Jul
+python launch.py --unitsPerJob=1 --production_label="Summer15_50nsV4" JetHT_Run2015B_17Jul
+python launch.py --unitsPerJob=1 --production_label="Summer15_50nsV4" HTMHT_Run2015B_17Jul
+python launch.py --unitsPerJob=1 --production_label="Summer15_50nsV4" MET_Run2015B_17Jul
+python launch.py --unitsPerJob=1 --production_label="Summer15_50nsV4" SingleElectron_Run2015B_17Jul
+python launch.py --unitsPerJob=1 --production_label="Summer15_50nsV4" SingleMu_Run2015B_17Jul
+python launch.py --unitsPerJob=1 --production_label="Summer15_50nsV4" SingleMuon_Run2015B_17Jul
+python launch.py --unitsPerJob=1 --production_label="Summer15_50nsV4" SinglePhoton_Run2015B_17Jul
+python launch.py --unitsPerJob=1 --production_label="Summer15_50nsV4" EGamma_Run2015B_17Jul
+python launch.py --unitsPerJob=1 --production_label="Summer15_50nsV4" DoubleEG_Run2015B_17Jul
+python launch.py --unitsPerJob=1 --production_label="Summer15_50nsV4" MuonEG_Run2015B_17Jul
+python launch.py --unitsPerJob=1 --production_label="Summer15_50nsV4" DoubleMuon_Run2015B_17Jul
+python launch.py --unitsPerJob=1 --production_label="Summer15_50nsV4" minBias_Run2015B_17Jul
+python launch.py --unitsPerJob=1 --production_label="Summer15_50nsV4" zeroBias_Run2015B_17Jul
 
 #python launch.py --unitsPerJob=1 --production_label="MC25ns" TTJets
 #python launch.py --unitsPerJob=1 --production_label="MC25ns" TToLeptons_tch

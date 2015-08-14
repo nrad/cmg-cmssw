@@ -213,12 +213,12 @@ if getHeppyOption("loadSamples"):
 
 if isData:
   assert bx!='25ns', "Has the future arrived?"
-  jecDBFile = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_50nsV3_DATA.db'
-  jecEra    = 'Summer15_50nsV3_DATA'
+  jecDBFile = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_50nsV4_DATA.db'
+  jecEra    = 'Summer15_50nsV4_DATA'
   mcGT = 'XXX'
   dataGT= '74X_dataRun2_Prompt_v1' #50ns data
-  jetAna.mcGT     = "Summer15_50nsV3_MC"
-  jetAna.dataGT   = "Summer15_50nsV3_DATA"
+  jetAna.mcGT     = "Summer15_50nsV4_MC"
+  jetAna.dataGT   = "Summer15_50nsV4_DATA"
   eventFlagsAna.processName = 'RECO'
   metAnaDef.metCollection   = ("slimmedMETs","", "RECO")
   jetAna.applyL2L3Residual = False if removeResiduals else 'Data' 
