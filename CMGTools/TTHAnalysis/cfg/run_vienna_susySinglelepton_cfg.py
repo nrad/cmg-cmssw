@@ -37,7 +37,7 @@ elif isolation == "relIso03":
     lepAna.loose_muon_relIso = 0.5
 
 # --- LEPTON SKIMMING ---
-ttHLepSkim.minLeptons = 1
+ttHLepSkim.minLeptons = 0
 ttHLepSkim.maxLeptons = 999
 #LepSkim.idCut  = ""
 #LepSkim.ptCuts = []
@@ -135,10 +135,12 @@ triggerFlagsAna.triggerBits = {
         'MET90'            :triggers_MET90MHT90    ,
         'MET120'           :triggers_MET120MHT120  ,
         'PhysRates'        :triggers_PhysRate      ,
-
-
-
-
+        'DiPFJet140': ["HLT_DiPFJetAve140_v*"],
+        'DiPFJet200': ["HLT_DiPFJetAve200_v*"],
+        'DiPFJet260': ["HLT_DiPFJetAve260_v*"],
+        'DiPFJet320': ["HLT_DiPFJetAve320_v*"],
+        'DiPFJet400': ["HLT_DiPFJetAve400_v*"],
+        'DiPFJet500': ["HLT_DiPFJetAve500_v*"],
         }
 
 # Tree Producer
