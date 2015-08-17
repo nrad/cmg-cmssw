@@ -112,9 +112,10 @@ def getN(f):
 def copy(source, target, pretend=True):
   if not pretend:
     if options.verbose: subprocess.call(["echo", cpCMD, source, target])
-    subprocess.call([cpCMD, source, target])
+    return subprocess.call([cpCMD, source, target])
   else:
-    subprocess.call(["echo", cpCMD, source, target])
+    return subprocess.call(["echo", cpCMD, source, target])
+  return 0
 
 if options.suggest:
   walkPath(options.source)
@@ -137,16 +138,31 @@ else:
     os.makedirs(chunkDir)
     lf = getAbsDPMPath(logFile['path'])
     tlf = '/'.join([chunkDir, logFile['path'].split('/')[-1]]) 
-    copy(lf, tlf, pretend=pretend)
+    cp_lf=copy(lf, tlf, pretend=pretend)
     tf = getAbsDPMPath(treeFile['path'])
+    if not cp_lf==0:
+      print "Could not copy log file %s to %s! Cleaning %s."%(lf, tlf,chunkDir)
+      shutil.rmtree(chunkDir)
+      continue
 
     targetTreeFileName =  '_'.join(treeFile['path'].split('/')[-1].replace('.root','').split('_')[:-1])+'.root' #removing the _1 from tree_1.root
     ttf='/'.join([chunkDir, targetTreeFileName])
-    copy(tf, ttf, pretend=pretend)
-    print "Unpacking log: %s"%tlf
-    subprocess.call(['tar','-xzf', tlf, '-C', chunkDir, '--strip', '1'])
+    cp_tf=copy(tf, ttf, pretend=pretend)
+    if not cp_tf==0:
+      print "Could not copy tree file %s to %s! Cleaning %s."%(tf, ttf,chunkDir)
+      shutil.rmtree(chunkDir)
+      continue
+
+    if cp_lf==0 and cp_tf==0:
+      print "Unpacking log: %s"%tlf
+      tar_tlf = subprocess.call(['tar','-xzf', tlf, '-C', chunkDir, '--strip', '1'])
+      if not tar_tlf==0:
+        print "Could not untar %s! Cleaning %s."%(tlf, chunkDir)
+        shutil.rmtree(chunkDir)
+        continue
 
     preprocessorFile = chunkDir+'/cmsswPreProcessing.root' #remove preprocessor file
     if os.path.exists(preprocessorFile):os.remove(preprocessorFile)
     os.remove(tlf) #remove target log file
     print "... done."
+  print "Done with copying %i files"%len(pairs)
