@@ -198,6 +198,7 @@ if getHeppyOption("loadSamples"):
     # RelVal test 
     selectedComponents=[ZMM_746p1_bx50]
     for comp in selectedComponents:
+      comp.files=comp.files[:1]
       comp.splitFactor = 1 
   elif test==4:
 #    TTJets_50ns.fineSplitFactor = 4
@@ -216,7 +217,7 @@ if getHeppyOption("loadSamples"):
 
   elif test=="data":
     from CMGTools.RootTools.samples.samples_13TeV_DATA2015 import *
-    selectedComponents = [ SingleMuon_Run2015B ]
+    selectedComponents = [ DoubleMuon_Run2015B_17Jul ]
     for comp in selectedComponents:
         comp.splitFactor = 1
 #        comp.files = ["root://eoscms.cern.ch//store/data/Run2015B/DoubleEG/MINIAOD/PromptReco-v1/000/251/096/00000/8A2D533C-5626-E511-AF3C-02163E011FAB.root"]
@@ -235,12 +236,13 @@ if isData:
   jetAna.mcGT     = "Summer15_50nsV4_MC"
   jetAna.dataGT   = "Summer15_50nsV4_DATA"
   eventFlagsAna.processName = 'RECO'
-  metAnaDef.metCollection   = ("slimmedMETs","", "RECO")
+  metAnaDef.metCollection   = ("slimmedMETs","", "RECO") #for PromptReco
+#  metAnaDef.metCollection   = ("slimmedMETs","", "PAT") #for Jul17 rereco
   jetAna.applyL2L3Residual = False if removeResiduals else 'Data' 
 else: #simulation
   if bx=='50ns':
-    jecDBFile = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_50nsV2_MC.db'
-    jecEra    = 'Summer15_50nsV2_MC'
+    jecDBFile = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_50nsV3_MC.db'
+    jecEra    = 'Summer15_50nsV3_MC'
     mcGT= 'MCRUN2_74_V9A' #50ns MC
     dataGT= 'XXX' #50ns Data
     jetAna.mcGT     = "Summer15_50nsV3_MC"
