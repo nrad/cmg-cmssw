@@ -25,7 +25,7 @@
 ##python launch.py --unitsPerJob=1 --production_label="Summer15_50nsV4_take4" --lumiMask="json/Cert_246908-251883_13TeV_PromptReco_Collisions15_JSON_v2_17Jul2015.txt" EGamma_Run2015B_17Jul
 ##python launch.py --unitsPerJob=1 --production_label="Summer15_50nsV4_take4" --lumiMask="json/Cert_246908-251883_13TeV_PromptReco_Collisions15_JSON_v2_17Jul2015.txt" DoubleEG_Run2015B_17Jul
 ##python launch.py --unitsPerJob=1 --production_label="Summer15_50nsV4_take4" --lumiMask="json/Cert_246908-251883_13TeV_PromptReco_Collisions15_JSON_v2_17Jul2015.txt" MuonEG_Run2015B_17Jul
-python launch.py --unitsPerJob=1 --production_label="Summer15_50nsV4_take4" --lumiMask="json/Cert_246908-251883_13TeV_PromptReco_Collisions15_JSON_v2_17Jul2015.txt" DoubleMuon_Run2015B_17Jul
+#python launch.py --unitsPerJob=1 --production_label="Summer15_50nsV4_take4" --lumiMask="json/Cert_246908-251883_13TeV_PromptReco_Collisions15_JSON_v2_17Jul2015.txt" DoubleMuon_Run2015B_17Jul
 ##python launch.py --unitsPerJob=1 --production_label="Summer15_50nsV4_take4" --lumiMask="json/Cert_246908-251883_13TeV_PromptReco_Collisions15_JSON_v2_17Jul2015.txt" minBias_Run2015B_17Jul
 ##python launch.py --unitsPerJob=1 --production_label="Summer15_50nsV4_take4" --lumiMask="json/Cert_246908-251883_13TeV_PromptReco_Collisions15_JSON_v2_17Jul2015.txt" zeroBias_Run2015B_17Jul
 
@@ -94,7 +94,7 @@ python launch.py --unitsPerJob=1 --production_label="Summer15_50nsV4_take4" --lu
 #python launch.py --unitsPerJob=1 --production_label="had" WWTo2L2Nu_50ns
 #python launch.py --unitsPerJob=1 --production_label="had" ZZp8_50ns
 #python launch.py --unitsPerJob=1 --production_label="had" WZp8_50ns 
-#python launch.py --unitsPerJob=1 --production_label="had" DYJetsToLL_M50_HT100to200_50ns
+python launch.py --unitsPerJob=1 --production_label="had" DYJetsToLL_M50_HT100to200_50ns
 #python launch.py --unitsPerJob=1 --production_label="had" DYJetsToLL_M50_HT200to400_50ns
 #python launch.py --unitsPerJob=1 --production_label="had" DYJetsToLL_M50_HT400to600_50ns
 #python launch.py --unitsPerJob=1 --production_label="had" DYJetsToLL_M50_HT600toInf_50ns
