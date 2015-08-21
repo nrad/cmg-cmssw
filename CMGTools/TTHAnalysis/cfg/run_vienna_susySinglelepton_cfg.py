@@ -37,7 +37,7 @@ elif isolation == "relIso03":
     lepAna.loose_muon_relIso = 0.5
 
 # --- LEPTON SKIMMING ---
-ttHLepSkim.minLeptons = 0
+ttHLepSkim.minLeptons = 1
 ttHLepSkim.maxLeptons = 999
 #LepSkim.idCut  = ""
 #LepSkim.ptCuts = []
@@ -127,7 +127,11 @@ triggerFlagsAna.triggerBits = {
         'mumuNoiso' : triggers_mumu_noniso,
         'mumuSS' : triggers_mumu_ss,
         'mumuHT' : triggers_mumu_ht,
-#
+# ee
+        'ee_DZ': triggers_MT2_ee, 
+#mue
+        'mue':triggers_MT2_mue,
+#MET
         'MET170_pres'      :triggers_MET170_pres   , 
         'MET250'           :triggers_MET250        ,
         'MET90nc'          :triggers_MET90nc       ,
@@ -168,8 +172,8 @@ sequence = cfg.Sequence(
         treeProducer,
         ])
 
-isData = False
-removeResiduals = True
+isData = True
+removeResiduals = False
 bx = '50ns'
 #bx = '25ns'
 
@@ -236,8 +240,8 @@ if isData:
   jetAna.mcGT     = "Summer15_50nsV4_MC"
   jetAna.dataGT   = "Summer15_50nsV4_DATA"
   eventFlagsAna.processName = 'RECO'
-#  metAnaDef.metCollection   = ("slimmedMETs","", "RECO") #for PromptReco
-  metAnaDef.metCollection   = ("slimmedMETs","", "PAT") #for Jul17 rereco
+  metAnaDef.metCollection   = ("slimmedMETs","", "RECO") #for PromptReco
+#  metAnaDef.metCollection   = ("slimmedMETs","", "PAT") #for Jul17 rereco
   jetAna.applyL2L3Residual = False if removeResiduals else 'Data' 
 else: #simulation
   if bx=='50ns':
