@@ -128,6 +128,10 @@ triggerFlagsAna.triggerBits = {
         'mumuSS' : triggers_mumu_ss,
         'mumuHT' : triggers_mumu_ht,
 #
+        'Jet80MET90'       :triggers_Jet80MET90    ,
+        'Jet80MET120'      :triggers_Jet80MET120   ,
+        'MET120Mu5'        :triggers_MET120Mu5     ,
+
         'MET170_pres'      :triggers_MET170_pres   , 
         'MET250'           :triggers_MET250        ,
         'MET90nc'          :triggers_MET90nc       ,
