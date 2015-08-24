@@ -172,10 +172,10 @@ sequence = cfg.Sequence(
         treeProducer,
         ])
 
-isData = True
-removeResiduals = False
-bx = '50ns'
-#bx = '25ns'
+isData = False
+removeResiduals = True
+#bx = '50ns'
+bx = '25ns'
 
 if isData:
   test="data"
@@ -224,7 +224,7 @@ if getHeppyOption("loadSamples"):
     selectedComponents = [ DoubleMuon_Run2015B_17Jul ]
     for comp in selectedComponents:
         comp.splitFactor = 1
-#        comp.files = ["root://eoscms.cern.ch//store/data/Run2015B/DoubleEG/MINIAOD/PromptReco-v1/000/251/096/00000/8A2D533C-5626-E511-AF3C-02163E011FAB.root"]
+        comp.files = ["root://eoscms.cern.ch//store/data/Run2015B/SingleElectron/MINIAOD/PromptReco-v1/000/251/604/00000/AE22AF42-902A-E511-8A22-02163E012B30.root"]
         comp.files = comp.files[:1] 
         comp.isMC = False
         comp.isData = True
