@@ -1,33 +1,33 @@
 #!/bin/sh
-#python launch.py --unitsPerJob=1 --production_label="Data50ns" --lumiMask="json/Cert_246908-251883_13TeV_PromptReco_Collisions15_JSON_v2_Non17Jul2015.txt" Jet_Run2015B
-#python launch.py --unitsPerJob=1 --production_label="Data50ns" --lumiMask="json/Cert_246908-251883_13TeV_PromptReco_Collisions15_JSON_v2_Non17Jul2015.txt" JetHT_Run2015B
-#python launch.py --unitsPerJob=1 --production_label="Data50ns" --lumiMask="json/Cert_246908-251883_13TeV_PromptReco_Collisions15_JSON_v2_Non17Jul2015.txt" HTMHT_Run2015B
-#python launch.py --unitsPerJob=1 --production_label="Data50ns" --lumiMask="json/Cert_246908-251883_13TeV_PromptReco_Collisions15_JSON_v2_Non17Jul2015.txt" MET_Run2015B
-#python launch.py --unitsPerJob=1 --production_label="Data50ns" --lumiMask="json/Cert_246908-251883_13TeV_PromptReco_Collisions15_JSON_v2_Non17Jul2015.txt" SingleElectron_Run2015B
-#python launch.py --unitsPerJob=1 --production_label="Data50ns" --lumiMask="json/Cert_246908-251883_13TeV_PromptReco_Collisions15_JSON_v2_Non17Jul2015.txt" SingleMu_Run2015B
-#python launch.py --unitsPerJob=1 --production_label="Data50ns" --lumiMask="json/Cert_246908-251883_13TeV_PromptReco_Collisions15_JSON_v2_Non17Jul2015.txt" SingleMuon_Run2015B
-#python launch.py --unitsPerJob=1 --production_label="Data50ns" --lumiMask="json/Cert_246908-251883_13TeV_PromptReco_Collisions15_JSON_v2_Non17Jul2015.txt" SinglePhoton_Run2015B
-#python launch.py --unitsPerJob=1 --production_label="Data50ns" --lumiMask="json/Cert_246908-251883_13TeV_PromptReco_Collisions15_JSON_v2_Non17Jul2015.txt" EGamma_Run2015B
-#python launch.py --unitsPerJob=1 --production_label="Data50ns" --lumiMask="json/Cert_246908-251883_13TeV_PromptReco_Collisions15_JSON_v2_Non17Jul2015.txt" DoubleEG_Run2015B
-#python launch.py --unitsPerJob=1 --production_label="Data50ns" --lumiMask="json/Cert_246908-251883_13TeV_PromptReco_Collisions15_JSON_v2_Non17Jul2015.txt" MuonEG_Run2015B
-#python launch.py --unitsPerJob=1 --production_label="Data50ns" --lumiMask="json/Cert_246908-251883_13TeV_PromptReco_Collisions15_JSON_v2_Non17Jul2015.txt" DoubleMuon_Run2015B
-#python launch.py --unitsPerJob=1 --production_label="Data50ns" --lumiMask="json/Cert_246908-251883_13TeV_PromptReco_Collisions15_JSON_v2_Non17Jul2015.txt" minBias_Run2015B
-#python launch.py --unitsPerJob=1 --production_label="Data50ns" --lumiMask="json/Cert_246908-251883_13TeV_PromptReco_Collisions15_JSON_v2_Non17Jul2015.txt" zeroBias_Run2015B
+#python launch.py --unitsPerJob=1 --remoteDir="Data50ns_1l" --production_label="Data50ns"   Jet_Run2015B
+#python launch.py --unitsPerJob=1 --remoteDir="Data50ns_1l" --production_label="Data50ns"   JetHT_Run2015B
+#python launch.py --unitsPerJob=1 --remoteDir="Data50ns_1l" --production_label="Data50ns"   HTMHT_Run2015B
+#python launch.py --unitsPerJob=1 --remoteDir="Data50ns_1l" --production_label="Data50ns"   MET_Run2015B
+#python launch.py --unitsPerJob=1 --remoteDir="Data50ns_1l" --production_label="Data50ns"   SingleElectron_Run2015B
+#python launch.py --unitsPerJob=1 --remoteDir="Data50ns_1l" --production_label="Data50ns_2" SingleMu_Run2015B
+#python launch.py --unitsPerJob=1 --remoteDir="Data50ns_1l" --production_label="Data50ns_2" SingleMuon_Run2015B
+#python launch.py --unitsPerJob=1 --remoteDir="Data50ns_1l" --production_label="Data50ns"   SinglePhoton_Run2015B
+#python launch.py --unitsPerJob=1 --remoteDir="Data50ns_1l" --production_label="Data50ns"   EGamma_Run2015B
+#python launch.py --unitsPerJob=1 --remoteDir="Data50ns_1l" --production_label="Data50ns"   DoubleEG_Run2015B
+python launch.py --unitsPerJob=1 --remoteDir="Data50ns_1l" --production_label="Data50ns"   MuonEG_Run2015B
+#python launch.py --unitsPerJob=1 --remoteDir="Data50ns_1l" --production_label="Data50ns"   DoubleMuon_Run2015B
+#python launch.py --unitsPerJob=1 --remoteDir="Data50ns_1l" --production_label="Data50ns"   minBias_Run2015B
+#python launch.py --unitsPerJob=1 --remoteDir="Data50ns_1l" --production_label="Data50ns"   zeroBias_Run2015B
 
-#python launch.py --unitsPerJob=1 --remoteDir="Data50ns_1l"  --production_label="Data50ns" --lumiMask="json/Cert_246908-251883_13TeV_PromptReco_Collisions15_JSON_v2_17Jul2015.txt" Jet_Run2015B_17Jul
-#python launch.py --unitsPerJob=1 --remoteDir="Data50ns_1l"  --production_label="Data50ns" --lumiMask="json/Cert_246908-251883_13TeV_PromptReco_Collisions15_JSON_v2_17Jul2015.txt" JetHT_Run2015B_17Jul
-#python launch.py --unitsPerJob=1 --remoteDir="Data50ns_1l"  --production_label="Data50ns" --lumiMask="json/Cert_246908-251883_13TeV_PromptReco_Collisions15_JSON_v2_17Jul2015.txt" HTMHT_Run2015B_17Jul
-#python launch.py --unitsPerJob=1 --remoteDir="Data50ns_1l"  --production_label="Data50ns" --lumiMask="json/Cert_246908-251883_13TeV_PromptReco_Collisions15_JSON_v2_17Jul2015.txt" MET_Run2015B_17Jul
-#python launch.py --unitsPerJob=1 --remoteDir="Data50ns_1l"  --production_label="Data50ns" --lumiMask="json/Cert_246908-251883_13TeV_PromptReco_Collisions15_JSON_v2_17Jul2015.txt" SingleElectron_Run2015B_17Jul
-#python launch.py --unitsPerJob=1  --remoteDir="Data50ns_1l" --production_label="Data50ns" --lumiMask="json/Cert_246908-251883_13TeV_PromptReco_Collisions15_JSON_v2_17Jul2015.txt" SingleMu_Run2015B_17Jul
-#python launch.py --unitsPerJob=1 --remoteDir="Data50ns_1l"  --production_label="Data50ns" --lumiMask="json/Cert_246908-251883_13TeV_PromptReco_Collisions15_JSON_v2_17Jul2015.txt" SingleMuon_Run2015B_17Jul
-#python launch.py --unitsPerJob=1 --remoteDir="Data50ns_1l"  --production_label="Data50ns" --lumiMask="json/Cert_246908-251883_13TeV_PromptReco_Collisions15_JSON_v2_17Jul2015.txt" SinglePhoton_Run2015B_17Jul
-#python launch.py --unitsPerJob=1 --remoteDir="Data50ns_1l"  --production_label="Data50ns" --lumiMask="json/Cert_246908-251883_13TeV_PromptReco_Collisions15_JSON_v2_17Jul2015.txt" EGamma_Run2015B_17Jul
-#python launch.py --unitsPerJob=1 --remoteDir="Data50ns_1l"  --production_label="Data50ns" --lumiMask="json/Cert_246908-251883_13TeV_PromptReco_Collisions15_JSON_v2_17Jul2015.txt" DoubleEG_Run2015B_17Jul
-#python launch.py --unitsPerJob=1 --remoteDir="Data50ns_1l"  --production_label="Data50ns" --lumiMask="json/Cert_246908-251883_13TeV_PromptReco_Collisions15_JSON_v2_17Jul2015.txt" MuonEG_Run2015B_17Jul
-#python launch.py --unitsPerJob=1 --remoteDir="Data50ns_1l"  --production_label="Data50ns" --lumiMask="json/Cert_246908-251883_13TeV_PromptReco_Collisions15_JSON_v2_17Jul2015.txt" DoubleMuon_Run2015B_17Jul
-#python launch.py --unitsPerJob=1 --remoteDir="Data50ns_1l"  --production_label="Data50ns" --lumiMask="json/Cert_246908-251883_13TeV_PromptReco_Collisions15_JSON_v2_17Jul2015.txt" minBias_Run2015B_17Jul
-#python launch.py --unitsPerJob=1 --remoteDir="Data50ns_1l"  --production_label="Data50ns" --lumiMask="json/Cert_246908-251883_13TeV_PromptReco_Collisions15_JSON_v2_17Jul2015.txt" zeroBias_Run2015B_17Jul
+#python launch.py --unitsPerJob=1 --remoteDir="Data50ns_1l"  --production_label="Data50ns"  Jet_Run2015B_17Jul
+#python launch.py --unitsPerJob=1 --remoteDir="Data50ns_1l"  --production_label="Data50ns"  JetHT_Run2015B_17Jul
+#python launch.py --unitsPerJob=1 --remoteDir="Data50ns_1l"  --production_label="Data50ns"  HTMHT_Run2015B_17Jul
+#python launch.py --unitsPerJob=1 --remoteDir="Data50ns_1l"  --production_label="Data50ns"  MET_Run2015B_17Jul
+#python launch.py --unitsPerJob=1 --remoteDir="Data50ns_1l"  --production_label="Data50ns"  SingleElectron_Run2015B_17Jul
+#python launch.py --unitsPerJob=1 --remoteDir="Data50ns_1l"  --production_label="Data50ns"  SingleMu_Run2015B_17Jul
+#python launch.py --unitsPerJob=1 --remoteDir="Data50ns_1l"  --production_label="Data50ns"  SingleMuon_Run2015B_17Jul
+#python launch.py --unitsPerJob=1 --remoteDir="Data50ns_1l"  --production_label="Data50ns"  SinglePhoton_Run2015B_17Jul
+#python launch.py --unitsPerJob=1 --remoteDir="Data50ns_1l"  --production_label="Data50ns"  EGamma_Run2015B_17Jul
+#python launch.py --unitsPerJob=1 --remoteDir="Data50ns_1l"  --production_label="Data50ns"  DoubleEG_Run2015B_17Jul
+#python launch.py --unitsPerJob=1 --remoteDir="Data50ns_1l"  --production_label="Data50ns"  MuonEG_Run2015B_17Jul
+#python launch.py --unitsPerJob=1 --remoteDir="Data50ns_1l"  --production_label="Data50ns"  DoubleMuon_Run2015B_17Jul
+#python launch.py --unitsPerJob=1 --remoteDir="Data50ns_1l"  --production_label="Data50ns"  minBias_Run2015B_17Jul
+#python launch.py --unitsPerJob=1 --remoteDir="Data50ns_1l"  --production_label="Data50ns"  zeroBias_Run2015B_17Jul
 
 #python launch.py --remoteDir="MC25ns_1l" --unitsPerJob=1 --production_label="MC25ns" TTJets
 #python launch.py --remoteDir="MC25ns_1l" --unitsPerJob=1 --production_label="MC25ns" TToLeptons_tch
@@ -100,7 +100,7 @@
 #python launch.py --remoteDir="MC25ns_1l" --unitsPerJob=1 --production_label="MC25ns" QCD_Pt1400to1800
 #python launch.py --remoteDir="MC25ns_1l" --unitsPerJob=1 --production_label="MC25ns" QCD_Pt1800to2400
 #python launch.py --remoteDir="MC25ns_1l" --unitsPerJob=1 --production_label="MC25ns" QCD_Pt2400to3200
-python launch.py --remoteDir="MC25ns_1l" --unitsPerJob=1 --production_label="MC25ns" QCD_Pt3200toInf
+#python launch.py --remoteDir="MC25ns_1l" --unitsPerJob=1 --production_label="MC25ns" QCD_Pt3200toInf
 
 # 50ns MC
 #python launch.py --remoteDir="MC50ns_1l" --unitsPerJob=1 --production_label="MC50ns" DYJetsToLL_M50_50ns
@@ -128,4 +128,20 @@ python launch.py --remoteDir="MC25ns_1l" --unitsPerJob=1 --production_label="MC2
 #python launch.py --remoteDir="MC50ns_1l" --unitsPerJob=1 --production_label="MC50ns" QCD_Pt470to600_Mu5_50ns
 #python launch.py --remoteDir="MC50ns_1l" --unitsPerJob=1 --production_label="MC50ns" QCD_Pt600to800_Mu5_50ns
 #python launch.py --remoteDir="MC50ns_1l" --unitsPerJob=1 --production_label="MC50ns" QCD_Pt800to1000_Mu5_50ns
-#python launch.py --remoteDir="MC50ns_1l" --unitsPerJob=1 --production_label="MC50ns" QCD_Pt1000toInf_Mu5_50ns 
+#python launch.py --remoteDir="MC50ns_1l" --unitsPerJob=1 --production_label="MC50ns" QCD_Pt1000toInf_Mu5_50ns
+#python launch.py --remoteDir="MC50ns_1l_2" --unitsPerJob=1 --production_label="MC50ns_1l_2" QCD_Pt10to15_50ns
+#python launch.py --remoteDir="MC50ns_1l_2" --unitsPerJob=1 --production_label="MC50ns_1l_2" QCD_Pt15to30_50ns
+#python launch.py --remoteDir="MC50ns_1l_2" --unitsPerJob=1 --production_label="MC50ns_1l_2" QCD_Pt30to50_50ns
+#python launch.py --remoteDir="MC50ns_1l_2" --unitsPerJob=1 --production_label="MC50ns_1l_2" QCD_Pt50to80_50ns
+#python launch.py --remoteDir="MC50ns_1l_2" --unitsPerJob=1 --production_label="MC50ns_1l_2" QCD_Pt80to120_50ns
+#python launch.py --remoteDir="MC50ns_1l_2" --unitsPerJob=1 --production_label="MC50ns_1l_2" QCD_Pt120to170_50ns
+#python launch.py --remoteDir="MC50ns_1l_2" --unitsPerJob=1 --production_label="MC50ns_1l_2" QCD_Pt170to300_50ns
+#python launch.py --remoteDir="MC50ns_1l_2" --unitsPerJob=1 --production_label="MC50ns_1l_2" QCD_Pt300to470_50ns
+#python launch.py --remoteDir="MC50ns_1l_2" --unitsPerJob=1 --production_label="MC50ns_1l_2" QCD_Pt470to600_50ns
+#python launch.py --remoteDir="MC50ns_1l_2" --unitsPerJob=1 --production_label="MC50ns_1l_2" QCD_Pt600to800_50ns
+#python launch.py --remoteDir="MC50ns_1l_2" --unitsPerJob=1 --production_label="MC50ns_1l_2" QCD_Pt800to1000_50ns
+#python launch.py --remoteDir="MC50ns_1l_2" --unitsPerJob=1 --production_label="MC50ns_1l_2" QCD_Pt1000to1400_50ns
+#python launch.py --remoteDir="MC50ns_1l_2" --unitsPerJob=1 --production_label="MC50ns_1l_2" QCD_Pt1400to1800_50ns
+#python launch.py --remoteDir="MC50ns_1l_2" --unitsPerJob=1 --production_label="MC50ns_1l_2" QCD_Pt1800to2400_50ns
+#python launch.py --remoteDir="MC50ns_1l_2" --unitsPerJob=1 --production_label="MC50ns_1l_2" QCD_Pt2400to3200_50ns
+#python launch.py --remoteDir="MC50ns_1l_2" --unitsPerJob=1 --production_label="MC50ns_1l_2" QCD_Pt3200toInf_50ns 
