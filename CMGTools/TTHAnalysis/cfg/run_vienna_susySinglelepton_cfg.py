@@ -177,13 +177,14 @@ sequence = cfg.Sequence(
         treeProducer,
         ])
 
-isData = True 
-removeResiduals = False
-bx = '50ns'
-#bx = '25ns'
+isData = False 
+removeResiduals = True
+#bx = '50ns'
+bx = '25ns'
 
 if isData:
-  test="data"
+  if bx=='50ns':test="data_50ns"
+  if bx=='25ns':test="data_25ns"
 else:
   if bx=='50ns':test=3
   if bx=='25ns':test=5
@@ -221,13 +222,23 @@ if getHeppyOption("loadSamples"):
     selectedComponents = [DYJetsToLL_M50]
 #    selectedComponents = [WJetsToLNu_HT600to800,WJetsToLNu_HT800to1200,WJetsToLNu_HT1200to2500,WJetsToLNu_HT2500toInf]
     for comp in selectedComponents:
-      comp.files = comp.files[:]
+      comp.files = comp.files[:1]
       comp.splitFactor = len(comp.files) 
 
-  elif test=="data":
+  elif test=="data_50ns":
     from CMGTools.RootTools.samples.samples_13TeV_DATA2015 import *
 #    selectedComponents = [ DoubleMuon_Run2015B ]
     selectedComponents = [ MuonEG_Run2015B ]
+    ##applying the correct json files to PrompReco and July17 samples
+
+    for comp in selectedComponents:
+        comp.splitFactor = 1
+        comp.files = comp.files 
+        comp.isMC = False
+        comp.isData = True
+  elif test=="data_25ns":
+    from CMGTools.RootTools.samples.samples_13TeV_DATA2015 import *
+    selectedComponents = [ DoubleMuon_Run2015C ]
     ##applying the correct json files to PrompReco and July17 samples
 
     for comp in selectedComponents:
@@ -239,33 +250,48 @@ if getHeppyOption("loadSamples"):
 
 
 if isData:
-  assert bx!='25ns', "Has the future arrived?"
-  jecDBFile = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_50nsV4_DATA.db'
-  jecEra    = 'Summer15_50nsV4_DATA'
-  mcGT = 'XXX'
-  dataGT= '74X_dataRun2_Prompt_v1' #50ns data
-  jetAna.mcGT     = "Summer15_50nsV4_MC"
-  jetAna.dataGT   = "Summer15_50nsV4_DATA"
-  eventFlagsAna.processName = 'RECO'
-  metAnaDef.metCollection   = ("slimmedMETs","", "RECO") #for PromptReco
-#  metAnaDef.metCollection   = ("slimmedMETs","", "PAT") #for Jul17 rereco
-  jetAna.applyL2L3Residual = False if removeResiduals else 'Data' 
-else: #simulation
-  if bx=='50ns':
-    jecDBFile = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_50nsV3_MC.db'
-    jecEra    = 'Summer15_50nsV3_MC'
-    mcGT= 'MCRUN2_74_V9A' #50ns MC
-    dataGT= 'XXX' #50ns Data
-    jetAna.mcGT     = "Summer15_50nsV3_MC"
-    jetAna.dataGT   = "XXX"#"Summer15_50nsV2"
   if bx=='25ns':
-    jecDBFile = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_25nsV2_MC.db'
+    jecDBFile  = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_25nsV2_MC.db'
+    jecUncFile = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_50nsV4_DATA_UncertaintySources_AK4PFchs.txt' 
+    jecEra    = 'Summer15_25nsV2_MC'
+    mcGT = 'XXX'
+    dataGT= '74X_dataRun2_Prompt_v1' 
+    jetAna.mcGT     = "Summer15_25nsV2_MC"
+    jetAna.dataGT   = "Summer15_25nsV2_MC"
+    eventFlagsAna.processName = 'RECO'
+    metAnaDef.metCollection   = ("slimmedMETs","", "RECO") #for PromptReco
+  #  metAnaDef.metCollection   = ("slimmedMETs","", "PAT") #for Jul17 rereco
+    jetAna.applyL2L3Residual = False if removeResiduals else 'Data' 
+  if bx=='50ns':
+    jecDBFile = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_50nsV4_DATA.db'
+    jecUncFile = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_50nsV4_DATA_UncertaintySources_AK4PFchs.txt' 
+    jecEra    = 'Summer15_50nsV4_DATA'
+    mcGT = 'XXX'
+    dataGT= '74X_dataRun2_Prompt_v1' 
+    jetAna.mcGT     = "Summer15_50nsV4_MC"
+    jetAna.dataGT   = "Summer15_50nsV4_DATA"
+    eventFlagsAna.processName = 'RECO'
+    metAnaDef.metCollection   = ("slimmedMETs","", "RECO") #for PromptReco
+  #  metAnaDef.metCollection   = ("slimmedMETs","", "PAT") #for Jul17 rereco
+    jetAna.applyL2L3Residual = False if removeResiduals else 'Data' 
+else: #simulation
+  if bx=='25ns':
+    jecDBFile  = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_25nsV2_MC.db'
+    jecUncFile = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_25nsV2_MC_UncertaintySources_AK4PFchs.txt' 
 #    jecDBFile = ''
     jecEra    = 'Summer15_25nsV2_MC' 
     dataGT= 'XXX' #50ns Data
     mcGT= 'MCRUN2_74_V9' #25ns MC
     jetAna.mcGT     = "Summer15_25nsV2_MC"
     jetAna.dataGT   = "XXX" 
+  if bx=='50ns':
+    jecDBFile = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_50nsV3_MC.db'
+    jecUncFile = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_50nsV4_MC_UncertaintySources_AK4PFchs.txt' 
+    jecEra    = 'Summer15_50nsV3_MC'
+    mcGT= 'MCRUN2_74_V9A' #50ns MC
+    dataGT= 'XXX' #50ns Data
+    jetAna.mcGT     = "Summer15_50nsV3_MC"
+    jetAna.dataGT   = "XXX"#"Summer15_50nsV2"
 
 GT = dataGT if isData else mcGT
 preprocessorFilename = "MetType1_jec_%s_GT_%s_residuals_%s.py"%(jecEra, GT, str(not(removeResiduals)))

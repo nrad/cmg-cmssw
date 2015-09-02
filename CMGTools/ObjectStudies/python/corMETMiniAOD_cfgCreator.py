@@ -11,7 +11,7 @@ parser = OptionParser()
 parser.add_option("--outputFile", dest="outputFile", default="MetType1_dump.py", type="string", action="store", help="output file")
 parser.add_option("--GT", dest="GT", default='MCRUN2_74_V9A', type="string", action="store", help="Global Tag")
 parser.add_option("--jecDBFile", dest="jecDBFile", default="", type="string", action="store", help="jec DB File")
-parser.add_option("--uncFile", dest="uncFile", default="", type="string", action="store", help="jec Uncer File")
+parser.add_option("--uncFile", dest="uncFile", default="", type="string", action="store", help="jec uncertainty file")
 parser.add_option("--jecEra", dest="jecEra", default='', type="string", action="store", help="jecEra")
 parser.add_option("--maxEvents", dest="maxEvents", default=-1, type="int", action="store", help="maxEvents")
 parser.add_option("--removeResiduals", dest="removeResiduals", action="store_true", default=False, help="remove residual JEC?") 
@@ -107,13 +107,13 @@ from PhysicsTools.PatUtils.tools.runMETCorrectionsAndUncertainties import runMet
 #for a full met computation, remove the pfCandColl input
 runMetCorAndUncFromMiniAOD(process,
                            isData=options.isData,
-#                           jecUncFile=uncFile
+                           jecUncFile=options.uncFile
                            )
 
 runMetCorAndUncFromMiniAOD(process,
                            isData=options.isData,
                            pfCandColl=cms.InputTag("noHFCands"),
-#                           jecUncFile=uncFile,
+                           jecUncFile=options.uncFile,
                            postfix="NoHF"
                            )
 
