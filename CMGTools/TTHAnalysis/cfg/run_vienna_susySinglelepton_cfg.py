@@ -206,13 +206,15 @@ if getHeppyOption("loadSamples"):
         comp.isData = True
   if isData and bx=='25ns':
     from CMGTools.RootTools.samples.samples_13TeV_DATA2015 import *
-    selectedComponents = [ SingleMuon_Run2015C ]
+    selectedComponents = [ SingleElectron_Run2015C ]
     for comp in selectedComponents:
         comp.splitFactor = 1
-        comp.files = comp.files[10:11] 
+#        comp.files = comp.files[10:11] 
         comp.isMC = False
         comp.isData = True
 #        comp.json = "$CMSSW_BASE/src/CMGTools/TTHAnalysis/data/json/Cert_246908-251883_13TeV_PromptReco_Collisions15_JSON_v2.json"
+
+jetAna.applyL2L3Residual = False if removeResiduals else 'Data' 
 
 if isData:
   if bx=='25ns':
@@ -226,7 +228,6 @@ if isData:
     eventFlagsAna.processName = 'RECO'
     metAnaDef.metCollection   = ("slimmedMETs","", "RECO") #for PromptReco
   #  metAnaDef.metCollection   = ("slimmedMETs","", "PAT") #for Jul17 rereco
-    jetAna.applyL2L3Residual = False if removeResiduals else 'Data' 
   if bx=='50ns':
     jecDBFile = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_50nsV4_DATA.db'
     jecUncFile = 'CMGTools/RootTools/data/jec/Summer15_50nsV4_DATA_UncertaintySources_AK4PFchs.txt' 
@@ -238,7 +239,6 @@ if isData:
     eventFlagsAna.processName = 'RECO'
     metAnaDef.metCollection   = ("slimmedMETs","", "RECO") #for PromptReco
   #  metAnaDef.metCollection   = ("slimmedMETs","", "PAT") #for Jul17 rereco
-    jetAna.applyL2L3Residual = False if removeResiduals else 'Data' 
 else: #simulation
   if bx=='25ns':
     jecDBFile  = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_25nsV2_MC.db'
