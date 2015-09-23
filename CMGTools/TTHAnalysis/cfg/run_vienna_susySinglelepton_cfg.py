@@ -70,10 +70,12 @@ susyCoreSequence.insert(susyCoreSequence.index(ttHCoreEventAna),
 
 from CMGTools.TTHAnalysis.analyzers.hbheAnalyzer import hbheAnalyzer
 hbheFilterAna = cfg.Analyzer(
-    hbheAnalyzer, name = 'hbheAnalyzer',
+    hbheAnalyzer, name="hbheAnalyzer", IgnoreTS4TS5ifJetInLowBVRegion=False
 )
 
-susyCoreSequence.insert(-1, hbheFilterAna)
+from PhysicsTools.Heppy.analyzers.gen.LHEAnalyzer import LHEAnalyzer 
+LHEAna = LHEAnalyzer.defaultConfig
+
 
 ### Single lepton + ST skim
 #from CMGTools.TTHAnalysis.analyzers.ttHSTSkimmer import ttHSTSkimmer
@@ -170,14 +172,18 @@ treeProducer = cfg.Analyzer(
 
 selectedComponents = [
         ]
+#susyCoreSequence.insert(-1, hbheFilterAna)
+#susyCoreSequence.insert(-1, LHEAna)
 
 sequence = cfg.Sequence(
   susyCoreSequence+
-      [ ttHEventAna,
+      [ hbheFilterAna, 
+        LHEAna,
+        ttHEventAna,
         treeProducer,
         ])
 
-isData = True 
+isData = False 
 removeResiduals = True
 #bx = '50ns'
 bx = '25ns'
@@ -191,9 +197,9 @@ if getHeppyOption("loadSamples"):
       comp.files=comp.files[:1]
       comp.splitFactor = 1 
   if not isData and bx=='25ns':
-    selectedComponents = [DYJetsToLL_M50]
+    selectedComponents = [TTJets_LO_HT800to1200]
     for comp in selectedComponents:
-      comp.files=['root://xrootd.unl.edu//store/mc/RunIISpring15DR74/tZq_ll_4f_13TeV-amcatnlo-pythia8_TuneCUETP8M1/MINIAODSIM/Asympt25ns_MCRUN2_74_V9-v2/40000/102EC100-5D2A-E511-A807-0CC47A4D99A4.root']
+#      comp.files=['root://xrootd.unl.edu//store/mc/RunIISpring15DR74/tZq_ll_4f_13TeV-amcatnlo-pythia8_TuneCUETP8M1/MINIAODSIM/Asympt25ns_MCRUN2_74_V9-v2/40000/102EC100-5D2A-E511-A807-0CC47A4D99A4.root']
       comp.files = comp.files[:1]
       comp.splitFactor = len(comp.files) 
   if isData and bx=='50ns':
