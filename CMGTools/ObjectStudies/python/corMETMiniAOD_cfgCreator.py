@@ -118,6 +118,10 @@ runMetCorAndUncFromMiniAOD(process,
                            postfix="NoHF"
                            )
 
+if options.isData:
+  process.slimmedMETs.t01Variation = cms.InputTag("slimmedMETs","","RECO") #FIXME
+  process.slimmedMETsNoHF.t01Variation = cms.InputTag("slimmedMETs","","RECO") #FIXME
+
 ### -------------------------------------------------------------------
 ### the lines below remove the L2L3 residual corrections when processing data
 ### -------------------------------------------------------------------

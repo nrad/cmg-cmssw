@@ -37,7 +37,7 @@ elif isolation == "relIso03":
     lepAna.loose_muon_relIso = 0.5
 
 # --- LEPTON SKIMMING ---
-ttHLepSkim.minLeptons = 1
+ttHLepSkim.minLeptons = 0
 ttHLepSkim.maxLeptons = 999
 #LepSkim.idCut  = ""
 #LepSkim.ptCuts = []
@@ -110,6 +110,7 @@ triggerFlagsAna.triggerBits = {
         'MuHT600' : triggers_mu_ht600,
         'MuHT400MET70' : triggers_mu_ht400_met70,
         'MuHT350MET70' : triggers_mu_ht350_met70,
+        'MuHT350' : triggers_mu_ht350,
         'MuMET120' : triggers_mu_met120,
         'MuHT400B': triggers_mu_ht400_btag,
         'MuHad' : triggers_muhad,
@@ -119,6 +120,7 @@ triggerFlagsAna.triggerBits = {
         'EleHT600' : triggers_el_ht600,
         'EleHT400MET70' : triggers_el_ht400_met70,
         'EleHT350MET70' : triggers_el_ht350_met70,
+        'EleHT350' : triggers_el_ht350,
         'EleHT200' :triggers_el_ht200,
         'ElHT400B': triggers_el_ht400_btag,
         'ElHad' : triggers_elhad,
@@ -183,7 +185,7 @@ sequence = cfg.Sequence(
         treeProducer,
         ])
 
-isData = False 
+isData = True 
 removeResiduals = True
 #bx = '50ns'
 bx = '25ns'
@@ -212,13 +214,12 @@ if getHeppyOption("loadSamples"):
         comp.isData = True
   if isData and bx=='25ns':
     from CMGTools.RootTools.samples.samples_13TeV_DATA2015 import *
-    selectedComponents = [ SingleElectron_Run2015C ]
+    selectedComponents = [ JetHT_Run2015D ]
     for comp in selectedComponents:
         comp.splitFactor = 1
-#        comp.files = comp.files[10:11] 
+        comp.files = comp.files[10:11] 
         comp.isMC = False
         comp.isData = True
-#        comp.json = "$CMSSW_BASE/src/CMGTools/TTHAnalysis/data/json/Cert_246908-251883_13TeV_PromptReco_Collisions15_JSON_v2.json"
 
 jetAna.applyL2L3Residual = False if removeResiduals else 'Data' 
 
@@ -228,7 +229,7 @@ if isData:
     jecUncFile = 'CMGTools/RootTools/data/jec/Summer15_50nsV4_DATA_UncertaintySources_AK4PFchs.txt' 
     jecEra    = 'Summer15_25nsV2_MC'
     mcGT = 'XXX'
-    dataGT= '74X_dataRun2_Prompt_v1' 
+    dataGT= '74X_dataRun2_Prompt_v2' 
     jetAna.mcGT     = "Summer15_25nsV2_MC"
     jetAna.dataGT   = "Summer15_25nsV2_MC"
     eventFlagsAna.processName = 'RECO'
