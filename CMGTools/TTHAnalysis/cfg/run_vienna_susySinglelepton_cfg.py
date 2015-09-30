@@ -37,7 +37,7 @@ elif isolation == "relIso03":
     lepAna.loose_muon_relIso = 0.5
 
 # --- LEPTON SKIMMING ---
-ttHLepSkim.minLeptons = 0
+ttHLepSkim.minLeptons = 2
 ttHLepSkim.maxLeptons = 999
 #LepSkim.idCut  = ""
 #LepSkim.ptCuts = []
@@ -148,12 +148,21 @@ triggerFlagsAna.triggerBits = {
         'MET90'            :triggers_MET90MHT90    ,
         'MET120'           :triggers_MET120MHT120  ,
         'PhysRates'        :triggers_PhysRate      ,
-        'DiPFJet140': ["HLT_DiPFJetAve140_v*"],
-        'DiPFJet200': ["HLT_DiPFJetAve200_v*"],
-        'DiPFJet260': ["HLT_DiPFJetAve260_v*"],
-        'DiPFJet320': ["HLT_DiPFJetAve320_v*"],
-        'DiPFJet400': ["HLT_DiPFJetAve400_v*"],
-        'DiPFJet500': ["HLT_DiPFJetAve500_v*"],
+        'DiPFJetAve100_HFJEC': ["HLT_DiPFJetAve100_HFJEC_v*"],
+        'DiPFJetAve140': ["HLT_DiPFJetAve140_v*"],
+        'DiPFJetAve160_HFJEC': ["HLT_DiPFJetAve160_HFJEC_v*"],
+        'DiPFJetAve200': ["HLT_DiPFJetAve200_v*"],
+        'DiPFJetAve220_HFJEC': ["HLT_DiPFJetAve220_HFJEC_v*"],
+        'DiPFJetAve260': ["HLT_DiPFJetAve260_v*"],
+        'DiPFJetAve300_HFJEC': ["HLT_DiPFJetAve300_HFJEC_v*"],
+        'DiPFJetAve320': ["HLT_DiPFJetAve320_v*"],
+        'DiPFJetAve40': ["HLT_DiPFJetAve40_v*"],
+        'DiPFJetAve400': ["HLT_DiPFJetAve400_v*"],
+        'DiPFJetAve500': ["HLT_DiPFJetAve500_v*"],
+        'DiPFJetAve60_HFJEC': ["HLT_DiPFJetAve60_HFJEC_v*"],
+        'DiPFJetAve60': ["HLT_DiPFJetAve60_v*"],
+        'DiPFJetAve80_HFJEC': ["HLT_DiPFJetAve80_HFJEC_v*"],
+        'DiPFJetAve80': ["HLT_DiPFJetAve80_v*"],
         }
 
 # Tree Producer
@@ -214,12 +223,13 @@ if getHeppyOption("loadSamples"):
         comp.isData = True
   if isData and bx=='25ns':
     from CMGTools.RootTools.samples.samples_13TeV_DATA2015 import *
-    selectedComponents = [ JetHT_Run2015D ]
+    selectedComponents = [ DoubleMuon_Run2015D ]
     for comp in selectedComponents:
-        comp.splitFactor = 1
-        comp.files = comp.files[10:11] 
+        comp.splitFactor = 10
+#        comp.files = comp.files[10:11] 
         comp.isMC = False
         comp.isData = True
+#        print "Using json",comp.json
 
 jetAna.applyL2L3Residual = False if removeResiduals else 'Data' 
 
