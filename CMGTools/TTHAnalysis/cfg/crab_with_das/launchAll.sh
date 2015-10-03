@@ -1,13 +1,13 @@
 #!/bin/sh
 
-python launch.py --unitsPerJob=1 --remoteDir="Data25ns_0l_5" --production_label="Data25ns_0l_5"  JetHT_Run2015D
-python launch.py --unitsPerJob=1 --remoteDir="Data25ns_0l_5" --production_label="Data25ns_0l_5"  MET_Run2015D
+python launch.py --unitsPerJob=1 --remoteDir="Data25ns_0l_9" --production_label="Data25ns_0l_9"  JetHT_Run2015D
+python launch.py --unitsPerJob=1 --remoteDir="Data25ns_0l_9" --production_label="Data25ns_0l_9"  MET_Run2015D
 
-#python launch.py --unitsPerJob=1 --remoteDir="Data25ns_1l_5" --production_label="Data25ns_1l_5"  SingleElectron_Run2015D
-#python launch.py --unitsPerJob=1 --remoteDir="Data25ns_1l_5" --production_label="Data25ns_1l_5"  SingleMuon_Run2015D
-#python launch.py --unitsPerJob=1 --remoteDir="Data25ns_1l_5" --production_label="Data25ns_1l_5"  DoubleEG_Run2015D
-#python launch.py --unitsPerJob=1 --remoteDir="Data25ns_1l_5" --production_label="Data25ns_1l_5"  MuonEG_Run2015D
-#python launch.py --unitsPerJob=1 --remoteDir="Data25ns_1l_5" --production_label="Data25ns_1l_5"  DoubleMuon_Run2015D
+#python launch.py --unitsPerJob=1 --remoteDir="Data25ns_1l_9" --production_label="Data25ns_1l_9"  SingleElectron_Run2015D
+#python launch.py --unitsPerJob=1 --remoteDir="Data25ns_1l_9" --production_label="Data25ns_1l_9"  SingleMuon_Run2015D
+#python launch.py --unitsPerJob=1 --remoteDir="Data25ns_1l_9" --production_label="Data25ns_1l_9"  DoubleEG_Run2015D
+#python launch.py --unitsPerJob=1 --remoteDir="Data25ns_1l_9" --production_label="Data25ns_1l_9"  MuonEG_Run2015D
+#python launch.py --unitsPerJob=1 --remoteDir="Data25ns_1l_9" --production_label="Data25ns_1l_9"  DoubleMuon_Run2015D
 
 #python launch.py --unitsPerJob=1 --remoteDir="Data25ns_0l_3" --production_label="Data25ns_0l_3"  Jet_Run2015D
 #python launch.py --unitsPerJob=1 --remoteDir="Data25ns_0l_3" --production_label="Data25ns_0l_3"  HTMHT_Run2015D
