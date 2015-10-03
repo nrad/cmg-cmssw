@@ -235,13 +235,13 @@ jetAna.applyL2L3Residual = False if removeResiduals else 'Data'
 
 if isData:
   if bx=='25ns':
-    jecDBFile  = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_25nsV2_DATA.db'
-    jecUncFile = 'CMGTools/RootTools/data/jec/Summer15_50nsV4_DATA_UncertaintySources_AK4PFchs.txt' 
-    jecEra    = 'Summer15_25nsV2_DATA'
+    jecDBFile  = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_25nsV5_DATA.db'
+#    jecUncFile = 'CMGTools/RootTools/data/jec/Summer15_50nsV4_DATA_UncertaintySources_AK4PFchs.txt' 
+    jecEra    = 'Summer15_25nsV5_DATA'
     mcGT = 'XXX'
     dataGT= '74X_dataRun2_Prompt_v2' 
-    jetAna.mcGT     = "Summer15_25nsV2_DATA"
-    jetAna.dataGT   = "Summer15_25nsV2_DATA"
+    jetAna.mcGT     = "Summer15_25nsV5_DATA"
+    jetAna.dataGT   = "Summer15_25nsV5_DATA"
     eventFlagsAna.processName = 'RECO'
     metAnaDef.metCollection   = ("slimmedMETs","", "RECO") #for PromptReco
   #  metAnaDef.metCollection   = ("slimmedMETs","", "PAT") #for Jul17 rereco
