@@ -56,6 +56,11 @@ metAna.recalibrate = False #should be false in susycore, already
 isoTrackAna.setOff=False
 genAna.allGenTaus = True
 
+### DegStop Settings:
+genAna.makePackedGenParticles=True
+isoTrackAna.makeAllTracks=True
+
+
 from CMGTools.TTHAnalysis.analyzers.ttHLepEventAnalyzer import ttHLepEventAnalyzer
 ttHEventAna = cfg.Analyzer(
     ttHLepEventAnalyzer, name="ttHLepEventAnalyzer",
@@ -191,13 +196,15 @@ bx = '25ns'
 #if True or getHeppyOption("loadSamples"):
 if getHeppyOption("loadSamples"):
   from CMGTools.RootTools.samples.samples_13TeV_74X import *
+  from CMGTools.RootTools.samples.samples_13TeV_74X_susyT2DegStopPriv import *
   if not isData and bx=='50ns':
     selectedComponents = [DYJetsToLL_M50_50ns]
     for comp in selectedComponents:
       comp.files=comp.files[:1]
       comp.splitFactor = 1 
   if not isData and bx=='25ns':
-    selectedComponents = [TTJets_LO_HT800to1200]
+    #selectedComponents = [TTJets_LO_HT800to1200]
+    selectedComponents = [T2DegStop_300_270]
     for comp in selectedComponents:
 #      comp.files=['root://xrootd.unl.edu//store/mc/RunIISpring15DR74/tZq_ll_4f_13TeV-amcatnlo-pythia8_TuneCUETP8M1/MINIAODSIM/Asympt25ns_MCRUN2_74_V9-v2/40000/102EC100-5D2A-E511-A807-0CC47A4D99A4.root']
       comp.files = comp.files[:1]

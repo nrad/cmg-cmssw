@@ -55,6 +55,7 @@ class GeneratorAnalyzer( Analyzer ):
         super(GeneratorAnalyzer,self).__init__(cfg_ana,cfg_comp,looperName)
         self.stableBSMParticleIds  = set(cfg_ana.stableBSMParticleIds) # neutralinos and such
         self.savePreFSRParticleIds = set(cfg_ana.savePreFSRParticleIds)
+        self.makePackedGenParticles= cfg_ana.makePackedGenParticles
         self.makeAllGenParticles   = cfg_ana.makeAllGenParticles
         self.makeSplittedGenLists  = cfg_ana.makeSplittedGenLists
         self.allGenTaus            = cfg_ana.allGenTaus if self.makeSplittedGenLists else False
@@ -63,6 +64,10 @@ class GeneratorAnalyzer( Analyzer ):
     def declareHandles(self):
         super(GeneratorAnalyzer, self).declareHandles()
         self.mchandles['genParticles'] = AutoHandle( 'prunedGenParticles', 'std::vector<reco::GenParticle>' )
+        if self.makePackedGenParticles:
+          self.mchandles['packedGenParticles'] = AutoHandle( 'packedGenParticles', 'std::vector<pat::PackedGenParticle>' )
+          print "!!!!!!!!      WARNING: Using Packed Gen Particles..... this will be slow  !!!!!!!!!!"
+
 	if self.makeLHEweights:
 		self.mchandles['LHEweights'] = AutoHandle( 'externalLHEProducer', 'LHEEventProduct', mayFail = True, fallbackLabel = 'source', lazy = False )
                 
@@ -97,8 +102,18 @@ class GeneratorAnalyzer( Analyzer ):
     def makeMCInfo(self, event):
         verbose = getattr(self.cfg_ana, 'verbose', False)
         rawGenParticles = self.mchandles['genParticles'].product() 
+        if self.makePackedGenParticles:
+          rawPackedGenParticles = self.mchandles['packedGenParticles'].product() 
+          #packedGenParticles = []
+          #packedGenParticles = rawPackedGenParticle
+          #for rawIndex,p in enumerate(rawPackedGenParticles):
+          #  packedGenParticles.append(p)
+
+
         good = []; keymap = {};
         allGenParticles = []
+
+
         for rawIndex,p in enumerate(rawGenParticles):
             if self.makeAllGenParticles: allGenParticles.append(p)
             id     = abs(p.pdgId())
@@ -204,6 +219,8 @@ class GeneratorAnalyzer( Analyzer ):
 
         if self.makeAllGenParticles:
             event.genParticles = allGenParticles
+        if self.makePackedGenParticles:
+            event.packedGenParticles = rawPackedGenParticles
 
         if self.makeSplittedGenLists:
             event.genHiggsBosons = []
@@ -303,6 +320,8 @@ setattr(GeneratorAnalyzer,"defaultConfig",
         savePreFSRParticleIds = [ 1,2,3,4,5, 11,12,13,14,15,16, 21 ],
         # Make also the list of all genParticles, for other analyzers to handle
         makeAllGenParticles = True,
+        # Make list of the packedGenParitlces:
+        makePackedGenParticles = False,
         # Make also the splitted lists
         makeSplittedGenLists = True,
         allGenTaus = False, 

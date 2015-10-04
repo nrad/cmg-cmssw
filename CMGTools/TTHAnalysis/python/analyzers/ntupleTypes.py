@@ -170,6 +170,19 @@ metTypeSusy = NTupleObjectType("metSusy", baseObjectTypes = [ metType ], variabl
 ##------------------------------------------  
 ## GENPARTICLE
 ##------------------------------------------  
+
+packedGenParticleWithMotherIndex = NTupleObjectType("genParticleWithMotherIndex", baseObjectTypes = [ genParticleWithMotherId ], mcOnly=True, variables = [
+    ## these work for 74X miniaod
+    NTupleVariable("nDaughters", lambda x : x.numberOfDaughters(), int, help="index of the daughters in the genParticles"),
+    NTupleVariable("nMothers", lambda x : x.numberOfMothers(), int, help="index of the mother in the genParticles"),
+    NTupleVariable("motherIndex1", lambda x : x.motherRef().index() if x.numberOfMothers() > 0 else -1, int, help="index of the first mother in the genParticles"),
+    NTupleVariable("daughterIndex1", lambda x : x.daughterRef(0).index() if x.numberOfDaughters() >0 else -1, int, help="index of the first mother in the genParticles"),
+    NTupleVariable("daughterIndex2", lambda x : x.daughterRef(x.numberOfDaughters()-1).index() if x.numberOfDaughters() > 1 else -1, int, help="index of the last mother in the genParticles"
+),
+])
+
+
+
 genParticleWithMotherIndex = NTupleObjectType("genParticleWithMotherIndex", baseObjectTypes = [ genParticleWithMotherId ], mcOnly=True, variables = [
     ## these work for 74X miniaod
     NTupleVariable("nDaughters", lambda x : x.numberOfDaughters(), int, help="index of the daughters in the genParticles"),

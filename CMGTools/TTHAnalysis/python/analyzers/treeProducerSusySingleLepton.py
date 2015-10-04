@@ -47,6 +47,8 @@ susySingleLepton_collections.update({
             # put more here
 ##            "genParticles"     : NTupleCollection("genPartAll",  genParticleWithMotherId, 200, help="all pruned genparticles"), # need to decide which gen collection ?
             "genParticles"     : NTupleCollection("genPartAll",  genParticleWithMotherIndex, 200, help="all pruned genparticles"),
+            "packedGenParticles"     : NTupleCollection("genPartPkd",  packedGenParticleWithMotherIndex, 2000, help="all packed genparticles"),
+
             ## ---------------------------------------------
             "selectedLeptons" : NTupleCollection("LepGood", leptonTypeSusy, 8, help="Leptons after the preselection"),
             "otherLeptons"    : NTupleCollection("LepOther", leptonTypeSusy, 8, help="Leptons after the preselection"),
