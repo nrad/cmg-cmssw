@@ -82,6 +82,19 @@ tauTypeSusy = NTupleObjectType("tauSusy",  baseObjectTypes = [ tauType ], variab
 ##------------------------------------------  
 
 isoTrackTypeSusy = NTupleObjectType("isoTrackSusy",  baseObjectTypes = [ isoTrackType ], variables = [
+
+    NTupleVariable("dxy",                 lambda x : x.dxy() , help="d_{xy} of lead track with respect to PV, in cm (with sign)"),
+    NTupleVariable("dxyError",            lambda x : x.dxyError() , help="d_{xy}Err of lead track with respect to PV, in cm (with sign)"),
+    NTupleVariable("dzError",             lambda x : x.dzError() , help="d_{z}Err of lead track with respect to PV, in cm (with sign)"),
+    NTupleVariable("fromPV",              lambda x : x.fromPV()  , help="is fromPV"),
+    NTupleVariable("isJet",               lambda x : x.isJet()),
+    NTupleVariable("numberOfPixleHits",   lambda x : x.numberOfPixelHits(), int),
+    NTupleVariable("numberOfHits",        lambda x : x.numberOfHits(), int ),
+    NTupleVariable("trackHighPurity",     lambda x : x.trackHighPurity(), int),
+    NTupleVariable("puppiWeight",         lambda x : x.puppiWeight()  ),
+    #NTupleVariable("nearestJet",         lambda x : might need something like ),
+
+
 ])
 
 

@@ -48,6 +48,7 @@ class IsoTrackAnalyzer( Analyzer ):
     def __init__(self, cfg_ana, cfg_comp, looperName ):
         super(IsoTrackAnalyzer,self).__init__(cfg_ana,cfg_comp,looperName)
         self.IsoTrackIsolationComputer = heppy.IsolationComputer(self.cfg_ana.isoDR)
+        self.makeAllTracks = cfg_ana.makeAllTracks
 
     #----------------------------------------
     # DECLARATION OF HANDLES OF LEPTONS STUFF   
@@ -75,7 +76,9 @@ class IsoTrackAnalyzer( Analyzer ):
         event.selectedIsoTrack = []
         event.selectedIsoCleanTrack = []
         #event.preIsoTrack = []
-
+        event.allTracks   = []
+      
+  
         patcands = self.handles['packedCandidates'].product()
 
         charged = [ p for p in patcands if ( p.charge() != 0 and abs(p.dz())<=self.cfg_ana.dzMax ) ]
@@ -86,6 +89,11 @@ class IsoTrackAnalyzer( Analyzer ):
 
 
         for track in alltrack:
+
+            if self.makeAllTracks:
+                isoSum = self.IsoTrackIsolationComputer.chargedAbsIso(track.physObj, self.cfg_ana.isoDR, 0., self.cfg_ana.ptPartMin)
+                track.absIso = isoSum - track.pt()
+                event.allTracks.append(track)
 
             if ( (abs(track.pdgId())!=11) and (abs(track.pdgId())!=13) and (track.pt() < self.cfg_ana.ptMin) ): continue
             if ( track.pt() < self.cfg_ana.ptMinEMU ): continue
@@ -220,6 +228,9 @@ class IsoTrackAnalyzer( Analyzer ):
         event.selectedIsoTrack.sort(key = lambda l : l.pt(), reverse = True)
         event.selectedIsoCleanTrack.sort(key = lambda l : l.pt(), reverse = True)
 
+        if self.makeAllTracks:
+            event.allTracks.sort(key = lambda l : l.pt(), reverse = True)
+
         self.counters.counter('events').inc('all events')
         #if(len(event.preIsoTrack)): self.counters.counter('events').inc('has >=1 selected Track') 
         if(len(event.selectedIsoTrack)): self.counters.counter('events').inc('has >=1 selected Iso Track')
@@ -316,5 +327,6 @@ setattr(IsoTrackAnalyzer,"defaultConfig",cfg.Analyzer(
     #####
     doPrune = True,
     do_mc_match = True, # note: it will in any case try it only on MC, not on data
+    makeAllTracks = False,
   )
 )
