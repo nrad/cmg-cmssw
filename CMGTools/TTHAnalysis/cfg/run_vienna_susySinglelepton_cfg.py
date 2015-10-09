@@ -37,7 +37,7 @@ elif isolation == "relIso03":
     lepAna.loose_muon_relIso = 0.5
 
 # --- LEPTON SKIMMING ---
-ttHLepSkim.minLeptons = 0
+ttHLepSkim.minLeptons = 1
 ttHLepSkim.maxLeptons = 999
 #LepSkim.idCut  = ""
 #LepSkim.ptCuts = []
@@ -195,7 +195,7 @@ sequence = cfg.Sequence(
         ])
 
 isData = True 
-removeResiduals = True
+removeResiduals = False
 #bx = '50ns'
 bx = '25ns'
 
@@ -225,8 +225,8 @@ if getHeppyOption("loadSamples"):
     from CMGTools.RootTools.samples.samples_13TeV_DATA2015 import *
     selectedComponents = [ DoubleMuon_Run2015D ]
     for comp in selectedComponents:
-        comp.splitFactor = 10
-#        comp.files = comp.files[10:11] 
+        comp.splitFactor = 1
+        comp.files = comp.files[10:11] 
         comp.isMC = False
         comp.isData = True
 #        print "Using json",comp.json
@@ -236,7 +236,7 @@ jetAna.applyL2L3Residual = False if removeResiduals else 'Data'
 if isData:
   if bx=='25ns':
     jecDBFile  = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_25nsV5_DATA.db'
-#    jecUncFile = 'CMGTools/RootTools/data/jec/Summer15_50nsV4_DATA_UncertaintySources_AK4PFchs.txt' 
+    jecUncFile = 'CMGTools/RootTools/data/jec/Summer15_50nsV5_DATA_UncertaintySources_AK4PFchs.txt' 
     jecEra    = 'Summer15_25nsV5_DATA'
     mcGT = 'XXX'
     dataGT= '74X_dataRun2_Prompt_v2' 
