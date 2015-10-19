@@ -227,9 +227,10 @@ if getHeppyOption("loadSamples"):
     for comp in selectedComponents:
         comp.splitFactor = 1
         comp.files = comp.files[10:11] 
+        comp.files = [ 'root://eoscms.cern.ch//eos/cms/store/data/Run2015D/SingleMuon/MINIAOD/PromptReco-v3/000/256/676/00000/C2D5A4CC-F55F-E511-A02A-02163E0123FC.root'] 
         comp.isMC = False
         comp.isData = True
-#        print "Using json",comp.json
+#        comp.json = None
 
 jetAna.applyL2L3Residual = False if removeResiduals else 'Data' 
 
