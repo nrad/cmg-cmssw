@@ -4,9 +4,6 @@ from CMGTools.TTHAnalysis.analyzers.ntupleTypes import *
 susySingleLepton_globalVariables = susyCore_globalVariables + [
 #susySingleLepton_globalVariables = [
 
-            NTupleVariable("met_genPt", lambda ev : ev.met_genPtDef, help="gen E_{T}^{miss} pt from patch of Matthieus recipe which doesn't store genmet"),
-            NTupleVariable("met_genPhi", lambda ev : ev.met_genPhiDef, help="gen E_{T}^{miss} phi from patch of Matthieus recipe which doesn't store genmet"),
-
             NTupleVariable("met_rawPt", lambda ev : ev.met.uncorPt(), help="raw met p_{T}"),
             NTupleVariable("met_rawPhi", lambda ev : ev.met.uncorPhi(), help="raw met phi"),
             NTupleVariable("met_rawSumEt", lambda ev : ev.met.uncorSumEt(), help="raw met sumEt"),
