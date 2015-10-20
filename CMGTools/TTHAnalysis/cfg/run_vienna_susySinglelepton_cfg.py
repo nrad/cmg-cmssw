@@ -95,48 +95,69 @@ LHEAna = LHEAnalyzer.defaultConfig
 from CMGTools.RootTools.samples.triggers_13TeV_Spring15 import *
 from CMGTools.RootTools.samples.triggers_13TeV_Spring15_1l import *
 triggerFlagsAna.triggerBits = {
-        # put trigger here for _MC_
-        ## hadronic
-        'HT350' : triggers_HT350,
-        'HT600' : triggers_HT600,
-        'HT900' : triggers_HT900,
-        'MET170' : triggers_MET170,
-        'HTMET' : triggers_HTMET,
-        'Had' : triggers_had,
-        ## muon
-        'SingleMu' : triggers_1mu,
-        'Mu45NoIso' : trigger_1mu_noiso_r,
-        'Mu50NoIso' : trigger_1mu_noiso_w,
-        'MuHT600' : triggers_mu_ht600,
-        'MuHT400MET70' : triggers_mu_ht400_met70,
-        'MuHT350MET70' : triggers_mu_ht350_met70,
-        'MuHT350' : triggers_mu_ht350,
-        'MuMET120' : triggers_mu_met120,
-        'MuHT400B': triggers_mu_ht400_btag,
-        'MuHad' : triggers_muhad,
-        ## electrons
-        'SingleEl' : triggers_1el,
-        'ElNoIso' : trigger_1el_noiso,
-        'EleHT600' : triggers_el_ht600,
-        'EleHT400MET70' : triggers_el_ht400_met70,
-        'EleHT350MET70' : triggers_el_ht350_met70,
-        'EleHT350' : triggers_el_ht350,
-        'EleHT200' :triggers_el_ht200,
-        'ElHT400B': triggers_el_ht400_btag,
-        'ElHad' : triggers_elhad,
-        #put trigger here for data
-#        'mumuRun1' : triggers_mumu_run1,
+  ## hadronic
+  'HT350' : triggers_HT350,
+  'HT600' : triggers_HT600,
+  'HT800' : triggers_HT800,
+  'MET170' : triggers_MET170,
+  'HT350MET120' : triggers_HT350MET120,
+  'HT350MET100' : triggers_HT350MET100,
+  'HTMET' : triggers_HT350MET100 + triggers_HT350MET120,
+  ## muon
+  'SingleMu' : triggers_1mu,
+  'IsoMu27' : triggers_1mu,
+  'IsoMu20' : triggers_1mu20,
+  'Mu45eta2p1' : trigger_1mu_noiso_r,
+  'Mu50' : trigger_1mu_noiso_w,
+  'MuHT600' : triggers_mu_ht600,
+  'MuHT400MET70' : triggers_mu_ht400_met70,
+  'MuHT350MET70' : triggers_mu_ht350_met70,
+  'MuHT350MET50' : triggers_mu_ht350_met50,
+  'MuHT350' : triggers_mu_ht350,
+  'MuHTMET' : triggers_mu_ht350_met70 + triggers_mu_ht400_met70,
+  'MuMET120' : triggers_mu_met120,
+  'MuHT400B': triggers_mu_ht400_btag,
+  ## electrons
+  'IsoEle32' : triggers_1el,
+  'IsoEle23' : triggers_1el23,
+  'IsoEle22' : triggers_1el22,
+  'Ele105' : trigger_1el_noiso,
+  'EleHT600' : triggers_el_ht600,
+  'EleHT400MET70' : triggers_el_ht400_met70,
+  'EleHT350MET70' : triggers_el_ht350_met70,
+  'EleHT350MET50' : triggers_el_ht350_met50,
+  'EleHT350' : triggers_el_ht350,
+  'EleHTMET' : triggers_el_ht350_met70 + triggers_el_ht400_met70,
+  'EleHT200' :triggers_el_ht200,
+  'EleHT400B': triggers_el_ht400_btag
+
+
+#mumu
         'mumuIso' : triggers_mumu_iso,
         'mumuNoniso_50ns' : triggers_mumu_noniso_50ns,
         'mumuNoiso' : triggers_mumu_noniso,
         'mumuSS' : triggers_mumu_ss,
         'mumuHT' : triggers_mumu_ht,
 # ee
-        'ee_DZ': triggers_MT2_ee, 
+        'ee_DZ': triggers_ee, 
 #mue
-        'mue':triggers_MT2_mue,
+        'mue':triggers_mue,
+#dilepton+HT
+        'ee_ht':triggers_ee_ht,
+        'mue_ht':triggers_mue_ht,
+#multi-lepton
+        '3e':triggers_3e,
+        '3mu':triggers_3mu,
+        '3mu_alt':triggers_3mu_alt,
+        '2mu1e':triggers_2mu1e,
+        '2e1mu':triggers_2e1mu,
+#fake rate
+        'FR_1mu_iso':triggers_FR_1mu_iso,
+        'FR_1mu_noiso':triggers_FR_1mu_noiso,
+        'FR_1e_noiso':triggers_FR_1e_noiso,
+        'FR_1e_iso':triggers_FR_1e_iso,
+        'FR_1e_b2g':triggers_FR_1e_b2g,
 #MET
-#
         'Jet80MET90'       :triggers_Jet80MET90    ,
         'Jet80MET120'      :triggers_Jet80MET120   ,
         'MET120Mu5'        :triggers_MET120Mu5     ,
@@ -237,7 +258,7 @@ jetAna.applyL2L3Residual = False if removeResiduals else 'Data'
 if isData:
   if bx=='25ns':
     jecDBFile  = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_25nsV5_DATA.db'
-    jecUncFile = 'CMGTools/RootTools/data/jec/Summer15_50nsV5_DATA_UncertaintySources_AK4PFchs.txt' 
+    jecUncFile = 'CondFormats/JetMETObjects/data/Summer15_50nsV5_DATA_UncertaintySources_AK4PFchs.txt'
     jecEra    = 'Summer15_25nsV5_DATA'
     mcGT = 'XXX'
     dataGT= '74X_dataRun2_Prompt_v2' 
