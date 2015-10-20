@@ -424,24 +424,6 @@ metNoHFAna = cfg.Analyzer(
     collectionPostFix = "NoHF",
     )
 
-metAnaDef = cfg.Analyzer(
-    METAnalyzer, name="metAnalyzerDef",
-    metCollection     = ("slimmedMETs","", "PAT"),
-    noPUMetCollection = ("slimmedMETs","", "PAT"),    
-    copyMETsByValue = True,
-    doTkMet = False,
-    doMetNoPU = False,
-    doMetNoMu = False,
-    doMetNoEle = False,
-    doMetNoPhoton = False,
-    recalibrate = False,
-    jetAnalyzerCalibrationPostFix = "",
-    candidates='packedPFCandidates',
-    candidatesTypes='std::vector<pat::PackedCandidate>',
-    dzMax = 0.1,
-    collectionPostFix = "Def",
-    )
-
 # Core Event Analyzer (computes basic quantities like HT, dilepton masses)
 from CMGTools.TTHAnalysis.analyzers.ttHCoreEventAnalyzer import ttHCoreEventAnalyzer
 ttHCoreEventAna = cfg.Analyzer(
@@ -491,7 +473,6 @@ susyCoreSequence = [
     #ttHSVAna, # out of core sequence for now
     metAna,
     metNoHFAna,
-    metAnaDef,
     ttHCoreEventAna,
     #ttHJetMETSkim
   triggerFlagsAna,
