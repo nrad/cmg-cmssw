@@ -65,7 +65,9 @@ class METAnalyzer( Analyzer ):
         chargedchs = []
         chargedPVLoose = []
         chargedPVTight = []
-
+        dochs=getattr(self.cfg_ana,"includeTkMetCHS",True)       
+        dotight=getattr(self.cfg_ana,"includeTkMetPVTight",True)       
+        doloose=getattr(self.cfg_ana,"includeTkMetPVLoose",True)       
         pfcands = self.handles['cmgCand'].product()
 
         for i in xrange(pfcands.size()):
@@ -77,13 +79,13 @@ class METAnalyzer( Analyzer ):
                 if abs(pfcands.at(i).dz())<=self.cfg_ana.dzMax:
                     charged.append(pfcands.at(i))
 
-                if pfcands.at(i).fromPV()>0:
+                if dochs and  pfcands.at(i).fromPV()>0:
                     chargedchs.append(pfcands.at(i))
 
-                if pfcands.at(i).fromPV()>1:
+                if doloose and pfcands.at(i).fromPV()>1:
                     chargedPVLoose.append(pfcands.at(i))
 
-                if pfcands.at(i).fromPV()>2:
+                if dotight and pfcands.at(i).fromPV()>2:
                     chargedPVTight.append(pfcands.at(i))
 
         import ROOT
@@ -196,14 +198,14 @@ class METAnalyzer( Analyzer ):
         #Shifted METs: to be re-enabled after updates to MiniAOD pass 2
         #Uncertainties defined in https://github.com/cms-sw/cmssw/blob/CMSSW_7_2_X/DataFormats/PatCandidates/interface/MET.h#L168
         #event.met_shifted = []
-        if not self.cfg_ana.copyMETsByValue:
-          for i in range(self.met.METUncertaintySize):
-              m = ROOT.pat.MET(self.met)
-              px  = m.shiftedPx(i);
-              py  = m.shiftedPy(i);
-              m.setP4(ROOT.reco.Particle.LorentzVector(px,py, 0, math.hypot(px,py)))
-              #event.met_shifted += [m]
-              setattr(event, "met{0}_shifted_{1}".format(self.cfg_ana.collectionPostFix, i), m)
+        #if not self.cfg_ana.copyMETsByValue:
+        #  for i in range(self.met.METUncertaintySize):
+        #      m = ROOT.pat.MET(self.met)
+        #      px  = m.shiftedPx(i);
+        #      py  = m.shiftedPy(i);
+        #      m.setP4(ROOT.reco.Particle.LorentzVector(px,py, 0, math.hypot(px,py)))
+        #      #event.met_shifted += [m]
+        #      setattr(event, "met{0}_shifted_{1}".format(self.cfg_ana.collectionPostFix, i), m)
 
         self.met_sig = self.met.significance()
         self.met_sumet = self.met.sumEt()
@@ -225,13 +227,6 @@ class METAnalyzer( Analyzer ):
 
         if hasattr(event,"met"+self.cfg_ana.collectionPostFix): raise RuntimeError, "Event already contains met with the following postfix: "+self.cfg_ana.collectionPostFix
         setattr(event, "met"+self.cfg_ana.collectionPostFix, self.met)
-        genMET = self.met.genMET()
-        if genMET:
-          setattr(event, "met_genPt"+self.cfg_ana.collectionPostFix, genMET.pt())
-          setattr(event, "met_genPhi"+self.cfg_ana.collectionPostFix, genMET.phi())
-        else:
-          setattr(event, "met_genPt"+self.cfg_ana.collectionPostFix, float('nan'))
-          setattr(event, "met_genPhi"+self.cfg_ana.collectionPostFix, float('nan'))
         if self.cfg_ana.doMetNoPU: setattr(event, "metNoPU"+self.cfg_ana.collectionPostFix, self.metNoPU)
         setattr(event, "met_sig"+self.cfg_ana.collectionPostFix, self.met_sig)
         setattr(event, "met_sumet"+self.cfg_ana.collectionPostFix, self.met_sumet)
@@ -262,8 +257,8 @@ class METAnalyzer( Analyzer ):
         if self.cfg_ana.doTkMet: 
             self.makeTkMETs(event);
 
-            if self.cfg_comp.isMC and hasattr(event, 'genParticles'):
-                self.makeGenTkMet(event)
+        if getattr(self.cfg_ana,"doTkGenMet",self.cfg_ana.doTkMet) and self.cfg_comp.isMC and hasattr(event, 'genParticles'):
+            self.makeGenTkMet(event)
 
         return True
 
@@ -278,14 +273,10 @@ setattr(METAnalyzer,"defaultConfig", cfg.Analyzer(
     jetAnalyzerPostFix = "",
     old74XMiniAODs = False, # need to set to True to get proper Raw MET on plain 74X MC produced with CMSSW <= 7_4_12
     doTkMet = False,
-<<<<<<< HEAD
-    doMetNoPU = True,  
-=======
     includeTkMetCHS = True,
     includeTkMetPVLoose = True,
     includeTkMetPVTight = True,
     doMetNoPU = False, # Not existing in MiniAOD at the moment
->>>>>>> cmg-central/CMGTools-from-CMSSW_7_4_12
     doMetNoMu = False,  
     doMetNoEle = False,  
     doMetNoPhoton = False,  
@@ -295,3 +286,4 @@ setattr(METAnalyzer,"defaultConfig", cfg.Analyzer(
     collectionPostFix = "",
     )
 )
+
