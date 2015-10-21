@@ -8,33 +8,63 @@ from PhysicsTools.HeppyCore.framework.heppy_loop import getHeppyOption
 #Load all analyzers
 from CMGTools.TTHAnalysis.analyzers.susyCore_modules_cff import *
 
-# Lepton Preselection
-# ele
-lepAna.loose_electron_id = "POG_MVA_ID_Run2_NonTrig_VLoose"
-lepAna.loose_electron_pt  = 5
-# mu
-lepAna.loose_muon_pt  = 5
-
-# Redefine what I need
+####### Leptons  #####
+# lep collection
 lepAna.packedCandidates = 'packedPFCandidates'
 
-# selec Iso
+## ELECTRONS
+lepAna.loose_electron_pt  = 5
+eleID = "MVAID"
+
+if eleID == "CBID":
+  lepAna.loose_electron_id  = "POG_Cuts_ID_SPRING15_25ns_v1_ConvVetoDxyDz_Veto_full5x5"
+  lepAna.loose_electron_lostHits = 999. # no cut
+  lepAna.loose_electron_dxy    = 999.
+  lepAna.loose_electron_dz     = 999.
+
+  lepAna.inclusive_electron_id  = ""#"POG_Cuts_ID_SPRING15_25ns_v1_ConvVetoDxyDz_Veto_full5x5"
+  lepAna.inclusive_electron_lostHits = 999. # no cut since embedded in ID
+  lepAna.inclusive_electron_dxy    = 999. # no cut since embedded in ID
+  lepAna.inclusive_electron_dz     = 999. # no cut since embedded in ID
+
+elif eleID == "MVAID":
+  inclusive_electron_id  = "" # same as in susyCore
+
+  #lepAna.loose_electron_id = "POG_MVA_ID_Phys14_NonTrig_VLoose" # Phys14 era
+  lepAna.loose_electron_id = "POG_MVA_ID_Spring15_NonTrig_VLoose" # Spring15 25ns era
+
+elif eleID == "Incl": # as inclusive as possible
+  lepAna.loose_electron_id  = ""
+  lepAna.loose_electron_lostHits = 999. # no cut
+  lepAna.loose_electron_dxy    = 999.
+  lepAna.loose_electron_dz     = 999.
+
+  lepAna.inclusive_electron_id  = ""
+  lepAna.inclusive_electron_lostHits = 999.  # no cut
+  lepAna.inclusive_electron_dxy    = 999. # no cut since embedded in ID
+  lepAna.inclusive_electron_dz     = 999. # no cut since embedded in ID
+
+## MUONS
+lepAna.loose_muon_pt  = 5
+
+# Isolation
 isolation = "miniIso"
 
 if isolation == "miniIso":
-# do miniIso
-    lepAna.doMiniIsolation = True
-    lepAna.miniIsolationPUCorr = 'rhoArea'
-    lepAna.miniIsolationVetoLeptons = None
-    lepAna.loose_muon_isoCut     = lambda muon : muon.miniRelIso < 0.4
-    lepAna.loose_electron_isoCut = lambda elec : elec.miniRelIso < 0.4
+  # do miniIso
+  lepAna.doMiniIsolation = True
+  lepAna.miniIsolationPUCorr = 'rhoArea'
+  lepAna.miniIsolationVetoLeptons = None
+  lepAna.loose_muon_isoCut     = lambda muon : muon.miniRelIso < 0.4
+  lepAna.loose_electron_isoCut = lambda elec : elec.miniRelIso < 0.4
 elif isolation == "relIso03":
-# normal relIso03
-    lepAna.ele_isoCorr = "rhoArea"
-    lepAna.mu_isoCorr = "rhoArea"
+  # normal relIso03
+  lepAna.ele_isoCorr = "rhoArea"
+  lepAna.mu_isoCorr = "rhoArea"
 
-    lepAna.loose_electron_relIso = 0.5
-    lepAna.loose_muon_relIso = 0.5
+  lepAna.loose_electron_relIso = 0.5
+  lepAna.loose_muon_relIso = 0.5
+
 
 # --- LEPTON SKIMMING ---
 ttHLepSkim.minLeptons = 1
@@ -44,8 +74,9 @@ ttHLepSkim.maxLeptons = 999
 
 # --- JET-LEPTON CLEANING ---
 jetAna.minLepPt = 10
-#jetAna.jetPt = 25
-#jetAna.jetEta = 2.4
+jetAna.applyL2L3Residual = 'Data' 
+jetAna.jetPt = 25
+jetAna.jetEta = 5.2
 
 jetAna.doQG = True
 jetAna.smearJets = False #should be false in susycore, already
@@ -95,42 +126,41 @@ LHEAna = LHEAnalyzer.defaultConfig
 from CMGTools.RootTools.samples.triggers_13TeV_Spring15 import *
 from CMGTools.RootTools.samples.triggers_13TeV_Spring15_1l import *
 triggerFlagsAna.triggerBits = {
-  ## hadronic
-  'HT350' : triggers_HT350,
-  'HT600' : triggers_HT600,
-  'HT800' : triggers_HT800,
-  'MET170' : triggers_MET170,
-  'HT350MET120' : triggers_HT350MET120,
-  'HT350MET100' : triggers_HT350MET100,
-  'HTMET' : triggers_HT350MET100 + triggers_HT350MET120,
-  ## muon
-  'SingleMu' : triggers_1mu,
-  'IsoMu27' : triggers_1mu,
-  'IsoMu20' : triggers_1mu20,
-  'Mu45eta2p1' : trigger_1mu_noiso_r,
-  'Mu50' : trigger_1mu_noiso_w,
-  'MuHT600' : triggers_mu_ht600,
-  'MuHT400MET70' : triggers_mu_ht400_met70,
-  'MuHT350MET70' : triggers_mu_ht350_met70,
-  'MuHT350MET50' : triggers_mu_ht350_met50,
-  'MuHT350' : triggers_mu_ht350,
-  'MuHTMET' : triggers_mu_ht350_met70 + triggers_mu_ht400_met70,
-  'MuMET120' : triggers_mu_met120,
-  'MuHT400B': triggers_mu_ht400_btag,
-  ## electrons
-  'IsoEle32' : triggers_1el,
-  'IsoEle23' : triggers_1el23,
-  'IsoEle22' : triggers_1el22,
-  'Ele105' : trigger_1el_noiso,
-  'EleHT600' : triggers_el_ht600,
-  'EleHT400MET70' : triggers_el_ht400_met70,
-  'EleHT350MET70' : triggers_el_ht350_met70,
-  'EleHT350MET50' : triggers_el_ht350_met50,
-  'EleHT350' : triggers_el_ht350,
-  'EleHTMET' : triggers_el_ht350_met70 + triggers_el_ht400_met70,
-  'EleHT200' :triggers_el_ht200,
-  'EleHT400B': triggers_el_ht400_btag
-
+        ## hadronic
+        'HT350' : triggers_HT350,
+        'HT600' : triggers_HT600,
+        'HT800' : triggers_HT800,
+        'MET170' : triggers_MET170,
+        'HT350MET120' : triggers_HT350MET120,
+        'HT350MET100' : triggers_HT350MET100,
+        'HTMET' : triggers_HT350MET100 + triggers_HT350MET120,
+        ## muon
+        'SingleMu' : triggers_1mu,
+        'IsoMu27' : triggers_1mu,
+        'IsoMu20' : triggers_1mu20,
+        'Mu45eta2p1' : trigger_1mu_noiso_r,
+        'Mu50' : trigger_1mu_noiso_w,
+        'MuHT600' : triggers_mu_ht600,
+        'MuHT400MET70' : triggers_mu_ht400_met70,
+        'MuHT350MET70' : triggers_mu_ht350_met70,
+        'MuHT350MET50' : triggers_mu_ht350_met50,
+        'MuHT350' : triggers_mu_ht350,
+        'MuHTMET' : triggers_mu_ht350_met70 + triggers_mu_ht400_met70,
+        'MuMET120' : triggers_mu_met120,
+        'MuHT400B': triggers_mu_ht400_btag,
+        ## electrons
+        'IsoEle32' : triggers_1el,
+        'IsoEle23' : triggers_1el23,
+        'IsoEle22' : triggers_1el22,
+        'Ele105' : trigger_1el_noiso,
+        'EleHT600' : triggers_el_ht600,
+        'EleHT400MET70' : triggers_el_ht400_met70,
+        'EleHT350MET70' : triggers_el_ht350_met70,
+        'EleHT350MET50' : triggers_el_ht350_met50,
+        'EleHT350' : triggers_el_ht350,
+        'EleHTMET' : triggers_el_ht350_met70 + triggers_el_ht400_met70,
+        'EleHT200' :triggers_el_ht200,
+        'EleHT400B': triggers_el_ht400_btag,
 
 #mumu
         'mumuIso' : triggers_mumu_iso,
@@ -215,21 +245,20 @@ sequence = cfg.Sequence(
         treeProducer,
         ])
 
-isData = True 
-removeResiduals = False
+isData = False 
 #bx = '50ns'
 bx = '25ns'
 
 #if True or getHeppyOption("loadSamples"):
 if getHeppyOption("loadSamples"):
-  from CMGTools.RootTools.samples.samples_13TeV_74X import *
+  from CMGTools.RootTools.samples.samples_13TeV_RunIISpring15MiniAODv2 import *
   if not isData and bx=='50ns':
     selectedComponents = [DYJetsToLL_M50_50ns]
     for comp in selectedComponents:
       comp.files=comp.files[:1]
       comp.splitFactor = 1 
   if not isData and bx=='25ns':
-    selectedComponents = [TTJets_LO_HT800to1200]
+    selectedComponents = [TTJets_DiLepton]
     for comp in selectedComponents:
 #      comp.files=['root://xrootd.unl.edu//store/mc/RunIISpring15DR74/tZq_ll_4f_13TeV-amcatnlo-pythia8_TuneCUETP8M1/MINIAODSIM/Asympt25ns_MCRUN2_74_V9-v2/40000/102EC100-5D2A-E511-A807-0CC47A4D99A4.root']
       comp.files = comp.files[:1]
@@ -248,86 +277,85 @@ if getHeppyOption("loadSamples"):
     for comp in selectedComponents:
         comp.splitFactor = 1
         comp.files = comp.files[10:11] 
-        comp.files = [ 'root://eoscms.cern.ch//eos/cms/store/data/Run2015D/SingleMuon/MINIAOD/PromptReco-v3/000/256/676/00000/C2D5A4CC-F55F-E511-A02A-02163E0123FC.root'] 
+#        comp.files = [ 'root://eoscms.cern.ch//eos/cms/store/data/Run2015D/SingleMuon/MINIAOD/PromptReco-v3/000/256/676/00000/C2D5A4CC-F55F-E511-A02A-02163E0123FC.root'] 
         comp.isMC = False
         comp.isData = True
 #        comp.json = None
 
-jetAna.applyL2L3Residual = False if removeResiduals else 'Data' 
 
-if isData:
-  if bx=='25ns':
-    jecDBFile  = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_25nsV5_DATA.db'
-    jecUncFile = 'CondFormats/JetMETObjects/data/Summer15_50nsV5_DATA_UncertaintySources_AK4PFchs.txt'
-    jecEra    = 'Summer15_25nsV5_DATA'
-    mcGT = 'XXX'
-    dataGT= '74X_dataRun2_Prompt_v2' 
-    jetAna.mcGT     = "Summer15_25nsV5_DATA"
-    jetAna.dataGT   = "Summer15_25nsV5_DATA"
-    eventFlagsAna.processName = 'RECO'
-    metAnaDef.metCollection   = ("slimmedMETs","", "RECO") #for PromptReco
-  #  metAnaDef.metCollection   = ("slimmedMETs","", "PAT") #for Jul17 rereco
-  if bx=='50ns':
-    jecDBFile = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_50nsV4_DATA.db'
-    jecUncFile = 'CMGTools/RootTools/data/jec/Summer15_50nsV4_DATA_UncertaintySources_AK4PFchs.txt' 
-    jecEra    = 'Summer15_50nsV4_DATA'
-    mcGT = 'XXX'
-    dataGT= '74X_dataRun2_Prompt_v1' 
-    jetAna.mcGT     = "Summer15_50nsV4_MC"
-    jetAna.dataGT   = "Summer15_50nsV4_DATA"
-    eventFlagsAna.processName = 'RECO'
-    metAnaDef.metCollection   = ("slimmedMETs","", "RECO") #for PromptReco
-  #  metAnaDef.metCollection   = ("slimmedMETs","", "PAT") #for Jul17 rereco
-else: #simulation
-  if bx=='25ns':
-    jecDBFile  = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_25nsV2_MC.db'
-    jecUncFile = 'CMGTools/RootTools/data/jec/Summer15_50nsV4_MC_UncertaintySources_AK4PFchs.txt' 
-#    jecDBFile = ''
-    jecEra    = 'Summer15_25nsV2_MC' 
-    dataGT= 'XXX' #50ns Data
-    mcGT= 'MCRUN2_74_V9' #25ns MC
-    jetAna.mcGT     = "Summer15_25nsV2_MC"
-    jetAna.dataGT   = "XXX" 
-  if bx=='50ns':
-    jecDBFile = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_50nsV3_MC.db'
-    jecUncFile = 'CMGTools/RootTools/data/jec/Summer15_50nsV4_MC_UncertaintySources_AK4PFchs.txt' 
-    jecEra    = 'Summer15_50nsV3_MC'
-    mcGT= 'MCRUN2_74_V9A' #50ns MC
-    dataGT= 'XXX' #50ns Data
-    jetAna.mcGT     = "Summer15_50nsV3_MC"
-    jetAna.dataGT   = "XXX"#"Summer15_50nsV2"
-
-GT = dataGT if isData else mcGT
-preprocessorFilename = "MetType1_jec_%s_GT_%s_residuals_%s.py"%(jecEra, GT, str(not(removeResiduals)))
-
-# -------------------- Running pre-processor
-if getHeppyOption("makePreProcessorFile"): #create preprocessor file on the fly
-  import subprocess
-  extraArgs=[]
-  if isData:
-    extraArgs.append('--isData')
-  if removeResiduals:extraArgs.append('--removeResiduals')
-  preprocessorDir = "$CMSSW_BASE/tmp"
-  preprocessorFile = "/".join([preprocessorDir, preprocessorFilename])
-  args = ['python', 
-    os.path.expandvars('$CMSSW_BASE/python/CMGTools/ObjectStudies/corMETMiniAOD_cfgCreator.py'),\
-    '--GT='+GT, 
-    '--outputFile='+preprocessorFile, 
-    '--jecDBFile='+jecDBFile,
-    '--jecUncFile='+jecUncFile,
-    '--jecEra='+jecEra
-    ] + extraArgs 
-  #print "Making pre-processorfile:"
-  #print " ".join(args)
-  subprocess.call(args)
-else: #use precomputed preprocessor files
-  preprocessorDir = "$CMSSW_BASE/python/CMGTools/TTHAnalysis/preProcFiles"
-  preprocessorFile = "/".join([preprocessorDir, preprocessorFilename])
-
-print "Using preprocessorFile", preprocessorFile
-
-from PhysicsTools.Heppy.utils.cmsswPreprocessor import CmsswPreprocessor
-preprocessor = CmsswPreprocessor(preprocessorFile)
+#if isData:
+#  if bx=='25ns':
+#    jecDBFile  = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_25nsV5_DATA.db'
+#    jecUncFile = 'CondFormats/JetMETObjects/data/Summer15_50nsV5_DATA_UncertaintySources_AK4PFchs.txt'
+#    jecEra    = 'Summer15_25nsV5_DATA'
+#    mcGT = 'XXX'
+#    dataGT= '74X_dataRun2_Prompt_v2' 
+#    jetAna.mcGT     = "Summer15_25nsV5_DATA"
+#    jetAna.dataGT   = "Summer15_25nsV5_DATA"
+#    eventFlagsAna.processName = 'RECO'
+#    metAnaDef.metCollection   = ("slimmedMETs","", "RECO") #for PromptReco
+#  #  metAnaDef.metCollection   = ("slimmedMETs","", "PAT") #for Jul17 rereco
+#  if bx=='50ns':
+#    jecDBFile = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_50nsV4_DATA.db'
+#    jecUncFile = 'CMGTools/RootTools/data/jec/Summer15_50nsV4_DATA_UncertaintySources_AK4PFchs.txt' 
+#    jecEra    = 'Summer15_50nsV4_DATA'
+#    mcGT = 'XXX'
+#    dataGT= '74X_dataRun2_Prompt_v1' 
+#    jetAna.mcGT     = "Summer15_50nsV4_MC"
+#    jetAna.dataGT   = "Summer15_50nsV4_DATA"
+#    eventFlagsAna.processName = 'RECO'
+#    metAnaDef.metCollection   = ("slimmedMETs","", "RECO") #for PromptReco
+#  #  metAnaDef.metCollection   = ("slimmedMETs","", "PAT") #for Jul17 rereco
+#else: #simulation
+#  if bx=='25ns':
+#    jecDBFile  = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_25nsV2_MC.db'
+#    jecUncFile = 'CMGTools/RootTools/data/jec/Summer15_50nsV4_MC_UncertaintySources_AK4PFchs.txt' 
+##    jecDBFile = ''
+#    jecEra    = 'Summer15_25nsV2_MC' 
+#    dataGT= 'XXX' #50ns Data
+#    mcGT= 'MCRUN2_74_V9' #25ns MC
+#    jetAna.mcGT     = "Summer15_25nsV2_MC"
+#    jetAna.dataGT   = "XXX" 
+#  if bx=='50ns':
+#    jecDBFile = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_50nsV3_MC.db'
+#    jecUncFile = 'CMGTools/RootTools/data/jec/Summer15_50nsV4_MC_UncertaintySources_AK4PFchs.txt' 
+#    jecEra    = 'Summer15_50nsV3_MC'
+#    mcGT= 'MCRUN2_74_V9A' #50ns MC
+#    dataGT= 'XXX' #50ns Data
+#    jetAna.mcGT     = "Summer15_50nsV3_MC"
+#    jetAna.dataGT   = "XXX"#"Summer15_50nsV2"
+#
+#GT = dataGT if isData else mcGT
+#preprocessorFilename = "MetType1_jec_%s_GT_%s_residuals_%s.py"%(jecEra, GT, str(not(removeResiduals)))
+#
+## -------------------- Running pre-processor
+#if getHeppyOption("makePreProcessorFile"): #create preprocessor file on the fly
+#  import subprocess
+#  extraArgs=[]
+#  if isData:
+#    extraArgs.append('--isData')
+#  if removeResiduals:extraArgs.append('--removeResiduals')
+#  preprocessorDir = "$CMSSW_BASE/tmp"
+#  preprocessorFile = "/".join([preprocessorDir, preprocessorFilename])
+#  args = ['python', 
+#    os.path.expandvars('$CMSSW_BASE/python/CMGTools/ObjectStudies/corMETMiniAOD_cfgCreator.py'),\
+#    '--GT='+GT, 
+#    '--outputFile='+preprocessorFile, 
+#    '--jecDBFile='+jecDBFile,
+#    '--jecUncFile='+jecUncFile,
+#    '--jecEra='+jecEra
+#    ] + extraArgs 
+#  #print "Making pre-processorfile:"
+#  #print " ".join(args)
+#  subprocess.call(args)
+#else: #use precomputed preprocessor files
+#  preprocessorDir = "$CMSSW_BASE/python/CMGTools/TTHAnalysis/preProcFiles"
+#  preprocessorFile = "/".join([preprocessorDir, preprocessorFilename])
+#
+#print "Using preprocessorFile", preprocessorFile
+#
+#from PhysicsTools.Heppy.utils.cmsswPreprocessor import CmsswPreprocessor
+#preprocessor = CmsswPreprocessor(preprocessorFile)
 
 from CMGTools.TTHAnalysis.tools.EOSEventsWithDownload import EOSEventsWithDownload
 from PhysicsTools.HeppyCore.framework.eventsfwlite import Events
@@ -340,6 +368,6 @@ print selectedComponents
 config = cfg.Config( components = selectedComponents,
                      sequence = sequence,
                      services = [],
-                     preprocessor=preprocessor, # comment if pre-processor non needed
+#                     preprocessor=preprocessor, # comment if pre-processor non needed
                      events_class = event_class)
 
