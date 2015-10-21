@@ -77,7 +77,7 @@ jetAna.minLepPt = 10
 jetAna.applyL2L3Residual = 'Data' 
 jetAna.jetPt = 25
 jetAna.jetEta = 5.2
-
+jetAna.addJECShifts = True
 jetAna.doQG = True
 jetAna.smearJets = False #should be false in susycore, already
 jetAna.recalibrateJets =  True #For data
@@ -99,11 +99,6 @@ susyCoreSequence.insert(susyCoreSequence.index(ttHCoreEventAna),
 susyCoreSequence.insert(susyCoreSequence.index(ttHCoreEventAna),
                         ttHSVAna)
 
-from CMGTools.TTHAnalysis.analyzers.hbheAnalyzer import hbheAnalyzer
-hbheFilterAna = cfg.Analyzer(
-    hbheAnalyzer, name="hbheAnalyzer", IgnoreTS4TS5ifJetInLowBVRegion=False
-)
-
 from PhysicsTools.Heppy.analyzers.gen.LHEAnalyzer import LHEAnalyzer 
 LHEAna = LHEAnalyzer.defaultConfig
 
@@ -121,6 +116,12 @@ LHEAna = LHEAnalyzer.defaultConfig
 #    pTSubJet = 30,
 #    etaSubJet = 5.0,
 #            )
+from CMGTools.TTHAnalysis.analyzers.hbheAnalyzer import hbheAnalyzer
+hbheFilterAna = cfg.Analyzer(
+    hbheAnalyzer, name = 'hbheAnalyzer',
+    IgnoreTS4TS5ifJetInLowBVRegion = False
+)
+
 
 #from CMGTools.RootTools.samples.triggers_13TeV_Spring15 import * # central trigger list
 from CMGTools.RootTools.samples.triggers_13TeV_Spring15 import *
@@ -230,16 +231,14 @@ treeProducer = cfg.Analyzer(
      collections = susySingleLepton_collections,
 )
 
-#!# #-------- SAMPLES AND TRIGGERS -----------
+#!# #-------- SAMPLES AND SEQUENCE -----------
 
 selectedComponents = [
         ]
-#susyCoreSequence.insert(-1, hbheFilterAna)
-#susyCoreSequence.insert(-1, LHEAna)
 
 sequence = cfg.Sequence(
   susyCoreSequence+
-      [ hbheFilterAna, 
+      [ hbheFilterAna,
         LHEAna,
         ttHEventAna,
         treeProducer,
@@ -281,81 +280,6 @@ if getHeppyOption("loadSamples"):
         comp.isMC = False
         comp.isData = True
 #        comp.json = None
-
-
-#if isData:
-#  if bx=='25ns':
-#    jecDBFile  = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_25nsV5_DATA.db'
-#    jecUncFile = 'CondFormats/JetMETObjects/data/Summer15_50nsV5_DATA_UncertaintySources_AK4PFchs.txt'
-#    jecEra    = 'Summer15_25nsV5_DATA'
-#    mcGT = 'XXX'
-#    dataGT= '74X_dataRun2_Prompt_v2' 
-#    jetAna.mcGT     = "Summer15_25nsV5_DATA"
-#    jetAna.dataGT   = "Summer15_25nsV5_DATA"
-#    eventFlagsAna.processName = 'RECO'
-#    metAnaDef.metCollection   = ("slimmedMETs","", "RECO") #for PromptReco
-#  #  metAnaDef.metCollection   = ("slimmedMETs","", "PAT") #for Jul17 rereco
-#  if bx=='50ns':
-#    jecDBFile = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_50nsV4_DATA.db'
-#    jecUncFile = 'CMGTools/RootTools/data/jec/Summer15_50nsV4_DATA_UncertaintySources_AK4PFchs.txt' 
-#    jecEra    = 'Summer15_50nsV4_DATA'
-#    mcGT = 'XXX'
-#    dataGT= '74X_dataRun2_Prompt_v1' 
-#    jetAna.mcGT     = "Summer15_50nsV4_MC"
-#    jetAna.dataGT   = "Summer15_50nsV4_DATA"
-#    eventFlagsAna.processName = 'RECO'
-#    metAnaDef.metCollection   = ("slimmedMETs","", "RECO") #for PromptReco
-#  #  metAnaDef.metCollection   = ("slimmedMETs","", "PAT") #for Jul17 rereco
-#else: #simulation
-#  if bx=='25ns':
-#    jecDBFile  = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_25nsV2_MC.db'
-#    jecUncFile = 'CMGTools/RootTools/data/jec/Summer15_50nsV4_MC_UncertaintySources_AK4PFchs.txt' 
-##    jecDBFile = ''
-#    jecEra    = 'Summer15_25nsV2_MC' 
-#    dataGT= 'XXX' #50ns Data
-#    mcGT= 'MCRUN2_74_V9' #25ns MC
-#    jetAna.mcGT     = "Summer15_25nsV2_MC"
-#    jetAna.dataGT   = "XXX" 
-#  if bx=='50ns':
-#    jecDBFile = '$CMSSW_BASE/src/CMGTools/RootTools/data/jec/Summer15_50nsV3_MC.db'
-#    jecUncFile = 'CMGTools/RootTools/data/jec/Summer15_50nsV4_MC_UncertaintySources_AK4PFchs.txt' 
-#    jecEra    = 'Summer15_50nsV3_MC'
-#    mcGT= 'MCRUN2_74_V9A' #50ns MC
-#    dataGT= 'XXX' #50ns Data
-#    jetAna.mcGT     = "Summer15_50nsV3_MC"
-#    jetAna.dataGT   = "XXX"#"Summer15_50nsV2"
-#
-#GT = dataGT if isData else mcGT
-#preprocessorFilename = "MetType1_jec_%s_GT_%s_residuals_%s.py"%(jecEra, GT, str(not(removeResiduals)))
-#
-## -------------------- Running pre-processor
-#if getHeppyOption("makePreProcessorFile"): #create preprocessor file on the fly
-#  import subprocess
-#  extraArgs=[]
-#  if isData:
-#    extraArgs.append('--isData')
-#  if removeResiduals:extraArgs.append('--removeResiduals')
-#  preprocessorDir = "$CMSSW_BASE/tmp"
-#  preprocessorFile = "/".join([preprocessorDir, preprocessorFilename])
-#  args = ['python', 
-#    os.path.expandvars('$CMSSW_BASE/python/CMGTools/ObjectStudies/corMETMiniAOD_cfgCreator.py'),\
-#    '--GT='+GT, 
-#    '--outputFile='+preprocessorFile, 
-#    '--jecDBFile='+jecDBFile,
-#    '--jecUncFile='+jecUncFile,
-#    '--jecEra='+jecEra
-#    ] + extraArgs 
-#  #print "Making pre-processorfile:"
-#  #print " ".join(args)
-#  subprocess.call(args)
-#else: #use precomputed preprocessor files
-#  preprocessorDir = "$CMSSW_BASE/python/CMGTools/TTHAnalysis/preProcFiles"
-#  preprocessorFile = "/".join([preprocessorDir, preprocessorFilename])
-#
-#print "Using preprocessorFile", preprocessorFile
-#
-#from PhysicsTools.Heppy.utils.cmsswPreprocessor import CmsswPreprocessor
-#preprocessor = CmsswPreprocessor(preprocessorFile)
 
 from CMGTools.TTHAnalysis.tools.EOSEventsWithDownload import EOSEventsWithDownload
 from PhysicsTools.HeppyCore.framework.eventsfwlite import Events
