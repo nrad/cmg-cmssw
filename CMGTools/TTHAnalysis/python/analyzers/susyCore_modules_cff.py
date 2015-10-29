@@ -423,6 +423,28 @@ metNoHFAna = cfg.Analyzer(
     dzMax = 0.1,
     collectionPostFix = "NoHF",
     )
+metPuppiAna = cfg.Analyzer(
+    METAnalyzer, name="metPuppiAnalyzer",
+    metCollection     = "slimmedMETsPuppi",
+    noPUMetCollection = "slimmedMETsPuppi",    
+    copyMETsByValue = False,
+    doTkMet = False,
+    includeTkMetCHS = False,
+    includeTkMetPVLoose = False,
+    includeTkMetPVTight = False,
+    doMetNoPU = False,
+    doMetNoMu = False,
+    doMetNoEle = False,
+    doMetNoPhoton = False,
+    recalibrate = False,
+    applyJetSmearing = False, # does nothing unless the jet smearing is turned on in the jet analyzer
+    old74XMiniAODs = False, # set to True to get the correct Raw MET when running on old 74X MiniAODs
+    jetAnalyzerCalibrationPostFix = "",
+    candidates='packedPFCandidates',
+    candidatesTypes='std::vector<pat::PackedCandidate>',
+    dzMax = 0.1,
+    collectionPostFix = "Puppi",
+    )
 
 # Core Event Analyzer (computes basic quantities like HT, dilepton masses)
 from CMGTools.TTHAnalysis.analyzers.ttHCoreEventAnalyzer import ttHCoreEventAnalyzer
@@ -473,6 +495,7 @@ susyCoreSequence = [
     #ttHSVAna, # out of core sequence for now
     metAna,
     metNoHFAna,
+    metPuppiAna,
     ttHCoreEventAna,
     #ttHJetMETSkim
   triggerFlagsAna,
