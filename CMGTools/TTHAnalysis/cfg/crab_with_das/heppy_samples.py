@@ -1,6 +1,6 @@
 #-------- SAMPLES AND TRIGGERS -----------
 #from CMGTools.TTHAnalysis.samples.samples_13TeV_PHYS14 import *
-from CMGTools.RootTools.samples.samples_13TeV_74X import *
+from CMGTools.RootTools.samples.samples_13TeV_RunIISpring15MiniAODv2 import *
 from CMGTools.RootTools.samples.samples_13TeV_DATA2015 import *
 from CMGTools.RootTools.samples.triggers_13TeV_Spring15 import *
 from CMGTools.RootTools.samples.triggers_13TeV_Spring15_1l import *
