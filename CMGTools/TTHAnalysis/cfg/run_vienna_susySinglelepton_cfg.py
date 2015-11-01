@@ -245,7 +245,7 @@ sequence = cfg.Sequence(
         treeProducer,
         ])
 
-isData = False 
+isData = True 
 #bx = '50ns'
 bx = '25ns'
 
@@ -273,10 +273,11 @@ if getHeppyOption("loadSamples"):
         comp.isData = True
   if isData and bx=='25ns':
     from CMGTools.RootTools.samples.samples_13TeV_DATA2015 import *
-    selectedComponents = [ DoubleMuon_Run2015D ]
+    selectedComponents = [ DoubleMuon_Run2015D_Promptv4 ]
     for comp in selectedComponents:
         comp.splitFactor = 1
-        comp.files = comp.files[10:11] 
+        comp.files = comp.files[10:11]
+        comp.json = "$CMSSW_BASE/src/CMGTools/TTHAnalysis/data/json/Cert_246908-258750_13TeV_PromptReco_Collisions15_25ns_JSON_Silver.txt" 
 #        comp.files = [ 'root://eoscms.cern.ch//eos/cms/store/data/Run2015D/SingleMuon/MINIAOD/PromptReco-v3/000/256/676/00000/C2D5A4CC-F55F-E511-A02A-02163E0123FC.root'] 
         comp.isMC = False
         comp.isData = True

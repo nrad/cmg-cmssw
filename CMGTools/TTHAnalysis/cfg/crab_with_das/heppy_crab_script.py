@@ -39,7 +39,7 @@ cfo = imp.load_source("heppy_config", "heppy_config.py", handle)
 #config = cfo.config
 cfg = cfo.cfg
 seq = cfo.sequence
-pre = cfo.preprocessor
+pre = cfo.preprocessor if hasattr(cfo, "preprocessor") else None
 handle.close()
 
 from PhysicsTools.HeppyCore.framework.eventsfwlite import Events
