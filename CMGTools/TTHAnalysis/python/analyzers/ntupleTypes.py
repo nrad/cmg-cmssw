@@ -25,6 +25,8 @@ leptonTypeSusy = NTupleObjectType("leptonSusy", baseObjectTypes = [ leptonType ]
     NTupleVariable("jetBTagCSV", lambda lepton : lepton.jet.btag('pfCombinedInclusiveSecondaryVertexV2BJetTags') if hasattr(lepton,'jet') and hasattr(lepton.jet, 'btag') else -99, help="CSV btag of nearest jet"),
     NTupleVariable("jetBTagCMVA", lambda lepton : lepton.jet.btag('pfCombinedMVABJetTags') if hasattr(lepton,'jet') and hasattr(lepton.jet, 'btag') else -99, help="CMA btag of nearest jet"),
     NTupleVariable("jetDR",      lambda lepton : deltaR(lepton.eta(),lepton.phi(),lepton.jet.eta(),lepton.jet.phi()) if hasattr(lepton,'jet') else -1, help="deltaR(lepton, nearest jet)"),
+    NTupleVariable("SPRING15_25ns_v1", lambda x : (1*x.electronID("POG_Cuts_ID_SPRING15_25ns_v1_ConvVetoDxyDz_Veto") + 1*x.electronID("POG_Cuts_ID_SPRING15_25ns_v1_ConvVetoDxyDz_Loose") + 1*x.electronID("POG_Cuts_ID_SPRING15_25ns_v1_ConvVetoDxyDz_Medium") + 1*x.electronID("POG_Cuts_ID_SPRING15_25ns_v1_ConvVetoDxyDz_Tight")) if abs(x.pdgId()) == 11 else -1, int, help="Electron cut-based id (POG_SPRING15_25ns_v1_ConvVetoDxyDy): 0=none, 1=veto, 2=loose, 3=medium, 4=tight" ),
+
 ])
 
 
@@ -95,7 +97,28 @@ tauTypeSusy = NTupleObjectType("tauSusy",  baseObjectTypes = [ tauType ], variab
 ##  ISOTRACK
 ##------------------------------------------  
 
-isoTrackTypeSusy = NTupleObjectType("isoTrackSusy",  baseObjectTypes = [ isoTrackType ], variables = [
+trackTypeSusy = NTupleObjectType("trackSusy",  baseObjectTypes = [ isoTrackType ], variables = [
+
+
+    
+    NTupleVariable("matchedJetIndex",     lambda x : x.matchedJetIndex , help="index of the matched Jet to the track"),
+    NTupleVariable("matchedJetDr",        lambda x : x.matchedJetDr    , help="deltaR of the matched Jet to the track"),
+    NTupleVariable("CosPhiJet1",          lambda x : x.CosPhiJet1   , help="Cos Track Phi with the Leading Jet"     ),
+    NTupleVariable("CosPhiJet12",          lambda x : x.CosPhiJet12   , help="Cos Track Phi with the Leading + SubJet"),
+    NTupleVariable("CosPhiJetAll",        lambda x : x.CosPhiJetAll , help="Cos Track Phi with the All Jets"     ),
+
+
+    NTupleVariable("dxy",                 lambda x : x.dxy() , help="d_{xy} of lead track with respect to PV, in cm (with sign)"),
+    NTupleVariable("dxyError",            lambda x : x.dxyError() , help="d_{xy}Err of lead track with respect to PV, in cm (with sign)"),
+    NTupleVariable("dzError",             lambda x : x.dzError() , help="d_{z}Err of lead track with respect to PV, in cm (with sign)"),
+    NTupleVariable("fromPV",              lambda x : x.fromPV()  , help="is fromPV"),
+    NTupleVariable("isJet",               lambda x : x.isJet()),
+    NTupleVariable("numberOfPixleHits",   lambda x : x.numberOfPixelHits(), int),
+    NTupleVariable("numberOfHits",        lambda x : x.numberOfHits(), int ),
+    NTupleVariable("trackHighPurity",     lambda x : x.trackHighPurity(), int),
+    NTupleVariable("puppiWeight",         lambda x : x.puppiWeight()  ),
+
+
 ])
 
 
@@ -198,6 +221,19 @@ genParticleWithMotherIndex = NTupleObjectType("genParticleWithMotherIndex", base
     NTupleVariable("motherIndex2", lambda x : x.motherRef(x.numberOfMothers()-1).index() if x.numberOfMothers() > 1 else -1, int, help="index of the last mother in the genParticles"),
     NTupleVariable("daughterIndex2", lambda x : x.daughterRef(x.numberOfDaughters()-1).index() if x.numberOfDaughters() > 1 else -1, int, help="index of the last mother in the genParticles"),
 ])
+
+
+packedGenParticleWithMotherIndex = NTupleObjectType("genParticleWithMotherIndex", baseObjectTypes = [ genParticleWithMotherId ], mcOnly=True, variables = [
+    ## these work for 74X miniaod
+    NTupleVariable("nDaughters", lambda x : x.numberOfDaughters(), int, help="index of the daughters in the genParticles"),
+    NTupleVariable("nMothers", lambda x : x.numberOfMothers(), int, help="index of the mother in the genParticles"),
+    NTupleVariable("motherIndex1", lambda x : x.motherRef().index() if x.numberOfMothers() > 0 else -1, int, help="index of the first mother in the genParticles"),
+    NTupleVariable("daughterIndex1", lambda x : x.daughterRef(0).index() if x.numberOfDaughters() >0 else -1, int, help="index of the first mother in the genParticles"),
+    NTupleVariable("daughterIndex2", lambda x : x.daughterRef(x.numberOfDaughters()-1).index() if x.numberOfDaughters() > 1 else -1, int, help="index of the last mother in the genParticles"
+),
+])
+
+
 
 genJetType = NTupleObjectType("genJets",  baseObjectTypes = [ fourVectorType ], mcOnly=True, variables = [
     NTupleVariable("nConstituents", lambda x : x.nConstituents() ,help="Number of Constituents"),

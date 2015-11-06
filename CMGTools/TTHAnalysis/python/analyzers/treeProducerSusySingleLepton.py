@@ -87,11 +87,19 @@ susySingleLepton_collections.update({
             # put more here
 ##            "genParticles"     : NTupleCollection("genPartAll",  genParticleWithMotherId, 200, help="all pruned genparticles"), # need to decide which gen collection ?
             "genParticles"     : NTupleCollection("genPartAll",  genParticleWithMotherIndex, 200, help="all pruned genparticles"),
+
+
             ## ---------------------------------------------
             "selectedLeptons" : NTupleCollection("LepGood", leptonTypeSusy, 8, help="Leptons after the preselection"),
             "otherLeptons"    : NTupleCollection("LepOther", leptonTypeSusy, 8, help="Leptons after the preselection"),
             "selectedTaus"    : NTupleCollection("TauGood", tauTypeSusy, 3, help="Taus after the preselection"),
             "selectedIsoTrack"    : NTupleCollection("isoTrack", isoTrackType, 50, help="isoTrack, sorted by pt"),
+
+            ## DegStop:
+            "packedGenParticles"  : NTupleCollection("genPartPkd",  packedGenParticleWithMotherIndex, 2000, help="all packed genparticles"),
+            "allTracks"           : NTupleCollection("track", trackTypeSusy, 2000, help="all Tracks from PackedPFCandidates (pt>1) , sorted by pt"),
+            ####
+
             ##------------------------------------------------
             "cleanJetsAll"       : NTupleCollection("Jet",     jetTypeSusy, 25, help="Cental jets after full selection and cleaning, sorted by pt"),
             "fatJets"         : NTupleCollection("FatJet",  fatJetType,  15, help="AK8 jets, sorted by pt"),

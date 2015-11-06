@@ -45,7 +45,7 @@ elif eleID == "Incl": # as inclusive as possible
   lepAna.inclusive_electron_dz     = 999. # no cut since embedded in ID
 
 ## MUONS
-lepAna.loose_muon_pt  = 5
+lepAna.loose_muon_pt  = 3  ##loosen mu cut from 5GeV
 
 # Isolation
 isolation = "miniIso"
@@ -67,7 +67,8 @@ elif isolation == "relIso03":
 
 
 # --- LEPTON SKIMMING ---
-ttHLepSkim.minLeptons = 1
+#ttHLepSkim.minLeptons = 1
+ttHLepSkim.minLeptons = 0 # Loosen min lep requirement
 ttHLepSkim.maxLeptons = 999
 #LepSkim.idCut  = ""
 #LepSkim.ptCuts = []
@@ -86,6 +87,31 @@ metAna.recalibrate = False #should be false in susycore, already
 
 isoTrackAna.setOff=False
 genAna.allGenTaus = True
+genAna.makePackedGenParticles=True
+
+isoTrackAna.makeAllTracks=True
+trackAna = cfg.Analyzer(
+    TrackAnalyzer, name='trackAnalyzer',
+    setOff=False,
+    makeAllTracks=True,
+    #####
+    candidates='packedPFCandidates',
+    candidatesTypes='std::vector<pat::PackedCandidate>',
+    ptMin = 5, # for pion 
+    ptMinEMU = 5, # for EMU
+    dzMax = 0.1,
+    #####
+    isoDR = 0.3,
+    ptPartMin = 0,
+    dzPartMax = 0.1,
+    maxAbsIso = 8,
+    )
+
+
+
+
+
+
 
 from CMGTools.TTHAnalysis.analyzers.ttHLepEventAnalyzer import ttHLepEventAnalyzer
 ttHEventAna = cfg.Analyzer(
@@ -98,6 +124,9 @@ susyCoreSequence.insert(susyCoreSequence.index(ttHCoreEventAna),
                         ttHFatJetAna)
 susyCoreSequence.insert(susyCoreSequence.index(ttHCoreEventAna),
                         ttHSVAna)
+## Insert TrackAna in the sequence:
+susyCoreSequence.insert(susyCoreSequence.index(jetAna)+1,
+                        trackAna)
 
 from PhysicsTools.Heppy.analyzers.gen.LHEAnalyzer import LHEAnalyzer 
 LHEAna = LHEAnalyzer.defaultConfig
@@ -193,14 +222,14 @@ triggerFlagsAna.triggerBits = {
         'Jet80MET120'      :triggers_Jet80MET120     ,
         'MET120Mu5'        :triggers_MET120Mu5       ,
 
-        'MET170_pres'      :triggers_MET170_pres     , 
-        'MET250'           :triggers_MET250          ,
-        'MET90nc'          :triggers_MET90nc         ,
-        'MET120nc'         :triggers_MET120nc        ,
-        'MET90'            :triggers_MET90MHT90      ,
-        'MET120'           :triggers_MET120MHT120    ,
-        'PhysRates'        :triggers_PhysRate        ,
-        'Mu3erHT140MET125' :triggers_Mu3erHT140MET125,
+        #'MET170_pres'      :triggers_MET170_pres     , 
+        #'MET250'           :triggers_MET250          ,
+        #'MET90nc'          :triggers_MET90nc         ,
+        #'MET120nc'         :triggers_MET120nc        ,
+        #'MET90'            :triggers_MET90MHT90      ,
+        #'MET120'           :triggers_MET120MHT120    ,
+        #'PhysRates'        :triggers_PhysRate        ,
+        #'Mu3erHT140MET125' :triggers_Mu3erHT140MET125,
         'DiPFJetAve100_HFJEC': ["HLT_DiPFJetAve100_HFJEC_v*"],
         'DiPFJetAve140': ["HLT_DiPFJetAve140_v*"],
         'DiPFJetAve160_HFJEC': ["HLT_DiPFJetAve160_HFJEC_v*"],
@@ -216,6 +245,64 @@ triggerFlagsAna.triggerBits = {
         'DiPFJetAve60': ["HLT_DiPFJetAve60_v*"],
         'DiPFJetAve80_HFJEC': ["HLT_DiPFJetAve80_HFJEC_v*"],
         'DiPFJetAve80': ["HLT_DiPFJetAve80_v*"],
+
+
+
+
+        ### MET PD::
+        "HLT_CaloMHTNoPU90_PFMET90_PFMHT90_IDTight_BTagCSV0p72"                       :triggers_HLT_CaloMHTNoPU90_PFMET90_PFMHT90_IDTight_BTagCSV0p72                        ,
+        "HLT_CaloMHTNoPU90_PFMET90_PFMHT90_IDTight"                                   :triggers_HLT_CaloMHTNoPU90_PFMET90_PFMHT90_IDTight                                    ,
+        "HLT_MET200_JetIdCleaned"                                                     :triggers_HLT_MET200_JetIdCleaned                                                      ,
+        "HLT_MET250"                                                                  :triggers_HLT_MET250                                                                   ,
+        "HLT_MET300"                                                                  :triggers_HLT_MET300                                                                   ,
+        "HLT_MET60_IsoTrk35_Loose"                                                    :triggers_HLT_MET60_IsoTrk35_Loose                                                     ,
+        "HLT_MET75_IsoTrk50"                                                          :triggers_HLT_MET75_IsoTrk50                                                           ,
+        "HLT_MET90_IsoTrk50"                                                          :triggers_HLT_MET90_IsoTrk50                                                           ,
+        "HLT_MonoCentralPFJet80_PFMETNoMu120_JetIdCleaned_PFMH_PFMHTNoMu120_IDTight"  :triggers_HLT_MonoCentralPFJet80_PFMETNoMu120_JetIdCleaned_PFMH_PFMHTNoMu120_IDTight   ,
+        "HLT_MonoCentralPFJet80_PFMETNoMu90_JetIdCleaned_PFMHT_PFMHTNoMu90_IDTight"   :triggers_HLT_MonoCentralPFJet80_PFMETNoMu90_JetIdCleaned_PFMHT_PFMHTNoMu90_IDTight    ,
+        "HLT_Mu14er_PFMET100_JetIdCleaned"                                            :triggers_HLT_Mu14er_PFMET100_JetIdCleaned                                             ,
+        "HLT_Mu3er_PFHT140_PFMET125_JetIdCleaned"                                     :triggers_HLT_Mu3er_PFHT140_PFMET125_JetIdCleaned                                      ,
+        "HLT_Mu6_PFHT200_PFMET100_JetIdCleaned"                                       :triggers_HLT_Mu6_PFHT200_PFMET100_JetIdCleaned                                        ,
+        "HLT_Mu6_PFHT200_PFMET80_JetIdCleaned_BTagCSV0p72"                            :triggers_HLT_Mu6_PFHT200_PFMET80_JetIdCleaned_BTagCSV0p72                             ,
+        "HLT_PFMET100_PFMHT100_IDTight"                                               :triggers_HLT_PFMET100_PFMHT100_IDTight                                                ,
+        "HLT_PFMET110_PFMHT110_IDTight"                                               :triggers_HLT_PFMET110_PFMHT110_IDTight                                                ,
+        "HLT_PFMET120_JetIdCleaned_BTagCSV0p72"                                       :triggers_HLT_PFMET120_JetIdCleaned_BTagCSV0p72                                        ,
+        "HLT_PFMET120_JetIdCleaned_Mu5"                                               :triggers_HLT_PFMET120_JetIdCleaned_Mu5                                                ,
+        "HLT_PFMET120_PFMHT120_IDTight"                                               :triggers_HLT_PFMET120_PFMHT120_IDTight                                                ,
+        "HLT_PFMET170_HBHECleaned"                                                    :triggers_HLT_PFMET170_HBHECleaned                                                     ,
+        "HLT_PFMET170_JetIdCleaned"                                                   :triggers_HLT_PFMET170_JetIdCleaned                                                    ,
+        "HLT_PFMET170_NoiseCleaned"                                                   :triggers_HLT_PFMET170_NoiseCleaned                                                    ,
+        "HLT_PFMET170"                                                                :triggers_HLT_PFMET170                                                                 ,
+        "HLT_PFMET300_JetIdCleaned"                                                   :triggers_HLT_PFMET300_JetIdCleaned                                                    ,
+        "HLT_PFMET400_JetIdCleaned"                                                   :triggers_HLT_PFMET400_JetIdCleaned                                                    ,
+        "HLT_PFMET90_PFMHT90_IDTight"                                                 :triggers_HLT_PFMET90_PFMHT90_IDTight                                                  ,
+        "HLT_PFMETNoMu120_JetIdCleaned_PFMHTNoMu120_IDTight"                          :triggers_HLT_PFMETNoMu120_JetIdCleaned_PFMHTNoMu120_IDTight                           ,
+        "HLT_PFMETNoMu90_JetIdCleaned_PFMHTNoMu90_IDTight"                            :triggers_HLT_PFMETNoMu90_JetIdCleaned_PFMHTNoMu90_IDTight                             ,
+
+        #### SingleMuon PD:
+        "HLT_IsoMu17_eta2p1"         :  triggers_HLT_IsoMu17_eta2p1    ,
+        "HLT_IsoMu18"                :  triggers_HLT_IsoMu18           ,
+        "HLT_IsoMu20"                :  triggers_HLT_IsoMu20           ,
+        "HLT_IsoMu22"                :  triggers_HLT_IsoMu22           ,
+        "HLT_IsoMu27"                :  triggers_HLT_IsoMu27           ,
+        "HLT_IsoTkMu18"              :  triggers_HLT_IsoTkMu18         ,
+        "HLT_IsoTkMu20"              :  triggers_HLT_IsoTkMu20         ,
+        "HLT_IsoTkMu22"              :  triggers_HLT_IsoTkMu22         ,
+        "HLT_IsoTkMu27"              :  triggers_HLT_IsoTkMu27         ,
+        "HLT_L1SingleMu16"           :  triggers_HLT_L1SingleMu16      ,
+        "HLT_L1SingleMuOpen"         :  triggers_HLT_L1SingleMuOpen    ,
+        "HLT_L2Mu10"                 :  triggers_HLT_L2Mu10            ,
+        "HLT_Mu20"                   :  triggers_HLT_Mu20              ,
+        "HLT_Mu24_eta2p1"            :  triggers_HLT_Mu24_eta2p1       ,
+        "HLT_Mu27"                   :  triggers_HLT_Mu27              ,
+        "HLT_Mu45_eta2p1"            :  triggers_HLT_Mu45_eta2p1       ,
+        "HLT_Mu50"                   :  triggers_HLT_Mu50              ,
+        "HLT_Mu55"                   :  triggers_HLT_Mu55              ,
+        "HLT_TkMu20"                 :  triggers_HLT_TkMu20            ,
+        "HLT_TkMu24_eta2p1"          :  triggers_HLT_TkMu24_eta2p1     ,
+
+
+
         }
 
 # Tree Producer
@@ -252,6 +339,8 @@ bx = '25ns'
 #if True or getHeppyOption("loadSamples"):
 if getHeppyOption("loadSamples"):
   from CMGTools.RootTools.samples.samples_13TeV_RunIISpring15MiniAODv2 import *
+  from CMGTools.RootTools.samples.samples_13TeV_74X_susyT2DegStopPriv import *
+
   if not isData and bx=='50ns':
     selectedComponents = [DYJetsToLL_M50_50ns]
     for comp in selectedComponents:
@@ -259,6 +348,7 @@ if getHeppyOption("loadSamples"):
       comp.splitFactor = 1 
   if not isData and bx=='25ns':
     selectedComponents = [TTJets_DiLepton]
+    #selectedComponents = [T2DegStop_300_270]
     for comp in selectedComponents:
 #      comp.files=['root://xrootd.unl.edu//store/mc/RunIISpring15DR74/tZq_ll_4f_13TeV-amcatnlo-pythia8_TuneCUETP8M1/MINIAODSIM/Asympt25ns_MCRUN2_74_V9-v2/40000/102EC100-5D2A-E511-A807-0CC47A4D99A4.root']
       comp.files = comp.files[:1]
