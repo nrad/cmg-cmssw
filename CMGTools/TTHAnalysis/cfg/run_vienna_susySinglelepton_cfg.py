@@ -250,56 +250,56 @@ triggerFlagsAna.triggerBits = {
 
 
         ### MET PD::
-        "HLT_CaloMHTNoPU90_PFMET90_PFMHT90_IDTight_BTagCSV0p72"                       :triggers_HLT_CaloMHTNoPU90_PFMET90_PFMHT90_IDTight_BTagCSV0p72                        ,
-        "HLT_CaloMHTNoPU90_PFMET90_PFMHT90_IDTight"                                   :triggers_HLT_CaloMHTNoPU90_PFMET90_PFMHT90_IDTight                                    ,
-        "HLT_MET200_JetIdCleaned"                                                     :triggers_HLT_MET200_JetIdCleaned                                                      ,
-        "HLT_MET250"                                                                  :triggers_HLT_MET250                                                                   ,
-        "HLT_MET300"                                                                  :triggers_HLT_MET300                                                                   ,
-        "HLT_MET60_IsoTrk35_Loose"                                                    :triggers_HLT_MET60_IsoTrk35_Loose                                                     ,
-        "HLT_MET75_IsoTrk50"                                                          :triggers_HLT_MET75_IsoTrk50                                                           ,
-        "HLT_MET90_IsoTrk50"                                                          :triggers_HLT_MET90_IsoTrk50                                                           ,
-        "HLT_MonoCentralPFJet80_PFMETNoMu120_JetIdCleaned_PFMH_PFMHTNoMu120_IDTight"  :triggers_HLT_MonoCentralPFJet80_PFMETNoMu120_JetIdCleaned_PFMH_PFMHTNoMu120_IDTight   ,
-        "HLT_MonoCentralPFJet80_PFMETNoMu90_JetIdCleaned_PFMHT_PFMHTNoMu90_IDTight"   :triggers_HLT_MonoCentralPFJet80_PFMETNoMu90_JetIdCleaned_PFMHT_PFMHTNoMu90_IDTight    ,
-        "HLT_Mu14er_PFMET100_JetIdCleaned"                                            :triggers_HLT_Mu14er_PFMET100_JetIdCleaned                                             ,
-        "HLT_Mu3er_PFHT140_PFMET125_JetIdCleaned"                                     :triggers_HLT_Mu3er_PFHT140_PFMET125_JetIdCleaned                                      ,
-        "HLT_Mu6_PFHT200_PFMET100_JetIdCleaned"                                       :triggers_HLT_Mu6_PFHT200_PFMET100_JetIdCleaned                                        ,
-        "HLT_Mu6_PFHT200_PFMET80_JetIdCleaned_BTagCSV0p72"                            :triggers_HLT_Mu6_PFHT200_PFMET80_JetIdCleaned_BTagCSV0p72                             ,
-        "HLT_PFMET100_PFMHT100_IDTight"                                               :triggers_HLT_PFMET100_PFMHT100_IDTight                                                ,
-        "HLT_PFMET110_PFMHT110_IDTight"                                               :triggers_HLT_PFMET110_PFMHT110_IDTight                                                ,
-        "HLT_PFMET120_JetIdCleaned_BTagCSV0p72"                                       :triggers_HLT_PFMET120_JetIdCleaned_BTagCSV0p72                                        ,
-        "HLT_PFMET120_JetIdCleaned_Mu5"                                               :triggers_HLT_PFMET120_JetIdCleaned_Mu5                                                ,
-        "HLT_PFMET120_PFMHT120_IDTight"                                               :triggers_HLT_PFMET120_PFMHT120_IDTight                                                ,
-        "HLT_PFMET170_HBHECleaned"                                                    :triggers_HLT_PFMET170_HBHECleaned                                                     ,
-        "HLT_PFMET170_JetIdCleaned"                                                   :triggers_HLT_PFMET170_JetIdCleaned                                                    ,
-        "HLT_PFMET170_NoiseCleaned"                                                   :triggers_HLT_PFMET170_NoiseCleaned                                                    ,
-        "HLT_PFMET170"                                                                :triggers_HLT_PFMET170                                                                 ,
-        "HLT_PFMET300_JetIdCleaned"                                                   :triggers_HLT_PFMET300_JetIdCleaned                                                    ,
-        "HLT_PFMET400_JetIdCleaned"                                                   :triggers_HLT_PFMET400_JetIdCleaned                                                    ,
-        "HLT_PFMET90_PFMHT90_IDTight"                                                 :triggers_HLT_PFMET90_PFMHT90_IDTight                                                  ,
-        "HLT_PFMETNoMu120_JetIdCleaned_PFMHTNoMu120_IDTight"                          :triggers_HLT_PFMETNoMu120_JetIdCleaned_PFMHTNoMu120_IDTight                           ,
-        "HLT_PFMETNoMu90_JetIdCleaned_PFMHTNoMu90_IDTight"                            :triggers_HLT_PFMETNoMu90_JetIdCleaned_PFMHTNoMu90_IDTight                             ,
+        "CaloMHTNoPU90_PFMET90_PFMHT90_IDTight_BTagCSV0p72"                       :triggers_HLT_CaloMHTNoPU90_PFMET90_PFMHT90_IDTight_BTagCSV0p72                        ,
+        "CaloMHTNoPU90_PFMET90_PFMHT90_IDTight"                                   :triggers_HLT_CaloMHTNoPU90_PFMET90_PFMHT90_IDTight                                    ,
+        "MET200"                                                                  :triggers_HLT_MET200                                                      ,
+        "MET250"                                                                  :triggers_HLT_MET250                                                                   ,
+        "MET300"                                                                  :triggers_HLT_MET300                                                                   ,
+        "MET60_IsoTrk35_Loose"                                                    :triggers_HLT_MET60_IsoTrk35_Loose                                                     ,
+        "MET75_IsoTrk50"                                                          :triggers_HLT_MET75_IsoTrk50                                                           ,
+        "MET90_IsoTrk50"                                                          :triggers_HLT_MET90_IsoTrk50                                                           ,
+        "MonoCentralPFJet80_PFMETNoMu120_PFMH_PFMHTNoMu120_IDTight"               :triggers_HLT_MonoCentralPFJet80_PFMETNoMu120_PFMH_PFMHTNoMu120_IDTight   ,
+        "MonoCentralPFJet80_PFMETNoMu90_PFMHT_PFMHTNoMu90_IDTight"                :triggers_HLT_MonoCentralPFJet80_PFMETNoMu90_PFMHT_PFMHTNoMu90_IDTight    ,
+        "Mu14er_PFMET100"                                                         :triggers_HLT_Mu14er_PFMET100                                             ,
+        "Mu3er_PFHT140_PFMET125"                                                  :triggers_HLT_Mu3er_PFHT140_PFMET125                                      ,
+        "Mu6_PFHT200_PFMET100"                                                    :triggers_HLT_Mu6_PFHT200_PFMET100                                        ,
+        "Mu6_PFHT200_PFMET80_BTagCSV0p72"                                         :triggers_HLT_Mu6_PFHT200_PFMET80_BTagCSV0p72                             ,
+        "PFMET100_PFMHT100_IDTight"                                               :triggers_HLT_PFMET100_PFMHT100_IDTight                                                ,
+        "PFMET110_PFMHT110_IDTight"                                               :triggers_HLT_PFMET110_PFMHT110_IDTight                                                ,
+        "PFMET120_BTagCSV0p72"                                                    :triggers_HLT_PFMET120_BTagCSV0p72                                        ,
+        "PFMET120_Mu5"                                                            :triggers_HLT_PFMET120_Mu5                                                ,
+        "PFMET120_PFMHT120_IDTight"                                               :triggers_HLT_PFMET120_PFMHT120_IDTight                                                ,
+        "PFMET170_HBHECleaned"                                                    :triggers_HLT_PFMET170_HBHECleaned                                                     ,
+        "PFMET170_JetIdCleaned"                                                   :triggers_HLT_PFMET170_JetIdCleaned                                                    ,
+        "PFMET170_NoiseCleaned"                                                   :triggers_HLT_PFMET170_NoiseCleaned                                                    ,
+        "PFMET170"                                                                :triggers_HLT_PFMET170                                                                 ,
+        "PFMET300"                                                                :triggers_HLT_PFMET300                                                    ,
+        "PFMET400"                                                                :triggers_HLT_PFMET400                                                    ,
+        "PFMET90_PFMHT90_IDTight"                                                 :triggers_HLT_PFMET90_PFMHT90_IDTight                                                  ,
+        "PFMETNoMu120_PFMHTNoMu120_IDTight"                                       :triggers_HLT_PFMETNoMu120_PFMHTNoMu120_IDTight                           ,
+        "PFMETNoMu90_PFMHTNoMu90_IDTight"                                         :triggers_HLT_PFMETNoMu90_PFMHTNoMu90_IDTight                             ,
 
         #### SingleMuon PD:
-        "HLT_IsoMu17_eta2p1"         :  triggers_HLT_IsoMu17_eta2p1    ,
-        "HLT_IsoMu18"                :  triggers_HLT_IsoMu18           ,
-        "HLT_IsoMu20"                :  triggers_HLT_IsoMu20           ,
-        "HLT_IsoMu22"                :  triggers_HLT_IsoMu22           ,
-        "HLT_IsoMu27"                :  triggers_HLT_IsoMu27           ,
-        "HLT_IsoTkMu18"              :  triggers_HLT_IsoTkMu18         ,
-        "HLT_IsoTkMu20"              :  triggers_HLT_IsoTkMu20         ,
-        "HLT_IsoTkMu22"              :  triggers_HLT_IsoTkMu22         ,
-        "HLT_IsoTkMu27"              :  triggers_HLT_IsoTkMu27         ,
-        "HLT_L1SingleMu16"           :  triggers_HLT_L1SingleMu16      ,
-        "HLT_L1SingleMuOpen"         :  triggers_HLT_L1SingleMuOpen    ,
-        "HLT_L2Mu10"                 :  triggers_HLT_L2Mu10            ,
-        "HLT_Mu20"                   :  triggers_HLT_Mu20              ,
-        "HLT_Mu24_eta2p1"            :  triggers_HLT_Mu24_eta2p1       ,
-        "HLT_Mu27"                   :  triggers_HLT_Mu27              ,
-        "HLT_Mu45_eta2p1"            :  triggers_HLT_Mu45_eta2p1       ,
-        "HLT_Mu50"                   :  triggers_HLT_Mu50              ,
-        "HLT_Mu55"                   :  triggers_HLT_Mu55              ,
-        "HLT_TkMu20"                 :  triggers_HLT_TkMu20            ,
-        "HLT_TkMu24_eta2p1"          :  triggers_HLT_TkMu24_eta2p1     ,
+        "IsoMu17_eta2p1"         :  triggers_HLT_IsoMu17_eta2p1    ,
+        "IsoMu18"                :  triggers_HLT_IsoMu18           ,
+        "IsoMu20"                :  triggers_HLT_IsoMu20           ,
+        "IsoMu22"                :  triggers_HLT_IsoMu22           ,
+        "IsoMu27"                :  triggers_HLT_IsoMu27           ,
+        "IsoTkMu18"              :  triggers_HLT_IsoTkMu18         ,
+        "IsoTkMu20"              :  triggers_HLT_IsoTkMu20         ,
+        "IsoTkMu22"              :  triggers_HLT_IsoTkMu22         ,
+        "IsoTkMu27"              :  triggers_HLT_IsoTkMu27         ,
+        "L1SingleMu16"           :  triggers_HLT_L1SingleMu16      ,
+        "L1SingleMuOpen"         :  triggers_HLT_L1SingleMuOpen    ,
+        "L2Mu10"                 :  triggers_HLT_L2Mu10            ,
+        "Mu20"                   :  triggers_HLT_Mu20              ,
+        "Mu24_eta2p1"            :  triggers_HLT_Mu24_eta2p1       ,
+        "Mu27"                   :  triggers_HLT_Mu27              ,
+        "Mu45_eta2p1"            :  triggers_HLT_Mu45_eta2p1       ,
+        "Mu50"                   :  triggers_HLT_Mu50              ,
+        "Mu55"                   :  triggers_HLT_Mu55              ,
+        "TkMu20"                 :  triggers_HLT_TkMu20            ,
+        "TkMu24_eta2p1"          :  triggers_HLT_TkMu24_eta2p1     ,
 
 
 
@@ -332,7 +332,7 @@ sequence = cfg.Sequence(
         treeProducer,
         ])
 
-isData = True 
+isData = False
 #bx = '50ns'
 bx = '25ns'
 
@@ -349,6 +349,7 @@ if getHeppyOption("loadSamples"):
   if not isData and bx=='25ns':
     selectedComponents = [TTJets_DiLepton]
     #selectedComponents = [T2DegStop_300_270]
+    #selectedComponents = [T2DegStop_300_270_FastSIM]
     for comp in selectedComponents:
 #      comp.files=['root://xrootd.unl.edu//store/mc/RunIISpring15DR74/tZq_ll_4f_13TeV-amcatnlo-pythia8_TuneCUETP8M1/MINIAODSIM/Asympt25ns_MCRUN2_74_V9-v2/40000/102EC100-5D2A-E511-A807-0CC47A4D99A4.root']
       comp.files = comp.files[:1]
