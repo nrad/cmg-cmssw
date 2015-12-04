@@ -97,17 +97,17 @@ tauTypeSusy = NTupleObjectType("tauSusy",  baseObjectTypes = [ tauType ], variab
 ##  ISOTRACK
 ##------------------------------------------  
 
-trackTypeSusy = NTupleObjectType("trackSusy",  baseObjectTypes = [ isoTrackType ], variables = [
-
-
+genTrackTypeSusy = NTupleObjectType("genTrackSusy",  baseObjectTypes = [ isoTrackType ], variables = [
     
     NTupleVariable("matchedJetIndex",     lambda x : x.matchedJetIndex , help="index of the matched Jet to the track"),
     NTupleVariable("matchedJetDr",        lambda x : x.matchedJetDr    , help="deltaR of the matched Jet to the track"),
     NTupleVariable("CosPhiJet1",          lambda x : x.CosPhiJet1   , help="Cos Track Phi with the Leading Jet"     ),
     NTupleVariable("CosPhiJet12",          lambda x : x.CosPhiJet12   , help="Cos Track Phi with the Leading + SubJet"),
     NTupleVariable("CosPhiJetAll",        lambda x : x.CosPhiJetAll , help="Cos Track Phi with the All Jets"     ),
+])
 
-
+trackTypeSusy = NTupleObjectType("trackSusy",  baseObjectTypes = [ genTrackTypeSusy ], variables = [
+    
     NTupleVariable("dxy",                 lambda x : x.dxy() , help="d_{xy} of lead track with respect to PV, in cm (with sign)"),
     NTupleVariable("dxyError",            lambda x : x.dxyError() , help="d_{xy}Err of lead track with respect to PV, in cm (with sign)"),
     NTupleVariable("dzError",             lambda x : x.dzError() , help="d_{z}Err of lead track with respect to PV, in cm (with sign)"),
@@ -117,7 +117,6 @@ trackTypeSusy = NTupleObjectType("trackSusy",  baseObjectTypes = [ isoTrackType 
     NTupleVariable("numberOfHits",        lambda x : x.numberOfHits(), int ),
     NTupleVariable("trackHighPurity",     lambda x : x.trackHighPurity(), int),
     NTupleVariable("puppiWeight",         lambda x : x.puppiWeight()  ),
-
 
 ])
 

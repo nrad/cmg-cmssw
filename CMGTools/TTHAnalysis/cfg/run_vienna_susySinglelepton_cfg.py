@@ -88,23 +88,19 @@ metAna.recalibrate = False #should be false in susycore, already
 isoTrackAna.setOff=False
 genAna.allGenTaus = True
 genAna.makePackedGenParticles=True
-
 isoTrackAna.makeAllTracks=False
+
+
+from PhysicsTools.Heppy.analyzers.objects.TrackAnalyzer import TrackAnalyzer
 trackAna = cfg.Analyzer(
     TrackAnalyzer, name='trackAnalyzer',
     setOff=False,
-    makeAllTracks=True,
-    #####
-    candidates='packedPFCandidates',
-    candidatesTypes='std::vector<pat::PackedCandidate>',
-    ptMin = 5, # for pion 
-    ptMinEMU = 5, # for EMU
-    dzMax = 0.1,
-    #####
-    isoDR = 0.3,
-    ptPartMin = 0,
-    dzPartMax = 0.1,
-    maxAbsIso = 8,
+    trackOpt="reco"
+    )
+genTrackAna = cfg.Analyzer(
+    TrackAnalyzer, name='GenTrackAnalyzer',
+    setOff=False,
+    trackOpt="gen"
     )
 
 
@@ -126,6 +122,8 @@ susyCoreSequence.insert(susyCoreSequence.index(ttHCoreEventAna),
                         ttHSVAna)
 ## Insert TrackAna in the sequence:
 susyCoreSequence.insert(susyCoreSequence.index(jetAna)+1,
+                        genTrackAna)
+susyCoreSequence.insert(susyCoreSequence.index(jetAna)+1,
                         trackAna)
 
 from PhysicsTools.Heppy.analyzers.gen.LHEAnalyzer import LHEAnalyzer 
@@ -145,6 +143,7 @@ LHEAna = LHEAnalyzer.defaultConfig
 #    pTSubJet = 30,
 #    etaSubJet = 5.0,
 #            )
+
 from CMGTools.TTHAnalysis.analyzers.hbheAnalyzer import hbheAnalyzer
 hbheFilterAna = cfg.Analyzer(
     hbheAnalyzer, name = 'hbheAnalyzer',
@@ -326,7 +325,9 @@ selectedComponents = [
 
 sequence = cfg.Sequence(
   susyCoreSequence+
-      [ hbheFilterAna,
+      [
+        #FASTSIM: hbeheFilterAna has to be truned off for FastSim 
+        hbheFilterAna,
         LHEAna,
         ttHEventAna,
         treeProducer,
@@ -339,7 +340,7 @@ bx = '25ns'
 #if True or getHeppyOption("loadSamples"):
 if getHeppyOption("loadSamples"):
   from CMGTools.RootTools.samples.samples_13TeV_RunIISpring15MiniAODv2 import *
-  from CMGTools.RootTools.samples.samples_13TeV_74X_susyT2DegStopPriv import *
+  #from CMGTools.RootTools.samples.samples_13TeV_74X_susyT2DegStopPriv import *
 
   if not isData and bx=='50ns':
     selectedComponents = [DYJetsToLL_M50_50ns]
@@ -347,12 +348,12 @@ if getHeppyOption("loadSamples"):
       comp.files=comp.files[:1]
       comp.splitFactor = 1 
   if not isData and bx=='25ns':
-    #selectedComponents = [TTJets_DiLepton]
+    selectedComponents = [TTJets_DiLepton]
     #selectedComponents = [T2DegStop_300_270]
-    selectedComponents = [T2DegStop_300_270_FastSim]
+    #selectedComponents = [T2DegStop_300_270_FastSim, T2DegStop_300_240_FastSim,T2DegStop_300_290_FastSim]
     for comp in selectedComponents:
 #      comp.files=['root://xrootd.unl.edu//store/mc/RunIISpring15DR74/tZq_ll_4f_13TeV-amcatnlo-pythia8_TuneCUETP8M1/MINIAODSIM/Asympt25ns_MCRUN2_74_V9-v2/40000/102EC100-5D2A-E511-A807-0CC47A4D99A4.root']
-      #comp.files = comp.files[:1]
+      comp.files = comp.files[:1]
       comp.splitFactor = len(comp.files) 
   if isData and bx=='50ns':
     from CMGTools.RootTools.samples.samples_13TeV_DATA2015 import *
