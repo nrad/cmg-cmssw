@@ -25,6 +25,7 @@ handle.close()
 import PhysicsTools.HeppyCore.framework.config as cfg
 allComponents = { }
 for d in cfo.__dict__:
+    if d=='comp':continue
     c = cfo.__dict__[d]
     if isinstance(c,cfg.Component):
         if c.name in allComponents:
