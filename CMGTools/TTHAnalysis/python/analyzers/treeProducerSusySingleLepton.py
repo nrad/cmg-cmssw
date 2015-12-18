@@ -71,7 +71,8 @@ susySingleLepton_globalVariables = susyCore_globalVariables + [
             NTupleVariable("lheHT", lambda ev : ev.lheHT, help="H_{T} computed from quarks and gluons in Heppy LHEAnalyzer", mcOnly=True),
             NTupleVariable("lheHTIncoming", lambda ev : ev.lheHTIncoming, help="H_{T} computed from quarks and gluons in Heppy LHEAnalyzer (only LHE status<0 as mothers)", mcOnly=True),
             # ----------------------- MET filter information (temporary)  -------------------------------------------------------------------- #
-
+            
+            #FASTSIM : These must be turned off for fastsim!
             NTupleVariable("Flag_HBHENoiseFilterReRun", lambda ev: ev.hbheFilterNew, help="HBEHE temporary filter decision"),
             NTupleVariable("Flag_HBHEIsoNoiseFilterReRun", lambda ev: ev.hbheFilterIso, help="HBEHE isolation temporary filter decision"),
 
@@ -87,15 +88,25 @@ susySingleLepton_collections.update({
             # put more here
 ##            "genParticles"     : NTupleCollection("genPartAll",  genParticleWithMotherId, 200, help="all pruned genparticles"), # need to decide which gen collection ?
             "genParticles"     : NTupleCollection("genPartAll",  genParticleWithMotherIndex, 200, help="all pruned genparticles"),
+
+
             ## ---------------------------------------------
-            "selectedLeptons" : NTupleCollection("LepGood", leptonTypeSusy, 8, help="Leptons after the preselection"),
-            "otherLeptons"    : NTupleCollection("LepOther", leptonTypeSusy, 8, help="Leptons after the preselection"),
+            "selectedLeptons" : NTupleCollection("LepGood", leptonTypeSusyExtra, 8, help="Leptons after the preselection"),
+            "otherLeptons"    : NTupleCollection("LepOther", leptonTypeSusyExtra, 8, help="Leptons after the preselection"),
             "selectedTaus"    : NTupleCollection("TauGood", tauTypeSusy, 3, help="Taus after the preselection"),
             "selectedIsoTrack"    : NTupleCollection("isoTrack", isoTrackType, 50, help="isoTrack, sorted by pt"),
+
+            ## DegStop:
+            #"packedGenParticles"  : NTupleCollection("genPartPkd",  packedGenParticleWithMotherIndex, 2000, help="all packed genparticles"),
+            "Tracks"              : NTupleCollection("Tracks",      trackTypeSusy, 2000, help="all Tracks from PackedPFCandidates (pt>1) , sorted by pt"),
+            "GenTracks"           : NTupleCollection("GenTracks",   genTrackTypeSusy, 2000, help="all Tracks from PackedPFCandidates (pt>1) , sorted by pt"),
+            ####
+
             ##------------------------------------------------
             "cleanJetsAll"       : NTupleCollection("Jet",     jetTypeSusy, 25, help="Cental jets after full selection and cleaning, sorted by pt"),
             "fatJets"         : NTupleCollection("FatJet",  fatJetType,  15, help="AK8 jets, sorted by pt"),
-            "genJets"         : NTupleCollection("GenJet",  genJetType,  15, help="Gen Jets, sorted by pt"),
+            "cleanGenJets"         : NTupleCollection("GenJet",  genJetType,  30, help="Gen Jets, sorted by pt"),
+            "genJets"         : NTupleCollection("GenJeti_NC",  genJetType,  30, help="Gen Jets, sorted by pt"),
 #            "reclusteredFatJets" : NTupleCollection("RCFatJet",     fourVectorType,20, help="FatJets1.2 reclusterd from ak4 cleanJetsAll pT > 30, eta <5 "),
             ##------------------------------------------------
             "ivf"       : NTupleCollection("SV",     svType, 20, help="SVs from IVF"),
