@@ -335,14 +335,15 @@ sequence = cfg.Sequence(
         treeProducer,
         ])
 
-isData = False
+isData = True
 #bx = '50ns'
 bx = '25ns'
 
 #if True or getHeppyOption("loadSamples"):
 if getHeppyOption("loadSamples"):
-  from CMGTools.RootTools.samples.samples_13TeV_RunIISpring15MiniAODv2 import *
-  from CMGTools.RootTools.samples.samples_13TeV_74X_susyT2DegStopPriv import *
+  if not isData:
+    from CMGTools.RootTools.samples.samples_13TeV_RunIISpring15MiniAODv2 import *
+    from CMGTools.RootTools.samples.samples_13TeV_74X_susyT2DegStopPriv import *
 
   if not isData and bx=='50ns':
     selectedComponents = [DYJetsToLL_M50_50ns]

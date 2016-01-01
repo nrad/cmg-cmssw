@@ -2,15 +2,20 @@
 import PhysicsTools.HeppyCore.framework.config as cfg
 #xsec from: https://twiki.cern.ch/twiki/bin/view/LHCPhysics/SUSYCrossSections13TeVstopsbottom 
 import subprocess
-
+import os.path
 #basedir="root://hephyse.oeaw.ac.at//dpm/oeaw.ac.at/home/cms/"
 #basedir="root://xrootd.unl.edu//"
 #basedir="root://cms-xrd-global.cern.ch/"
 
 #import gfal2
 
-def makePrivateMCComponentFromDPM(name,dataset,dpmdir,subdirs=[''],xSec=1):
-    basedir="root://hephyse.oeaw.ac.at//cms/"
+def makePrivateMCComponentFromDPM(name,dataset,dpmdir,subdirs=[''],xSec=1,server= "hephyse.oeaw.ac.at",verbose=True):
+
+    basedir="root://%s/"%server
+    prot="xrd"
+    dpmdir = "/cms/"+dpmdir
+    lscommand= prot + " " + server + "  ls  " +dpmdir
+    print lscommand
     #basedir="root://xrootd.unl.edu//"
     #basedir="root://cms-xrd-global.cern.ch/"
     #ctx = gfal2.create_context()
@@ -18,16 +23,27 @@ def makePrivateMCComponentFromDPM(name,dataset,dpmdir,subdirs=[''],xSec=1):
     dirs={  }
     allfiles=[]
     for subdir in subdirs:
-        gfalout  = subprocess.Popen(["gfal-ls "+ basedir+"/"+dpmdir+'/'+subdir ], shell = True , stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-        for f in gfalout.stdout.readlines():
-            f = f[:-1]
+        #gfalout  = subprocess.Popen(["gfal-ls "+ basedir+"/"+dpmdir+'/'+subdir ], shell = True , stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        lsout = subprocess.Popen([ lscommand ], shell = True , stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        for f in lsout.stdout.readlines():
+            #f = f[:-1]
+            #print f
+            f =  f.rsplit()
+            if len(f)==0:
+                continue
+            f=f[-1]
+            
             if not f.endswith("root"):
                 continue
-            allfiles.append( basedir+"/"+dpmdir+'/'+subdir+'/'+f )
-    print "looked for files in :", basedir+"/"+dpmdir+'/'+subdir
+            filepath = basedir +"/" + f
+            #print filepath
+            allfiles.append( filepath )
+    #print "looked for files in :", basedir+"/"+dpmdir+'/'+subdir
     if len(allfiles) == 0:
-       raise RuntimeError, "Trying to make a component %s with no files" % name
-    print "Found: %s"%len(allfiles)
+       raise RuntimeError, "Trying to make a component %s with no files" % name  + "\n Dir: " + basedir+"/"+dpmdir+'/'+subdir+'/'
+    if verbose:
+      print "%s , xSec:%s , dataset: %s " %(name, xSec, dataset)
+      print "    Found: %s"%len(allfiles)
     component = cfg.MCComponent(
         dataset=dataset,
         name = name,

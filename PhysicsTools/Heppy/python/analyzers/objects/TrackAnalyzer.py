@@ -43,27 +43,40 @@ class TrackAnalyzer( Analyzer ):
         self.isoDR = 0.3   ,
         self.ptPartMin = 0 ,
 
+        print cfg_comp
+        print cfg_comp.isData
+        self.isData = cfg_comp.isData
+        self.processTracks=True
+
         if self.trackOpt.lower() == "reco":
-            self.do_mc_match        =     getattr(cfg_ana,  "do_mc_match",True)
+            self.do_mc_match        =     getattr(cfg_ana,  "do_mc_match", True)
             self.jetCollection      =     getattr(cfg_ana,  "jetCollection",     "cleanJetsAll")
             self.preFix             =     getattr(cfg_ana,  "collectionPreFix" ,"Tracks")
             self.candidates         =     'packedPFCandidates'
             self.candidateTypes     =     'std::vector<pat::PackedCandidate>' 
+            if self.isData:
+              self.do_mc_match= False
+              print "--- comp is data, mc Matched forced off"
         elif self.trackOpt.lower() == "gen":
             self.do_mc_match        =     False
             self.jetCollection      =     getattr(cfg_ana,  "jetCollection",     "cleanGenJets")
             self.preFix             =     getattr(cfg_ana,  "collectionPreFix" , "GenTracks")
             self.candidates         =     'packedGenParticles'
             self.candidateTypes     =     'std::vector<pat::PackedGenParticle>' 
+            if self.isData: 
+                self.processTracks=False
         else:
             assert False, "track option not recognized...selected reco or gen"
 
+
         print "------------" * 3 
-        print self.do_mc_match              
-        print self.jetCollection 
-        print self.preFix        
-        print self.candidates    
-        print self.candidateTypes
+        print "Jet Collection:", self.jetCollection 
+        print "Prefix:", self.preFix        
+        print "Candidates:", self.candidates    
+        print "Cand Type:", self.candidateTypes
+        print "isData:", self.isData
+        print "Do MC Match:", self.do_mc_match              
+        print "Will Process Tracks:" , self.processTracks
         print "------------" * 3 
 
 
@@ -131,34 +144,35 @@ class TrackAnalyzer( Analyzer ):
         #print "matchTau:", matchTau
         #matchGen = matchObjectCollection3(event.allTracks, event.packedGenParticles, deltaRMax = 0.5)
 
-        matchGen = matchObjectCollection3(tracks, event.GenTracks, deltaRMax = 0.5)
-        #print "-----------------"
-        #print "matchGen:"#, matchGen
-
-        #print [ ( trk.pt(), matchGen[trk].pt() if matchGen[trk] else None ) for trk in matchGen  ]
-        #print [  (trk.pt(), matchGen[trk].pt() if matchGen[trk] else None,  deltaR(trk, matchGen[trk]) if matchGen[trk] else None ) for trk in matchGen  ]
-        #print [ event.GenTracks.index( matchGen[trk] ) if matchGen[trk] else None  for trk in matchGen ]
-        #print [x.pdgId() for x in matchGen]
-        for trk in tracks:
-            gen = matchGen[trk]
-            #if gen:
-            #  print "---matched:"
-            #  print gen
-            #  print lep
-            #  print deltaR(gen,lep) 
-            #  print "----", gen.pdgId(),gen.motherRef().index() ,event.packedGenParticles[gen.motherRef().index()].pdgId(), gen.motherRef().pdgId()
-            #lep.mcMatchId = gen.motherRef().pdgId() if gen else 0
-            if gen:
-                trk.mcMatchIndex = event.GenTracks.index( matchGen[trk] )
-                trk.mcMatchDr = deltaR(trk,matchGen[trk] )
-                ptRatio = trk.pt()/matchGen[trk].pt() 
-                trk.mcMatchPtRatio = ptRatio 
-                trk.mcMatchId = 1   if ( ptRatio < 1.2 and ptRatio > 0.8 )   else 0
-            else:
-                trk.mcMatchPtRatio = -1 
-                trk.mcMatchIndex = -1 
+        if self.do_mc_match:
+            matchGen = matchObjectCollection3(tracks, event.GenTracks, deltaRMax = 0.5)
+            for trk in tracks:
+                gen = matchGen[trk]
+                #if gen:
+                #  print "---matched:"
+                #  print gen
+                #  print lep
+                #  print deltaR(gen,lep) 
+                #  print "----", gen.pdgId(),gen.motherRef().index() ,event.packedGenParticles[gen.motherRef().index()].pdgId(), gen.motherRef().pdgId()
+                #lep.mcMatchId = gen.motherRef().pdgId() if gen else 0
+                if gen:
+                    trk.mcMatchIndex = event.GenTracks.index( matchGen[trk] )
+                    trk.mcMatchDr = deltaR(trk,matchGen[trk] )
+                    ptRatio = trk.pt()/matchGen[trk].pt() 
+                    trk.mcMatchPtRatio = ptRatio 
+                    trk.mcMatchId = 1   if ( ptRatio < 1.2 and ptRatio > 0.8 )   else 0
+                else:
+                    trk.mcMatchPtRatio = -1 
+                    trk.mcMatchIndex = -1 
+                    trk.mcMatchDr    = 999
+                    trk.mcMatchId    = 0  
+        else:
+            print "------ do mc match is off, creating mc match vars with default values"
+            for trk in tracks:
+                trk.mcMatchPtRatio = -1
+                trk.mcMatchIndex = -1
                 trk.mcMatchDr    = 999
-                trk.mcMatchId    = 0  
+                trk.mcMatchId    = 0
             #print trk.mcMatchIndex, trk.mcMatchDr, trk.mcMatchId 
 
 
@@ -169,6 +183,7 @@ class TrackAnalyzer( Analyzer ):
         #print "---"*12
         #print "   "*3 , "Making Tracks!" ,  "   "*3
         #print "---"*12
+
 
         self.allTracks   = []
 
@@ -237,12 +252,11 @@ class TrackAnalyzer( Analyzer ):
 
         if self.cfg_ana.setOff:
             return True
+        if not self.processTracks:
+            return True
 
         self.readCollections( event.input )
         self.makeTrack(event)
-
-        #print self.allTracks
-        #print [x.pt() for x in self.allTracks]
         setattr( event,self.preFix, self.allTracks)
 
         #if len(event.selectedIsoTrack)==0 : return True
@@ -252,13 +266,13 @@ class TrackAnalyzer( Analyzer ):
 
 ### ===> do matching
         
+        self.matchTrackToGen(self.allTracks, event )        
         if not self.cfg_comp.isMC:
             return True
 
-        if hasattr(event, 'gentaus') and hasattr(event, 'gentauleps') and hasattr(event, 'genleps') and self.do_mc_match :
-            #print "-------------------------------  MATCHING TRACKS --------------------------------------------"
-            self.matchTrackToGen(self.allTracks, event)        
-            #print "-----------"
+        #do_match = hasattr(event, 'gentaus') and hasattr(event, 'gentauleps') and hasattr(event, 'genleps') and self.do_mc_match :
+        #print "-------------------------------  MATCHING TRACKS --------------------------------------------"
+        #print "-----------"
 
         return True
 

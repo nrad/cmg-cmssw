@@ -99,7 +99,7 @@ susySingleLepton_collections.update({
             ## DegStop:
             #"packedGenParticles"  : NTupleCollection("genPartPkd",  packedGenParticleWithMotherIndex, 2000, help="all packed genparticles"),
             "Tracks"              : NTupleCollection("Tracks",      trackTypeSusy, 2000, help="all Tracks from PackedPFCandidates (pt>1) , sorted by pt"),
-            "GenTracks"           : NTupleCollection("GenTracks",   genTrackTypeSusy, 2000, help="all Tracks from PackedPFCandidates (pt>1) , sorted by pt"),
+            "GenTracks"           : NTupleCollection("GenTracks",   genTrackTypeSusy, 2000, mcOnly=True, help="all Tracks from PackedPFCandidates (pt>1) , sorted by pt"),
             ####
 
             ##------------------------------------------------
