@@ -329,13 +329,13 @@ sequence = cfg.Sequence(
   susyCoreSequence+
       [
         #FASTSIM: hbeheFilterAna has to be truned off for FastSim 
-        hbheFilterAna,
+        #hbheFilterAna,
         LHEAna,
         ttHEventAna,
         treeProducer,
         ])
 
-isData = True
+isData = False
 #bx = '50ns'
 bx = '25ns'
 
@@ -352,11 +352,12 @@ if getHeppyOption("loadSamples"):
       comp.splitFactor = 1 
   if not isData and bx=='25ns':
     #selectedComponents = [TTJets_DiLepton]
-    selectedComponents = [T2DegStop_300_270]
+    #selectedComponents = [T2DegStop_300_270]
+    selectedComponents = [T2tt_300_270_FastSim]
     #selectedComponents = [T2DegStop_300_270_FastSim, T2DegStop_300_240_FastSim,T2DegStop_300_290_FastSim]
     for comp in selectedComponents:
 #      comp.files=['root://xrootd.unl.edu//store/mc/RunIISpring15DR74/tZq_ll_4f_13TeV-amcatnlo-pythia8_TuneCUETP8M1/MINIAODSIM/Asympt25ns_MCRUN2_74_V9-v2/40000/102EC100-5D2A-E511-A807-0CC47A4D99A4.root']
-      #comp.files = comp.files[:1]
+      comp.files = comp.files[:1]
       comp.splitFactor = len(comp.files) 
   if isData and bx=='50ns':
     from CMGTools.RootTools.samples.samples_13TeV_DATA2015 import *

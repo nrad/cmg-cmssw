@@ -167,7 +167,7 @@ class TrackAnalyzer( Analyzer ):
                     trk.mcMatchDr    = 999
                     trk.mcMatchId    = 0  
         else:
-            print "------ do mc match is off, creating mc match vars with default values"
+            print "------ do mc match is off, creating mc match vars with default values for trkOpt:", self.trackOpt
             for trk in tracks:
                 trk.mcMatchPtRatio = -1
                 trk.mcMatchIndex = -1

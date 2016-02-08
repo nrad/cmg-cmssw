@@ -21,8 +21,8 @@ config.JobType.outputFiles = ['output.log.tgz'] # susySingleLepton.root is autom
 
 config.section_("Data")
 config.Data.ignoreLocality = False
-config.Data.inputDBS = 'global'
-#config.Data.inputDBS = 'phys03'
+#config.Data.inputDBS = 'global'
+config.Data.inputDBS = os.environ["INPUT_DBS"]
 config.Data.splitting = 'FileBased'
 
 import subprocess
