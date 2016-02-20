@@ -48,7 +48,8 @@ elif eleID == "Incl": # as inclusive as possible
 lepAna.loose_muon_pt  = 3  ##loosen mu cut from 5GeV
 
 # Isolation
-isolation = "miniIso"
+isolation = "hybridIso"
+#isolation = "miniIso"
 
 if isolation == "miniIso":
   # do miniIso
@@ -64,6 +65,19 @@ elif isolation == "relIso03":
 
   lepAna.loose_electron_relIso = 0.5
   lepAna.loose_muon_relIso = 0.5
+
+    
+
+
+elif isolation == "hybridIso":
+  lepAna.doMiniIsolation = False
+
+  lepAna.ele_isoCorr = "rhoArea"
+  lepAna.mu_isoCorr = "rhoArea"
+  
+  lepAna.loose_muon_isoCut     =  lambda mu: ( (mu.pt() < 25  and mu.absIso04 < 5 ) or (mu.pt()>=25 and mu.relIso04 < 0.2 ) )
+  #lepAna.loose_electron_isoCut =  None # 
+  lepAna.loose_electron_relIso = lambda el: ( el.relIso04 < 0.5   )
 
 
 # --- LEPTON SKIMMING ---
@@ -123,7 +137,7 @@ susyCoreSequence.insert(susyCoreSequence.index(ttHCoreEventAna),
 susyCoreSequence.insert(susyCoreSequence.index(ttHCoreEventAna),
                         ttHSVAna)
 ## Insert TrackAna in the sequence:
-susyCoreSequence.insert(susyCoreSequence.index(jetAna)+1,
+susyCoreSequence.insert(susyCoreSequence.index(metAna)+1,
                         genTrackAna)
 susyCoreSequence.insert(susyCoreSequence.index(genTrackAna)+1,
                         trackAna)
@@ -329,13 +343,20 @@ sequence = cfg.Sequence(
   susyCoreSequence+
       [
         #FASTSIM: hbeheFilterAna has to be truned off for FastSim 
-        #hbheFilterAna,
+        hbheFilterAna,
         LHEAna,
         ttHEventAna,
         treeProducer,
         ])
 
-isData = False
+
+import os
+if os.environ.has_key("ISDATA"):
+  isData = os.environ["ISDATA"].lower() == "true"
+else:
+  isData = False
+
+print "------------------------------------------ isData: %s"%isData
 #bx = '50ns'
 bx = '25ns'
 
@@ -343,7 +364,9 @@ bx = '25ns'
 if getHeppyOption("loadSamples"):
   if not isData:
     from CMGTools.RootTools.samples.samples_13TeV_RunIISpring15MiniAODv2 import *
-    from CMGTools.RootTools.samples.samples_13TeV_74X_susyT2DegStopPriv import *
+
+    #from CMGTools.RootTools.samples.samples_13TeV_74X_susyT2DegStopPriv import *
+    from CMGTools.RootTools.samples.samples_13TeV_signals import *
 
   if not isData and bx=='50ns':
     selectedComponents = [DYJetsToLL_M50_50ns]
@@ -351,9 +374,11 @@ if getHeppyOption("loadSamples"):
       comp.files=comp.files[:1]
       comp.splitFactor = 1 
   if not isData and bx=='25ns':
-    #selectedComponents = [TTJets_DiLepton]
+    selectedComponents = [TTJets_DiLepton]
+    #selectedComponents = [ SMS_T2_4bd_mStop_400_mLSP_320to390,  SMS_T2_4bd_mStop_550to600_mLSP_470to590 ] 
+    #selectedComponents = SignalT2DegFullScan 
     #selectedComponents = [T2DegStop_300_270]
-    selectedComponents = [T2tt_300_270_FastSim]
+    #selectedComponents = [T2tt_300_270_FastSim]
     #selectedComponents = [T2DegStop_300_270_FastSim, T2DegStop_300_240_FastSim,T2DegStop_300_290_FastSim]
     for comp in selectedComponents:
 #      comp.files=['root://xrootd.unl.edu//store/mc/RunIISpring15DR74/tZq_ll_4f_13TeV-amcatnlo-pythia8_TuneCUETP8M1/MINIAODSIM/Asympt25ns_MCRUN2_74_V9-v2/40000/102EC100-5D2A-E511-A807-0CC47A4D99A4.root']

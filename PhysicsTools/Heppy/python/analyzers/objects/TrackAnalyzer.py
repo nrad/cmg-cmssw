@@ -49,6 +49,7 @@ class TrackAnalyzer( Analyzer ):
         self.processTracks=True
 
         if self.trackOpt.lower() == "reco":
+            self.lepCollection      =     getattr(cfg_ana, "lepCollection",   "selectedLeptons")
             self.do_mc_match        =     getattr(cfg_ana,  "do_mc_match", True)
             self.jetCollection      =     getattr(cfg_ana,  "jetCollection",     "cleanJetsAll")
             self.preFix             =     getattr(cfg_ana,  "collectionPreFix" ,"Tracks")
@@ -57,8 +58,15 @@ class TrackAnalyzer( Analyzer ):
             if self.isData:
               self.do_mc_match= False
               print "--- comp is data, mc Matched forced off"
+
+
+
+
+
+
         elif self.trackOpt.lower() == "gen":
             self.do_mc_match        =     False
+            self.lepCollection      =     getattr(cfg_ana, "lepCollection",   "genleps")
             self.jetCollection      =     getattr(cfg_ana,  "jetCollection",     "cleanGenJets")
             self.preFix             =     getattr(cfg_ana,  "collectionPreFix" , "GenTracks")
             self.candidates         =     'packedGenParticles'
@@ -67,9 +75,15 @@ class TrackAnalyzer( Analyzer ):
                 self.processTracks=False
         else:
             assert False, "track option not recognized...selected reco or gen"
+        if self.isData:
+            self.genCollection =    None
+        else:
+            self.genCollection =    getattr(cfg_ana, "genPartCollection", "generatorSummary") 
 
 
         print "------------" * 3 
+        print "Lep Collection:", self.lepCollection 
+        print "Gen Collection:", self.genCollection 
         print "Jet Collection:", self.jetCollection 
         print "Prefix:", self.preFix        
         print "Candidates:", self.candidates    
@@ -111,6 +125,37 @@ class TrackAnalyzer( Analyzer ):
                 if dR < drMin:  
                     trk.matchedJetIndex = ij
                     #print "   jet indx", ij  , jets[ij],
+
+
+    def matchTrackToLeptons(self,trk,leps,drMin=0.4):
+        """ adds the index and dr of the best matched jet to the track  """
+        trk.matchedLepIndex=-1
+        trk.matchedLepDr=99999
+        #trk.matchedLepPtRatio=99999
+
+        for ilep, lep in enumerate(leps):
+            dR      = deltaR(trk,lep)
+            ptRatio = trk.pt()/lep.pt()
+            if dR < trk.matchedLepDr:
+                trk.matchedLepDr    = dR
+                if dR < drMin and ( ptRatio < 1.2 and ptRatio > 0.8 ):  
+                    trk.matchedLepIndex = ilep
+
+    def matchTrackToGenParts(self,trk,genParts,drMin=0.4):
+        """ adds the index and dr of the best matched jet to the track  """
+        trk.matchedGenPartIndex=-1
+        trk.matchedGenPartDr=99999
+        for igp, gp in enumerate(genParts):
+            if abs(gp.pdgId()) > 1000000:  # Don't want to match to sparticles!
+              continue 
+            #ptRatio = trk.pt()/gp.pt()
+            dR = deltaR(trk,gp)
+            if dR < trk.matchedGenPartDr:
+                trk.matchedGenPartDr    = dR
+                if dR < drMin: 
+                    trk.matchedGenPartIndex = igp
+
+
     def getTrackCosPhiToJets(self,trk,jets):
         nJets = len(jets)
         trk.CosPhiJet1  = -99
@@ -147,7 +192,7 @@ class TrackAnalyzer( Analyzer ):
         if self.do_mc_match:
             matchGen = matchObjectCollection3(tracks, event.GenTracks, deltaRMax = 0.5)
             for trk in tracks:
-                gen = matchGen[trk]
+                matchedGenTrk = matchGen[trk]
                 #if gen:
                 #  print "---matched:"
                 #  print gen
@@ -155,10 +200,10 @@ class TrackAnalyzer( Analyzer ):
                 #  print deltaR(gen,lep) 
                 #  print "----", gen.pdgId(),gen.motherRef().index() ,event.packedGenParticles[gen.motherRef().index()].pdgId(), gen.motherRef().pdgId()
                 #lep.mcMatchId = gen.motherRef().pdgId() if gen else 0
-                if gen:
-                    trk.mcMatchIndex = event.GenTracks.index( matchGen[trk] )
-                    trk.mcMatchDr = deltaR(trk,matchGen[trk] )
-                    ptRatio = trk.pt()/matchGen[trk].pt() 
+                if matchedGenTrk:
+                    trk.mcMatchIndex = event.GenTracks.index( matchedGenTrk )
+                    trk.mcMatchDr = deltaR(trk,matchedGenTrk)
+                    ptRatio = trk.pt()/matchedGenTrk.pt() 
                     trk.mcMatchPtRatio = ptRatio 
                     trk.mcMatchId = 1   if ( ptRatio < 1.2 and ptRatio > 0.8 )   else 0
                 else:
@@ -167,13 +212,20 @@ class TrackAnalyzer( Analyzer ):
                     trk.mcMatchDr    = 999
                     trk.mcMatchId    = 0  
         else:
-            print "------ do mc match is off, creating mc match vars with default values for trkOpt:", self.trackOpt
+            #print "------ do mc match is off, creating mc match vars with default values for trkOpt:", self.trackOpt
             for trk in tracks:
                 trk.mcMatchPtRatio = -1
                 trk.mcMatchIndex = -1
                 trk.mcMatchDr    = 999
                 trk.mcMatchId    = 0
             #print trk.mcMatchIndex, trk.mcMatchDr, trk.mcMatchId 
+
+        # Maybe try to add the index of the actual particle that the track belongs too
+        #elif: self.trkOpt.lower() == "gen":
+        #  ### maybe try to add 
+        #  pass
+
+
 
 
     #------------------
@@ -204,6 +256,9 @@ class TrackAnalyzer( Analyzer ):
         #jets = event.jets
         #jets = event.cleanJetsAll
         self.jets = getattr(event,self.jetCollection)
+        self.leps = getattr(event, self.lepCollection)
+        self.genParts = getattr(event, self.genCollection) if self.genCollection else None
+
 
         for track in rawTracks:
             if track.pt() > 1 and abs( track.eta() ) <  2.5:
@@ -211,10 +266,15 @@ class TrackAnalyzer( Analyzer ):
                     #isoSum = self.IsoTrackIsolationComputer.chargedAbsIso(track.physObj, self.isoDR, 0., self.ptPartMin)
                     #track.absIso = isoSum - track.pt()
                     track.absIso = 0
+                    metPhi = event.met.phi()
                 elif self.trackOpt.lower() == "gen":
+                    metPhi = event.met_genPhi
                     track.absIso = 0
                 #self.matchTrackToJets(track,jets,drMin=0.4)
+                self.matchTrackToLeptons(track,self.leps,drMin=0.4)
+                if self.genParts: self.matchTrackToGenParts(track,self.genParts,drMin=0.4)
                 self.matchTrackToJets(track,self.jets,drMin=0.4)
+                track.CosPhiMet = math.cos( track.phi() - metPhi)
                 self.getTrackCosPhiToJets(track,self.jets)
                 #print "---------------------------"
                 #print track.matchedJetIndex , track.matchedJetDr

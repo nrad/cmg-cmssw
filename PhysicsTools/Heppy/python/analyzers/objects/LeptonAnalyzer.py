@@ -36,6 +36,7 @@ class LeptonAnalyzer( Analyzer ):
         self.electronEnergyCalibrator = EmbeddedElectronCalibrator()
 #        if hasattr(cfg_comp,'efficiency'):
 #            self.efficiency= EfficiencyCorrector(cfg_comp.efficiency)
+
         # Isolation cut
         if hasattr(cfg_ana, 'loose_electron_isoCut'):
             self.eleIsoCut = cfg_ana.loose_electron_isoCut
@@ -66,6 +67,7 @@ class LeptonAnalyzer( Analyzer ):
             else:
                 self.IsolationComputer = heppy.IsolationComputer()
 
+
         self.doIsoAnnulus = getattr(cfg_ana, 'doIsoAnnulus', False)
         if self.doIsoAnnulus:
             if not self.doMiniIsolation:
@@ -79,6 +81,14 @@ class LeptonAnalyzer( Analyzer ):
             else:
                 self.IsolationComputer = heppy.IsolationComputer()
             
+        # Hybrid Isolation
+        #self.doHybridIsolation = getattr( cfg_ana, 'doHybridIsolation', False)
+        #if self.doHybridIsolation :
+        #    # FIXME  
+        #    pass
+        #     
+
+
 
     #----------------------------------------
     # DECLARATION OF HANDLES OF LEPTONS STUFF   
@@ -142,6 +152,8 @@ class LeptonAnalyzer( Analyzer ):
             if (mu.track().isNonnull() and mu.muonID(self.cfg_ana.inclusive_muon_id) and 
                     mu.pt()>self.cfg_ana.inclusive_muon_pt and abs(mu.eta())<self.cfg_ana.inclusive_muon_eta and 
                     abs(mu.dxy())<self.cfg_ana.inclusive_muon_dxy and abs(mu.dz())<self.cfg_ana.inclusive_muon_dz):
+
+
                 inclusiveMuons.append(mu)
         for ele in allelectrons:
             if ( ele.electronID(self.cfg_ana.inclusive_electron_id) and
@@ -165,6 +177,16 @@ class LeptonAnalyzer( Analyzer ):
         if self.doIsolationScan:
             for lep in event.inclusiveLeptons:
                 self.attachIsolationScan(lep)
+
+
+        #for lep in event.inclusiveLeptons:
+        #    ## Add MT, Q80 and CosLMet for leptons
+        #    lep.cosLMet = math.cos(lep.phi() - event.met.pt() )
+        #    lep.mt      = math.sqrt(2.* lep.pt() * event.met.pt() * (1- lep.cosLMet) )
+        #    lep.Q80     = 1- 80**2 / (2.*lep.pt()*event.met.pt() )
+        #    print  mu.cosLMet, mu.mt, mu.Q80
+
+
 
         # make loose leptons (basic selection)
         for mu in inclusiveMuons:

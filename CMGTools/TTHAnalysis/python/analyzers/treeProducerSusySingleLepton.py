@@ -73,8 +73,8 @@ susySingleLepton_globalVariables = susyCore_globalVariables + [
             # ----------------------- MET filter information (temporary)  -------------------------------------------------------------------- #
             
             #FASTSIM : These must be turned off for fastsim!
-            #NTupleVariable("Flag_HBHENoiseFilterReRun", lambda ev: ev.hbheFilterNew, help="HBEHE temporary filter decision"),
-            #NTupleVariable("Flag_HBHEIsoNoiseFilterReRun", lambda ev: ev.hbheFilterIso, help="HBEHE isolation temporary filter decision"),
+            NTupleVariable("Flag_HBHENoiseFilterReRun", lambda ev: ev.hbheFilterNew, help="HBEHE temporary filter decision"),
+            NTupleVariable("Flag_HBHEIsoNoiseFilterReRun", lambda ev: ev.hbheFilterIso, help="HBEHE isolation temporary filter decision"),
 
 ]
 susySingleLepton_globalObjects = susyCore_globalObjects.copy()
@@ -91,8 +91,8 @@ susySingleLepton_collections.update({
 
 
             ## ---------------------------------------------
-            "selectedLeptons" : NTupleCollection("LepGood", leptonTypeSusyExtra, 8, help="Leptons after the preselection"),
-            "otherLeptons"    : NTupleCollection("LepOther", leptonTypeSusyExtra, 8, help="Leptons after the preselection"),
+            "selectedLeptons" : NTupleCollection("LepGood", leptonTypeDegStop, 8, help="Leptons after the preselection"),
+            "otherLeptons"    : NTupleCollection("LepOther", leptonTypeDegStop, 8, help="Leptons after the preselection"),
             "selectedTaus"    : NTupleCollection("TauGood", tauTypeSusy, 3, help="Taus after the preselection"),
             "selectedIsoTrack"    : NTupleCollection("isoTrack", isoTrackType, 50, help="isoTrack, sorted by pt"),
 
