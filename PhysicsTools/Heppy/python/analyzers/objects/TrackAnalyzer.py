@@ -145,6 +145,7 @@ class TrackAnalyzer( Analyzer ):
         """ adds the index and dr of the best matched jet to the track  """
         trk.matchedGenPartIndex=-1
         trk.matchedGenPartDr=99999
+        if not genParts: return 
         for igp, gp in enumerate(genParts):
             if abs(gp.pdgId()) > 1000000:  # Don't want to match to sparticles!
               continue 
@@ -259,7 +260,6 @@ class TrackAnalyzer( Analyzer ):
         self.leps = getattr(event, self.lepCollection)
         self.genParts = getattr(event, self.genCollection) if self.genCollection else None
 
-
         for track in rawTracks:
             if track.pt() > 1 and abs( track.eta() ) <  2.5:
                 if self.trackOpt.lower() == "reco":
@@ -272,7 +272,7 @@ class TrackAnalyzer( Analyzer ):
                     track.absIso = 0
                 #self.matchTrackToJets(track,jets,drMin=0.4)
                 self.matchTrackToLeptons(track,self.leps,drMin=0.4)
-                if self.genParts: self.matchTrackToGenParts(track,self.genParts,drMin=0.4)
+                self.matchTrackToGenParts(track,self.genParts,drMin=0.4)
                 self.matchTrackToJets(track,self.jets,drMin=0.4)
                 track.CosPhiMet = math.cos( track.phi() - metPhi)
                 self.getTrackCosPhiToJets(track,self.jets)

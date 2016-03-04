@@ -343,7 +343,7 @@ sequence = cfg.Sequence(
   susyCoreSequence+
       [
         #FASTSIM: hbeheFilterAna has to be truned off for FastSim 
-        hbheFilterAna,
+        #hbheFilterAna,
         LHEAna,
         ttHEventAna,
         treeProducer,
@@ -374,7 +374,7 @@ if getHeppyOption("loadSamples"):
       comp.files=comp.files[:1]
       comp.splitFactor = 1 
   if not isData and bx=='25ns':
-    selectedComponents = [TTJets_DiLepton]
+    selectedComponents = [QCD_HT200to300]
     #selectedComponents = [ SMS_T2_4bd_mStop_400_mLSP_320to390,  SMS_T2_4bd_mStop_550to600_mLSP_470to590 ] 
     #selectedComponents = SignalT2DegFullScan 
     #selectedComponents = [T2DegStop_300_270]

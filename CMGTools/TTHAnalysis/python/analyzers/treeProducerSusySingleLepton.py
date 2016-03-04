@@ -73,8 +73,8 @@ susySingleLepton_globalVariables = susyCore_globalVariables + [
             # ----------------------- MET filter information (temporary)  -------------------------------------------------------------------- #
             
             #FASTSIM : These must be turned off for fastsim!
-            NTupleVariable("Flag_HBHENoiseFilterReRun", lambda ev: ev.hbheFilterNew, help="HBEHE temporary filter decision"),
-            NTupleVariable("Flag_HBHEIsoNoiseFilterReRun", lambda ev: ev.hbheFilterIso, help="HBEHE isolation temporary filter decision"),
+            #NTupleVariable("Flag_HBHENoiseFilterReRun", lambda ev: ev.hbheFilterNew, help="HBEHE temporary filter decision"),
+            #NTupleVariable("Flag_HBHEIsoNoiseFilterReRun", lambda ev: ev.hbheFilterIso, help="HBEHE isolation temporary filter decision"),
 
 ]
 susySingleLepton_globalObjects = susyCore_globalObjects.copy()
